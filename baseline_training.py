@@ -52,7 +52,7 @@ def load_checkpoint(model, mode, path="./model.pt"):
 
 ############## Training Related Logic ####################################
 
-def train_val_model(opt, model, train_data_loader, val_data_loader, loss_fn, 
+def train_val_model(opt, vocab_size, model, train_data_loader, val_data_loader, loss_fn, 
                     optimizer, lr_scheduler, curr_epoch, total_epochs,
                       best_perf=0, print_freq=50,
                     save_freq=50):
@@ -80,40 +80,41 @@ def train_val_model(opt, model, train_data_loader, val_data_loader, loss_fn,
 
         running_loss = 0.0
         running_total = 0.0
-        running_metric = 0.0
+        running_perplexity = 0.0
         for i, batch_data in enumerate(train_data_loader):
             # Every data instance is an image + label pair
-            images, labels = batch_data
-            images = images.to_device(device)
-            labels = labels.to_device(device)
+            images, captions = batch_data
+            images = images.to(device)
+            captions = captions.to(device)
             
             # zero the parameter gradients
             optimizer.zero_grad()
 
             # use the model
-            # TODO: Next few lines are going to be a little different than what was copied
-            #  from hw
-            outputs = model(images)
+            outputs = model(images, captions[:, :-1]) # we want <SOS> to last word but not <EOS> token
 
-            #print(outputs)
-            loss = loss_fn(outputs, labels)
+            loss = loss_fn(
+                outputs.reshape(-1, vocab_size), # first dimension is batch * seq length, second dim vocab size
+                captions[:, 1:].reshape(-1) # groud truth, ignore <SOS> tag
+            )
+
             loss.backward()
 
             optimizer.step()
 
             # print statistics
             running_loss += loss.item()
-            running_total += labels.size(0)
+            running_total += captions.size(0)
             
             # eval metric
-            running_metric += evaluation_metric(labels, outputs)
+            running_perplexity += torch.exp(loss.item())
 
             # save at regular intervals as well as at end of epoch
             if i % save_freq or i == len(train_data_loader):
-                running_acc = running_metric / running_total * 100
+                running_perplexity = running_perplexity / running_total * 100
 
-                if running_acc > best_perf:
-                    best_perf = running_acc
+                if running_perplexity > best_perf:
+                    best_perf = running_perplexity
                     last_lr = lr_scheduler.get_last_lr()[0]
 
                     save_path = opt.save_path.split(".")
@@ -126,23 +127,23 @@ def train_val_model(opt, model, train_data_loader, val_data_loader, loss_fn,
             if i % print_freq == 0:    # print and log every certain number of mini-batches
                 running_loss = running_loss / print_freq
     
-                running_metric = running_metric / running_total * 100
+                running_perplexity = running_perplexity / running_total * 100
                 
                 writer.add_scalar("Loss/train", running_loss,
                                   epoch_i*(batch_data[0].shape[0] + i))
 
                 # switch out metric
-                print(f'[{epoch_i + 1}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] loss: {running_loss:.3f} metric: {running_metric:.3f} lr: {last_lr:.5f}')
+                print(f'[{epoch_i + 1}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] loss: {running_loss:.3f} perplexity: {running_metric:.3f} lr: {last_lr:.5f}')
                 running_loss = 0.0
                 running_total = 0.0
-                running_metric = 0.0
+                running_perplexity = 0.0
             
         # adjust the learning rate
         lr_scheduler.step()
 
-        val_acc = test_model(model, val_data_loader)
+        val_metric = test_model(model, val_data_loader)
         # switch out metric
-        print(f'[{epoch_i + 1}/{total_epochs}] val acc: {val_acc:.3f}')
+        print(f'[{epoch_i + 1}/{total_epochs}] val acc: {val_metric:.3f}')
 
     return model
 
@@ -151,7 +152,8 @@ def main(opt):
     train_loader, val_loader, test_loader, vocab = get_flickr8k_loaders(root_dir=opt.dataset_dir)
 
     # make model and load from checkpoint if needed
-    model = BaselineModel()
+    # there are other params we can change here
+    model = BaselineModel(vocab_size=len(vocab))
 
     ##### set up params
     
@@ -170,7 +172,7 @@ def main(opt):
 
 
     # call train_val_model
-    train_val_model(opt, model, train_loader, val_loader, loss_fn, 
+    train_val_model(opt, len(vocab), model, train_loader, val_loader, loss_fn, 
                     optimizer, lr_scheduler, curr_epoch, opt.epochs, best_perf, print_freq=50,
                     save_freq=50)
 

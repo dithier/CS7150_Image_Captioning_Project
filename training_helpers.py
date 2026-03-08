@@ -2,13 +2,17 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
+from eval_metrics import evaluation_metric
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# TODO (priyanshu) need generate function, behaves differently than training
 # this probably shouldn't be accuracy, maybe BLEU-4?
-def test_model(model, data_loader):
+# if we use BLEU-4 it will need to be across the whole dataset, not just batches
+# also, better results if we get ALL captions for image (ex flickr8 has 5 per image)
+def test_model(model, data_loader, vocab):
     """
-    Compute (accuracy?) performance of the model.
+    Compute (BLUE 4?) performance of the model.
 
     Inputs:
       - model: A encoder/decoder model  implemented in PyTorch
@@ -18,8 +22,8 @@ def test_model(model, data_loader):
     # set model to eval mode
     model.eval()
 
-    # TODO:  we prob don't want correct, we prob want one of our metrics like BLEU
-    correct = 0
+    # TODO: we prob want one of our metrics like BLEU. Once decided, fix logic and names
+    metric = 0
     total = 0
 
     # we are not training, we are evaluating here, so we don't need to calculate
@@ -27,21 +31,16 @@ def test_model(model, data_loader):
     with torch.no_grad():
         for batch_data in data_loader:
             images, targets = batch_data
-            images.to_device(device)
-            targets.to_device(device)
+            images = images.to(device)
+            targets = targets.to(device)
 
-            logits = model(images)
-            # TODO: putting this as place holder bc diff than hw
-            predicted = 0
+            predicted_caption = model.generate(images, vocab)
 
             total += targets.size(0)
-            # TODO: calculate eval metric based on logits. for know just using correct
-            # which is not what we want
-            correct += (predicted == targets.sum().item())
+            metric += evaluation_metric(targets, predicted_caption)
     
-    # TODO: this is a placeholder
-    acc = 100 * correct // total
-    return acc
+    metric = 100 * metric // total
+    return metric
 
 def set_up_SGD_loss_optimizer(model, learning_rate, momentum):
     """
