@@ -29,6 +29,8 @@ from collections import Counter
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 
+# TODO: Priyanshu- fix comments about train/val/test size since I changed it to match the paper
+
 
 # ──────────────────────────────────────────────
 # 1.  VOCABULARY
@@ -211,8 +213,8 @@ class Flickr8kDataset(Dataset):
         vocab          = None,
         transform      = None,
         freq_threshold = 5,
-        train_frac     = 0.70,
-        val_frac       = 0.15,
+        train_frac     = 0.80,
+        val_frac       = 0.10,
         seed           = 42,
     ):
         assert split in ("train", "val", "test"), \
@@ -334,8 +336,8 @@ def get_flickr8k_loaders(
     batch_size     = 32,
     num_workers    = 4,
     freq_threshold = 5,
-    train_frac     = 0.70,
-    val_frac       = 0.15,
+    train_frac     = 0.80,
+    val_frac       = 0.10,
     seed           = 42,
     transform      = None,
 ):
