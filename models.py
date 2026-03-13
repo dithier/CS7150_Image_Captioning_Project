@@ -6,36 +6,77 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 """
 Baseline model:
-Pretrained RESNET encoder
+Pretrained ResNet50 encoder (SAT-style, outputs spatial feature maps)
 LSTM decoder (without attention)
+
+SAT Encoder explanation:
+    The original baseline encoder collapsed the image into a single vector
+    (B, embed_dim) by keeping avgpool. This loses all spatial information —
+    the decoder has no idea WHERE in the image things are.
+
+    For Show, Attend and Tell (SAT), the encoder must preserve spatial
+    structure so the attention mechanism can focus on different regions
+    when generating each word.
+
+    We do this by removing BOTH avgpool and the final classification layer
+    (the last 2 layers of ResNet), keeping the convolutional layers only.
+    This gives us a 14x14 grid of feature vectors — one per image region.
+
+    Input  : (B, 3, 224, 224)
+    Output : (B, 196, embed_dim)
+             196 = 14x14 spatial locations
+             Each location has embed_dim features describing that region
 """
 class ResNetEncoder(nn.Module):
     def __init__(self, embed_dim=512, freeze=True):
-        # 512 was what was used in Vinyal's show and tell
-        # freeze is a parameter of whether or not we want to freeze resnet layers during
-        # training
+        """
+        Parameters
+        ----------
+        embed_dim : int    size of the feature vector for each spatial location.
+                           512 was used in Vinyals' Show and Tell.
+        freeze    : bool   if True, freeze all ResNet weights during training.
+                           Set to False in later phases to fine-tune the encoder.
+        """
         super().__init__()
         resnet = models.resnet50(weights="IMAGENET1K_V1")
 
-        # we don't want the classification layer (last layer) for resnet bc we are not doing
-        # classification. We want to take the features learned before that layer
-        # and feed it into LSTM
-        modules = list(resnet.children())[:-1]
+        # Remove the last 2 layers (avgpool + fc classification layer).
+        # Keeping only convolutional layers preserves the 14x14 spatial grid.
+        # Compare to baseline which only removed the last 1 layer (fc),
+        # keeping avgpool which collapsed spatial info to (B, 2048, 1, 1).
+        modules = list(resnet.children())[:-2]
         self.resnet = nn.Sequential(*modules)
 
-        # We want to take resnet prev layer output (2048) and
-        # make it the embed dim size for the LSM input
+        # Ensure spatial size is exactly 14x14 regardless of input size
+        self.adaptive_pool = nn.AdaptiveAvgPool2d((14, 14))
+
+        # Project each of the 2048-dimensional spatial features to embed_dim.
+        # Applied independently to each of the 196 spatial locations.
         self.fc = nn.Linear(2048, embed_dim)
 
         if freeze:
-            # freeze encoder for baseline
+            # Freeze all ResNet layers — only the projection fc will be trained.
+            # In Phase 4 experiments, set freeze=False to fine-tune ResNet too.
             for p in self.resnet.parameters():
                 p.requires_grad = False
 
     def forward(self, x):
-        features = self.resnet(x) # (B, 2048, 1, 1)
-        features = features.flatten(1) # needed bc last layer was global avg pooling (B, 2048)
-        return self.fc(features) # at this point we have (B, embed_dim)
+        # Pass through frozen ResNet convolutional layers
+        features = self.resnet(x)               # (B, 2048, H, W)
+
+        # Ensure spatial size is exactly 14x14 regardless of input size
+        features = self.adaptive_pool(features) # (B, 2048, 14, 14)
+
+        # Reshape: move spatial dimensions into the sequence dimension
+        # so each of the 196 locations becomes one "token" for the decoder
+        B, C, H, W = features.size()
+        features = features.permute(0, 2, 3, 1)  # (B, 14, 14, 2048)
+        features = features.view(B, H * W, C)     # (B, 196, 2048)
+
+        # Project each spatial location from 2048 -> embed_dim
+        features = self.fc(features)              # (B, 196, embed_dim)
+
+        return features
 
 class BasicLSTMDecoder(nn.Module):
     def __init__(self, vocab_size, embed_dim=512, hidden_dim=512, num_layers=1):
