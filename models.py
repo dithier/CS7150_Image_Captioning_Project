@@ -76,6 +76,8 @@ class BasicLSTMDecoder(nn.Module):
         # 1 means we are finished with that image in the batch, 0 otherwise
         finished = torch.zeros(B, dtype=torch.bool, device=device)
 
+        h, c = h0, c0
+
         with torch.no_grad():
             for _ in range(max_length):
                 embed = self.embed(token) # (B , 1, embed_dim)
