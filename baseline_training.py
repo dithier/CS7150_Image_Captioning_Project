@@ -8,6 +8,10 @@ from dataloader import get_flickr8k_loaders
 from training_helpers import *
 from models import BaselineModel
 
+# pip install tensorboard
+# pip install pandas
+# pip install nltk
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ############## Checkpoint Related Logic #############################
