@@ -2,7 +2,7 @@
 #SBATCH -p courses-gpu
 #SBATCH --gres=gpu:p100:1
 #SBATCH --time=04:00:00
-#SBATCH --job-name=baseling_training
+#SBATCH --job-name=baseline_training
 #SBATCH --output=logs/%j.out
 #SBATCH --error=logs/%j.err
 
