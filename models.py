@@ -65,7 +65,7 @@ class BasicLSTMDecoder(nn.Module):
 
         token = torch.full(
             (B, 1), # make a tensor for dimensions batch size, 1
-            vocab.stoi[vocab.SOS_TOKEN], # make every row start with the Start of Sentence (SOS) token
+            vocab.word_to_index[vocab.SOS_TOKEN], # make every row start with the Start of Sentence (SOS) token
             dtype=torch.long, device=device
         )
 
@@ -91,7 +91,7 @@ class BasicLSTMDecoder(nn.Module):
                         # not finished? get the predicted word
                         idx = predicted[i].item()
                         # if that word is end of sentence token, mark as done
-                        if idx == vocab.stoi[vocab.EOS_TOKEN]:
+                        if idx == vocab.word_to_index[vocab.EOS_TOKEN]:
                             finished[i] = True
                         else:
                             # otherwise, apply word to caption

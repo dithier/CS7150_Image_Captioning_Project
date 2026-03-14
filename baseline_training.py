@@ -4,7 +4,7 @@ from torch import Tensor
 import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 import argparse
-from Dataloader import get_flickr8k_loaders
+from dataloader import get_flickr8k_loaders
 from training_helpers import *
 from models import BaselineModel
 from eval_metrics import evaluation_metric
@@ -15,7 +15,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # if we switch to Adam we'll need to save weight decay
 # but for now, baseline is SGD + momentum
-def save_checkpoint(model, optimizer, epoch, loss, lr, lr_sched, 
+def save_checkpoint(model, optimizer, epoch, train_loss, val_loss, lr, lr_sched, 
                     best_perf, path="./model.pt"):
     torch.save({
           'epoch': epoch,
@@ -23,8 +23,9 @@ def save_checkpoint(model, optimizer, epoch, loss, lr, lr_sched,
           'optimizer_state_dict': optimizer.state_dict(),
           'best_perf': best_perf,
           'lr': lr,
-          'lr_sched': lr_sched,
-          'loss': loss,
+          'lr_sched': lr_sched.state_dict(),
+          'train_loss': train_loss,
+          'val_loss': val_loss
           }, path)
     print("Saved checkpoint to", path)
 
@@ -35,7 +36,6 @@ def load_checkpoint(model, mode, path="./model.pt"):
       lr = checkpoint['lr']
       model.load_state_dict(checkpoint['model_state_dict'])
       optimizer_state_dict = checkpoint['optimizer_state_dict']
-      loss = checkpoint['loss']
       lr_sched = checkpoint['lr_sched']
       best_perf = checkpoint['best_perf']
 
@@ -47,15 +47,14 @@ def load_checkpoint(model, mode, path="./model.pt"):
       else:
         model.train()
     
-      return model, optimizer_state_dict, epoch, loss, lr, lr_sched, best_perf #weight_decay,
+      return model, optimizer_state_dict, epoch, lr, lr_sched, best_perf #weight_decay,
 
 
 ############## Training Related Logic ####################################
 
-def train_val_model(opt, vocab_size, model, train_data_loader, val_data_loader, loss_fn, 
-                    optimizer, lr_scheduler, curr_epoch, total_epochs,
-                      best_perf=0, print_freq=50,
-                    save_freq=50):
+def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_fn, 
+                    optimizer, lr_scheduler, current_lr, curr_epoch, total_epochs,
+                      best_perf, print_save_freq):
     """
     Training and validating a model using PyTorch.
 
@@ -73,17 +72,18 @@ def train_val_model(opt, vocab_size, model, train_data_loader, val_data_loader, 
 
     writer = SummaryWriter(opt.log_dir)
 
-    # TODO: better naming for variables of "running_metric" once we choose one
+    last_lr = current_lr
+
     for epoch_i in range(curr_epoch, total_epochs + 1):
         # set the model in the train mode so the batch norm layers will behave correctly
         model.train()
 
         running_loss = 0.0
         running_total = 0.0
-        running_perplexity = 0.0
+       
         for i, batch_data in enumerate(train_data_loader):
             # Every data instance is an image + label pair
-            images, captions = batch_data
+            images, captions, _ = batch_data
             images = images.to(device)
             captions = captions.to(device)
             
@@ -94,7 +94,7 @@ def train_val_model(opt, vocab_size, model, train_data_loader, val_data_loader, 
             outputs = model(images, captions[:, :-1]) # we want <SOS> to last word but not <EOS> token
 
             loss = loss_fn(
-                outputs.reshape(-1, vocab_size), # first dimension is batch * seq length, second dim vocab size
+                outputs.reshape(-1, len(vocab)), # first dimension is batch * seq length, second dim vocab size
                 captions[:, 1:].reshape(-1) # groud truth, ignore <SOS> tag
             )
 
@@ -105,45 +105,45 @@ def train_val_model(opt, vocab_size, model, train_data_loader, val_data_loader, 
             # print statistics
             running_loss += loss.item()
             running_total += captions.size(0)
-            
-            # eval metric
-            running_perplexity += torch.exp(loss.item())
 
             # save at regular intervals as well as at end of epoch
-            if i % save_freq or i == len(train_data_loader):
-                running_perplexity = running_perplexity / running_total * 100
+            if i % print_save_freq == 0 or i == len(train_data_loader) - 1:
+                
+                running_loss = running_loss / print_save_freq
+                
+                writer.add_scalar("Loss/train", running_loss,
+                                  epoch_i*(batch_data[0].shape[0] + i))
 
-                if running_perplexity > best_perf:
-                    best_perf = running_perplexity
+                avg_val_loss = get_avg_validation_loss(model, val_data_loader, loss_fn, vocab)
+
+                writer.add_scalar("Loss/val", avg_val_loss,
+                                  epoch_i*(batch_data[0].shape[0] + i))
+
+                try:
+                    # if it's not the first step we can get what lr currently is from scheduler
                     last_lr = lr_scheduler.get_last_lr()[0]
+                except AttributeError:
+                    # otherwise we use the last_lr initialized at top of func
+                    pass
+
+                if avg_val_loss < best_perf:
+                    best_perf = avg_val_loss
 
                     save_path = opt.save_path.split(".")
                     save_path_labeled = "".join(save_path[:-1])
                     save_path_labeled += f"_epoch_{epoch_i}_iter_{i}." + save_path[-1]
 
-                    save_checkpoint(model, optimizer, epoch_i, loss, 
+                    save_checkpoint(model, optimizer, epoch_i, running_loss, avg_val_loss,
                                     last_lr, lr_scheduler, best_perf, save_path_labeled)
 
-            if i % print_freq == 0:    # print and log every certain number of mini-batches
-                running_loss = running_loss / print_freq
-    
-                running_perplexity = running_perplexity / running_total * 100
-                
-                writer.add_scalar("Loss/train", running_loss,
-                                  epoch_i*(batch_data[0].shape[0] + i))
-
                 # switch out metric
-                print(f'[{epoch_i + 1}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] loss: {running_loss:.3f} perplexity: {running_metric:.3f} lr: {last_lr:.5f}')
+                print(f'[{epoch_i + 1}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] avg train loss: {running_loss:.3f} avg val loss: {avg_val_loss:.3f} lr: {last_lr:.5f}')
                 running_loss = 0.0
                 running_total = 0.0
-                running_perplexity = 0.0
+
             
         # adjust the learning rate
         lr_scheduler.step()
-
-        val_metric = test_model(model, val_data_loader)
-        # switch out metric
-        print(f'[{epoch_i + 1}/{total_epochs}] val acc: {val_metric:.3f}')
 
     return model
 
@@ -153,34 +153,41 @@ def main(opt):
 
     # make model and load from checkpoint if needed
     # there are other params we can change here
-    model = BaselineModel(vocab_size=len(vocab))
+    model = BaselineModel(vocab_size=len(vocab)).to(device)
 
     ##### set up params
+
+    # this is for cosine annealing lr scheduler. This is a variable we can change
+    tmax = 10
     
     # are we loading from a checkpoint?
     if opt.checkpoint:
-        model, optimizer_state_dict, curr_epoch, lr, lr_scheduler, best_perf = load_checkpoint(model, "train", opt.checkpoint_path)                                                                                              path=opt.checkpoint_path)
-        loss_fn, optimizer = set_up_SGD_loss_optimizer(model, lr, opt.momentum)
+        model, optimizer_state_dict, curr_epoch, lr, lr_sched_state, best_perf = load_checkpoint(model, "train", opt.checkpoint_path)                                                                                           
+        
+        loss_fn, optimizer = set_up_SGD_loss_optimizer(model, lr, opt.momentum, vocab)
         optimizer.load_state_dict(optimizer_state_dict)
-    else:
-        loss_fn, optimizer = set_up_SGD_loss_optimizer(model, opt.lr, opt.momentum)
-        curr_epoch = 0
-        # this is for cosine annealing lr scheduler. This is a variable we can change
-        tmax = 10
+
         lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
-        best_perf
+        lr_scheduler.load_state_dict(lr_sched_state)
+
+        curr_lr = lr
+    else:
+        loss_fn, optimizer = set_up_SGD_loss_optimizer(model, opt.lr, opt.momentum, vocab)
+        curr_epoch = 0
+        lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
+        best_perf = float("inf")
+        curr_lr = opt.lr
 
 
     # call train_val_model
-    train_val_model(opt, len(vocab), model, train_loader, val_loader, loss_fn, 
-                    optimizer, lr_scheduler, curr_epoch, opt.epochs, best_perf, print_freq=50,
-                    save_freq=50)
+    train_val_model(opt, vocab, model, train_loader, val_loader, loss_fn, 
+                    optimizer, lr_scheduler, curr_lr, curr_epoch, opt.epochs, best_perf, print_save_freq=50)
 
 
 ############## Helper Fns for Args ############################
 def str2bool(arg):
     if isinstance(arg, bool):
-        return argparse
+        return arg
     if arg == "True":
         return True
     elif arg == "False":
@@ -190,7 +197,7 @@ def str2bool(arg):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--epochs", type=int, default=100, help="number of epochs")
+    parser.add_argument("--epochs", type=int, default=40, help="number of epochs")
     parser.add_argument("--checkpoint", type=str2bool, default=True, help="true to load from checkpoint, false otherwise")
     parser.add_argument("--checkpoint_path", type=str, default="./model.pt", help="path pointing towards checkpoint to load")
     parser.add_argument("--dataset_dir", type=str, default=".", help="directory for all images/annotations")

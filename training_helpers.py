@@ -6,6 +6,31 @@ from eval_metrics import evaluation_metric
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+def get_avg_validation_loss(model, val_data_loader, loss_fn, vocab):
+    running_loss = 0
+
+    model.eval()
+    with torch.no_grad():
+        for i, batch_data in enumerate(val_data_loader):
+            # Every data instance is an image + label pair
+            images, captions, _ = batch_data
+            images = images.to(device)
+            captions = captions.to(device)
+
+            # use the model
+            outputs = model(images, captions[:, :-1]) # we want <SOS> to last word but not <EOS> token
+
+            loss = loss_fn(
+                outputs.reshape(-1, len(vocab)), # first dimension is batch * seq length, second dim vocab size
+                captions[:, 1:].reshape(-1) # groud truth, ignore <SOS> tag
+            )
+
+            running_loss += loss.item()
+    
+    model.train()
+    
+    return running_loss / len(val_data_loader)
+
 # TODO (priyanshu) need generate function, behaves differently than training
 # this probably shouldn't be accuracy, maybe BLEU-4?
 # if we use BLEU-4 it will need to be across the whole dataset, not just batches
@@ -42,24 +67,24 @@ def test_model(model, data_loader, vocab):
     metric = 100 * metric // total
     return metric
 
-def set_up_SGD_loss_optimizer(model, learning_rate, momentum):
+def set_up_SGD_loss_optimizer(model, learning_rate, momentum, vocab):
     """
     In this programming assignment, we will adopt the most common choice for the optimizer:
     SGD + momentum and learning rate scheduler: StepLR. Please refer to https://pytorch.org/docs/stable/optim.html#algorithms
     and https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.StepLR.html#torch.optim.lr_scheduler.StepLR for more details.
     """
-    loss_fn = nn.CrossEntropyLoss()
+    loss_fn = nn.CrossEntropyLoss(ignore_index=vocab.word_to_index[vocab.PAD_TOKEN]) # needed to ignore index 0 whenever it shows up which is definited as PAD in our vocab
     optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=momentum)
 
     return loss_fn, optimizer
 
-def set_up_Adam_loss_optimizer(model, learning_rate, betas, weight_decay):
+def set_up_Adam_loss_optimizer(model, learning_rate, betas, weight_decay, vocab):
     """
     In this programming assignment, we will adopt the most common choice for the optimizer:
     SGD + momentum and learning rate scheduler: StepLR. Please refer to https://pytorch.org/docs/stable/optim.html#algorithms
     and https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.StepLR.html#torch.optim.lr_scheduler.StepLR for more details.
     """
-    loss_fn = nn.CrossEntropyLoss()
+    loss_fn = nn.CrossEntropyLoss(ignore_index=vocab.word_to_index[vocab.PAD_TOKEN]) # needed to ignore index 0 whenever it shows up which is defined as PAD in our vocab
     optimizer = optim.Adam(model.parameters(), lr=learning_rate, betas=betas,
                            weight_decay=weight_decay)
     

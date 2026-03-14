@@ -503,7 +503,7 @@ if __name__ == "__main__":
     print(f"Val   batches   : {len(val_loader)}")
     print(f"Test  batches   : {len(test_loader)}")
 
-    images, captions = next(iter(train_loader))
+    images, captions, _ = next(iter(train_loader))
     print(f"\nBatch shapes")
     print(f"  images   : {tuple(images.shape)}")    # (32, 3, 224, 224)
     print(f"  captions : {tuple(captions.shape)}")  # (32, max_caption_length + 2)
@@ -521,7 +521,7 @@ if __name__ == "__main__":
         raw_image = Image.open(args.image_path).convert("RGB")
 
         if match_idx is not None:
-            _, caption_tensor = dataset[match_idx]
+            _, caption_tensor, _ = dataset[match_idx]
             decoded = vocab.decode(caption_tensor.tolist())
             print(f"\nImage   : {args.image_path}")
             print(f"Caption : {decoded}")
