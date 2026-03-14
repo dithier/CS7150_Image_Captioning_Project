@@ -10,6 +10,16 @@ Also, it's a good check to edit train.sh to make sure everything is correct
 ```sbatch train.sh```
 
 # 4. Monitor job as needed
-```squeue -u ithier.c``` checks job status
+```squeue -u <neu user name>``` checks job status
 ```tail -f logs/<jobid>.out``` 
+
+
+# Tensorboard
+## Get event file locally
+Download the event file from Open On Demand on to your local computer in "runs" folder
+
+## Start tensorboard visualization
+In your terminal in the directory that has the runs folder run:
+ ```PYTHONWARNINGS="ignore:pkg_resources is deprecated as an API:UserWarning" tensorboard --logdir=runs```
+
 

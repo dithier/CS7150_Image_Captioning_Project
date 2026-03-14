@@ -88,6 +88,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
 
         running_loss = 0.0
         running_total = 0.0
+        batches_since_last_log = 0
        
         for i, batch_data in enumerate(train_data_loader):
             # Every data instance is an image + label pair
@@ -113,19 +114,20 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
             # print statistics
             running_loss += loss.item()
             running_total += captions.size(0)
+            batches_since_last_log += 1
 
             # save at regular intervals as well as at end of epoch
             if i % print_save_freq == 0 or i == len(train_data_loader) - 1:
                 
-                running_loss = running_loss / print_save_freq
-                
-                writer.add_scalar("Loss/train", running_loss,
-                                    epoch_i * len(train_data_loader) + i)
+                running_loss = running_loss / batches_since_last_log
 
                 avg_val_loss = get_avg_validation_loss(model, val_data_loader, loss_fn, vocab)
+                
+                writer.add_scalars("Loss", {
+                    "train": running_loss,
+                    "val": avg_val_loss
+                }, epoch_i * len(train_data_loader) + i)
 
-                writer.add_scalar("Loss/val", avg_val_loss,
-                                    epoch_i * len(train_data_loader) + i)
                 try:
                     # if it's not the first step we can get what lr currently is from scheduler
                     last_lr = lr_scheduler.get_last_lr()[0]
@@ -145,6 +147,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
                 print(f'[{epoch_i + 1}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] avg train loss: {running_loss:.3f} avg val loss: {avg_val_loss:.3f} lr: {last_lr:.5f}')
                 running_loss = 0.0
                 running_total = 0.0
+                batches_since_last_log = 0
 
             
         # adjust the learning rate
