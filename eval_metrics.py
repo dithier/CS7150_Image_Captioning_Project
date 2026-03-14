@@ -43,8 +43,7 @@ Install dependencies:
 
 from nltk.translate.bleu_score import corpus_bleu
 
-
-def evaluation_metric(ground_truth, hypotheses):
+def evaluation_metric(dataloader, hypotheses):
     """
     Compute BLEU-1 through BLEU-4 scores over the entire dataset.
 
@@ -52,17 +51,22 @@ def evaluation_metric(ground_truth, hypotheses):
     ----------
     ground_truth : list of list of list of str
         All 5 reference captions per image, each tokenized into words.
-        Shape: [num_images, 5, caption_length]
+        outer list holds the inner lists
+        next inner list is for each image
+        next inner list is for each caption for an image (will be 5 items for flickr)
 
     hypotheses : list of list of str
         One generated caption per image, tokenized into words.
-        Shape: [num_images, caption_length]
+        one list per image
+        inner list is length of caption (tokenized words)
 
     Returns
     -------
     dict with keys 'bleu1', 'bleu2', 'bleu3', 'bleu4'
     Values are floats between 0 and 1 (multiply by 100 for percentage).
     """
+    ground_truth = dataloader.dataset.get_all_references()
+
     # BLEU-1: only unigrams (individual words)
     bleu1 = corpus_bleu(ground_truth, hypotheses, weights=(1.0, 0, 0, 0))
 

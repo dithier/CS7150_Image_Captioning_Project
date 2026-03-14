@@ -352,7 +352,46 @@ class Flickr8kDataset(Dataset):
         )
 
         caption = torch.tensor(token_ids, dtype=torch.long)
-        return image, caption
+
+        # we need to also return image name so in evaluation we know which captions to go to image
+        return image, caption, self.images[idx]
+    
+    def get_all_references(self):
+        """ 
+        When we comput BLEU scores we need to know ALL captions for each image. Without
+        this functionm, that is not possible because image shows up multiple times in self.images
+        (each with a different caption)
+
+        Here we return a list of list of list of strings which is format needed by our eval metric to 
+        get bleu 4 scores
+        """
+        references = []
+
+        ref_dict = self.get_all_references_dict()
+
+        for _, captions in ref_dict.items():
+            references.append(captions)
+         
+        return references
+    
+    def get_all_references_dict(self):
+        """ 
+        When we comput BLEU scores we need to know ALL captions for each image. Without
+        this functionm, that is not possible because image shows up multiple times in self.images
+        (each with a different caption)
+
+        Here we return a dictionary of image name to list of captions
+        """
+        references = {}
+
+        for i, image_name in enumerate(self.images):
+            if image_name in references:
+                references[image_name].append(self.vocab.tokenize(self.captions[i]))
+            else:
+                references[image_name] = [self.vocab.tokenize(self.captions[i])]
+         
+        return references
+    
 
     # ------------------------------------------------------------------
     @staticmethod
