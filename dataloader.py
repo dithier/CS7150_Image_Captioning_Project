@@ -423,7 +423,7 @@ class Flickr8kDataset(Dataset):
 def get_flickr8k_loaders(
     root_dir,
     batch_size         = 32,
-    num_workers        = 4,
+    num_workers        = 1,
     max_caption_length = 30,
     n_train            = 6000,
     n_val              = 1000,

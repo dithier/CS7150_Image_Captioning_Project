@@ -12,6 +12,11 @@ from models import BaselineModel
 # pip install pandas
 # pip install nltk
 
+"""
+To run on cluster makes sure to use sbatch NOT srun so it runs independently of connection. Use script train.sh
+to run. You may need to edit it based on your params
+"""
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ############## Checkpoint Related Logic #############################
@@ -115,13 +120,12 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
                 running_loss = running_loss / print_save_freq
                 
                 writer.add_scalar("Loss/train", running_loss,
-                                  epoch_i*(batch_data[0].shape[0] + i))
+                                    epoch_i * len(train_data_loader) + i)
 
                 avg_val_loss = get_avg_validation_loss(model, val_data_loader, loss_fn, vocab)
 
                 writer.add_scalar("Loss/val", avg_val_loss,
-                                  epoch_i*(batch_data[0].shape[0] + i))
-
+                                    epoch_i * len(train_data_loader) + i)
                 try:
                     # if it's not the first step we can get what lr currently is from scheduler
                     last_lr = lr_scheduler.get_last_lr()[0]
@@ -132,9 +136,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
                 if avg_val_loss < best_perf:
                     best_perf = avg_val_loss
 
-                    save_path = opt.save_path.split(".")
-                    save_path_labeled = "".join(save_path[:-1])
-                    save_path_labeled += f"_epoch_{epoch_i}_iter_{i}." + save_path[-1]
+                    save_path_labeled = opt.save_path + f"model_epoch_{epoch_i}_iter_{i}.pt"  
 
                     save_checkpoint(model, optimizer, epoch_i, running_loss, avg_val_loss,
                                     last_lr, lr_scheduler, best_perf, save_path_labeled)
