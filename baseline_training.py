@@ -7,7 +7,6 @@ import argparse
 from dataloader import get_flickr8k_loaders
 from training_helpers import *
 from models import BaselineModel
-from eval_metrics import evaluation_metric
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
