@@ -4,7 +4,9 @@
 
 # 2. Make sure all directories you need exist (logs, runs, and models)
 
-Also, it's a good check to edit train.sh to make sure everything is correct
+Also, it's a good check to edit train.sh to make sure everything is correct. In train.sh
+for save path you want a trailing "/" due to concatenation with model name. However, you 
+do not need a trailing "/" for log_dir
 
 # 3. Submit request to train
 ```sbatch train.sh```

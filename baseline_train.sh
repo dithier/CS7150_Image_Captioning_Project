@@ -12,6 +12,6 @@ source activate cs7150
 python baseline_training.py \
 	--epochs 30 \
 	--checkpoint False \
-	--dataset_dir flickr8k
+	--dataset_dir flickr8k \
 	--log_dir runs/first_pass_3_14 \
-        --save_path saved_models/models_3_14
+    --save_path saved_models/models_3_14/
