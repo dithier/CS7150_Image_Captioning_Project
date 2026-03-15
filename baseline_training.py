@@ -139,7 +139,10 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
                 if avg_val_loss < best_perf:
                     best_perf = avg_val_loss
 
-                    save_path_labeled = os.path.join(opt.save_path, f"model_epoch_{epoch_i}_iter_{i}.pt")
+                    #save_path_labeled = os.path.join(opt.save_path, f"model_epoch_{epoch_i}_iter_{i}.pt")
+                    # needed to save model over itself with same name because run out of disk space
+                    # if you want to see which epochs and iteration the best model is saved, would have to look at logs                     file
+                    save_path_labled = os.path.join(opt.save_path, "model.pt")
 
                     save_checkpoint(model, optimizer, epoch_i, running_loss, avg_val_loss,
                                     last_lr, lr_scheduler, best_perf, save_path_labeled)
