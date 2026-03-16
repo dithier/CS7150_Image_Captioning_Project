@@ -88,6 +88,13 @@ def evaluation_metric(dataloader, hypotheses):
     }
 
 
+def prepare_hypotheses(all_generated, vocab):
+    hypotheses = []
+    for token_ids in all_generated:
+        words = vocab.decode(token_ids).split()
+        hypotheses.append(words)
+    return hypotheses
+
 # def prepare_references_and_hypotheses(all_references, all_generated, vocab):
 #     """
 #     Convert raw token ID tensors from the dataloader and model into the

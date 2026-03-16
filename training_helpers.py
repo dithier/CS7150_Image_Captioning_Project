@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
-from eval_metrics import evaluation_metric
+from eval_metrics import evaluation_metric, prepare_hypotheses
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -35,14 +35,15 @@ def get_avg_validation_loss(model, val_data_loader, loss_fn, vocab):
 # this probably shouldn't be accuracy, maybe BLEU-4?
 # if we use BLEU-4 it will need to be across the whole dataset, not just batches
 # also, better results if we get ALL captions for image (ex flickr8 has 5 per image)
+"""
 def test_model(model, data_loader, vocab):
-    """
+    
     Compute (BLUE 4?) performance of the model.
 
     Inputs:
       - model: A encoder/decoder model  implemented in PyTorch
       - data_loader: A data loader that will provide batched images and targets
-    """
+    
 
     # set model to eval mode
     model.eval()
@@ -66,6 +67,26 @@ def test_model(model, data_loader, vocab):
     
     metric = 100 * metric // total
     return metric
+
+"""
+
+def test_model(model, data_loader, vocab):
+    model.eval()
+
+    all_generated = []
+
+    with torch.no_grad():
+        for batch_data in data_loader:
+            images, captions, _ = batch_data
+            images = images.to(device)
+
+            batch_generated = model.generate(images, vocab)
+            all_generated.extend(batch_generated)
+
+    hypotheses = prepare_hypotheses(all_generated, vocab)
+    bleu_scores = evaluation_metric(data_loader, hypotheses)
+
+    return bleu_scores
 
 def set_up_SGD_loss_optimizer(model, learning_rate, momentum, vocab):
     """
