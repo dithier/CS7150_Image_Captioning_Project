@@ -73,19 +73,29 @@ def test_model(model, data_loader, vocab):
 def test_model(model, data_loader, vocab):
     model.eval()
 
-    all_generated = []
+    all_generated = {}  # image_name -> generated caption (deduplicate by image)
 
     with torch.no_grad():
         for batch_data in data_loader:
-            images, captions, _ = batch_data
+            images, captions, image_names = batch_data
             images = images.to(device)
 
             batch_generated = model.generate(images, vocab)
-            all_generated.extend(batch_generated)
 
-    hypotheses = prepare_hypotheses(all_generated, vocab)
+            for img_name, generated in zip(image_names, batch_generated):
+                if img_name not in all_generated:
+                    all_generated[img_name] = generated
+
+    # get references dict to ensure same ordering
+    ref_dict = data_loader.dataset.get_all_references_dict()
+
+    # build hypotheses in same order as references
+    hypotheses = prepare_hypotheses(
+        [all_generated[img] for img in ref_dict.keys()],
+        vocab
+    )
+
     bleu_scores = evaluation_metric(data_loader, hypotheses)
-
     return bleu_scores
 
 def set_up_SGD_loss_optimizer(model, learning_rate, momentum, vocab):
