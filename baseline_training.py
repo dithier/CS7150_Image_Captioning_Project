@@ -170,7 +170,7 @@ def main(opt):
     ##### set up params
 
     # this is for cosine annealing lr scheduler. This is a variable we can change
-    tmax = 10
+    tmax = opt.epochs
     
     # are we loading from a checkpoint?
     if opt.checkpoint:
