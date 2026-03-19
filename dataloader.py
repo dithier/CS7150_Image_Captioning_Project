@@ -272,7 +272,7 @@ class Flickr8kDataset(Dataset):
             "split must be 'train', 'val', or 'test'"
 
         self.root_dir           = root_dir
-        self.img_dir            = os.path.join(root_dir, "Images")
+        self.img_dir            = root_dir
         self.split              = split
         self.max_caption_length = max_caption_length
         self.transform          = transform or self._default_transform()
@@ -423,7 +423,7 @@ class Flickr8kDataset(Dataset):
 def get_flickr8k_loaders(
     root_dir,
     batch_size         = 32,
-    num_workers        = 1,
+    num_workers        = 0,
     max_caption_length = 30,
     n_train            = 6000,
     n_val              = 1000,
