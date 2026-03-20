@@ -126,3 +126,6 @@ def set_up_step_lr_scheduler(optimizer, lr_step_size, lr_gamma):
 
 def set_up_cos_annealing_lr_scheduler(optimizer, t_max):
     return optim.lr_scheduler.CosineAnnealingLR(optimizer, t_max)
+
+def set_up_cos_annealing_warm_restarts_scheduler(optimizer, t_0, t_mult=1):
+    return optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=t_0, T_mult=t_mult)
