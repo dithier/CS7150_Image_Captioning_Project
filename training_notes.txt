@@ -12,7 +12,7 @@ First Pass 3_14
     - 3/15 loss still going down at 30 epochs. Going to train for 50 to be safe. Next time
     prob use larger starting learning rate
 
-3_16 Baseline model
+3_16 Baseline model (baseline_sgd_lr001/01)
     - Code has not changed from previous run but params have
     - 30 epochs
     - Exact baseline model as before
@@ -22,3 +22,6 @@ First Pass 3_14
     - lr start HIGHER with 0.01 with cosine annealing lr scheduler where tmax = 10
     - thoughts if we need to change, tmax is a good place to start and the lr will depend on the 
     graphs we see for training and val loss. Maybe tmax equal to number epochs?
+
+3_17 Baseline Model SGD tmax=opt.epochs
+    - Only difference from above training is tmax=opt.epochs (30)
