@@ -1,16 +1,7 @@
 import torch
 import argparse
 from dataloader import get_flickr8k_loaders
-from eval_metrics import test_model, evaluation_metric
 from models import BaselineModel
-
-"""
-Evaluate a saved model checkpoint on the test set.
-Prints BLEU-1 through BLEU-4 scores.
-
-Usage:
-    python evaluate.py --checkpoint_path saved_models/models_3_14/model.pt --dataset_dir flickr8k
-"""
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
