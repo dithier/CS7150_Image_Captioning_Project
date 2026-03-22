@@ -2,7 +2,6 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
-from eval_metrics import evaluation_metric
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -31,41 +30,6 @@ def get_avg_validation_loss(model, val_data_loader, loss_fn, vocab):
     
     return running_loss / len(val_data_loader)
 
-# TODO (priyanshu) need generate function, behaves differently than training
-# this probably shouldn't be accuracy, maybe BLEU-4?
-# if we use BLEU-4 it will need to be across the whole dataset, not just batches
-# also, better results if we get ALL captions for image (ex flickr8 has 5 per image)
-def test_model(model, data_loader, vocab):
-    """
-    Compute (BLUE 4?) performance of the model.
-
-    Inputs:
-      - model: A encoder/decoder model  implemented in PyTorch
-      - data_loader: A data loader that will provide batched images and targets
-    """
-
-    # set model to eval mode
-    model.eval()
-
-    # TODO: we prob want one of our metrics like BLEU. Once decided, fix logic and names
-    metric = 0
-    total = 0
-
-    # we are not training, we are evaluating here, so we don't need to calculate
-    # gradients for our outputs
-    with torch.no_grad():
-        for batch_data in data_loader:
-            images, targets = batch_data
-            images = images.to(device)
-            targets = targets.to(device)
-
-            predicted_caption = model.generate(images, vocab)
-
-            total += targets.size(0)
-            metric += evaluation_metric(targets, predicted_caption)
-    
-    metric = 100 * metric // total
-    return metric
 
 def set_up_SGD_loss_optimizer(model, learning_rate, momentum, vocab):
     """
@@ -95,3 +59,6 @@ def set_up_step_lr_scheduler(optimizer, lr_step_size, lr_gamma):
 
 def set_up_cos_annealing_lr_scheduler(optimizer, t_max):
     return optim.lr_scheduler.CosineAnnealingLR(optimizer, t_max)
+
+def set_up_cos_annealing_warm_restarts_scheduler(optimizer, t_0, t_mult=1):
+    return optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=t_0, T_mult=t_mult)

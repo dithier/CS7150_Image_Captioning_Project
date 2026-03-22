@@ -95,7 +95,7 @@ class BasicLSTMDecoder(nn.Module):
                             finished[i] = True
                         else:
                             # otherwise, apply word to caption
-                            captions[i].append(idx)
+                            captions[i].append(vocab.index_to_word[idx])
 
                 # everything finished? we can break, we're done
                 if finished.all():
@@ -120,10 +120,6 @@ class BaselineModel(nn.Module):
     def generate(self, images, vocab, max_length=30):
         features = self.encoder(images)
         return self.decoder.generate(features, vocab, max_length)
-    
-    def generate_in_english(self, images, vocab, max_length=30):
-        index_captions = self.generate(images, vocab, max_length)
-        return [vocab.decode(seq) for seq in index_captions]
 
 """
 Other possibilities:

@@ -356,14 +356,13 @@ class Flickr8kDataset(Dataset):
         # we need to also return image name so in evaluation we know which captions to go to image
         return image, caption, self.images[idx]
     
-    def get_all_references(self):
+    def get_all_references(self, split="test"):
         """ 
         When we comput BLEU scores we need to know ALL captions for each image. Without
         this functionm, that is not possible because image shows up multiple times in self.images
         (each with a different caption)
 
-        Here we return a list of list of list of strings which is format needed by our eval metric to 
-        get bleu 4 scores
+        Here we return a list of list of list of strings which is format needed by our eval metric to get BLEU scores
         """
         references = []
 
@@ -423,7 +422,7 @@ class Flickr8kDataset(Dataset):
 def get_flickr8k_loaders(
     root_dir,
     batch_size         = 32,
-    num_workers        = 1,
+    num_workers        = 0,
     max_caption_length = 30,
     n_train            = 6000,
     n_val              = 1000,

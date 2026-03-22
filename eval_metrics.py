@@ -1,47 +1,6 @@
-"""
-# TODO come up with eval metric to use during training. BLEU?
-def evaluation_metric(ground_truth, results):
-    pass
-
-
-# On BLEU-4: Yes, it's the standard metric for image captioning. The original Show and Tell paper reports BLEU-4, and it's still the most commonly cited score for comparing against other work. A couple of things worth knowing for your implementation:
-
-# BLEU-4 compares n-grams (up to 4-grams) between your generated caption and the reference captions
-# Flickr8k has 5 reference captions per image, and BLEU is designed to leverage multiple references — so make sure your evaluation_metric passes all 5 references, not just one. This is important because it significantly affects the score
-# A reasonable baseline BLEU-4 on Flickr8k with a ResNet+LSTM is roughly 20–25
-"""
-
-"""
-Evaluation Metrics for Image Captioning
-========================================
-Implements BLEU-1 through BLEU-4 using nltk's corpus_bleu.
-
-Why corpus_bleu and not sentence_bleu?
-    corpus_bleu computes BLEU over the entire dataset at once rather than
-    averaging per-sentence scores. This is the standard for image captioning
-    and matches how the original SAT paper reports results.
-
-Why all 5 reference captions?
-    Flickr8k has 5 human-written captions per image. BLEU is designed to
-    leverage multiple references — passing all 5 significantly improves the
-    score and gives a fairer evaluation.
-
-Expected input format:
-    ground_truth : list of list of list of str
-        Outer list  : one entry per image
-        Middle list : one entry per reference caption (5 for Flickr8k)
-        Inner list  : tokenized words of that caption
-        e.g. [[["a", "dog", "runs"], ["brown", "dog", "plays"]], ...]
-
-    hypotheses : list of list of str
-        One tokenized generated caption per image
-        e.g. [["a", "dog", "runs"], ...]
-
-Install dependencies:
-    pip install nltk
-"""
-
 from nltk.translate.bleu_score import corpus_bleu
+import torch
+
 
 def evaluation_metric(dataloader, hypotheses):
     """
@@ -50,10 +9,10 @@ def evaluation_metric(dataloader, hypotheses):
     Parameters
     ----------
     ground_truth : list of list of list of str
-        All 5 reference captions per image, each tokenized into words.
-        outer list holds the inner lists
-        next inner list is for each image
-        next inner list is for each caption for an image (will be 5 items for flickr)
+        - All 5 reference captions per image, each tokenized into words.
+        - outer list holds the inner lists and has size # images
+        - next inner list is for each image and contains all references for that image (5 ref per image for flickr)
+        - next inner list is for tokenized captions for an image 
 
     hypotheses : list of list of str
         One generated caption per image, tokenized into words.
@@ -87,6 +46,54 @@ def evaluation_metric(dataloader, hypotheses):
         "bleu4": bleu4,
     }
 
+
+# def prepare_hypotheses(all_generated, vocab):
+#     hypotheses = []
+#     for token_ids in all_generated:
+#         words = vocab.decode(token_ids).split()
+#         hypotheses.append(words)
+#     return hypotheses
+
+def test_model(model, data_loader, vocab, num_reference_per_image=5):
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+    model.eval()
+
+    all_generated = {}  # image_name -> generated caption (deduplicate by image)
+
+    with torch.no_grad():
+        for batch_data in data_loader:
+            images, captions, image_names = batch_data
+
+            assert all(image_names[j] == image_names[0] 
+                for j in range(num_reference_per_image)), \
+                    "First batch images aren't grouped by num_references_per_image — slicing will be wrong"
+
+            
+            images = images[::num_reference_per_image]
+
+            # below are for debugging purposes
+            captions = captions[::num_reference_per_image]
+            image_names = image_names[::num_reference_per_image]
+
+            images = images.to(device)
+
+            batch_generated = model.generate(images, vocab)
+            
+            for img_name, prediction in zip(image_names, batch_generated):
+                if img_name not in all_generated:
+                    all_generated[img_name] = prediction
+
+    # get references dict to ensure same ordering
+    ref_dict = data_loader.dataset.get_all_references_dict()
+
+    # # build hypotheses in same order as references
+    hypotheses = [all_generated[img] for img in ref_dict.keys()]
+    
+
+    bleu_scores = evaluation_metric(data_loader, hypotheses)
+
+    return bleu_scores
 
 # def prepare_references_and_hypotheses(all_references, all_generated, vocab):
 #     """
