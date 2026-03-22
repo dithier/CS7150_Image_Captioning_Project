@@ -2,7 +2,7 @@ import torch
 import argparse
 from dataloader import get_flickr8k_loaders
 from eval_metrics import test_model, evaluation_metric
-from models import BaselineModel
+from baseline_model_v1 import BaselineModel
 
 """
 Evaluate a saved model checkpoint on the test set.
