@@ -23,6 +23,7 @@ def main(opt):
 
     train_image, train_caption, train_file = train_loader.dataset[0]
     test_image, test_caption, test_file = test_loader.dataset[0]
+    val_image, val_caption, val_file = val_loader.dataset[0]
 
     # build model and load weights from checkpoint
     model = BaselineModel(vocab_size=len(vocab)).to(device)
@@ -40,6 +41,9 @@ def main(opt):
 
     print("Test example")
     get_results(model, vocab, test_image, test_caption, test_file)
+
+    print("Val example")
+    get_results(model, vocab, val_image, val_caption, val_file)
    
 
 if __name__ == "__main__":
