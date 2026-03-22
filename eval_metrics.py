@@ -46,14 +46,6 @@ def evaluation_metric(dataloader, hypotheses):
         "bleu4": bleu4,
     }
 
-
-# def prepare_hypotheses(all_generated, vocab):
-#     hypotheses = []
-#     for token_ids in all_generated:
-#         words = vocab.decode(token_ids).split()
-#         hypotheses.append(words)
-#     return hypotheses
-
 def test_model(model, data_loader, vocab, num_reference_per_image=5):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -94,42 +86,3 @@ def test_model(model, data_loader, vocab, num_reference_per_image=5):
     bleu_scores = evaluation_metric(data_loader, hypotheses)
 
     return bleu_scores
-
-# def prepare_references_and_hypotheses(all_references, all_generated, vocab):
-#     """
-#     Convert raw token ID tensors from the dataloader and model into the
-#     string format expected by corpus_bleu.
-
-#     Parameters
-#     ----------
-#     all_references : list of tensors  (5, max_caption_length+1) per image
-#         The ground truth caption tensors from the dataloader.
-
-#     all_generated : list of list of int
-#         The generated caption token IDs from model.generate().
-
-#     vocab : Vocabulary
-#         The vocabulary object used to decode token IDs to words.
-
-#     Returns
-#     -------
-#     references  : list of list of list of str  — for corpus_bleu
-#     hypotheses  : list of list of str          — for corpus_bleu
-#     """
-#     references = []
-#     hypotheses = []
-
-#     for ref_tensor, gen_ids in zip(all_references, all_generated):
-#         # Decode all 5 reference captions for this image
-#         # Each is tokenized into a list of words (special tokens stripped by decode)
-#         image_refs = [
-#             vocab.decode(ref_tensor[i].tolist()).split()
-#             for i in range(ref_tensor.size(0))  # iterate over 5 captions
-#         ]
-#         references.append(image_refs)
-
-#         # Decode the generated caption into a list of words
-#         hypothesis = vocab.decode(gen_ids).split()
-#         hypotheses.append(hypothesis)
-
-#     return references, hypotheses
