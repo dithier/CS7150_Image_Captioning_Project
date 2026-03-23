@@ -5,7 +5,7 @@ from torch import Tensor
 import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 import argparse
-from dataloader import get_flickr8k_loaders
+from dataloader_v2 import get_flickr8k_loaders
 from training_helpers import *
 from baseline_model_v2 import BaselineModel
 import os

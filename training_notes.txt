@@ -2,10 +2,49 @@ First Pass 3_14
     - Code on github from 3/14/26 around 6 pm
     - Baseline model in models.py (frozen resnet with LSTM without attention)
     - 30 epochs total (but only saving best model as determined by validation loss)
-    - 1 gpu p 100 for requested 4 hours
-    - no checkpoint (as of yet)
+    - 1 gpu p 100 for requested 4 hours (used maybe 3 more requests)
     - flickr8k dataset
     - log dir was runs/first_pass_3_14
     - models dir was saved_models/models_3_14
     - SGD with momentum (default momentum 0.9)
     - lr start at 0.001 with cosine annealing lr scheduler where tmax = 10
+
+    - 3/15 loss still going down at 30 epochs. Going to train for 50 to be safe. Next time
+    prob use larger starting learning rate
+
+3_16 Baseline model (baseline_sgd_lr001/01)
+    - Code has not changed from previous run but params have
+    - 30 epochs
+    - Exact baseline model as before
+    - flickr8k
+    - 1 pgu p 100 for 4 hours requested (more will be needed)
+    - SGD with momentum (default momentum 0.9)
+    - lr start HIGHER with 0.01 with cosine annealing lr scheduler where tmax = 10
+    - thoughts if we need to change, tmax is a good place to start and the lr will depend on the 
+    graphs we see for training and val loss. Maybe tmax equal to number epochs?
+
+3_17 Baseline Model SGD tmax=opt.epochs
+    - Only difference from above training is tmax=opt.epochs (30)
+
+ADAM_PASS-
+adam_pass_1 -
+	- Baseline Model using ADAM, lr=0.001, epochs =30, CosineAnnealing (tmax=30)
+	- Almost as good as best model
+	- Used the original codes for model (without c0 layer)
+	- 
+
+adam_pass_2 -
+	- Baseline Model using ADAM, lr=0.001, epochs =30, CosineAnnealing (tmax=30)
+	- Best Model
+	- Used the original codes for model (without c0 layer)
+	- 
+
+
+adam_pass_3 - 
+	- Used baseline_training_adam_restart
+	- Cosine resets after every 10 epochs, used total epochs = 30
+	- Very bad results
+	- Use only for exploration nothing else
+
+
+adam_pass_4 - Still in training
