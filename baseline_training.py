@@ -6,7 +6,7 @@ from torch.utils.tensorboard import SummaryWriter
 import argparse
 from dataloader import get_flickr8k_loaders
 from training_helpers import *
-from models import BaselineModel
+from baseline_model_v2 import BaselineModel
 import os
 
 # pip install tensorboard

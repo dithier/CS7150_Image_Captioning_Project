@@ -1,8 +1,8 @@
 import torch
 import argparse
-from dataloader import get_flickr8k_loaders
-from training_helpers import test_model
-from models import BaselineModel
+from dataloader_v2 import get_flickr8k_loaders
+from eval_metrics import test_model, evaluation_metric
+from baseline_model_v1 import BaselineModel
 
 """
 Evaluate a saved model checkpoint on the test set.
@@ -15,8 +15,11 @@ Usage:
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def main(opt):
+    batch_size = opt.ref * 32
+
     # load data
-    _, _, test_loader, vocab = get_flickr8k_loaders(root_dir=opt.dataset_dir)
+    _, _, test_loader, vocab = get_flickr8k_loaders(root_dir=opt.dataset_dir, batch_size=batch_size) # batch size needs to be divisible by opt.ref for this to work
+    # (otherwise the same image will be spread across different batches)
 
     # build model and load weights from checkpoint
     model = BaselineModel(vocab_size=len(vocab)).to(device)
@@ -27,7 +30,7 @@ def main(opt):
 
     # run evaluation
     print("\nRunning evaluation on test set...")
-    bleu_scores = test_model(model, test_loader, vocab)
+    bleu_scores = test_model(model, test_loader, vocab, opt.ref)
 
     print("\n--- BLEU Scores ---")
     print(f"  BLEU-1: {bleu_scores['bleu1'] * 100:.2f}")
@@ -45,6 +48,8 @@ if __name__ == "__main__":
     parser.add_argument("--dataset_dir", type=str, 
                         default="flickr8k", 
                         help="path to flickr8k folder")
+    parser.add_argument("--ref", type=int, default=5,
+                        help="number of references per image")
     opt = parser.parse_args()
 
     main(opt)

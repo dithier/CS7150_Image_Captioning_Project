@@ -1,7 +1,7 @@
 import torch
 import argparse
-from dataloader import get_flickr8k_loaders
-from models import BaselineModel
+from dataloader_v2 import get_flickr8k_loaders
+from baseline_model_v2 import BaselineModel
 
 """
 Evaluate a saved model checkpoint using METEOR score.

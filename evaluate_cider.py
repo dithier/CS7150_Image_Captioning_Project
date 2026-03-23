@@ -3,7 +3,7 @@ import argparse
 import math
 import copy
 from collections import defaultdict
-from dataloader import get_flickr8k_loaders
+from dataloader_v2 import get_flickr8k_loaders
 from models import BaselineModel
 
 """
@@ -91,9 +91,8 @@ def compute_cider_n(test_counts, refs_counts, doc_freq, num_images, n, sigma=6.0
         for ngram, count in counts.items():
             df = doc_freq.get(ngram, 0)
             # BM25-style IDF — exact formula from cider_scorer.py
+            # negative values are kept (common ngrams get downweighted naturally)
             idf = math.log((num_images - df + 0.5) / (df + 0.5))
-            # clip negative IDF (happens when df > N/2, very common ngrams)
-            idf = max(idf, 1e-10)
             vec[ngram] = count * idf
             norm += (count * idf) ** 2
         norm = math.sqrt(norm)
@@ -170,15 +169,7 @@ def compute_cider(ref_dict, hypotheses_dict, n_max=4, sigma=6.0):
             test_ngrams[n].append(get_ngrams(hyp, n))
 
     # Document frequencies per n-gram order
-    doc_freqs = {
-        n: compute_doc_freq(
-            [[ref for ref in refs_ngrams[n][i]] for i in range(num_images)],
-            n  # n arg unused here since counts already computed — pass for clarity
-        )
-        for n in range(1, n_max + 1)
-    }
-
-    # Note: doc_freq already computed from ngram counts above, recompute cleanly
+    # Computed from pre-cooked count dicts — iterate ngram keys directly
     doc_freqs = {}
     for n in range(1, n_max + 1):
         df = defaultdict(int)
@@ -262,6 +253,16 @@ def main(opt):
 
     # Score
     print("Computing CIDEr-D (may take ~30s)...")
+
+    # Debug: sample a few hypotheses and references
+    sample_imgs = list(ref_dict.keys())[:3]
+    print("\n--- Debug Sample ---")
+    for img in sample_imgs:
+        print(f"  image : {img}")
+        print(f"  hyp   : {hypotheses_dict[img]}")
+        print(f"  ref[0]: {ref_dict[img][0]}")
+    print("--------------------\n")
+
     cider = compute_cider(ref_dict, hypotheses_dict)
 
     print("\n--- CIDEr-D Score ---")

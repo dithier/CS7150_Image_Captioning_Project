@@ -4,7 +4,7 @@ Flickr8k Dataset Loader for Image Captioning
 Expects the following directory structure:
 
     flickr8k/
-    ├── Images/        # all .jpg images
+    ├── images        # all .jpg images
     └── captions.txt   # CSV: image,caption  (with header row)
 
 Example captions.txt rows:
@@ -272,7 +272,7 @@ class Flickr8kDataset(Dataset):
             "split must be 'train', 'val', or 'test'"
 
         self.root_dir           = root_dir
-        self.img_dir            = os.path.join(root_dir, "Images")
+        self.img_dir            = root_dir
         self.split              = split
         self.max_caption_length = max_caption_length
         self.transform          = transform or self._default_transform()

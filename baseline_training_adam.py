@@ -1,5 +1,4 @@
 import sys
-
 import torch
 import torch.nn as nn
 from torch import Tensor
@@ -8,7 +7,7 @@ from torch.utils.tensorboard import SummaryWriter
 import argparse
 from dataloader import get_flickr8k_loaders
 from training_helpers import *
-from models import BaselineModel
+from baseline_model_v2 import BaselineModel
 import os
 
 # pip install tensorboard
@@ -46,7 +45,7 @@ class Logger:
         self.terminal.flush()
         self.log.flush()
 
-sys.stdout = Logger(os.path.join("logs", "adam_pass_3.out"))
+sys.stdout = Logger(os.path.join("logs", "adam_pass_2.out"))
 
 ############## Checkpoint Related Logic #############################
 
@@ -159,23 +158,21 @@ def main(opt):
 
     model = BaselineModel(vocab_size=len(vocab)).to(device)
 
-#    tmax = opt.epochs 
+    tmax = opt.epochs 
     if opt.checkpoint:
         model, optimizer_state_dict, curr_epoch, lr, lr_sched_state, best_perf, weight_decay = load_checkpoint(model, "train", opt.checkpoint_path)
 
         loss_fn, optimizer = set_up_Adam_loss_optimizer(model, lr, opt.betas, weight_decay, vocab)
         optimizer.load_state_dict(optimizer_state_dict)
 
-#        lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
-        lr_scheduler = set_up_cos_annealing_warm_restarts_scheduler(optimizer, t_0=opt.t0, t_mult=opt.t_mult)
+        lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
         lr_scheduler.load_state_dict(lr_sched_state)
 
         curr_lr = lr
     else:
         loss_fn, optimizer = set_up_Adam_loss_optimizer(model, opt.lr, opt.betas, opt.weight_decay, vocab)
         curr_epoch = 0
-#        lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
-        lr_scheduler = set_up_cos_annealing_warm_restarts_scheduler(optimizer, t_0=opt.t0, t_mult=opt.t_mult)
+        lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
         best_perf = float("inf")
         curr_lr = opt.lr
 
@@ -212,8 +209,6 @@ if __name__ == "__main__":
     parser.add_argument("--log_dir", type=str, default="./runs/adam_pass_1", help="tensorboard log directory")
     parser.add_argument("--save_path", type=str, default="./saved_models/adam_pass_1/", help="directory to save checkpoints")
 
-    parser.add_argument("--t0", type=int, default=10, help="epochs for first cosine restart cycle")
-    parser.add_argument("--t_mult", type=int, default=1, help="cycle length multiplier after each restart")
     opt = parser.parse_args() 
 
     main(opt)
