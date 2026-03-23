@@ -1,0 +1,778 @@
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='train'  caption pairs=30000
+[Vocabulary] 7458 tokens total
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='val'  caption pairs=5000
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='test'  caption pairs=5455
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,     1/938] avg train loss: 8.908 avg val loss: 8.583 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,    51/938] avg train loss: 5.251 avg val loss: 4.474 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   101/938] avg train loss: 4.222 avg val loss: 4.118 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   151/938] avg train loss: 3.959 avg val loss: 3.949 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   201/938] avg train loss: 3.864 avg val loss: 3.844 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   251/938] avg train loss: 3.789 avg val loss: 3.768 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   301/938] avg train loss: 3.696 avg val loss: 3.701 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   351/938] avg train loss: 3.641 avg val loss: 3.651 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   401/938] avg train loss: 3.616 avg val loss: 3.610 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   451/938] avg train loss: 3.508 avg val loss: 3.570 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   501/938] avg train loss: 3.492 avg val loss: 3.546 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   551/938] avg train loss: 3.532 avg val loss: 3.513 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   601/938] avg train loss: 3.472 avg val loss: 3.498 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   651/938] avg train loss: 3.421 avg val loss: 3.481 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   701/938] avg train loss: 3.430 avg val loss: 3.459 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   751/938] avg train loss: 3.371 avg val loss: 3.450 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   801/938] avg train loss: 3.412 avg val loss: 3.426 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   851/938] avg train loss: 3.324 avg val loss: 3.420 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   901/938] avg train loss: 3.348 avg val loss: 3.413 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[1/30,   938/938] avg train loss: 3.381 avg val loss: 3.397 lr: 0.001000
+[2/30,     1/938] avg train loss: 3.182 avg val loss: 3.397 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,    51/938] avg train loss: 3.215 avg val loss: 3.389 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   101/938] avg train loss: 3.213 avg val loss: 3.375 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   151/938] avg train loss: 3.230 avg val loss: 3.366 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   201/938] avg train loss: 3.235 avg val loss: 3.363 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   251/938] avg train loss: 3.221 avg val loss: 3.354 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   301/938] avg train loss: 3.247 avg val loss: 3.347 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   351/938] avg train loss: 3.216 avg val loss: 3.345 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   401/938] avg train loss: 3.236 avg val loss: 3.333 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   451/938] avg train loss: 3.224 avg val loss: 3.327 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   501/938] avg train loss: 3.215 avg val loss: 3.324 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   551/938] avg train loss: 3.152 avg val loss: 3.318 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   601/938] avg train loss: 3.178 avg val loss: 3.307 lr: 0.000976
+[2/30,   651/938] avg train loss: 3.163 avg val loss: 3.307 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   701/938] avg train loss: 3.197 avg val loss: 3.299 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   751/938] avg train loss: 3.173 avg val loss: 3.297 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   801/938] avg train loss: 3.203 avg val loss: 3.290 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   851/938] avg train loss: 3.215 avg val loss: 3.283 lr: 0.000976
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[2/30,   901/938] avg train loss: 3.202 avg val loss: 3.277 lr: 0.000976
+[2/30,   938/938] avg train loss: 3.133 avg val loss: 3.279 lr: 0.000976
+[3/30,     1/938] avg train loss: 2.941 avg val loss: 3.277 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,    51/938] avg train loss: 3.013 avg val loss: 3.276 lr: 0.000905
+[3/30,   101/938] avg train loss: 3.030 avg val loss: 3.277 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,   151/938] avg train loss: 3.072 avg val loss: 3.265 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,   201/938] avg train loss: 3.098 avg val loss: 3.264 lr: 0.000905
+[3/30,   251/938] avg train loss: 3.048 avg val loss: 3.269 lr: 0.000905
+[3/30,   301/938] avg train loss: 3.014 avg val loss: 3.265 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,   351/938] avg train loss: 3.085 avg val loss: 3.257 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,   401/938] avg train loss: 3.079 avg val loss: 3.252 lr: 0.000905
+[3/30,   451/938] avg train loss: 3.097 avg val loss: 3.261 lr: 0.000905
+[3/30,   501/938] avg train loss: 3.109 avg val loss: 3.258 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,   551/938] avg train loss: 3.082 avg val loss: 3.246 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,   601/938] avg train loss: 3.079 avg val loss: 3.238 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,   651/938] avg train loss: 3.069 avg val loss: 3.236 lr: 0.000905
+[3/30,   701/938] avg train loss: 3.131 avg val loss: 3.238 lr: 0.000905
+[3/30,   751/938] avg train loss: 3.115 avg val loss: 3.236 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,   801/938] avg train loss: 3.079 avg val loss: 3.236 lr: 0.000905
+[3/30,   851/938] avg train loss: 3.100 avg val loss: 3.236 lr: 0.000905
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[3/30,   901/938] avg train loss: 3.117 avg val loss: 3.220 lr: 0.000905
+[3/30,   938/938] avg train loss: 3.169 avg val loss: 3.230 lr: 0.000905
+[4/30,     1/938] avg train loss: 2.995 avg val loss: 3.230 lr: 0.000794
+[4/30,    51/938] avg train loss: 2.920 avg val loss: 3.222 lr: 0.000794
+[4/30,   101/938] avg train loss: 2.990 avg val loss: 3.222 lr: 0.000794
+[4/30,   151/938] avg train loss: 2.943 avg val loss: 3.224 lr: 0.000794
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[4/30,   201/938] avg train loss: 2.971 avg val loss: 3.213 lr: 0.000794
+[4/30,   251/938] avg train loss: 2.990 avg val loss: 3.224 lr: 0.000794
+[4/30,   301/938] avg train loss: 3.005 avg val loss: 3.215 lr: 0.000794
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[4/30,   351/938] avg train loss: 2.995 avg val loss: 3.211 lr: 0.000794
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[4/30,   401/938] avg train loss: 2.959 avg val loss: 3.199 lr: 0.000794
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[4/30,   451/938] avg train loss: 3.030 avg val loss: 3.185 lr: 0.000794
+[4/30,   501/938] avg train loss: 3.015 avg val loss: 3.188 lr: 0.000794
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[4/30,   551/938] avg train loss: 2.986 avg val loss: 3.176 lr: 0.000794
+[4/30,   601/938] avg train loss: 2.998 avg val loss: 3.178 lr: 0.000794
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[4/30,   651/938] avg train loss: 2.984 avg val loss: 3.167 lr: 0.000794
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[4/30,   701/938] avg train loss: 3.031 avg val loss: 3.159 lr: 0.000794
+[4/30,   751/938] avg train loss: 2.993 avg val loss: 3.175 lr: 0.000794
+[4/30,   801/938] avg train loss: 3.005 avg val loss: 3.181 lr: 0.000794
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[4/30,   851/938] avg train loss: 2.992 avg val loss: 3.152 lr: 0.000794
+[4/30,   901/938] avg train loss: 3.014 avg val loss: 3.156 lr: 0.000794
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[4/30,   938/938] avg train loss: 3.017 avg val loss: 3.150 lr: 0.000794
+[5/30,     1/938] avg train loss: 2.851 avg val loss: 3.151 lr: 0.000655
+[5/30,    51/938] avg train loss: 2.856 avg val loss: 3.152 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   101/938] avg train loss: 2.874 avg val loss: 3.140 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   151/938] avg train loss: 2.869 avg val loss: 3.137 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   201/938] avg train loss: 2.886 avg val loss: 3.132 lr: 0.000655
+[5/30,   251/938] avg train loss: 2.901 avg val loss: 3.133 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   301/938] avg train loss: 2.880 avg val loss: 3.118 lr: 0.000655
+[5/30,   351/938] avg train loss: 2.890 avg val loss: 3.132 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   401/938] avg train loss: 2.856 avg val loss: 3.114 lr: 0.000655
+[5/30,   451/938] avg train loss: 2.873 avg val loss: 3.121 lr: 0.000655
+[5/30,   501/938] avg train loss: 2.876 avg val loss: 3.123 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   551/938] avg train loss: 2.959 avg val loss: 3.104 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   601/938] avg train loss: 2.861 avg val loss: 3.095 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   651/938] avg train loss: 2.888 avg val loss: 3.094 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   701/938] avg train loss: 2.924 avg val loss: 3.084 lr: 0.000655
+[5/30,   751/938] avg train loss: 2.884 avg val loss: 3.085 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   801/938] avg train loss: 2.890 avg val loss: 3.082 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   851/938] avg train loss: 2.893 avg val loss: 3.079 lr: 0.000655
+[5/30,   901/938] avg train loss: 2.927 avg val loss: 3.087 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[5/30,   938/938] avg train loss: 2.921 avg val loss: 3.077 lr: 0.000655
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,     1/938] avg train loss: 2.618 avg val loss: 3.075 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,    51/938] avg train loss: 2.764 avg val loss: 3.071 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   101/938] avg train loss: 2.774 avg val loss: 3.065 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   151/938] avg train loss: 2.770 avg val loss: 3.060 lr: 0.000500
+[6/30,   201/938] avg train loss: 2.776 avg val loss: 3.072 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   251/938] avg train loss: 2.800 avg val loss: 3.060 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   301/938] avg train loss: 2.777 avg val loss: 3.054 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   351/938] avg train loss: 2.760 avg val loss: 3.048 lr: 0.000500
+[6/30,   401/938] avg train loss: 2.768 avg val loss: 3.066 lr: 0.000500
+[6/30,   451/938] avg train loss: 2.796 avg val loss: 3.053 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   501/938] avg train loss: 2.818 avg val loss: 3.041 lr: 0.000500
+[6/30,   551/938] avg train loss: 2.801 avg val loss: 3.054 lr: 0.000500
+[6/30,   601/938] avg train loss: 2.839 avg val loss: 3.042 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   651/938] avg train loss: 2.817 avg val loss: 3.038 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   701/938] avg train loss: 2.806 avg val loss: 3.036 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   751/938] avg train loss: 2.816 avg val loss: 3.035 lr: 0.000500
+[6/30,   801/938] avg train loss: 2.782 avg val loss: 3.036 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   851/938] avg train loss: 2.817 avg val loss: 3.034 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   901/938] avg train loss: 2.828 avg val loss: 3.024 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[6/30,   938/938] avg train loss: 2.765 avg val loss: 3.022 lr: 0.000500
+[7/30,     1/938] avg train loss: 2.502 avg val loss: 3.024 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,    51/938] avg train loss: 2.680 avg val loss: 3.018 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,   101/938] avg train loss: 2.658 avg val loss: 3.016 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,   151/938] avg train loss: 2.697 avg val loss: 3.008 lr: 0.000345
+[7/30,   201/938] avg train loss: 2.684 avg val loss: 3.015 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,   251/938] avg train loss: 2.660 avg val loss: 3.005 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,   301/938] avg train loss: 2.715 avg val loss: 3.001 lr: 0.000345
+[7/30,   351/938] avg train loss: 2.701 avg val loss: 3.002 lr: 0.000345
+[7/30,   401/938] avg train loss: 2.698 avg val loss: 3.006 lr: 0.000345
+[7/30,   451/938] avg train loss: 2.729 avg val loss: 3.006 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,   501/938] avg train loss: 2.686 avg val loss: 2.997 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,   551/938] avg train loss: 2.745 avg val loss: 2.995 lr: 0.000345
+[7/30,   601/938] avg train loss: 2.746 avg val loss: 2.996 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,   651/938] avg train loss: 2.727 avg val loss: 2.990 lr: 0.000345
+[7/30,   701/938] avg train loss: 2.697 avg val loss: 2.992 lr: 0.000345
+[7/30,   751/938] avg train loss: 2.716 avg val loss: 2.994 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,   801/938] avg train loss: 2.731 avg val loss: 2.986 lr: 0.000345
+[7/30,   851/938] avg train loss: 2.732 avg val loss: 2.988 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[7/30,   901/938] avg train loss: 2.690 avg val loss: 2.982 lr: 0.000345
+[7/30,   938/938] avg train loss: 2.742 avg val loss: 2.982 lr: 0.000345
+[8/30,     1/938] avg train loss: 2.694 avg val loss: 2.983 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[8/30,    51/938] avg train loss: 2.650 avg val loss: 2.974 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[8/30,   101/938] avg train loss: 2.617 avg val loss: 2.968 lr: 0.000206
+[8/30,   151/938] avg train loss: 2.618 avg val loss: 2.971 lr: 0.000206
+[8/30,   201/938] avg train loss: 2.608 avg val loss: 2.970 lr: 0.000206
+[8/30,   251/938] avg train loss: 2.575 avg val loss: 2.970 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[8/30,   301/938] avg train loss: 2.607 avg val loss: 2.968 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[8/30,   351/938] avg train loss: 2.621 avg val loss: 2.966 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[8/30,   401/938] avg train loss: 2.596 avg val loss: 2.961 lr: 0.000206
+[8/30,   451/938] avg train loss: 2.625 avg val loss: 2.961 lr: 0.000206
+[8/30,   501/938] avg train loss: 2.638 avg val loss: 2.964 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[8/30,   551/938] avg train loss: 2.588 avg val loss: 2.959 lr: 0.000206
+[8/30,   601/938] avg train loss: 2.649 avg val loss: 2.962 lr: 0.000206
+[8/30,   651/938] avg train loss: 2.676 avg val loss: 2.960 lr: 0.000206
+[8/30,   701/938] avg train loss: 2.644 avg val loss: 2.960 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[8/30,   751/938] avg train loss: 2.618 avg val loss: 2.953 lr: 0.000206
+[8/30,   801/938] avg train loss: 2.585 avg val loss: 2.954 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[8/30,   851/938] avg train loss: 2.642 avg val loss: 2.950 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[8/30,   901/938] avg train loss: 2.662 avg val loss: 2.948 lr: 0.000206
+[8/30,   938/938] avg train loss: 2.656 avg val loss: 2.953 lr: 0.000206
+[9/30,     1/938] avg train loss: 2.372 avg val loss: 2.953 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[9/30,    51/938] avg train loss: 2.525 avg val loss: 2.941 lr: 0.000095
+[9/30,   101/938] avg train loss: 2.541 avg val loss: 2.942 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[9/30,   151/938] avg train loss: 2.539 avg val loss: 2.941 lr: 0.000095
+[9/30,   201/938] avg train loss: 2.564 avg val loss: 2.943 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[9/30,   251/938] avg train loss: 2.570 avg val loss: 2.937 lr: 0.000095
+[9/30,   301/938] avg train loss: 2.576 avg val loss: 2.940 lr: 0.000095
+[9/30,   351/938] avg train loss: 2.520 avg val loss: 2.939 lr: 0.000095
+[9/30,   401/938] avg train loss: 2.551 avg val loss: 2.937 lr: 0.000095
+[9/30,   451/938] avg train loss: 2.567 avg val loss: 2.939 lr: 0.000095
+[9/30,   501/938] avg train loss: 2.579 avg val loss: 2.937 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[9/30,   551/938] avg train loss: 2.574 avg val loss: 2.934 lr: 0.000095
+[9/30,   601/938] avg train loss: 2.565 avg val loss: 2.935 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[9/30,   651/938] avg train loss: 2.573 avg val loss: 2.934 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[9/30,   701/938] avg train loss: 2.515 avg val loss: 2.933 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[9/30,   751/938] avg train loss: 2.565 avg val loss: 2.931 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[9/30,   801/938] avg train loss: 2.534 avg val loss: 2.931 lr: 0.000095
+[9/30,   851/938] avg train loss: 2.573 avg val loss: 2.934 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[9/30,   901/938] avg train loss: 2.571 avg val loss: 2.931 lr: 0.000095
+[9/30,   938/938] avg train loss: 2.571 avg val loss: 2.931 lr: 0.000095
+[10/30,     1/938] avg train loss: 2.563 avg val loss: 2.931 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,    51/938] avg train loss: 2.516 avg val loss: 2.927 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   101/938] avg train loss: 2.498 avg val loss: 2.926 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   151/938] avg train loss: 2.516 avg val loss: 2.925 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   201/938] avg train loss: 2.497 avg val loss: 2.925 lr: 0.000024
+[10/30,   251/938] avg train loss: 2.530 avg val loss: 2.926 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   301/938] avg train loss: 2.497 avg val loss: 2.925 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   351/938] avg train loss: 2.510 avg val loss: 2.924 lr: 0.000024
+[10/30,   401/938] avg train loss: 2.487 avg val loss: 2.925 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   451/938] avg train loss: 2.452 avg val loss: 2.924 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   501/938] avg train loss: 2.504 avg val loss: 2.923 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   551/938] avg train loss: 2.525 avg val loss: 2.923 lr: 0.000024
+[10/30,   601/938] avg train loss: 2.485 avg val loss: 2.924 lr: 0.000024
+[10/30,   651/938] avg train loss: 2.519 avg val loss: 2.923 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   701/938] avg train loss: 2.516 avg val loss: 2.923 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   751/938] avg train loss: 2.524 avg val loss: 2.922 lr: 0.000024
+[10/30,   801/938] avg train loss: 2.535 avg val loss: 2.923 lr: 0.000024
+[10/30,   851/938] avg train loss: 2.530 avg val loss: 2.923 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[10/30,   901/938] avg train loss: 2.540 avg val loss: 2.922 lr: 0.000024
+[10/30,   938/938] avg train loss: 2.550 avg val loss: 2.922 lr: 0.000024
+[11/30,     1/938] avg train loss: 2.121 avg val loss: 2.928 lr: 0.001000
+[11/30,    51/938] avg train loss: 2.640 avg val loss: 3.039 lr: 0.001000
+[11/30,   101/938] avg train loss: 2.651 avg val loss: 3.053 lr: 0.001000
+[11/30,   151/938] avg train loss: 2.681 avg val loss: 3.046 lr: 0.001000
+[11/30,   201/938] avg train loss: 2.712 avg val loss: 3.071 lr: 0.001000
+[11/30,   251/938] avg train loss: 2.756 avg val loss: 3.039 lr: 0.001000
+[11/30,   301/938] avg train loss: 2.763 avg val loss: 3.034 lr: 0.001000
+[11/30,   351/938] avg train loss: 2.763 avg val loss: 3.032 lr: 0.001000
+[11/30,   401/938] avg train loss: 2.779 avg val loss: 3.035 lr: 0.001000
+[11/30,   451/938] avg train loss: 2.795 avg val loss: 3.034 lr: 0.001000
+[11/30,   501/938] avg train loss: 2.808 avg val loss: 3.037 lr: 0.001000
+[11/30,   551/938] avg train loss: 2.826 avg val loss: 3.028 lr: 0.001000
+[11/30,   601/938] avg train loss: 2.780 avg val loss: 3.028 lr: 0.001000
+[11/30,   651/938] avg train loss: 2.832 avg val loss: 3.041 lr: 0.001000
+[11/30,   701/938] avg train loss: 2.773 avg val loss: 3.027 lr: 0.001000
+[11/30,   751/938] avg train loss: 2.816 avg val loss: 3.024 lr: 0.001000
+[11/30,   801/938] avg train loss: 2.842 avg val loss: 3.019 lr: 0.001000
+[11/30,   851/938] avg train loss: 2.797 avg val loss: 3.018 lr: 0.001000
+[11/30,   901/938] avg train loss: 2.866 avg val loss: 3.023 lr: 0.001000
+[11/30,   938/938] avg train loss: 2.834 avg val loss: 3.018 lr: 0.001000
+[12/30,     1/938] avg train loss: 2.719 avg val loss: 3.015 lr: 0.000976
+[12/30,    51/938] avg train loss: 2.622 avg val loss: 3.028 lr: 0.000976
+[12/30,   101/938] avg train loss: 2.686 avg val loss: 3.023 lr: 0.000976
+[12/30,   151/938] avg train loss: 2.678 avg val loss: 3.017 lr: 0.000976
+[12/30,   201/938] avg train loss: 2.721 avg val loss: 3.019 lr: 0.000976
+[12/30,   251/938] avg train loss: 2.744 avg val loss: 3.020 lr: 0.000976
+[12/30,   301/938] avg train loss: 2.703 avg val loss: 3.020 lr: 0.000976
+[12/30,   351/938] avg train loss: 2.706 avg val loss: 3.015 lr: 0.000976
+[12/30,   401/938] avg train loss: 2.751 avg val loss: 3.002 lr: 0.000976
+[12/30,   451/938] avg train loss: 2.754 avg val loss: 3.023 lr: 0.000976
+[12/30,   501/938] avg train loss: 2.741 avg val loss: 3.002 lr: 0.000976
+[12/30,   551/938] avg train loss: 2.764 avg val loss: 2.996 lr: 0.000976
+[12/30,   601/938] avg train loss: 2.781 avg val loss: 3.016 lr: 0.000976
+[12/30,   651/938] avg train loss: 2.749 avg val loss: 2.997 lr: 0.000976
+[12/30,   701/938] avg train loss: 2.745 avg val loss: 3.004 lr: 0.000976
+[12/30,   751/938] avg train loss: 2.810 avg val loss: 3.024 lr: 0.000976
+[12/30,   801/938] avg train loss: 2.797 avg val loss: 2.995 lr: 0.000976
+[12/30,   851/938] avg train loss: 2.743 avg val loss: 2.998 lr: 0.000976
+[12/30,   901/938] avg train loss: 2.746 avg val loss: 2.989 lr: 0.000976
+[12/30,   938/938] avg train loss: 2.800 avg val loss: 3.004 lr: 0.000976
+[13/30,     1/938] avg train loss: 2.789 avg val loss: 3.006 lr: 0.000905
+[13/30,    51/938] avg train loss: 2.603 avg val loss: 3.009 lr: 0.000905
+[13/30,   101/938] avg train loss: 2.667 avg val loss: 2.999 lr: 0.000905
+[13/30,   151/938] avg train loss: 2.617 avg val loss: 3.006 lr: 0.000905
+[13/30,   201/938] avg train loss: 2.675 avg val loss: 2.999 lr: 0.000905
+[13/30,   251/938] avg train loss: 2.662 avg val loss: 3.010 lr: 0.000905
+[13/30,   301/938] avg train loss: 2.680 avg val loss: 2.994 lr: 0.000905
+[13/30,   351/938] avg train loss: 2.678 avg val loss: 2.996 lr: 0.000905
+[13/30,   401/938] avg train loss: 2.668 avg val loss: 2.998 lr: 0.000905
+[13/30,   451/938] avg train loss: 2.715 avg val loss: 3.004 lr: 0.000905
+[13/30,   501/938] avg train loss: 2.738 avg val loss: 2.990 lr: 0.000905
+[13/30,   551/938] avg train loss: 2.693 avg val loss: 2.986 lr: 0.000905
+[13/30,   601/938] avg train loss: 2.728 avg val loss: 2.980 lr: 0.000905
+[13/30,   651/938] avg train loss: 2.704 avg val loss: 2.989 lr: 0.000905
+[13/30,   701/938] avg train loss: 2.747 avg val loss: 2.992 lr: 0.000905
+[13/30,   751/938] avg train loss: 2.702 avg val loss: 2.991 lr: 0.000905
+[13/30,   801/938] avg train loss: 2.713 avg val loss: 2.975 lr: 0.000905
+[13/30,   851/938] avg train loss: 2.725 avg val loss: 2.986 lr: 0.000905
+[13/30,   901/938] avg train loss: 2.790 avg val loss: 2.973 lr: 0.000905
+[13/30,   938/938] avg train loss: 2.688 avg val loss: 3.005 lr: 0.000905
+[14/30,     1/938] avg train loss: 2.626 avg val loss: 3.006 lr: 0.000794
+[14/30,    51/938] avg train loss: 2.551 avg val loss: 2.973 lr: 0.000794
+[14/30,   101/938] avg train loss: 2.554 avg val loss: 2.981 lr: 0.000794
+[14/30,   151/938] avg train loss: 2.588 avg val loss: 2.975 lr: 0.000794
+[14/30,   201/938] avg train loss: 2.585 avg val loss: 2.982 lr: 0.000794
+[14/30,   251/938] avg train loss: 2.631 avg val loss: 2.980 lr: 0.000794
+[14/30,   301/938] avg train loss: 2.593 avg val loss: 2.983 lr: 0.000794
+[14/30,   351/938] avg train loss: 2.618 avg val loss: 2.970 lr: 0.000794
+[14/30,   401/938] avg train loss: 2.663 avg val loss: 2.969 lr: 0.000794
+[14/30,   451/938] avg train loss: 2.625 avg val loss: 2.985 lr: 0.000794
+[14/30,   501/938] avg train loss: 2.663 avg val loss: 2.969 lr: 0.000794
+[14/30,   551/938] avg train loss: 2.662 avg val loss: 2.973 lr: 0.000794
+[14/30,   601/938] avg train loss: 2.701 avg val loss: 2.961 lr: 0.000794
+[14/30,   651/938] avg train loss: 2.666 avg val loss: 2.968 lr: 0.000794
+[14/30,   701/938] avg train loss: 2.673 avg val loss: 2.979 lr: 0.000794
+[14/30,   751/938] avg train loss: 2.690 avg val loss: 2.969 lr: 0.000794
+[14/30,   801/938] avg train loss: 2.683 avg val loss: 2.970 lr: 0.000794
+[14/30,   851/938] avg train loss: 2.691 avg val loss: 2.965 lr: 0.000794
+[14/30,   901/938] avg train loss: 2.704 avg val loss: 2.960 lr: 0.000794
+[14/30,   938/938] avg train loss: 2.697 avg val loss: 2.965 lr: 0.000794
+[15/30,     1/938] avg train loss: 2.334 avg val loss: 2.967 lr: 0.000655
+[15/30,    51/938] avg train loss: 2.533 avg val loss: 2.960 lr: 0.000655
+[15/30,   101/938] avg train loss: 2.488 avg val loss: 2.949 lr: 0.000655
+[15/30,   151/938] avg train loss: 2.557 avg val loss: 2.950 lr: 0.000655
+[15/30,   201/938] avg train loss: 2.558 avg val loss: 2.954 lr: 0.000655
+[15/30,   251/938] avg train loss: 2.574 avg val loss: 2.949 lr: 0.000655
+[15/30,   301/938] avg train loss: 2.575 avg val loss: 2.951 lr: 0.000655
+[15/30,   351/938] avg train loss: 2.544 avg val loss: 2.956 lr: 0.000655
+[15/30,   401/938] avg train loss: 2.561 avg val loss: 2.950 lr: 0.000655
+[15/30,   451/938] avg train loss: 2.594 avg val loss: 2.949 lr: 0.000655
+[15/30,   501/938] avg train loss: 2.611 avg val loss: 2.953 lr: 0.000655
+[15/30,   551/938] avg train loss: 2.600 avg val loss: 2.971 lr: 0.000655
+[15/30,   601/938] avg train loss: 2.625 avg val loss: 2.948 lr: 0.000655
+[15/30,   651/938] avg train loss: 2.629 avg val loss: 2.948 lr: 0.000655
+[15/30,   701/938] avg train loss: 2.632 avg val loss: 2.952 lr: 0.000655
+[15/30,   751/938] avg train loss: 2.612 avg val loss: 2.948 lr: 0.000655
+[15/30,   801/938] avg train loss: 2.625 avg val loss: 2.949 lr: 0.000655
+[15/30,   851/938] avg train loss: 2.641 avg val loss: 2.946 lr: 0.000655
+[15/30,   901/938] avg train loss: 2.612 avg val loss: 2.946 lr: 0.000655
+[15/30,   938/938] avg train loss: 2.605 avg val loss: 2.945 lr: 0.000655
+[16/30,     1/938] avg train loss: 2.371 avg val loss: 2.944 lr: 0.000500
+[16/30,    51/938] avg train loss: 2.457 avg val loss: 2.943 lr: 0.000500
+[16/30,   101/938] avg train loss: 2.482 avg val loss: 2.934 lr: 0.000500
+[16/30,   151/938] avg train loss: 2.496 avg val loss: 2.930 lr: 0.000500
+[16/30,   201/938] avg train loss: 2.484 avg val loss: 2.926 lr: 0.000500
+[16/30,   251/938] avg train loss: 2.484 avg val loss: 2.930 lr: 0.000500
+[16/30,   301/938] avg train loss: 2.519 avg val loss: 2.932 lr: 0.000500
+[16/30,   351/938] avg train loss: 2.492 avg val loss: 2.927 lr: 0.000500
+[16/30,   401/938] avg train loss: 2.496 avg val loss: 2.925 lr: 0.000500
+[16/30,   451/938] avg train loss: 2.526 avg val loss: 2.927 lr: 0.000500
+[16/30,   501/938] avg train loss: 2.503 avg val loss: 2.926 lr: 0.000500
+[16/30,   551/938] avg train loss: 2.526 avg val loss: 2.923 lr: 0.000500
+[16/30,   601/938] avg train loss: 2.529 avg val loss: 2.933 lr: 0.000500
+[16/30,   651/938] avg train loss: 2.556 avg val loss: 2.924 lr: 0.000500
+[16/30,   701/938] avg train loss: 2.562 avg val loss: 2.932 lr: 0.000500
+[16/30,   751/938] avg train loss: 2.565 avg val loss: 2.922 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[16/30,   801/938] avg train loss: 2.542 avg val loss: 2.921 lr: 0.000500
+[16/30,   851/938] avg train loss: 2.582 avg val loss: 2.922 lr: 0.000500
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[16/30,   901/938] avg train loss: 2.554 avg val loss: 2.921 lr: 0.000500
+[16/30,   938/938] avg train loss: 2.552 avg val loss: 2.934 lr: 0.000500
+[17/30,     1/938] avg train loss: 2.626 avg val loss: 2.936 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[17/30,    51/938] avg train loss: 2.410 avg val loss: 2.915 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[17/30,   101/938] avg train loss: 2.422 avg val loss: 2.914 lr: 0.000345
+[17/30,   151/938] avg train loss: 2.401 avg val loss: 2.914 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[17/30,   201/938] avg train loss: 2.405 avg val loss: 2.911 lr: 0.000345
+[17/30,   251/938] avg train loss: 2.465 avg val loss: 2.913 lr: 0.000345
+[17/30,   301/938] avg train loss: 2.423 avg val loss: 2.912 lr: 0.000345
+[17/30,   351/938] avg train loss: 2.441 avg val loss: 2.917 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[17/30,   401/938] avg train loss: 2.487 avg val loss: 2.908 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[17/30,   451/938] avg train loss: 2.426 avg val loss: 2.904 lr: 0.000345
+[17/30,   501/938] avg train loss: 2.442 avg val loss: 2.907 lr: 0.000345
+[17/30,   551/938] avg train loss: 2.426 avg val loss: 2.912 lr: 0.000345
+[17/30,   601/938] avg train loss: 2.451 avg val loss: 2.910 lr: 0.000345
+[17/30,   651/938] avg train loss: 2.474 avg val loss: 2.909 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[17/30,   701/938] avg train loss: 2.456 avg val loss: 2.903 lr: 0.000345
+[17/30,   751/938] avg train loss: 2.464 avg val loss: 2.908 lr: 0.000345
+[17/30,   801/938] avg train loss: 2.467 avg val loss: 2.910 lr: 0.000345
+[17/30,   851/938] avg train loss: 2.494 avg val loss: 2.905 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[17/30,   901/938] avg train loss: 2.520 avg val loss: 2.903 lr: 0.000345
+[17/30,   938/938] avg train loss: 2.483 avg val loss: 2.903 lr: 0.000345
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[18/30,     1/938] avg train loss: 2.255 avg val loss: 2.903 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[18/30,    51/938] avg train loss: 2.344 avg val loss: 2.896 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[18/30,   101/938] avg train loss: 2.363 avg val loss: 2.894 lr: 0.000206
+[18/30,   151/938] avg train loss: 2.349 avg val loss: 2.897 lr: 0.000206
+[18/30,   201/938] avg train loss: 2.375 avg val loss: 2.895 lr: 0.000206
+[18/30,   251/938] avg train loss: 2.341 avg val loss: 2.896 lr: 0.000206
+[18/30,   301/938] avg train loss: 2.394 avg val loss: 2.897 lr: 0.000206
+[18/30,   351/938] avg train loss: 2.391 avg val loss: 2.896 lr: 0.000206
+[18/30,   401/938] avg train loss: 2.345 avg val loss: 2.895 lr: 0.000206
+[18/30,   451/938] avg train loss: 2.368 avg val loss: 2.895 lr: 0.000206
+[18/30,   501/938] avg train loss: 2.401 avg val loss: 2.896 lr: 0.000206
+[18/30,   551/938] avg train loss: 2.409 avg val loss: 2.894 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[18/30,   601/938] avg train loss: 2.373 avg val loss: 2.894 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[18/30,   651/938] avg train loss: 2.410 avg val loss: 2.892 lr: 0.000206
+[18/30,   701/938] avg train loss: 2.389 avg val loss: 2.893 lr: 0.000206
+[18/30,   751/938] avg train loss: 2.405 avg val loss: 2.893 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[18/30,   801/938] avg train loss: 2.414 avg val loss: 2.890 lr: 0.000206
+[18/30,   851/938] avg train loss: 2.347 avg val loss: 2.891 lr: 0.000206
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[18/30,   901/938] avg train loss: 2.401 avg val loss: 2.889 lr: 0.000206
+[18/30,   938/938] avg train loss: 2.417 avg val loss: 2.890 lr: 0.000206
+[19/30,     1/938] avg train loss: 2.266 avg val loss: 2.889 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[19/30,    51/938] avg train loss: 2.286 avg val loss: 2.885 lr: 0.000095
+[19/30,   101/938] avg train loss: 2.327 avg val loss: 2.885 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[19/30,   151/938] avg train loss: 2.320 avg val loss: 2.885 lr: 0.000095
+[19/30,   201/938] avg train loss: 2.294 avg val loss: 2.885 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[19/30,   251/938] avg train loss: 2.280 avg val loss: 2.884 lr: 0.000095
+[19/30,   301/938] avg train loss: 2.321 avg val loss: 2.884 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[19/30,   351/938] avg train loss: 2.310 avg val loss: 2.883 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[19/30,   401/938] avg train loss: 2.318 avg val loss: 2.882 lr: 0.000095
+[19/30,   451/938] avg train loss: 2.335 avg val loss: 2.884 lr: 0.000095
+[19/30,   501/938] avg train loss: 2.328 avg val loss: 2.883 lr: 0.000095
+[19/30,   551/938] avg train loss: 2.286 avg val loss: 2.883 lr: 0.000095
+[19/30,   601/938] avg train loss: 2.316 avg val loss: 2.885 lr: 0.000095
+[19/30,   651/938] avg train loss: 2.310 avg val loss: 2.885 lr: 0.000095
+[19/30,   701/938] avg train loss: 2.349 avg val loss: 2.884 lr: 0.000095
+[19/30,   751/938] avg train loss: 2.350 avg val loss: 2.883 lr: 0.000095
+[19/30,   801/938] avg train loss: 2.326 avg val loss: 2.883 lr: 0.000095
+[19/30,   851/938] avg train loss: 2.339 avg val loss: 2.883 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[19/30,   901/938] avg train loss: 2.358 avg val loss: 2.881 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[19/30,   938/938] avg train loss: 2.383 avg val loss: 2.881 lr: 0.000095
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[20/30,     1/938] avg train loss: 2.539 avg val loss: 2.881 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[20/30,    51/938] avg train loss: 2.299 avg val loss: 2.878 lr: 0.000024
+[20/30,   101/938] avg train loss: 2.304 avg val loss: 2.879 lr: 0.000024
+Saved checkpoint to saved_models/adam_pass_3/model.pt
+[20/30,   151/938] avg train loss: 2.260 avg val loss: 2.878 lr: 0.000024
+[20/30,   201/938] avg train loss: 2.307 avg val loss: 2.879 lr: 0.000024
+[20/30,   251/938] avg train loss: 2.306 avg val loss: 2.879 lr: 0.000024
+[20/30,   301/938] avg train loss: 2.274 avg val loss: 2.880 lr: 0.000024
+[20/30,   351/938] avg train loss: 2.272 avg val loss: 2.879 lr: 0.000024
+[20/30,   401/938] avg train loss: 2.248 avg val loss: 2.880 lr: 0.000024
+[20/30,   451/938] avg train loss: 2.282 avg val loss: 2.881 lr: 0.000024
+[20/30,   501/938] avg train loss: 2.269 avg val loss: 2.879 lr: 0.000024
+[20/30,   551/938] avg train loss: 2.297 avg val loss: 2.880 lr: 0.000024
+[20/30,   601/938] avg train loss: 2.263 avg val loss: 2.879 lr: 0.000024
+[20/30,   651/938] avg train loss: 2.298 avg val loss: 2.879 lr: 0.000024
+[20/30,   701/938] avg train loss: 2.297 avg val loss: 2.880 lr: 0.000024
+[20/30,   751/938] avg train loss: 2.273 avg val loss: 2.879 lr: 0.000024
+[20/30,   801/938] avg train loss: 2.297 avg val loss: 2.878 lr: 0.000024
+[20/30,   851/938] avg train loss: 2.264 avg val loss: 2.879 lr: 0.000024
+[20/30,   901/938] avg train loss: 2.273 avg val loss: 2.879 lr: 0.000024
+[20/30,   938/938] avg train loss: 2.255 avg val loss: 2.878 lr: 0.000024
+[21/30,     1/938] avg train loss: 2.153 avg val loss: 2.881 lr: 0.001000
+[21/30,    51/938] avg train loss: 2.392 avg val loss: 2.989 lr: 0.001000
+[21/30,   101/938] avg train loss: 2.527 avg val loss: 3.015 lr: 0.001000
+[21/30,   151/938] avg train loss: 2.546 avg val loss: 3.008 lr: 0.001000
+[21/30,   201/938] avg train loss: 2.556 avg val loss: 3.003 lr: 0.001000
+[21/30,   251/938] avg train loss: 2.611 avg val loss: 2.991 lr: 0.001000
+[21/30,   301/938] avg train loss: 2.555 avg val loss: 2.985 lr: 0.001000
+[21/30,   351/938] avg train loss: 2.591 avg val loss: 2.991 lr: 0.001000
+[21/30,   401/938] avg train loss: 2.629 avg val loss: 2.994 lr: 0.001000
+[21/30,   451/938] avg train loss: 2.622 avg val loss: 2.990 lr: 0.001000
+[21/30,   501/938] avg train loss: 2.634 avg val loss: 2.983 lr: 0.001000
+[21/30,   551/938] avg train loss: 2.631 avg val loss: 2.993 lr: 0.001000
+[21/30,   601/938] avg train loss: 2.662 avg val loss: 2.994 lr: 0.001000
+[21/30,   651/938] avg train loss: 2.658 avg val loss: 2.984 lr: 0.001000
+[21/30,   701/938] avg train loss: 2.638 avg val loss: 2.987 lr: 0.001000
+[21/30,   751/938] avg train loss: 2.660 avg val loss: 2.987 lr: 0.001000
+[21/30,   801/938] avg train loss: 2.691 avg val loss: 2.980 lr: 0.001000
+[21/30,   851/938] avg train loss: 2.671 avg val loss: 2.976 lr: 0.001000
+[21/30,   901/938] avg train loss: 2.682 avg val loss: 2.976 lr: 0.001000
+[21/30,   938/938] avg train loss: 2.671 avg val loss: 2.968 lr: 0.001000
+[22/30,     1/938] avg train loss: 2.651 avg val loss: 2.970 lr: 0.000976
+[22/30,    51/938] avg train loss: 2.493 avg val loss: 2.976 lr: 0.000976
+[22/30,   101/938] avg train loss: 2.490 avg val loss: 2.992 lr: 0.000976
+[22/30,   151/938] avg train loss: 2.532 avg val loss: 2.988 lr: 0.000976
+[22/30,   201/938] avg train loss: 2.540 avg val loss: 2.982 lr: 0.000976
+[22/30,   251/938] avg train loss: 2.573 avg val loss: 2.992 lr: 0.000976
+[22/30,   301/938] avg train loss: 2.544 avg val loss: 2.986 lr: 0.000976
+[22/30,   351/938] avg train loss: 2.598 avg val loss: 2.990 lr: 0.000976
+[22/30,   401/938] avg train loss: 2.581 avg val loss: 2.978 lr: 0.000976
+[22/30,   451/938] avg train loss: 2.654 avg val loss: 2.984 lr: 0.000976
+[22/30,   501/938] avg train loss: 2.560 avg val loss: 2.972 lr: 0.000976
+[22/30,   551/938] avg train loss: 2.591 avg val loss: 2.971 lr: 0.000976
+[22/30,   601/938] avg train loss: 2.623 avg val loss: 2.980 lr: 0.000976
+[22/30,   651/938] avg train loss: 2.651 avg val loss: 2.971 lr: 0.000976
+[22/30,   701/938] avg train loss: 2.679 avg val loss: 2.976 lr: 0.000976
+[22/30,   751/938] avg train loss: 2.600 avg val loss: 2.974 lr: 0.000976
+[22/30,   801/938] avg train loss: 2.688 avg val loss: 2.963 lr: 0.000976
+[22/30,   851/938] avg train loss: 2.624 avg val loss: 2.972 lr: 0.000976
+[22/30,   901/938] avg train loss: 2.669 avg val loss: 2.992 lr: 0.000976
+[22/30,   938/938] avg train loss: 2.671 avg val loss: 2.987 lr: 0.000976
+[23/30,     1/938] avg train loss: 2.592 avg val loss: 2.985 lr: 0.000905
+[23/30,    51/938] avg train loss: 2.448 avg val loss: 2.973 lr: 0.000905
+[23/30,   101/938] avg train loss: 2.479 avg val loss: 2.973 lr: 0.000905
+[23/30,   151/938] avg train loss: 2.492 avg val loss: 2.961 lr: 0.000905
+[23/30,   201/938] avg train loss: 2.491 avg val loss: 2.963 lr: 0.000905
+[23/30,   251/938] avg train loss: 2.542 avg val loss: 2.970 lr: 0.000905
+[23/30,   301/938] avg train loss: 2.560 avg val loss: 2.978 lr: 0.000905
+[23/30,   351/938] avg train loss: 2.574 avg val loss: 2.971 lr: 0.000905
+[23/30,   401/938] avg train loss: 2.587 avg val loss: 2.965 lr: 0.000905
+[23/30,   451/938] avg train loss: 2.573 avg val loss: 2.964 lr: 0.000905
+[23/30,   501/938] avg train loss: 2.576 avg val loss: 2.979 lr: 0.000905
+[23/30,   551/938] avg train loss: 2.593 avg val loss: 2.973 lr: 0.000905
+[23/30,   601/938] avg train loss: 2.565 avg val loss: 2.967 lr: 0.000905
+[23/30,   651/938] avg train loss: 2.590 avg val loss: 2.958 lr: 0.000905
+[23/30,   701/938] avg train loss: 2.577 avg val loss: 2.977 lr: 0.000905
+[23/30,   751/938] avg train loss: 2.616 avg val loss: 2.958 lr: 0.000905
+[23/30,   801/938] avg train loss: 2.632 avg val loss: 2.956 lr: 0.000905
+[23/30,   851/938] avg train loss: 2.597 avg val loss: 2.948 lr: 0.000905
+[23/30,   901/938] avg train loss: 2.655 avg val loss: 2.963 lr: 0.000905
+[23/30,   938/938] avg train loss: 2.610 avg val loss: 2.967 lr: 0.000905
+[24/30,     1/938] avg train loss: 2.327 avg val loss: 2.967 lr: 0.000794
+[24/30,    51/938] avg train loss: 2.411 avg val loss: 2.964 lr: 0.000794
+[24/30,   101/938] avg train loss: 2.452 avg val loss: 2.970 lr: 0.000794
+[24/30,   151/938] avg train loss: 2.459 avg val loss: 2.970 lr: 0.000794
+[24/30,   201/938] avg train loss: 2.491 avg val loss: 2.956 lr: 0.000794
+[24/30,   251/938] avg train loss: 2.468 avg val loss: 2.966 lr: 0.000794
+[24/30,   301/938] avg train loss: 2.512 avg val loss: 2.967 lr: 0.000794
+[24/30,   351/938] avg train loss: 2.504 avg val loss: 2.962 lr: 0.000794
+[24/30,   401/938] avg train loss: 2.526 avg val loss: 2.971 lr: 0.000794
+[24/30,   451/938] avg train loss: 2.536 avg val loss: 2.959 lr: 0.000794
+[24/30,   501/938] avg train loss: 2.504 avg val loss: 2.957 lr: 0.000794
+[24/30,   551/938] avg train loss: 2.539 avg val loss: 2.961 lr: 0.000794
+[24/30,   601/938] avg train loss: 2.580 avg val loss: 2.969 lr: 0.000794
+[24/30,   651/938] avg train loss: 2.556 avg val loss: 2.969 lr: 0.000794
+[24/30,   701/938] avg train loss: 2.579 avg val loss: 2.948 lr: 0.000794
+[24/30,   751/938] avg train loss: 2.561 avg val loss: 2.952 lr: 0.000794
+[24/30,   801/938] avg train loss: 2.543 avg val loss: 2.948 lr: 0.000794
+[24/30,   851/938] avg train loss: 2.576 avg val loss: 2.947 lr: 0.000794
+[24/30,   901/938] avg train loss: 2.561 avg val loss: 2.948 lr: 0.000794
+[24/30,   938/938] avg train loss: 2.635 avg val loss: 2.950 lr: 0.000794
+[25/30,     1/938] avg train loss: 2.584 avg val loss: 2.950 lr: 0.000655
+[25/30,    51/938] avg train loss: 2.390 avg val loss: 2.947 lr: 0.000655
+[25/30,   101/938] avg train loss: 2.427 avg val loss: 2.942 lr: 0.000655
+[25/30,   151/938] avg train loss: 2.399 avg val loss: 2.951 lr: 0.000655
+[25/30,   201/938] avg train loss: 2.426 avg val loss: 2.950 lr: 0.000655
+[25/30,   251/938] avg train loss: 2.434 avg val loss: 2.957 lr: 0.000655
+[25/30,   301/938] avg train loss: 2.436 avg val loss: 2.949 lr: 0.000655
+[25/30,   351/938] avg train loss: 2.477 avg val loss: 2.950 lr: 0.000655
+[25/30,   401/938] avg train loss: 2.464 avg val loss: 2.942 lr: 0.000655
+[25/30,   451/938] avg train loss: 2.446 avg val loss: 2.946 lr: 0.000655
+[25/30,   501/938] avg train loss: 2.469 avg val loss: 2.945 lr: 0.000655
+[25/30,   551/938] avg train loss: 2.486 avg val loss: 2.941 lr: 0.000655
+[25/30,   601/938] avg train loss: 2.476 avg val loss: 2.937 lr: 0.000655
+[25/30,   651/938] avg train loss: 2.494 avg val loss: 2.942 lr: 0.000655
+[25/30,   701/938] avg train loss: 2.509 avg val loss: 2.943 lr: 0.000655
+[25/30,   751/938] avg train loss: 2.503 avg val loss: 2.931 lr: 0.000655
+[25/30,   801/938] avg train loss: 2.506 avg val loss: 2.936 lr: 0.000655
+[25/30,   851/938] avg train loss: 2.544 avg val loss: 2.930 lr: 0.000655
+[25/30,   901/938] avg train loss: 2.542 avg val loss: 2.935 lr: 0.000655
+[25/30,   938/938] avg train loss: 2.538 avg val loss: 2.935 lr: 0.000655
+[26/30,     1/938] avg train loss: 2.282 avg val loss: 2.935 lr: 0.000500
+[26/30,    51/938] avg train loss: 2.295 avg val loss: 2.919 lr: 0.000500
+[26/30,   101/938] avg train loss: 2.336 avg val loss: 2.924 lr: 0.000500
+[26/30,   151/938] avg train loss: 2.363 avg val loss: 2.932 lr: 0.000500
+[26/30,   201/938] avg train loss: 2.382 avg val loss: 2.931 lr: 0.000500
+[26/30,   251/938] avg train loss: 2.362 avg val loss: 2.928 lr: 0.000500
+[26/30,   301/938] avg train loss: 2.385 avg val loss: 2.930 lr: 0.000500
+[26/30,   351/938] avg train loss: 2.401 avg val loss: 2.925 lr: 0.000500
+[26/30,   401/938] avg train loss: 2.397 avg val loss: 2.925 lr: 0.000500
+[26/30,   451/938] avg train loss: 2.370 avg val loss: 2.930 lr: 0.000500
+[26/30,   501/938] avg train loss: 2.417 avg val loss: 2.926 lr: 0.000500
+[26/30,   551/938] avg train loss: 2.451 avg val loss: 2.933 lr: 0.000500
+[26/30,   601/938] avg train loss: 2.416 avg val loss: 2.920 lr: 0.000500
+[26/30,   651/938] avg train loss: 2.425 avg val loss: 2.923 lr: 0.000500
+[26/30,   701/938] avg train loss: 2.430 avg val loss: 2.935 lr: 0.000500
+[26/30,   751/938] avg train loss: 2.462 avg val loss: 2.922 lr: 0.000500
+[26/30,   801/938] avg train loss: 2.454 avg val loss: 2.919 lr: 0.000500
+[26/30,   851/938] avg train loss: 2.462 avg val loss: 2.919 lr: 0.000500
+[26/30,   901/938] avg train loss: 2.468 avg val loss: 2.913 lr: 0.000500
+[26/30,   938/938] avg train loss: 2.455 avg val loss: 2.916 lr: 0.000500
+[27/30,     1/938] avg train loss: 2.468 avg val loss: 2.915 lr: 0.000345
+[27/30,    51/938] avg train loss: 2.268 avg val loss: 2.907 lr: 0.000345
+[27/30,   101/938] avg train loss: 2.303 avg val loss: 2.909 lr: 0.000345
+[27/30,   151/938] avg train loss: 2.307 avg val loss: 2.907 lr: 0.000345
+[27/30,   201/938] avg train loss: 2.299 avg val loss: 2.912 lr: 0.000345
+[27/30,   251/938] avg train loss: 2.280 avg val loss: 2.909 lr: 0.000345
+[27/30,   301/938] avg train loss: 2.320 avg val loss: 2.909 lr: 0.000345
+[27/30,   351/938] avg train loss: 2.308 avg val loss: 2.910 lr: 0.000345
+[27/30,   401/938] avg train loss: 2.333 avg val loss: 2.909 lr: 0.000345
+[27/30,   451/938] avg train loss: 2.338 avg val loss: 2.915 lr: 0.000345
+[27/30,   501/938] avg train loss: 2.355 avg val loss: 2.908 lr: 0.000345
+[27/30,   551/938] avg train loss: 2.323 avg val loss: 2.909 lr: 0.000345
+[27/30,   601/938] avg train loss: 2.376 avg val loss: 2.911 lr: 0.000345
+[27/30,   651/938] avg train loss: 2.347 avg val loss: 2.912 lr: 0.000345
+[27/30,   701/938] avg train loss: 2.328 avg val loss: 2.908 lr: 0.000345
+[27/30,   751/938] avg train loss: 2.408 avg val loss: 2.906 lr: 0.000345
+[27/30,   801/938] avg train loss: 2.374 avg val loss: 2.904 lr: 0.000345
+[27/30,   851/938] avg train loss: 2.387 avg val loss: 2.906 lr: 0.000345
+[27/30,   901/938] avg train loss: 2.346 avg val loss: 2.906 lr: 0.000345
+[27/30,   938/938] avg train loss: 2.344 avg val loss: 2.901 lr: 0.000345
+[28/30,     1/938] avg train loss: 2.270 avg val loss: 2.901 lr: 0.000206
+[28/30,    51/938] avg train loss: 2.241 avg val loss: 2.898 lr: 0.000206
+[28/30,   101/938] avg train loss: 2.258 avg val loss: 2.896 lr: 0.000206
+[28/30,   151/938] avg train loss: 2.256 avg val loss: 2.895 lr: 0.000206
+[28/30,   201/938] avg train loss: 2.245 avg val loss: 2.897 lr: 0.000206
+[28/30,   251/938] avg train loss: 2.248 avg val loss: 2.894 lr: 0.000206
+[28/30,   301/938] avg train loss: 2.233 avg val loss: 2.898 lr: 0.000206
+[28/30,   351/938] avg train loss: 2.252 avg val loss: 2.895 lr: 0.000206
+[28/30,   401/938] avg train loss: 2.271 avg val loss: 2.897 lr: 0.000206
+[28/30,   451/938] avg train loss: 2.227 avg val loss: 2.894 lr: 0.000206
+[28/30,   501/938] avg train loss: 2.266 avg val loss: 2.895 lr: 0.000206
+[28/30,   551/938] avg train loss: 2.251 avg val loss: 2.896 lr: 0.000206
+[28/30,   601/938] avg train loss: 2.292 avg val loss: 2.898 lr: 0.000206
+[28/30,   651/938] avg train loss: 2.245 avg val loss: 2.900 lr: 0.000206
+[28/30,   701/938] avg train loss: 2.305 avg val loss: 2.899 lr: 0.000206
+[28/30,   751/938] avg train loss: 2.275 avg val loss: 2.895 lr: 0.000206
+[28/30,   801/938] avg train loss: 2.287 avg val loss: 2.894 lr: 0.000206
+[28/30,   851/938] avg train loss: 2.312 avg val loss: 2.898 lr: 0.000206
+[28/30,   901/938] avg train loss: 2.291 avg val loss: 2.897 lr: 0.000206
+[28/30,   938/938] avg train loss: 2.315 avg val loss: 2.897 lr: 0.000206
+[29/30,     1/938] avg train loss: 2.094 avg val loss: 2.897 lr: 0.000095
+[29/30,    51/938] avg train loss: 2.174 avg val loss: 2.897 lr: 0.000095
+[29/30,   101/938] avg train loss: 2.205 avg val loss: 2.894 lr: 0.000095
+[29/30,   151/938] avg train loss: 2.178 avg val loss: 2.891 lr: 0.000095
+[29/30,   201/938] avg train loss: 2.224 avg val loss: 2.893 lr: 0.000095
+[29/30,   251/938] avg train loss: 2.190 avg val loss: 2.892 lr: 0.000095
+[29/30,   301/938] avg train loss: 2.221 avg val loss: 2.892 lr: 0.000095
+[29/30,   351/938] avg train loss: 2.205 avg val loss: 2.893 lr: 0.000095
+[29/30,   401/938] avg train loss: 2.223 avg val loss: 2.893 lr: 0.000095
+[29/30,   451/938] avg train loss: 2.216 avg val loss: 2.890 lr: 0.000095
+[29/30,   501/938] avg train loss: 2.241 avg val loss: 2.891 lr: 0.000095
+[29/30,   551/938] avg train loss: 2.204 avg val loss: 2.891 lr: 0.000095
+[29/30,   601/938] avg train loss: 2.170 avg val loss: 2.893 lr: 0.000095
+[29/30,   651/938] avg train loss: 2.220 avg val loss: 2.892 lr: 0.000095
+[29/30,   701/938] avg train loss: 2.217 avg val loss: 2.891 lr: 0.000095
+[29/30,   751/938] avg train loss: 2.220 avg val loss: 2.890 lr: 0.000095
+[29/30,   801/938] avg train loss: 2.182 avg val loss: 2.889 lr: 0.000095
+[29/30,   851/938] avg train loss: 2.242 avg val loss: 2.889 lr: 0.000095
+[29/30,   901/938] avg train loss: 2.224 avg val loss: 2.891 lr: 0.000095
+[29/30,   938/938] avg train loss: 2.200 avg val loss: 2.888 lr: 0.000095
+[30/30,     1/938] avg train loss: 2.310 avg val loss: 2.889 lr: 0.000024
+[30/30,    51/938] avg train loss: 2.179 avg val loss: 2.889 lr: 0.000024
+[30/30,   101/938] avg train loss: 2.193 avg val loss: 2.888 lr: 0.000024
+[30/30,   151/938] avg train loss: 2.181 avg val loss: 2.887 lr: 0.000024
+[30/30,   201/938] avg train loss: 2.170 avg val loss: 2.887 lr: 0.000024
+[30/30,   251/938] avg train loss: 2.145 avg val loss: 2.888 lr: 0.000024
+[30/30,   301/938] avg train loss: 2.201 avg val loss: 2.888 lr: 0.000024
+[30/30,   351/938] avg train loss: 2.144 avg val loss: 2.887 lr: 0.000024
+[30/30,   401/938] avg train loss: 2.161 avg val loss: 2.889 lr: 0.000024
+[30/30,   451/938] avg train loss: 2.142 avg val loss: 2.887 lr: 0.000024
+[30/30,   501/938] avg train loss: 2.171 avg val loss: 2.886 lr: 0.000024
+[30/30,   551/938] avg train loss: 2.197 avg val loss: 2.888 lr: 0.000024
+[30/30,   601/938] avg train loss: 2.158 avg val loss: 2.888 lr: 0.000024
+[30/30,   651/938] avg train loss: 2.166 avg val loss: 2.887 lr: 0.000024
+[30/30,   701/938] avg train loss: 2.168 avg val loss: 2.887 lr: 0.000024
+[30/30,   751/938] avg train loss: 2.138 avg val loss: 2.886 lr: 0.000024
+[30/30,   801/938] avg train loss: 2.174 avg val loss: 2.885 lr: 0.000024
+[30/30,   851/938] avg train loss: 2.187 avg val loss: 2.887 lr: 0.000024
+[30/30,   901/938] avg train loss: 2.177 avg val loss: 2.888 lr: 0.000024
+[30/30,   938/938] avg train loss: 2.148 avg val loss: 2.888 lr: 0.000024
+[31/30,     1/938] avg train loss: 2.190 avg val loss: 2.889 lr: 0.001000
+[31/30,    51/938] avg train loss: 2.313 avg val loss: 2.989 lr: 0.001000
+[31/30,   101/938] avg train loss: 2.393 avg val loss: 2.998 lr: 0.001000
+[31/30,   151/938] avg train loss: 2.425 avg val loss: 2.992 lr: 0.001000
+[31/30,   201/938] avg train loss: 2.431 avg val loss: 2.986 lr: 0.001000
+[31/30,   251/938] avg train loss: 2.498 avg val loss: 2.990 lr: 0.001000
+[31/30,   301/938] avg train loss: 2.539 avg val loss: 3.003 lr: 0.001000
+[31/30,   351/938] avg train loss: 2.505 avg val loss: 3.004 lr: 0.001000
+[31/30,   401/938] avg train loss: 2.524 avg val loss: 3.005 lr: 0.001000
+[31/30,   451/938] avg train loss: 2.563 avg val loss: 2.998 lr: 0.001000
+[31/30,   501/938] avg train loss: 2.552 avg val loss: 3.003 lr: 0.001000
+[31/30,   551/938] avg train loss: 2.568 avg val loss: 3.000 lr: 0.001000
+[31/30,   601/938] avg train loss: 2.573 avg val loss: 2.992 lr: 0.001000
+[31/30,   651/938] avg train loss: 2.568 avg val loss: 3.003 lr: 0.001000
+[31/30,   701/938] avg train loss: 2.599 avg val loss: 2.984 lr: 0.001000
+[31/30,   751/938] avg train loss: 2.597 avg val loss: 2.971 lr: 0.001000
+[31/30,   801/938] avg train loss: 2.611 avg val loss: 2.982 lr: 0.001000
+[31/30,   851/938] avg train loss: 2.617 avg val loss: 2.976 lr: 0.001000
+[31/30,   901/938] avg train loss: 2.601 avg val loss: 2.979 lr: 0.001000
+[31/30,   938/938] avg train loss: 2.606 avg val loss: 2.967 lr: 0.001000

@@ -1,0 +1,10 @@
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='train'  caption pairs=30000
+[Vocabulary] 7458 tokens total
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='val'  caption pairs=5000
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='test'  caption pairs=5455

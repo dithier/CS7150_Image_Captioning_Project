@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "C:\Users\yashr\Desktop\NEU\Semester 4\DL\Project\CS7150_Image_Captioning_Project\baseline_training_adam.py", line 198, in <module>
+    main(opt)
+  File "C:\Users\yashr\Desktop\NEU\Semester 4\DL\Project\CS7150_Image_Captioning_Project\baseline_training_adam.py", line 164, in main
+    train_val_model(opt, vocab, model, train_loader, val_loader, loss_fn,
+  File "C:\Users\yashr\Desktop\NEU\Semester 4\DL\Project\CS7150_Image_Captioning_Project\baseline_training_adam.py", line 100, in train_val_model
+    loss.backward()
+  File "C:\Users\yashr\miniconda3\envs\dlProject\lib\site-packages\torch\_tensor.py", line 648, in backward
+    torch.autograd.backward(
+  File "C:\Users\yashr\miniconda3\envs\dlProject\lib\site-packages\torch\autograd\__init__.py", line 353, in backward
+    _engine_run_backward(
+  File "C:\Users\yashr\miniconda3\envs\dlProject\lib\site-packages\torch\autograd\graph.py", line 824, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
+^C

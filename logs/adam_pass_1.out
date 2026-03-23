@@ -1,0 +1,16 @@
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='train'  caption pairs=30000
+[Vocabulary] 7458 tokens total
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='val'  caption pairs=5000
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='test'  caption pairs=5455
+Saved checkpoint to saved_models/adam_pass_1/model.pt
+[1/50,     1/938] avg train loss: 8.919 avg val loss: 8.571 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_1/model.pt
+[1/50,    51/938] avg train loss: 5.310 avg val loss: 4.490 lr: 0.001000
+Saved checkpoint to saved_models/adam_pass_1/model.pt
+[1/50,   101/938] avg train loss: 4.221 avg val loss: 4.128 lr: 0.001000
