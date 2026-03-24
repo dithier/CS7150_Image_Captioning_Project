@@ -40,9 +40,6 @@ class MultiHeadAttention(nn.Module):
                                       self.dim_per_head * self.num_heads)
 
         self.softmax = nn.Softmax(dim=3)
-        ###########################################################################
-        #                             END OF YOUR CODE                            #
-        ###########################################################################
 
 
     def forward(self, query: torch.Tensor, key: torch.Tensor, value: torch.Tensor, mask: torch.Tensor=None):
@@ -125,14 +122,13 @@ class MultiHeadAttention(nn.Module):
         ###########################################################################
 
         return out
-    
-# TODO: add second RELU?    
+       
 class FeedForwardNetwork(nn.Module):
     """
     A simple feedforward network. Essentially, it is a two-layer fully-connected
     neural network.
     """
-    def __init__(self, input_dim, ff_dim, dropout):
+    def __init__(self, input_dim, ff_dim):
         """
         Inputs:
         - input_dim: Input dimension
@@ -228,9 +224,6 @@ class PositionalEncoding(nn.Module):
         # odd index
         pe[:, 1::2] = torch.cos(p / max_length**(torch.arange(0, self.input_dim, 2)/ self.input_dim))
 
-        
-        ###########################################################################
-        #                             END OF YOUR CODE                            #
         ###########################################################################
 
         x = x + pe.to(x.device)
@@ -243,7 +236,7 @@ class VisionTransformerEncoderCell(nn.Module):
     def __init__(self, input_dim: int, num_heads: int, ff_dim: int, dropout: float):
         """
         Inputs:
-        - input_dim: Input dimension for each token in a sequence
+        - input_dim: Input dimension for each token in a sequence/dim of image features
         - num_heads: Number of attention heads in a multi-head attention module
         - ff_dim: The hidden dimension for a feedforward network
         - dropout: Dropout ratio for the output of the multi-head attention and feedforward
@@ -267,12 +260,11 @@ class VisionTransformerEncoderCell(nn.Module):
         ###########################################################################
         self.multihead_attn = MultiHeadAttention(input_dim, num_heads)
         self.dropout = nn.Dropout(dropout)
-        self.layer_norm = nn.LayerNorm(input_dim) # I want it to be across the embedding dimension
+        self.layer_norm_1 = nn.LayerNorm(input_dim) # I want it to be across the embedding dimension
+        self.layer_norm_2 = nn.LayerNorm(input_dim)
 
-        self.feedforward = FeedForwardNetwork(input_dim, ff_dim, dropout) # dropout param not being used here (see piazaa post referenced earlier)
-        ###########################################################################
-        #                             END OF YOUR CODE                            #
-        ###########################################################################
+        self.feedforward = FeedForwardNetwork(input_dim, ff_dim) 
+        
 
     def forward(self, x: torch.Tensor, mask: torch.Tensor=None):
         """
@@ -291,13 +283,90 @@ class VisionTransformerEncoderCell(nn.Module):
         # Don't forget the residual connections for both parts.                   #
         ###########################################################################
         # TODO: drouput before residual connection, right?
-        normalized = self.layer_norm(x)
+        normalized = self.layer_norm_1(x)
         query, key, value = normalized, normalized, normalized 
         out = self.multihead_attn(query, key, value, mask)
         out = self.dropout(out)
         b = x + out
 
-        out = self.layer_norm(b)
+        out = self.layer_norm_2(b)
+        out = self.feedforward(out) 
+        out = self.dropout(out)
+        y = b + out
+
+        return y
+
+class VisionTransformerDecoderCell(nn.Module):
+    """
+    A single cell (unit) for the Transformer decoder.
+    """
+    def __init__(self, input_dim: int, num_heads: int, ff_dim: int, dropout: float):
+        """
+        Inputs:
+        - input_dim: Input dimension for each token in a sequence
+        - num_heads: Number of attention heads in a multi-head attention module
+        - ff_dim: The hidden dimension for a feedforward network
+        - dropout: Dropout ratio for the output of the multi-head attention and feedforward
+          modules.
+        """
+        super(VisionTransformerDecoderCell, self).__init__()
+
+        ###########################################################################
+        # This is similar to to version above but here we are doing PRE-NORM
+        # A single Transformer encoder cell consists of
+        # 1. Layer norm
+        # 2. A multi-head attention module
+        # 3. Followed by dropout
+        # https://pytorch.org/docs/stable/generated/torch.nn.LayerNorm.html#torch.nn.LayerNorm
+
+        # At the same time, it also has
+        # 1. Layer norm
+        # 2. Followed by a feedforward network
+        # 3. Followed by dropout
+       
+        ###########################################################################
+        self.self_attn = MultiHeadAttention(input_dim, num_heads)
+        self.cross_attn = MultiHeadAttention(input_dim, num_heads)
+        self.dropout = nn.Dropout(dropout)
+        self.layer_norm_1 = nn.LayerNorm(input_dim) # I want it to be across the embedding dimension
+        self.layer_norm_2 = nn.LayerNorm(input_dim) 
+        self.layer_norm_3 = nn.LayerNorm(input_dim) 
+
+        self.feedforward = FeedForwardNetwork(input_dim, ff_dim) 
+
+    def forward(self, x: torch.Tensor, encoder_output: torch.Tensor, mask: torch.Tensor=None):
+        """
+        Inputs:
+        - x: Tensor of the shape BxLxC, where B is the batch size, L is the sequence length,
+            and C is the channel dimension. 
+        - encoder_utput: Tensor of the shape BxLxC, where B is the batch size, L is the sequence length,
+            and C is the channel dimension. This is coming from the ENCODER
+        - mask: Tensor for masking in the multi-head attention
+        """
+
+        ###########################################################################
+        #  Get the output of the multi-head attention part (with dropout     #
+        # and pre layer norm), which is used as input to layernorm and then the   #
+        # feedforward network (again, followed by dropout).                       #
+        #                                                                         #
+        # Don't forget the residual connections for both parts.                   #
+        ###########################################################################
+        
+        # TODO: dropout before residual connection, right?
+        normalized = self.layer_norm_1(x)
+        query, key, value = normalized, normalized, normalized 
+        out = self.self_attn(query, key, value, mask) # mask should not be None
+        out = self.dropout(out)
+        c = x + out
+
+        normalized = self.layer_norm_2(c)
+        query = normalized
+        key, value = encoder_output, encoder_output
+        out = self.cross_attn(query, key, value, None)
+        out = self.dropout(out)
+        b = c + out
+
+        out = self.layer_norm_3(b)
         out = self.feedforward(out) 
         out = self.dropout(out)
         y = b + out
@@ -323,7 +392,6 @@ class VisionTransformerEncoder(nn.Module):
         """
         super(VisionTransformerEncoder, self).__init__()
 
-        self.norm = None
         ###########################################################################
         #  Construct a nn.ModuleList to store a stack of                     #
         # TranformerEncoderCells. Check the documentation here of how to use it   #
@@ -367,17 +435,80 @@ class VisionTransformerEncoder(nn.Module):
         ###########################################################################
 
         return y
+
+class VisionTransformerDecoder(nn.Module):
+    """
+    A full encoder consisting of a set of TransformerEncoderCell.
+    """
+    def __init__(self, input_dim: int, num_heads: int, ff_dim: int, num_cells: int, dropout: float=0.1):
+        """
+        Inputs:
+        - input_dim: Input dimension for each token in a sequence
+        - num_heads: Number of attention heads in a multi-head attention module
+        - ff_dim: The hidden dimension for a feedforward network
+        - num_cells: Number of TransformerEncoderCells
+        - dropout: Dropout ratio for the output of the multi-head attention and feedforward
+          modules.
+        """
+        super(VisionTransformerDecoder, self).__init__()
+
+        ###########################################################################
+        #  Construct a nn.ModuleList to store a stack of                     #
+        # TranformerEncoderCells. Check the documentation here of how to use it   #
+        # https://pytorch.org/docs/stable/generated/torch.nn.ModuleList.html#torch.nn.ModuleList
+
+        # At the same time, define a layer normalization layer to process the     #
+        # output of the entire encoder.                                           #
+        ###########################################################################
+        
+        self.cells = nn.ModuleList([VisionTransformerDecoderCell(input_dim, num_heads, ff_dim, dropout) \
+                                        for i in range(num_cells)])
+        self.layer_norm = nn.LayerNorm(input_dim)
+        ###########################################################################
+        #                             END OF YOUR CODE                            #
+        ###########################################################################
+
+    def forward(self, x: torch.Tensor, encoder_output: torch.Tensor, mask: torch.Tensor=None):
+        """
+        Inputs:
+        - x: Tensor of the shape BxLxC, where B is the batch size, L is the sequence length,
+          and C is the channel dimension
+        - encoder_output: The outputs of the encoder cell 
+        - mask: Tensor for masking in the multi-head attention
+
+        Return:
+        - y: Tensor of the shape of BxLxC, which is the normalized output of the encoder
+        """
+
+        y = None
+        ###########################################################################
+        # Feed x into the stack of TransformerEncoderCells and then         #
+        # normalize the output with layer norm.                                   #
+        ###########################################################################
+
+        # TODO: layer norm first or this ok? Do we need layer norm in decoder?
+        for layer in self.cells:
+            x = layer(x, encoder_output, mask)
+
+        y = self.layer_norm(x)
+        ###########################################################################
+        #                             END OF YOUR CODE                            #
+        ###########################################################################
+
+        return y
     
 class VisionTransformerModel(nn.Module):
     """
-    A Transformer-based text classifier.
+    A Transformer-based image captioning model
     """
     def __init__(self,
-            P: int, num_heads: int, trx_ff_dim: int,
-            num_trx_cells: int, dropout: float=0.1
+            vocab, P: int, num_heads: int, trx_ff_dim: int,
+            num_encoder_cells: int, num_decoder_cells : int,
+              dropout: float=0.1
         ):
         """
         Inputs:
+        - vocab: the vocab object generated from training data
         - P: (P,P) is resolution of each image patch
         - num_heads: Number of attention heads in a multi-head attention module
         - trx_ff_dim: The hidden dimension for a feedforward network
@@ -390,6 +521,8 @@ class VisionTransformerModel(nn.Module):
         self.C = 3 # number of channels
 
         self.embed_dim = P * P * self.C 
+        self.pad_token = vocab.word_to_index["<PAD>"]
+        self.vocab = vocab
         
         ###########################################################################
         # Define a module for positional encoding, Transformer encoder, and #
@@ -397,17 +530,20 @@ class VisionTransformerModel(nn.Module):
         ###########################################################################
         self.positional_encoding = PositionalEncoding(self.embed_dim)
         self.transformer_encoder = VisionTransformerEncoder(self.embed_dim, num_heads, trx_ff_dim,
-                                                      num_trx_cells, dropout)
-        # TODO: self.transformer_decoder
+                                                      num_encoder_cells, dropout)
+        self.transformer_decoder = VisionTransformerDecoder(self.embed_dim, num_heads, 
+                                                            trx_ff_dim, num_decoder_cells)
+        self.embedding = nn.Embedding(len(vocab), self.embed_dim)
+        self.fc_out = nn.Linear(self.embed_dim, len(vocab))
         ###########################################################################
         #                             END OF YOUR CODE                            #
         ###########################################################################
 
-    def forward(self, image, mask=None):
+    def forward(self, image, labels):
         """
         Inputs:
         - image: is input image(s) of shape B x C X H X W
-        - text: Tensor with the shape of BxL, containing the indexes of each word in
+        - labels: Tensor with the shape of BxL, containing the indexes of each word in
           the vocabulary, which will be converted into word embeddings with the shape
           of BxLxC
         - mask: Tensor for masking in the multi-head attention
@@ -415,7 +551,6 @@ class VisionTransformerModel(nn.Module):
         Return:
         - logits: Tensor with the shape of BxK, where K is the number of classes
         """
-
         # image is B x C X H x W
         #print(f"image shape: {image.shape}")
         
@@ -436,27 +571,38 @@ class VisionTransformerModel(nn.Module):
         
 
         # flatten each chunk
-        flatten = [torch.flatten(item) for sublist in chunks for item in sublist] # this returns a list
-        
-        flatten = torch.stack(flatten) # make into a tensor this is 
+        flatten = [item.flatten(1) for sublist in chunks for item in sublist] # this returns a list
+        embedded = torch.stack(flatten, dim=1)
+
+        # flatten = torch.stack(flatten) # make into a tensor this is 
        
-        # lets call N num of patches
-        # then flatten shape is N X (P * P * C * B)
-        # We need to reshape to B X N X (P * P * C)
-        final = torch.reshape(flatten, (N, B, -1)) # N X B X (P * P * C)
+        # # lets call N num of patches
+        # # then flatten shape is N X (P * P * C * B)
+        # # We need to reshape to B X N X (P * P * C)
+        # final = torch.reshape(flatten, (N, B, -1)) # N X B X (P * P * C)
         
 
-        final = torch.transpose(final, 0, 1) # B X N X (P * P * C)
-        
-        embedded = final
+        # embedded = torch.transpose(final, 0, 1) # B X N X (P * P * C)
+
 
         # TODO: do we need a linear layer to run final/embedded through?
 
         # TODO: do we need this?
         # word embeddings, note we multiple the embeddings by a factor
         # embedded = self.embedding(text) * math.sqrt(self.embed_dim)
-        # if mask is None:
-        #   mask = (text != self.pad_token).unsqueeze(-2).unsqueeze(1)
+        seq_len = labels.size(1)
+
+        # makes the decoder not able to see future tokens during training (seq_len, seq_len)
+        # our mutlihead attn block fills False/0 with -inf so we want the top right hand triangle
+        # of our mask to be 0
+        mask = (1 - torch.triu(torch.ones(seq_len, seq_len), diagonal=1)).bool().to(labels.device)
+
+        # handles padding tokens we don't want our decoder to see (B, 1, 1, seq_len)
+        # again bc multihead attn block fills False/0 with -inf we want where our pad
+        # tokens are to be false
+        pad_mask = (labels != self.pad_token).unsqueeze(1).unsqueeze(2)
+    
+        mask = pad_mask | mask
 
         logits = None
         ###########################################################################
@@ -467,16 +613,29 @@ class VisionTransformerModel(nn.Module):
         # C' = P * P * C
         # embedded is B X N X embed_dim
         output = self.positional_encoding(embedded) # B X N X C'
-        output = self.transformer_encoder(output) # B X N X C'
+        encoder_output = self.transformer_encoder(output) # B X N X C'
 
-        # todo, update with decoder
-        logits = output
+        # label embeddings B X L
+        label_embeddings = self.embedding(labels) # B X L X C
+        label_embeddings = self.positional_encoding(label_embeddings)
+        decoder_output = self.transformer_decoder(label_embeddings, encoder_output, mask) 
+        logits = self.fc_out(decoder_output) # B X L X vocab_size
 
-        # TODO: run through transformer decoder
-        # pool = torch.mean(output,dim=1) # B X C'
-        # logits = self.fc(pool)
         ###########################################################################
         #                             END OF YOUR CODE                            #
         ###########################################################################
 
         return logits
+    
+    # def generate(...):
+    #     # start with just <SOS>
+    #     generated = [sos_token]
+
+    #     for _ in range(max_length):
+    #         # pass entire sequence so far through decoder
+    #         logits = self.forward(image, torch.tensor(generated))
+    #         # take only the LAST token's prediction
+    #         next_token = logits[-1].argmax()
+    #         generated.append(next_token)
+    #         if next_token == eos_token:
+    #             break
