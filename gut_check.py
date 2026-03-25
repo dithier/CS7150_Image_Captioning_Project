@@ -7,7 +7,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def get_results(model, vocab, image, caption, file):
     # image is C X W X H
-    image = image.unsqueeze(0) # 1 X C X W X H
+    image = image.unsqueeze(0).to(device) # 1 X C X W X H
 
     english_caption = [vocab.index_to_word[x] for x in caption.tolist()]
 

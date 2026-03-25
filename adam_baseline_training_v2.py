@@ -81,7 +81,6 @@ def load_checkpoint(model, mode, path="./model.pt"):
 
     return model, optimizer_state_dict, epoch, lr, lr_sched, best_perf, weight_decay
 
-
 ############## Training Related Logic ####################################
 
 def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_fn,
@@ -100,11 +99,13 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
         batches_since_last_log = 0
 
         for i, batch_data in enumerate(train_data_loader):
+            # Every data instance is an image + label pair
             images, captions, _ = batch_data
             images = images.to(device)
             captions = captions.to(device)
 
-            optimizer.zero_grad()
+            # use the model
+            optimizer.zero_grad() # we want <SOS> to last word but not <EOS> token
 
             outputs = model(images, captions[:, :-1])
 

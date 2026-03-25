@@ -85,7 +85,6 @@ def load_checkpoint(model, mode, path="./model.pt"):
     
       return model, optimizer_state_dict, epoch, lr, lr_sched, best_perf #weight_decay,
 
-
 ############## Training Related Logic ####################################
 
 def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_fn, 

@@ -1,7 +1,8 @@
 import torch
 import argparse
 from dataloader_v2 import get_flickr8k_loaders
-from eval_metrics import test_model, evaluation_metric
+from eval_metrics import evaluation_metric
+from training_helpers import test_model
 from baseline_model_v1 import BaselineModel
 
 """
