@@ -1,0 +1,71 @@
+(dlProject) PS C:\Users\yashr\Desktop\NEU\Semester 4\DL\Project\CS7150_Image_Captioning_Project> python gut_check.py --checkpoint_path saved_models/adam_pass_4/model.pt --dataset_dir flickr8k
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='train'  caption pairs=30000
+[Vocabulary] 7458 tokens total
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='val'  caption pairs=5000
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='test'  caption pairs=5455
+Loaded checkpoint from saved_models/adam_pass_4/model.pt
+Checkpoint was saved at epoch 22 with val loss 2.9610
+Train example
+Image: 1002674143_1b742ab4b8.jpg
+One caption: ['<SOS>', 'a', 'little', 'girl', 'covered', 'in', 'paint', 'sits', 'in', 'front', 'of', 'a', 'painted', 'rainbow', 'with', 'her', 'hands', 'in', 'a', 'bowl', '<EOS>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>']
+model output: [['a', 'woman', 'in', 'a', 'yellow', 'shirt', 'is', 'holding', 'a', 'child', 'in', 'a', 'white', 'dress']]
+
+
+
+Test example
+Image: 1000268201_693b08cb0e.jpg
+One caption: ['<SOS>', 'a', 'child', 'in', 'a', 'pink', 'dress', 'is', 'climbing', 'up', 'a', 'set', 'of', 'stairs', 'in', 'an', '<UNK>', 'way', '<EOS>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>']
+model output: [['a', 'woman', 'in', 'a', 'yellow', 'shirt', 'is', 'holding', 'a', 'child', 'in', 'a', 'white', 'dress']]
+
+
+
+Val example
+Image: 1001773457_577c3a7d70.jpg
+One caption: ['<SOS>', 'a', 'black', 'dog', 'and', 'a', 'spotted', 'dog', 'are', 'fighting', '<EOS>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>', '<PAD>']
+model output: [['a', 'woman', 'in', 'a', 'yellow', 'shirt', 'is', 'holding', 'a', 'large', 'stick']]
+
+-------------------------
+
+ADAM_PASS_4 - Caption Generation
+(dlProject) PS C:\Users\yashr\Desktop\NEU\Semester 4\DL\Project\CS7150_Image_Captioning_Project> python caption_v2_with_c.py --image_path flickr8k/667626_18933d713e.jpg --checkpoint_path saved_models/adam_pass_4/model.pt
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='train'  caption pairs=30000
+[Vocabulary] 7458 tokens total
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='val'  caption pairs=5000
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='test'  caption pairs=5455
+Loaded checkpoint from epoch 22 | val loss 2.9610
+Model : baseline_model_v2 (with learned c0 init)
+
+Image  : flickr8k/667626_18933d713e.jpg
+Caption: a girl in a pink bathing suit is laying on the back of a man in a pool
+
+--------------------------
+
+ADAM_PASS_2 - Caption generation (with no C weights)
+(dlProject) PS C:\Users\yashr\Desktop\NEU\Semester 4\DL\Project\CS7150_Image_Captioning_Project> python caption_v1_no_c.py --image_path flickr8k/667626_18933d713e.jpg --checkpoint_path saved_models/adam_pass_2/model.pt
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='train'  caption pairs=30000
+[Vocabulary] 7458 tokens total
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='val'  caption pairs=5000
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='test'  caption pairs=5455
+Loaded checkpoint from epoch 30 | val loss 2.8769
+Model : baseline_model_v1 (c0 = zeros, no learned init)
+
+Image  : flickr8k/667626_18933d713e.jpg
+Caption: a young boy in a swimming pool is splashing in a pool of water in a pool with a water bottle in the background and a woman in the background
