@@ -31,44 +31,7 @@ def get_avg_validation_loss(model, val_data_loader, loss_fn, vocab):
     
     return running_loss / len(val_data_loader)
 
-# TODO (priyanshu) need generate function, behaves differently than training
-# this probably shouldn't be accuracy, maybe BLEU-4?
-# if we use BLEU-4 it will need to be across the whole dataset, not just batches
-# also, better results if we get ALL captions for image (ex flickr8 has 5 per image)
-"""
-def test_model(model, data_loader, vocab):
-    
-    Compute (BLUE 4?) performance of the model.
 
-    Inputs:
-      - model: A encoder/decoder model  implemented in PyTorch
-      - data_loader: A data loader that will provide batched images and targets
-    
-
-    # set model to eval mode
-    model.eval()
-
-    # TODO: we prob want one of our metrics like BLEU. Once decided, fix logic and names
-    metric = 0
-    total = 0
-
-    # we are not training, we are evaluating here, so we don't need to calculate
-    # gradients for our outputs
-    with torch.no_grad():
-        for batch_data in data_loader:
-            images, targets = batch_data
-            images = images.to(device)
-            targets = targets.to(device)
-
-            predicted_caption = model.generate(images, vocab)
-
-            total += targets.size(0)
-            metric += evaluation_metric(targets, predicted_caption)
-    
-    metric = 100 * metric // total
-    return metric
-
-"""
 
 def test_model(model, data_loader, vocab):
     model.eval()
