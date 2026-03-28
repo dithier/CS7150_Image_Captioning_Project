@@ -23,8 +23,7 @@ Key differences from baseline_training.py:
   - Log and save paths default to adam-specific directories
 
 To run locally:
-  python baseline_training_adam.py --epochs 50 --checkpoint False --dataset_dir flickr8k
-      --log_dir runs/adam_pass_1 --save_path saved_models/adam_pass_1/
+  python adam_baseline_training_v2.py --epochs 30 --checkpoint False --dataset_dir flickr8k --log_dir runs/adam_pass_5 --save_path saved_models/adam_pass_5/
 
 To run on cluster:
   Use baseline_train_adam.sh (same structure as baseline_train.sh)
@@ -45,7 +44,7 @@ class Logger:
         self.terminal.flush()
         self.log.flush()
 
-sys.stdout = Logger(os.path.join("logs", "adam_pass_4_newModel.out"))
+sys.stdout = Logger(os.path.join("logs", "adam_pass_5_newModel.out"))
 
 ############## Checkpoint Related Logic #############################
 

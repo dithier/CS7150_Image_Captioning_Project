@@ -47,4 +47,9 @@ adam_pass_3 -
 	- Use only for exploration nothing else
 
 
-adam_pass_4 - Still in training
+adam_pass_4 - 
+	- Used new baseline model - added c0 layer
+	- Used the new adam_baseline_training_v2 for training
+	- Same params - 0.001, 30 epochs etc
+	- Back to normal cosine annealing not reseting every 10 epochs
+	- THE BEST SCORES YET!
