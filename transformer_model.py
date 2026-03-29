@@ -3,7 +3,9 @@ import math
 import torch
 import torch.nn as nn
 
-
+# Note when working with text BXLXC means B batches, L is sequence number, C is channels
+# For images we have BXNXC where this time N is num patches
+# We use these interchangeably in code below
 class MultiHeadAttention(nn.Module):
     """
     A module that computes multi-head attention given query, key, and value tensors.
@@ -194,11 +196,11 @@ class PositionalEncoding(nn.Module):
 
         Input:
         - x: Tensor of the shape BxLxC, where B is the batch size, L is the sequence length,
-          and C is the channel dimension
+          and C is the channel dimension (if image, L is N for num patches)
         - max_length: maximum sequence length the positional encoding can handle
 
         Return:
-        - x: Tensor of the shape BxLxC, with the positional encoding added to the input
+        - x: Tensor of the shape BxL(or N)xC, with the positional encoding added to the input
         """
         seq_len = x.shape[1]
 
@@ -269,7 +271,7 @@ class VisionTransformerEncoderCell(nn.Module):
     def forward(self, x: torch.Tensor, mask: torch.Tensor=None):
         """
         Inputs:
-        - x: Tensor of the shape BxLxC, where B is the batch size, L is the sequence length,
+        - x: Tensor of the shape BxNxC, where B is the batch size, N is number of patches,
             and C is the channel dimension
         - mask: Tensor for masking in the multi-head attention
         """
@@ -282,7 +284,6 @@ class VisionTransformerEncoderCell(nn.Module):
         #                                                                         #
         # Don't forget the residual connections for both parts.                   #
         ###########################################################################
-        # TODO: drouput before residual connection, right?
         normalized = self.layer_norm_1(x)
         query, key, value = normalized, normalized, normalized 
         out = self.multihead_attn(query, key, value, mask)
@@ -295,7 +296,6 @@ class VisionTransformerEncoderCell(nn.Module):
         y = b + out
 
         return y
-
 class VisionTransformerDecoderCell(nn.Module):
     """
     A single cell (unit) for the Transformer decoder.
@@ -339,7 +339,7 @@ class VisionTransformerDecoderCell(nn.Module):
         Inputs:
         - x: Tensor of the shape BxLxC, where B is the batch size, L is the sequence length,
             and C is the channel dimension. 
-        - encoder_utput: Tensor of the shape BxLxC, where B is the batch size, L is the sequence length,
+        - encoder_output: Tensor of the shape BxLxC, where B is the batch size, L is the sequence length,
             and C is the channel dimension. This is coming from the ENCODER
         - mask: Tensor for masking in the multi-head attention
         """
@@ -352,7 +352,6 @@ class VisionTransformerDecoderCell(nn.Module):
         # Don't forget the residual connections for both parts.                   #
         ###########################################################################
         
-        # TODO: dropout before residual connection, right?
         normalized = self.layer_norm_1(x)
         query, key, value = normalized, normalized, normalized 
         out = self.self_attn(query, key, value, mask) # mask should not be None
@@ -424,8 +423,6 @@ class VisionTransformerEncoder(nn.Module):
         # Feed x into the stack of TransformerEncoderCells and then         #
         # normalize the output with layer norm.                                   #
         ###########################################################################
-
-        # TODO: layer norm first or this ok?
         for layer in self.cells:
             x = layer(x, mask)
 
@@ -485,8 +482,6 @@ class VisionTransformerDecoder(nn.Module):
         # Feed x into the stack of TransformerEncoderCells and then         #
         # normalize the output with layer norm.                                   #
         ###########################################################################
-
-        # TODO: layer norm first or this ok? Do we need layer norm in decoder?
         for layer in self.cells:
             x = layer(x, encoder_output, mask)
 
@@ -502,7 +497,7 @@ class VisionTransformerModel(nn.Module):
     A Transformer-based image captioning model
     """
     def __init__(self,
-            vocab, P: int, num_heads: int, trx_ff_dim: int,
+            vocab, P: int, embed_dim: int, num_heads: int, trx_ff_dim: int,
             num_encoder_cells: int, num_decoder_cells : int,
               dropout: float=0.1
         ):
@@ -519,8 +514,10 @@ class VisionTransformerModel(nn.Module):
 
         self.P = P
         self.C = 3 # number of channels
+        self.embed_dim = embed_dim
 
-        self.embed_dim = P * P * self.C 
+        self.init_embed_dim = P * P * self.C # from vision transformer paper in HW 3
+
         self.pad_token = vocab.word_to_index["<PAD>"]
         self.vocab = vocab
         
@@ -528,6 +525,7 @@ class VisionTransformerModel(nn.Module):
         # Define a module for positional encoding, Transformer encoder, and #
         # a output layer                                                          #
         ###########################################################################
+        self.image_embedding_layer = nn.Linear(self.init_embed_dim, self.embed_dim)
         self.positional_encoding = PositionalEncoding(self.embed_dim)
         self.transformer_encoder = VisionTransformerEncoder(self.embed_dim, num_heads, trx_ff_dim,
                                                       num_encoder_cells, dropout)
@@ -538,6 +536,16 @@ class VisionTransformerModel(nn.Module):
         ###########################################################################
         #                             END OF YOUR CODE                            #
         ###########################################################################
+
+    def make_patches(self, image):
+        # image is B x C X H x W
+        patches = torch.nn.functional.unfold(image, self.P, stride=self.P) 
+
+        # patches is B X (P * P * C) X N
+        patches = torch.transpose(patches, 1, 2)
+
+        # patches is B X N X (P * P * C)
+        return patches
 
     def forward(self, image, labels):
         """
@@ -552,8 +560,7 @@ class VisionTransformerModel(nn.Module):
         - logits: Tensor with the shape of BxK, where K is the number of classes
         """
         # image is B x C X H x W
-        #print(f"image shape: {image.shape}")
-        
+    
         # make sure we can split up the image correctly
         assert image.shape[2] % self.P == 0
         assert image.shape[3] % self.P == 0
@@ -564,37 +571,14 @@ class VisionTransformerModel(nn.Module):
         # batch num
         B = image.shape[0]
 
-        # chunk image
-        chunks = torch.split(image, (self.P), dim=2) # split on H
-       
-        chunks = [torch.split(c, (self.P), dim=3) for c in chunks] # split on Q, result is nested list of chunks
-        
+        embedded = self.make_patches(image) # B X N X (P * P * C)
+        embedded = self.image_embedding_layer(embedded) * math.sqrt(self.embed_dim) # B X N X self.embed_dim
 
-        # flatten each chunk
-        flatten = [item.flatten(1) for sublist in chunks for item in sublist] # this returns a list
-        embedded = torch.stack(flatten, dim=1)
-
-        # flatten = torch.stack(flatten) # make into a tensor this is 
-       
-        # # lets call N num of patches
-        # # then flatten shape is N X (P * P * C * B)
-        # # We need to reshape to B X N X (P * P * C)
-        # final = torch.reshape(flatten, (N, B, -1)) # N X B X (P * P * C)
-        
-
-        # embedded = torch.transpose(final, 0, 1) # B X N X (P * P * C)
-
-
-        # TODO: do we need a linear layer to run final/embedded through?
-
-        # TODO: do we need this?
-        # word embeddings, note we multiple the embeddings by a factor
-        # embedded = self.embedding(text) * math.sqrt(self.embed_dim)
-        seq_len = labels.size(1)
-
+        # the same setup as the second slide for masking in lecture 14
         # makes the decoder not able to see future tokens during training (seq_len, seq_len)
         # our mutlihead attn block fills False/0 with -inf so we want the top right hand triangle
         # of our mask to be 0
+        seq_len = labels.size(1)
         mask = (1 - torch.triu(torch.ones(seq_len, seq_len), diagonal=1)).bool().to(labels.device)
 
         # handles padding tokens we don't want our decoder to see (B, 1, 1, seq_len)
@@ -610,8 +594,7 @@ class VisionTransformerModel(nn.Module):
         # the encoder. Average pooling is applied then to all the features of all #
         # tokens. Finally, the logits are computed based on the pooled features.  #
         ###########################################################################
-        # C' = P * P * C
-        # embedded is B X N X embed_dim
+        # C' = self.embed_dim
         output = self.positional_encoding(embedded) # B X N X C'
         encoder_output = self.transformer_encoder(output) # B X N X C'
 
@@ -627,15 +610,78 @@ class VisionTransformerModel(nn.Module):
 
         return logits
     
-    # def generate(...):
-    #     # start with just <SOS>
-    #     generated = [sos_token]
+    # Note: Output strips SOS and EOS tokens in result
+    # this is in english
+    # will generate for whole batch
+    def generate(self, image, max_length=30):
+        self.eval()
 
-    #     for _ in range(max_length):
-    #         # pass entire sequence so far through decoder
-    #         logits = self.forward(image, torch.tensor(generated))
-    #         # take only the LAST token's prediction
-    #         next_token = logits[-1].argmax()
-    #         generated.append(next_token)
-    #         if next_token == eos_token:
-    #             break
+        B = image.size(0)
+
+        # start with just <SOS>
+        generated = torch.full(
+            (B, 1), # make a tensor for dimensions batch size, 1
+            self.vocab.word_to_index[self.vocab.SOS_TOKEN], # make every row start with the Start of Sentence (SOS) token
+            dtype=torch.long, device=image.device
+        )
+
+        finished = torch.zeros(B, dtype=torch.bool, device=image.device)
+
+        # this has a emty list for each batch image. These lists will be appended to as we generate 
+        # the caption below
+        captions = [[] for _ in range(B)]
+
+        with torch.no_grad():
+            for _ in range(max_length):
+                # pass entire sequence so far through decoder
+                logits = self.forward(image, generated)
+                # logits are B X L X vocab size
+                # take only the LAST token's prediction
+                predicted = logits[:, -1, :].argmax(dim=-1).unsqueeze(1) # (B, 1)
+            
+                generated = torch.cat((generated, predicted), dim=1)
+
+                # we now have a prediction for each batch, lets add them to our caption list   
+                for i in range(B):
+                    if not finished[i]:
+                        # not finished? get the predicted word
+                        idx = predicted[i].item()
+                        # if that word is end of sentence token, mark as done
+                        if idx == self.vocab.word_to_index[self.vocab.EOS_TOKEN]:
+                            # this makes sure we don't include EOS token
+                            finished[i] = True
+                        else:
+                            # otherwise, apply word to caption
+                            captions[i].append(self.vocab.index_to_word[idx])
+                
+                if finished.all():
+                    break
+
+            return captions
+            
+    
+    # Note: Output strips SOS and EOS tokens in result
+    # this is in english
+    # def generate_one_image(self, image, max_length=30):
+    #     self.eval()
+
+    #     with torch.no_grad():
+    #         # start with just <SOS>
+    #         generated = [self.vocab.word_to_index["<SOS>"]] # plain int
+
+    #         for _ in range(max_length):
+    #             # pass entire sequence so far through decoder
+    #             token_seq = torch.tensor(generated).unsqueeze(0).to(image.device)
+    #             logits = self.forward(image, token_seq)
+    #             # take only the LAST token's prediction
+    #             next_token = logits[:,-1, :].argmax()
+    #             generated.append(next_token.item())
+    #             if next_token.item() == self.vocab.word_to_index["<EOS>"]:
+    #                 break
+            
+    #         result = [self.vocab.index_to_word[index] for index in generated]
+
+    #         # strip result if <SOS> or <EOS>
+    #         omit = ["<SOS>", "<EOS>"]
+    #         return [word for word in result if word not in omit]
+        
