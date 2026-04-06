@@ -53,3 +53,9 @@ adam_pass_4 -
 	- Same params - 0.001, 30 epochs etc
 	- Back to normal cosine annealing not reseting every 10 epochs
 	- THE BEST SCORES YET!
+
+transformer model
+    - lr =0.0001
+    epochs =30
+    using the new model with lesser lr
+    - Does not produce any results despite low errors/loss rate

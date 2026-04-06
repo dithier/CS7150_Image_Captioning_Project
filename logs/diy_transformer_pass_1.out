@@ -1,0 +1,903 @@
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='train'  caption pairs=30000
+[Vocabulary] 7458 tokens total
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='val'  caption pairs=5000
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='test'  caption pairs=5455
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,     1/938] avg train loss: 8.998 avg val loss: 8.679 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,    51/938] avg train loss: 6.994 avg val loss: 6.132 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   101/938] avg train loss: 5.650 avg val loss: 5.180 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   151/938] avg train loss: 4.900 avg val loss: 4.628 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   201/938] avg train loss: 4.398 avg val loss: 4.213 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   251/938] avg train loss: 4.040 avg val loss: 3.869 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   301/938] avg train loss: 3.734 avg val loss: 3.540 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   351/938] avg train loss: 3.427 avg val loss: 3.230 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   401/938] avg train loss: 3.093 avg val loss: 2.962 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   451/938] avg train loss: 2.856 avg val loss: 2.724 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   501/938] avg train loss: 2.632 avg val loss: 2.520 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   551/938] avg train loss: 2.440 avg val loss: 2.350 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   601/938] avg train loss: 2.292 avg val loss: 2.189 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   651/938] avg train loss: 2.123 avg val loss: 2.050 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   701/938] avg train loss: 2.116 avg val loss: 1.920 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   751/938] avg train loss: 1.836 avg val loss: 1.814 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   801/938] avg train loss: 1.799 avg val loss: 1.717 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   851/938] avg train loss: 1.675 avg val loss: 1.624 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   901/938] avg train loss: 1.614 avg val loss: 1.542 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[1/30,   938/938] avg train loss: 1.522 avg val loss: 1.484 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,     1/938] avg train loss: 1.286 avg val loss: 1.482 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,    51/938] avg train loss: 1.421 avg val loss: 1.415 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   101/938] avg train loss: 1.344 avg val loss: 1.355 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   151/938] avg train loss: 1.292 avg val loss: 1.300 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   201/938] avg train loss: 1.280 avg val loss: 1.247 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   251/938] avg train loss: 1.172 avg val loss: 1.201 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   301/938] avg train loss: 1.157 avg val loss: 1.150 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   351/938] avg train loss: 1.110 avg val loss: 1.111 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   401/938] avg train loss: 1.078 avg val loss: 1.069 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   451/938] avg train loss: 1.054 avg val loss: 1.033 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   501/938] avg train loss: 0.985 avg val loss: 0.997 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   551/938] avg train loss: 1.008 avg val loss: 0.964 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   601/938] avg train loss: 0.937 avg val loss: 0.927 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   651/938] avg train loss: 0.927 avg val loss: 0.901 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   701/938] avg train loss: 0.910 avg val loss: 0.873 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   751/938] avg train loss: 0.842 avg val loss: 0.847 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   801/938] avg train loss: 0.817 avg val loss: 0.816 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   851/938] avg train loss: 0.784 avg val loss: 0.795 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   901/938] avg train loss: 0.787 avg val loss: 0.770 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[2/30,   938/938] avg train loss: 0.770 avg val loss: 0.754 lr: 0.000100
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,     1/938] avg train loss: 0.775 avg val loss: 0.754 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,    51/938] avg train loss: 0.690 avg val loss: 0.731 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   101/938] avg train loss: 0.688 avg val loss: 0.711 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   151/938] avg train loss: 0.652 avg val loss: 0.694 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   201/938] avg train loss: 0.661 avg val loss: 0.677 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   251/938] avg train loss: 0.617 avg val loss: 0.663 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   301/938] avg train loss: 0.626 avg val loss: 0.645 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   351/938] avg train loss: 0.603 avg val loss: 0.630 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   401/938] avg train loss: 0.574 avg val loss: 0.615 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   451/938] avg train loss: 0.592 avg val loss: 0.602 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   501/938] avg train loss: 0.556 avg val loss: 0.588 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   551/938] avg train loss: 0.575 avg val loss: 0.577 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   601/938] avg train loss: 0.531 avg val loss: 0.562 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   651/938] avg train loss: 0.518 avg val loss: 0.548 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   701/938] avg train loss: 0.518 avg val loss: 0.535 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   751/938] avg train loss: 0.497 avg val loss: 0.525 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   801/938] avg train loss: 0.465 avg val loss: 0.513 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   851/938] avg train loss: 0.481 avg val loss: 0.503 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   901/938] avg train loss: 0.477 avg val loss: 0.494 lr: 0.000099
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[3/30,   938/938] avg train loss: 0.472 avg val loss: 0.488 lr: 0.000099
+[4/30,     1/938] avg train loss: 0.455 avg val loss: 0.488 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,    51/938] avg train loss: 0.422 avg val loss: 0.481 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   101/938] avg train loss: 0.419 avg val loss: 0.468 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   151/938] avg train loss: 0.393 avg val loss: 0.462 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   201/938] avg train loss: 0.412 avg val loss: 0.454 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   251/938] avg train loss: 0.396 avg val loss: 0.443 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   301/938] avg train loss: 0.388 avg val loss: 0.436 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   351/938] avg train loss: 0.363 avg val loss: 0.430 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   401/938] avg train loss: 0.366 avg val loss: 0.421 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   451/938] avg train loss: 0.373 avg val loss: 0.414 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   501/938] avg train loss: 0.373 avg val loss: 0.405 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   551/938] avg train loss: 0.348 avg val loss: 0.402 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   601/938] avg train loss: 0.335 avg val loss: 0.395 lr: 0.000098
+[4/30,   651/938] avg train loss: 0.366 avg val loss: 0.396 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   701/938] avg train loss: 0.343 avg val loss: 0.391 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   751/938] avg train loss: 0.368 avg val loss: 0.382 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   801/938] avg train loss: 0.326 avg val loss: 0.374 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   851/938] avg train loss: 0.328 avg val loss: 0.369 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   901/938] avg train loss: 0.325 avg val loss: 0.362 lr: 0.000098
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[4/30,   938/938] avg train loss: 0.313 avg val loss: 0.355 lr: 0.000098
+[5/30,     1/938] avg train loss: 0.250 avg val loss: 0.355 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,    51/938] avg train loss: 0.264 avg val loss: 0.349 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   101/938] avg train loss: 0.293 avg val loss: 0.343 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   151/938] avg train loss: 0.282 avg val loss: 0.341 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   201/938] avg train loss: 0.275 avg val loss: 0.334 lr: 0.000096
+[5/30,   251/938] avg train loss: 0.277 avg val loss: 0.336 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   301/938] avg train loss: 0.274 avg val loss: 0.326 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   351/938] avg train loss: 0.271 avg val loss: 0.324 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   401/938] avg train loss: 0.247 avg val loss: 0.318 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   451/938] avg train loss: 0.273 avg val loss: 0.315 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   501/938] avg train loss: 0.273 avg val loss: 0.314 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   551/938] avg train loss: 0.268 avg val loss: 0.309 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   601/938] avg train loss: 0.246 avg val loss: 0.308 lr: 0.000096
+[5/30,   651/938] avg train loss: 0.268 avg val loss: 0.308 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   701/938] avg train loss: 0.253 avg val loss: 0.299 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   751/938] avg train loss: 0.227 avg val loss: 0.295 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   801/938] avg train loss: 0.235 avg val loss: 0.294 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   851/938] avg train loss: 0.230 avg val loss: 0.288 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   901/938] avg train loss: 0.226 avg val loss: 0.287 lr: 0.000096
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[5/30,   938/938] avg train loss: 0.209 avg val loss: 0.286 lr: 0.000096
+[6/30,     1/938] avg train loss: 0.341 avg val loss: 0.286 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,    51/938] avg train loss: 0.214 avg val loss: 0.282 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   101/938] avg train loss: 0.208 avg val loss: 0.280 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   151/938] avg train loss: 0.196 avg val loss: 0.276 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   201/938] avg train loss: 0.200 avg val loss: 0.271 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   251/938] avg train loss: 0.196 avg val loss: 0.268 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   301/938] avg train loss: 0.216 avg val loss: 0.265 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   351/938] avg train loss: 0.195 avg val loss: 0.262 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   401/938] avg train loss: 0.184 avg val loss: 0.260 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   451/938] avg train loss: 0.178 avg val loss: 0.257 lr: 0.000094
+[6/30,   501/938] avg train loss: 0.198 avg val loss: 0.258 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   551/938] avg train loss: 0.193 avg val loss: 0.255 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   601/938] avg train loss: 0.177 avg val loss: 0.251 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   651/938] avg train loss: 0.198 avg val loss: 0.250 lr: 0.000094
+[6/30,   701/938] avg train loss: 0.199 avg val loss: 0.251 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   751/938] avg train loss: 0.191 avg val loss: 0.247 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   801/938] avg train loss: 0.197 avg val loss: 0.245 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   851/938] avg train loss: 0.190 avg val loss: 0.242 lr: 0.000094
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[6/30,   901/938] avg train loss: 0.163 avg val loss: 0.237 lr: 0.000094
+[6/30,   938/938] avg train loss: 0.184 avg val loss: 0.238 lr: 0.000094
+[7/30,     1/938] avg train loss: 0.164 avg val loss: 0.238 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,    51/938] avg train loss: 0.163 avg val loss: 0.237 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   101/938] avg train loss: 0.160 avg val loss: 0.236 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   151/938] avg train loss: 0.157 avg val loss: 0.234 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   201/938] avg train loss: 0.147 avg val loss: 0.231 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   251/938] avg train loss: 0.153 avg val loss: 0.229 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   301/938] avg train loss: 0.153 avg val loss: 0.228 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   351/938] avg train loss: 0.154 avg val loss: 0.226 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   401/938] avg train loss: 0.163 avg val loss: 0.224 lr: 0.000091
+[7/30,   451/938] avg train loss: 0.159 avg val loss: 0.225 lr: 0.000091
+[7/30,   501/938] avg train loss: 0.150 avg val loss: 0.224 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   551/938] avg train loss: 0.146 avg val loss: 0.221 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   601/938] avg train loss: 0.150 avg val loss: 0.219 lr: 0.000091
+[7/30,   651/938] avg train loss: 0.148 avg val loss: 0.221 lr: 0.000091
+[7/30,   701/938] avg train loss: 0.155 avg val loss: 0.221 lr: 0.000091
+[7/30,   751/938] avg train loss: 0.163 avg val loss: 0.219 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   801/938] avg train loss: 0.153 avg val loss: 0.214 lr: 0.000091
+[7/30,   851/938] avg train loss: 0.145 avg val loss: 0.215 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   901/938] avg train loss: 0.146 avg val loss: 0.211 lr: 0.000091
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[7/30,   938/938] avg train loss: 0.150 avg val loss: 0.209 lr: 0.000091
+[8/30,     1/938] avg train loss: 0.165 avg val loss: 0.209 lr: 0.000088
+[8/30,    51/938] avg train loss: 0.131 avg val loss: 0.211 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   101/938] avg train loss: 0.131 avg val loss: 0.206 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   151/938] avg train loss: 0.127 avg val loss: 0.206 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   201/938] avg train loss: 0.135 avg val loss: 0.204 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   251/938] avg train loss: 0.121 avg val loss: 0.204 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   301/938] avg train loss: 0.128 avg val loss: 0.203 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   351/938] avg train loss: 0.131 avg val loss: 0.202 lr: 0.000088
+[8/30,   401/938] avg train loss: 0.127 avg val loss: 0.203 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   451/938] avg train loss: 0.126 avg val loss: 0.199 lr: 0.000088
+[8/30,   501/938] avg train loss: 0.118 avg val loss: 0.205 lr: 0.000088
+[8/30,   551/938] avg train loss: 0.125 avg val loss: 0.201 lr: 0.000088
+[8/30,   601/938] avg train loss: 0.117 avg val loss: 0.199 lr: 0.000088
+[8/30,   651/938] avg train loss: 0.129 avg val loss: 0.199 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   701/938] avg train loss: 0.128 avg val loss: 0.196 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   751/938] avg train loss: 0.133 avg val loss: 0.194 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   801/938] avg train loss: 0.125 avg val loss: 0.193 lr: 0.000088
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[8/30,   851/938] avg train loss: 0.116 avg val loss: 0.191 lr: 0.000088
+[8/30,   901/938] avg train loss: 0.116 avg val loss: 0.203 lr: 0.000088
+[8/30,   938/938] avg train loss: 0.130 avg val loss: 0.193 lr: 0.000088
+[9/30,     1/938] avg train loss: 0.113 avg val loss: 0.193 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,    51/938] avg train loss: 0.120 avg val loss: 0.191 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   101/938] avg train loss: 0.103 avg val loss: 0.188 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   151/938] avg train loss: 0.104 avg val loss: 0.188 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   201/938] avg train loss: 0.104 avg val loss: 0.186 lr: 0.000084
+[9/30,   251/938] avg train loss: 0.100 avg val loss: 0.186 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   301/938] avg train loss: 0.105 avg val loss: 0.185 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   351/938] avg train loss: 0.106 avg val loss: 0.184 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   401/938] avg train loss: 0.101 avg val loss: 0.184 lr: 0.000084
+[9/30,   451/938] avg train loss: 0.115 avg val loss: 0.184 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   501/938] avg train loss: 0.105 avg val loss: 0.184 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   551/938] avg train loss: 0.107 avg val loss: 0.181 lr: 0.000084
+[9/30,   601/938] avg train loss: 0.089 avg val loss: 0.182 lr: 0.000084
+[9/30,   651/938] avg train loss: 0.107 avg val loss: 0.182 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   701/938] avg train loss: 0.100 avg val loss: 0.179 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   751/938] avg train loss: 0.096 avg val loss: 0.178 lr: 0.000084
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[9/30,   801/938] avg train loss: 0.093 avg val loss: 0.178 lr: 0.000084
+[9/30,   851/938] avg train loss: 0.106 avg val loss: 0.182 lr: 0.000084
+[9/30,   901/938] avg train loss: 0.109 avg val loss: 0.178 lr: 0.000084
+[9/30,   938/938] avg train loss: 0.104 avg val loss: 0.178 lr: 0.000084
+[10/30,     1/938] avg train loss: 0.097 avg val loss: 0.178 lr: 0.000081
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[10/30,    51/938] avg train loss: 0.082 avg val loss: 0.176 lr: 0.000081
+[10/30,   101/938] avg train loss: 0.086 avg val loss: 0.176 lr: 0.000081
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[10/30,   151/938] avg train loss: 0.100 avg val loss: 0.175 lr: 0.000081
+[10/30,   201/938] avg train loss: 0.081 avg val loss: 0.176 lr: 0.000081
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[10/30,   251/938] avg train loss: 0.087 avg val loss: 0.174 lr: 0.000081
+[10/30,   301/938] avg train loss: 0.083 avg val loss: 0.175 lr: 0.000081
+[10/30,   351/938] avg train loss: 0.087 avg val loss: 0.176 lr: 0.000081
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[10/30,   401/938] avg train loss: 0.094 avg val loss: 0.173 lr: 0.000081
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[10/30,   451/938] avg train loss: 0.091 avg val loss: 0.172 lr: 0.000081
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[10/30,   501/938] avg train loss: 0.096 avg val loss: 0.170 lr: 0.000081
+[10/30,   551/938] avg train loss: 0.081 avg val loss: 0.171 lr: 0.000081
+[10/30,   601/938] avg train loss: 0.094 avg val loss: 0.175 lr: 0.000081
+[10/30,   651/938] avg train loss: 0.100 avg val loss: 0.175 lr: 0.000081
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[10/30,   701/938] avg train loss: 0.087 avg val loss: 0.170 lr: 0.000081
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[10/30,   751/938] avg train loss: 0.090 avg val loss: 0.169 lr: 0.000081
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[10/30,   801/938] avg train loss: 0.088 avg val loss: 0.167 lr: 0.000081
+[10/30,   851/938] avg train loss: 0.085 avg val loss: 0.167 lr: 0.000081
+[10/30,   901/938] avg train loss: 0.090 avg val loss: 0.169 lr: 0.000081
+[10/30,   938/938] avg train loss: 0.106 avg val loss: 0.181 lr: 0.000081
+[11/30,     1/938] avg train loss: 0.123 avg val loss: 0.178 lr: 0.000076
+[11/30,    51/938] avg train loss: 0.079 avg val loss: 0.168 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   101/938] avg train loss: 0.083 avg val loss: 0.166 lr: 0.000076
+[11/30,   151/938] avg train loss: 0.077 avg val loss: 0.166 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   201/938] avg train loss: 0.074 avg val loss: 0.165 lr: 0.000076
+[11/30,   251/938] avg train loss: 0.078 avg val loss: 0.165 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   301/938] avg train loss: 0.079 avg val loss: 0.164 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   351/938] avg train loss: 0.074 avg val loss: 0.163 lr: 0.000076
+[11/30,   401/938] avg train loss: 0.082 avg val loss: 0.164 lr: 0.000076
+[11/30,   451/938] avg train loss: 0.073 avg val loss: 0.164 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   501/938] avg train loss: 0.083 avg val loss: 0.162 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   551/938] avg train loss: 0.075 avg val loss: 0.161 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   601/938] avg train loss: 0.085 avg val loss: 0.161 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   651/938] avg train loss: 0.082 avg val loss: 0.160 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   701/938] avg train loss: 0.081 avg val loss: 0.159 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   751/938] avg train loss: 0.077 avg val loss: 0.159 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   801/938] avg train loss: 0.069 avg val loss: 0.158 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   851/938] avg train loss: 0.076 avg val loss: 0.157 lr: 0.000076
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[11/30,   901/938] avg train loss: 0.077 avg val loss: 0.157 lr: 0.000076
+[11/30,   938/938] avg train loss: 0.071 avg val loss: 0.158 lr: 0.000076
+[12/30,     1/938] avg train loss: 0.134 avg val loss: 0.158 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,    51/938] avg train loss: 0.065 avg val loss: 0.157 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   101/938] avg train loss: 0.070 avg val loss: 0.156 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   151/938] avg train loss: 0.063 avg val loss: 0.155 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   201/938] avg train loss: 0.066 avg val loss: 0.155 lr: 0.000072
+[12/30,   251/938] avg train loss: 0.069 avg val loss: 0.155 lr: 0.000072
+[12/30,   301/938] avg train loss: 0.069 avg val loss: 0.156 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   351/938] avg train loss: 0.067 avg val loss: 0.154 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   401/938] avg train loss: 0.071 avg val loss: 0.154 lr: 0.000072
+[12/30,   451/938] avg train loss: 0.071 avg val loss: 0.156 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   501/938] avg train loss: 0.071 avg val loss: 0.153 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   551/938] avg train loss: 0.066 avg val loss: 0.153 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   601/938] avg train loss: 0.078 avg val loss: 0.153 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   651/938] avg train loss: 0.067 avg val loss: 0.152 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   701/938] avg train loss: 0.069 avg val loss: 0.151 lr: 0.000072
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[12/30,   751/938] avg train loss: 0.062 avg val loss: 0.151 lr: 0.000072
+[12/30,   801/938] avg train loss: 0.061 avg val loss: 0.152 lr: 0.000072
+[12/30,   851/938] avg train loss: 0.068 avg val loss: 0.152 lr: 0.000072
+[12/30,   901/938] avg train loss: 0.070 avg val loss: 0.151 lr: 0.000072
+[12/30,   938/938] avg train loss: 0.058 avg val loss: 0.151 lr: 0.000072
+[13/30,     1/938] avg train loss: 0.059 avg val loss: 0.152 lr: 0.000067
+[13/30,    51/938] avg train loss: 0.061 avg val loss: 0.162 lr: 0.000067
+[13/30,   101/938] avg train loss: 0.061 avg val loss: 0.153 lr: 0.000067
+[13/30,   151/938] avg train loss: 0.063 avg val loss: 0.151 lr: 0.000067
+[13/30,   201/938] avg train loss: 0.060 avg val loss: 0.154 lr: 0.000067
+[13/30,   251/938] avg train loss: 0.066 avg val loss: 0.153 lr: 0.000067
+[13/30,   301/938] avg train loss: 0.057 avg val loss: 0.152 lr: 0.000067
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[13/30,   351/938] avg train loss: 0.058 avg val loss: 0.149 lr: 0.000067
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[13/30,   401/938] avg train loss: 0.063 avg val loss: 0.149 lr: 0.000067
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[13/30,   451/938] avg train loss: 0.064 avg val loss: 0.148 lr: 0.000067
+[13/30,   501/938] avg train loss: 0.059 avg val loss: 0.148 lr: 0.000067
+[13/30,   551/938] avg train loss: 0.065 avg val loss: 0.149 lr: 0.000067
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[13/30,   601/938] avg train loss: 0.060 avg val loss: 0.148 lr: 0.000067
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[13/30,   651/938] avg train loss: 0.063 avg val loss: 0.148 lr: 0.000067
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[13/30,   701/938] avg train loss: 0.061 avg val loss: 0.147 lr: 0.000067
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[13/30,   751/938] avg train loss: 0.061 avg val loss: 0.147 lr: 0.000067
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[13/30,   801/938] avg train loss: 0.054 avg val loss: 0.146 lr: 0.000067
+[13/30,   851/938] avg train loss: 0.066 avg val loss: 0.147 lr: 0.000067
+[13/30,   901/938] avg train loss: 0.057 avg val loss: 0.147 lr: 0.000067
+[13/30,   938/938] avg train loss: 0.063 avg val loss: 0.146 lr: 0.000067
+[14/30,     1/938] avg train loss: 0.054 avg val loss: 0.147 lr: 0.000063
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[14/30,    51/938] avg train loss: 0.049 avg val loss: 0.145 lr: 0.000063
+[14/30,   101/938] avg train loss: 0.045 avg val loss: 0.146 lr: 0.000063
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[14/30,   151/938] avg train loss: 0.056 avg val loss: 0.145 lr: 0.000063
+[14/30,   201/938] avg train loss: 0.058 avg val loss: 0.149 lr: 0.000063
+[14/30,   251/938] avg train loss: 0.057 avg val loss: 0.148 lr: 0.000063
+[14/30,   301/938] avg train loss: 0.058 avg val loss: 0.145 lr: 0.000063
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[14/30,   351/938] avg train loss: 0.054 avg val loss: 0.145 lr: 0.000063
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[14/30,   401/938] avg train loss: 0.054 avg val loss: 0.145 lr: 0.000063
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[14/30,   451/938] avg train loss: 0.057 avg val loss: 0.144 lr: 0.000063
+[14/30,   501/938] avg train loss: 0.058 avg val loss: 0.144 lr: 0.000063
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[14/30,   551/938] avg train loss: 0.057 avg val loss: 0.143 lr: 0.000063
+[14/30,   601/938] avg train loss: 0.063 avg val loss: 0.146 lr: 0.000063
+[14/30,   651/938] avg train loss: 0.056 avg val loss: 0.145 lr: 0.000063
+[14/30,   701/938] avg train loss: 0.056 avg val loss: 0.143 lr: 0.000063
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[14/30,   751/938] avg train loss: 0.052 avg val loss: 0.142 lr: 0.000063
+[14/30,   801/938] avg train loss: 0.056 avg val loss: 0.143 lr: 0.000063
+[14/30,   851/938] avg train loss: 0.054 avg val loss: 0.143 lr: 0.000063
+[14/30,   901/938] avg train loss: 0.058 avg val loss: 0.145 lr: 0.000063
+[14/30,   938/938] avg train loss: 0.060 avg val loss: 0.145 lr: 0.000063
+[15/30,     1/938] avg train loss: 0.089 avg val loss: 0.144 lr: 0.000058
+[15/30,    51/938] avg train loss: 0.043 avg val loss: 0.145 lr: 0.000058
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[15/30,   101/938] avg train loss: 0.049 avg val loss: 0.141 lr: 0.000058
+[15/30,   151/938] avg train loss: 0.047 avg val loss: 0.142 lr: 0.000058
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[15/30,   201/938] avg train loss: 0.054 avg val loss: 0.140 lr: 0.000058
+[15/30,   251/938] avg train loss: 0.047 avg val loss: 0.141 lr: 0.000058
+[15/30,   301/938] avg train loss: 0.054 avg val loss: 0.141 lr: 0.000058
+[15/30,   351/938] avg train loss: 0.056 avg val loss: 0.142 lr: 0.000058
+[15/30,   401/938] avg train loss: 0.051 avg val loss: 0.141 lr: 0.000058
+[15/30,   451/938] avg train loss: 0.050 avg val loss: 0.141 lr: 0.000058
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[15/30,   501/938] avg train loss: 0.054 avg val loss: 0.140 lr: 0.000058
+[15/30,   551/938] avg train loss: 0.047 avg val loss: 0.140 lr: 0.000058
+[15/30,   601/938] avg train loss: 0.047 avg val loss: 0.140 lr: 0.000058
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[15/30,   651/938] avg train loss: 0.053 avg val loss: 0.140 lr: 0.000058
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[15/30,   701/938] avg train loss: 0.045 avg val loss: 0.140 lr: 0.000058
+[15/30,   751/938] avg train loss: 0.053 avg val loss: 0.140 lr: 0.000058
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[15/30,   801/938] avg train loss: 0.054 avg val loss: 0.139 lr: 0.000058
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[15/30,   851/938] avg train loss: 0.047 avg val loss: 0.139 lr: 0.000058
+[15/30,   901/938] avg train loss: 0.054 avg val loss: 0.140 lr: 0.000058
+[15/30,   938/938] avg train loss: 0.055 avg val loss: 0.141 lr: 0.000058
+[16/30,     1/938] avg train loss: 0.039 avg val loss: 0.141 lr: 0.000053
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[16/30,    51/938] avg train loss: 0.044 avg val loss: 0.139 lr: 0.000053
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[16/30,   101/938] avg train loss: 0.044 avg val loss: 0.138 lr: 0.000053
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[16/30,   151/938] avg train loss: 0.046 avg val loss: 0.138 lr: 0.000053
+[16/30,   201/938] avg train loss: 0.045 avg val loss: 0.138 lr: 0.000053
+[16/30,   251/938] avg train loss: 0.047 avg val loss: 0.138 lr: 0.000053
+[16/30,   301/938] avg train loss: 0.042 avg val loss: 0.138 lr: 0.000053
+[16/30,   351/938] avg train loss: 0.045 avg val loss: 0.140 lr: 0.000053
+[16/30,   401/938] avg train loss: 0.052 avg val loss: 0.143 lr: 0.000053
+[16/30,   451/938] avg train loss: 0.046 avg val loss: 0.141 lr: 0.000053
+[16/30,   501/938] avg train loss: 0.050 avg val loss: 0.141 lr: 0.000053
+[16/30,   551/938] avg train loss: 0.052 avg val loss: 0.140 lr: 0.000053
+[16/30,   601/938] avg train loss: 0.046 avg val loss: 0.139 lr: 0.000053
+[16/30,   651/938] avg train loss: 0.050 avg val loss: 0.139 lr: 0.000053
+[16/30,   701/938] avg train loss: 0.050 avg val loss: 0.139 lr: 0.000053
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[16/30,   751/938] avg train loss: 0.049 avg val loss: 0.137 lr: 0.000053
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[16/30,   801/938] avg train loss: 0.048 avg val loss: 0.137 lr: 0.000053
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[16/30,   851/938] avg train loss: 0.045 avg val loss: 0.137 lr: 0.000053
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[16/30,   901/938] avg train loss: 0.047 avg val loss: 0.136 lr: 0.000053
+[16/30,   938/938] avg train loss: 0.049 avg val loss: 0.136 lr: 0.000053
+[17/30,     1/938] avg train loss: 0.030 avg val loss: 0.136 lr: 0.000047
+[17/30,    51/938] avg train loss: 0.038 avg val loss: 0.136 lr: 0.000047
+[17/30,   101/938] avg train loss: 0.039 avg val loss: 0.136 lr: 0.000047
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[17/30,   151/938] avg train loss: 0.047 avg val loss: 0.136 lr: 0.000047
+[17/30,   201/938] avg train loss: 0.041 avg val loss: 0.136 lr: 0.000047
+[17/30,   251/938] avg train loss: 0.039 avg val loss: 0.136 lr: 0.000047
+[17/30,   301/938] avg train loss: 0.042 avg val loss: 0.136 lr: 0.000047
+[17/30,   351/938] avg train loss: 0.040 avg val loss: 0.136 lr: 0.000047
+[17/30,   401/938] avg train loss: 0.039 avg val loss: 0.136 lr: 0.000047
+[17/30,   451/938] avg train loss: 0.048 avg val loss: 0.136 lr: 0.000047
+[17/30,   501/938] avg train loss: 0.044 avg val loss: 0.136 lr: 0.000047
+[17/30,   551/938] avg train loss: 0.044 avg val loss: 0.136 lr: 0.000047
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[17/30,   601/938] avg train loss: 0.040 avg val loss: 0.135 lr: 0.000047
+[17/30,   651/938] avg train loss: 0.044 avg val loss: 0.136 lr: 0.000047
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[17/30,   701/938] avg train loss: 0.050 avg val loss: 0.135 lr: 0.000047
+[17/30,   751/938] avg train loss: 0.043 avg val loss: 0.137 lr: 0.000047
+[17/30,   801/938] avg train loss: 0.048 avg val loss: 0.136 lr: 0.000047
+[17/30,   851/938] avg train loss: 0.042 avg val loss: 0.136 lr: 0.000047
+[17/30,   901/938] avg train loss: 0.050 avg val loss: 0.136 lr: 0.000047
+[17/30,   938/938] avg train loss: 0.046 avg val loss: 0.136 lr: 0.000047
+[18/30,     1/938] avg train loss: 0.026 avg val loss: 0.136 lr: 0.000042
+[18/30,    51/938] avg train loss: 0.038 avg val loss: 0.136 lr: 0.000042
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[18/30,   101/938] avg train loss: 0.042 avg val loss: 0.135 lr: 0.000042
+[18/30,   151/938] avg train loss: 0.042 avg val loss: 0.136 lr: 0.000042
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[18/30,   201/938] avg train loss: 0.040 avg val loss: 0.135 lr: 0.000042
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[18/30,   251/938] avg train loss: 0.038 avg val loss: 0.134 lr: 0.000042
+[18/30,   301/938] avg train loss: 0.040 avg val loss: 0.135 lr: 0.000042
+[18/30,   351/938] avg train loss: 0.044 avg val loss: 0.136 lr: 0.000042
+[18/30,   401/938] avg train loss: 0.046 avg val loss: 0.135 lr: 0.000042
+[18/30,   451/938] avg train loss: 0.042 avg val loss: 0.135 lr: 0.000042
+[18/30,   501/938] avg train loss: 0.042 avg val loss: 0.135 lr: 0.000042
+[18/30,   551/938] avg train loss: 0.040 avg val loss: 0.135 lr: 0.000042
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[18/30,   601/938] avg train loss: 0.040 avg val loss: 0.134 lr: 0.000042
+[18/30,   651/938] avg train loss: 0.037 avg val loss: 0.136 lr: 0.000042
+[18/30,   701/938] avg train loss: 0.040 avg val loss: 0.135 lr: 0.000042
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[18/30,   751/938] avg train loss: 0.043 avg val loss: 0.134 lr: 0.000042
+[18/30,   801/938] avg train loss: 0.044 avg val loss: 0.134 lr: 0.000042
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[18/30,   851/938] avg train loss: 0.039 avg val loss: 0.133 lr: 0.000042
+[18/30,   901/938] avg train loss: 0.043 avg val loss: 0.133 lr: 0.000042
+[18/30,   938/938] avg train loss: 0.043 avg val loss: 0.134 lr: 0.000042
+[19/30,     1/938] avg train loss: 0.053 avg val loss: 0.134 lr: 0.000037
+[19/30,    51/938] avg train loss: 0.036 avg val loss: 0.134 lr: 0.000037
+[19/30,   101/938] avg train loss: 0.037 avg val loss: 0.135 lr: 0.000037
+[19/30,   151/938] avg train loss: 0.033 avg val loss: 0.134 lr: 0.000037
+[19/30,   201/938] avg train loss: 0.040 avg val loss: 0.134 lr: 0.000037
+[19/30,   251/938] avg train loss: 0.036 avg val loss: 0.134 lr: 0.000037
+[19/30,   301/938] avg train loss: 0.036 avg val loss: 0.135 lr: 0.000037
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[19/30,   351/938] avg train loss: 0.041 avg val loss: 0.133 lr: 0.000037
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[19/30,   401/938] avg train loss: 0.041 avg val loss: 0.133 lr: 0.000037
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[19/30,   451/938] avg train loss: 0.039 avg val loss: 0.133 lr: 0.000037
+[19/30,   501/938] avg train loss: 0.038 avg val loss: 0.133 lr: 0.000037
+[19/30,   551/938] avg train loss: 0.041 avg val loss: 0.133 lr: 0.000037
+[19/30,   601/938] avg train loss: 0.039 avg val loss: 0.133 lr: 0.000037
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[19/30,   651/938] avg train loss: 0.040 avg val loss: 0.133 lr: 0.000037
+[19/30,   701/938] avg train loss: 0.041 avg val loss: 0.133 lr: 0.000037
+[19/30,   751/938] avg train loss: 0.038 avg val loss: 0.134 lr: 0.000037
+[19/30,   801/938] avg train loss: 0.043 avg val loss: 0.133 lr: 0.000037
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[19/30,   851/938] avg train loss: 0.041 avg val loss: 0.132 lr: 0.000037
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[19/30,   901/938] avg train loss: 0.040 avg val loss: 0.132 lr: 0.000037
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[19/30,   938/938] avg train loss: 0.040 avg val loss: 0.132 lr: 0.000037
+[20/30,     1/938] avg train loss: 0.052 avg val loss: 0.132 lr: 0.000033
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[20/30,    51/938] avg train loss: 0.033 avg val loss: 0.132 lr: 0.000033
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[20/30,   101/938] avg train loss: 0.037 avg val loss: 0.131 lr: 0.000033
+[20/30,   151/938] avg train loss: 0.039 avg val loss: 0.132 lr: 0.000033
+[20/30,   201/938] avg train loss: 0.037 avg val loss: 0.135 lr: 0.000033
+[20/30,   251/938] avg train loss: 0.034 avg val loss: 0.132 lr: 0.000033
+[20/30,   301/938] avg train loss: 0.035 avg val loss: 0.132 lr: 0.000033
+[20/30,   351/938] avg train loss: 0.037 avg val loss: 0.132 lr: 0.000033
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[20/30,   401/938] avg train loss: 0.036 avg val loss: 0.131 lr: 0.000033
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[20/30,   451/938] avg train loss: 0.034 avg val loss: 0.131 lr: 0.000033
+[20/30,   501/938] avg train loss: 0.040 avg val loss: 0.131 lr: 0.000033
+[20/30,   551/938] avg train loss: 0.038 avg val loss: 0.131 lr: 0.000033
+[20/30,   601/938] avg train loss: 0.037 avg val loss: 0.131 lr: 0.000033
+[20/30,   651/938] avg train loss: 0.039 avg val loss: 0.131 lr: 0.000033
+[20/30,   701/938] avg train loss: 0.036 avg val loss: 0.132 lr: 0.000033
+[20/30,   751/938] avg train loss: 0.034 avg val loss: 0.131 lr: 0.000033
+[20/30,   801/938] avg train loss: 0.041 avg val loss: 0.131 lr: 0.000033
+[20/30,   851/938] avg train loss: 0.038 avg val loss: 0.131 lr: 0.000033
+[20/30,   901/938] avg train loss: 0.040 avg val loss: 0.131 lr: 0.000033
+[20/30,   938/938] avg train loss: 0.038 avg val loss: 0.132 lr: 0.000033
+[21/30,     1/938] avg train loss: 0.037 avg val loss: 0.132 lr: 0.000028
+[21/30,    51/938] avg train loss: 0.034 avg val loss: 0.131 lr: 0.000028
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[21/30,   101/938] avg train loss: 0.034 avg val loss: 0.130 lr: 0.000028
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[21/30,   151/938] avg train loss: 0.032 avg val loss: 0.130 lr: 0.000028
+[21/30,   201/938] avg train loss: 0.035 avg val loss: 0.131 lr: 0.000028
+[21/30,   251/938] avg train loss: 0.037 avg val loss: 0.130 lr: 0.000028
+[21/30,   301/938] avg train loss: 0.036 avg val loss: 0.131 lr: 0.000028
+[21/30,   351/938] avg train loss: 0.035 avg val loss: 0.130 lr: 0.000028
+[21/30,   401/938] avg train loss: 0.037 avg val loss: 0.130 lr: 0.000028
+[21/30,   451/938] avg train loss: 0.032 avg val loss: 0.131 lr: 0.000028
+[21/30,   501/938] avg train loss: 0.037 avg val loss: 0.131 lr: 0.000028
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[21/30,   551/938] avg train loss: 0.036 avg val loss: 0.130 lr: 0.000028
+[21/30,   601/938] avg train loss: 0.034 avg val loss: 0.131 lr: 0.000028
+[21/30,   651/938] avg train loss: 0.036 avg val loss: 0.131 lr: 0.000028
+[21/30,   701/938] avg train loss: 0.037 avg val loss: 0.131 lr: 0.000028
+[21/30,   751/938] avg train loss: 0.038 avg val loss: 0.130 lr: 0.000028
+[21/30,   801/938] avg train loss: 0.038 avg val loss: 0.130 lr: 0.000028
+[21/30,   851/938] avg train loss: 0.035 avg val loss: 0.130 lr: 0.000028
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[21/30,   901/938] avg train loss: 0.039 avg val loss: 0.130 lr: 0.000028
+[21/30,   938/938] avg train loss: 0.031 avg val loss: 0.131 lr: 0.000028
+[22/30,     1/938] avg train loss: 0.031 avg val loss: 0.131 lr: 0.000024
+[22/30,    51/938] avg train loss: 0.032 avg val loss: 0.130 lr: 0.000024
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[22/30,   101/938] avg train loss: 0.032 avg val loss: 0.130 lr: 0.000024
+[22/30,   151/938] avg train loss: 0.031 avg val loss: 0.130 lr: 0.000024
+[22/30,   201/938] avg train loss: 0.033 avg val loss: 0.130 lr: 0.000024
+[22/30,   251/938] avg train loss: 0.033 avg val loss: 0.130 lr: 0.000024
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[22/30,   301/938] avg train loss: 0.032 avg val loss: 0.129 lr: 0.000024
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[22/30,   351/938] avg train loss: 0.035 avg val loss: 0.129 lr: 0.000024
+[22/30,   401/938] avg train loss: 0.035 avg val loss: 0.130 lr: 0.000024
+[22/30,   451/938] avg train loss: 0.037 avg val loss: 0.130 lr: 0.000024
+[22/30,   501/938] avg train loss: 0.034 avg val loss: 0.130 lr: 0.000024
+[22/30,   551/938] avg train loss: 0.035 avg val loss: 0.129 lr: 0.000024
+[22/30,   601/938] avg train loss: 0.033 avg val loss: 0.130 lr: 0.000024
+[22/30,   651/938] avg train loss: 0.035 avg val loss: 0.130 lr: 0.000024
+[22/30,   701/938] avg train loss: 0.033 avg val loss: 0.130 lr: 0.000024
+[22/30,   751/938] avg train loss: 0.040 avg val loss: 0.130 lr: 0.000024
+[22/30,   801/938] avg train loss: 0.036 avg val loss: 0.130 lr: 0.000024
+[22/30,   851/938] avg train loss: 0.034 avg val loss: 0.130 lr: 0.000024
+[22/30,   901/938] avg train loss: 0.037 avg val loss: 0.130 lr: 0.000024
+[22/30,   938/938] avg train loss: 0.034 avg val loss: 0.129 lr: 0.000024
+[23/30,     1/938] avg train loss: 0.030 avg val loss: 0.129 lr: 0.000019
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[23/30,    51/938] avg train loss: 0.031 avg val loss: 0.129 lr: 0.000019
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[23/30,   101/938] avg train loss: 0.032 avg val loss: 0.129 lr: 0.000019
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[23/30,   151/938] avg train loss: 0.034 avg val loss: 0.129 lr: 0.000019
+[23/30,   201/938] avg train loss: 0.030 avg val loss: 0.129 lr: 0.000019
+[23/30,   251/938] avg train loss: 0.031 avg val loss: 0.129 lr: 0.000019
+[23/30,   301/938] avg train loss: 0.033 avg val loss: 0.129 lr: 0.000019
+[23/30,   351/938] avg train loss: 0.035 avg val loss: 0.129 lr: 0.000019
+[23/30,   401/938] avg train loss: 0.036 avg val loss: 0.129 lr: 0.000019
+[23/30,   451/938] avg train loss: 0.031 avg val loss: 0.129 lr: 0.000019
+[23/30,   501/938] avg train loss: 0.035 avg val loss: 0.130 lr: 0.000019
+[23/30,   551/938] avg train loss: 0.034 avg val loss: 0.130 lr: 0.000019
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[23/30,   601/938] avg train loss: 0.034 avg val loss: 0.129 lr: 0.000019
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[23/30,   651/938] avg train loss: 0.034 avg val loss: 0.129 lr: 0.000019
+[23/30,   701/938] avg train loss: 0.034 avg val loss: 0.129 lr: 0.000019
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[23/30,   751/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000019
+[23/30,   801/938] avg train loss: 0.034 avg val loss: 0.129 lr: 0.000019
+[23/30,   851/938] avg train loss: 0.030 avg val loss: 0.129 lr: 0.000019
+[23/30,   901/938] avg train loss: 0.033 avg val loss: 0.129 lr: 0.000019
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[23/30,   938/938] avg train loss: 0.033 avg val loss: 0.128 lr: 0.000019
+[24/30,     1/938] avg train loss: 0.035 avg val loss: 0.128 lr: 0.000016
+[24/30,    51/938] avg train loss: 0.032 avg val loss: 0.128 lr: 0.000016
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[24/30,   101/938] avg train loss: 0.033 avg val loss: 0.128 lr: 0.000016
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[24/30,   151/938] avg train loss: 0.030 avg val loss: 0.128 lr: 0.000016
+[24/30,   201/938] avg train loss: 0.031 avg val loss: 0.128 lr: 0.000016
+[24/30,   251/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000016
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[24/30,   301/938] avg train loss: 0.035 avg val loss: 0.128 lr: 0.000016
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[24/30,   351/938] avg train loss: 0.031 avg val loss: 0.128 lr: 0.000016
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[24/30,   401/938] avg train loss: 0.029 avg val loss: 0.128 lr: 0.000016
+[24/30,   451/938] avg train loss: 0.031 avg val loss: 0.128 lr: 0.000016
+[24/30,   501/938] avg train loss: 0.032 avg val loss: 0.128 lr: 0.000016
+[24/30,   551/938] avg train loss: 0.036 avg val loss: 0.128 lr: 0.000016
+[24/30,   601/938] avg train loss: 0.032 avg val loss: 0.128 lr: 0.000016
+[24/30,   651/938] avg train loss: 0.030 avg val loss: 0.128 lr: 0.000016
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[24/30,   701/938] avg train loss: 0.032 avg val loss: 0.128 lr: 0.000016
+[24/30,   751/938] avg train loss: 0.035 avg val loss: 0.128 lr: 0.000016
+[24/30,   801/938] avg train loss: 0.033 avg val loss: 0.128 lr: 0.000016
+[24/30,   851/938] avg train loss: 0.032 avg val loss: 0.128 lr: 0.000016
+[24/30,   901/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000016
+[24/30,   938/938] avg train loss: 0.033 avg val loss: 0.128 lr: 0.000016
+[25/30,     1/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000012
+[25/30,    51/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000012
+[25/30,   101/938] avg train loss: 0.030 avg val loss: 0.129 lr: 0.000012
+[25/30,   151/938] avg train loss: 0.033 avg val loss: 0.128 lr: 0.000012
+[25/30,   201/938] avg train loss: 0.029 avg val loss: 0.128 lr: 0.000012
+[25/30,   251/938] avg train loss: 0.031 avg val loss: 0.128 lr: 0.000012
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[25/30,   301/938] avg train loss: 0.029 avg val loss: 0.128 lr: 0.000012
+[25/30,   351/938] avg train loss: 0.032 avg val loss: 0.128 lr: 0.000012
+[25/30,   401/938] avg train loss: 0.032 avg val loss: 0.128 lr: 0.000012
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[25/30,   451/938] avg train loss: 0.030 avg val loss: 0.128 lr: 0.000012
+[25/30,   501/938] avg train loss: 0.031 avg val loss: 0.128 lr: 0.000012
+[25/30,   551/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000012
+[25/30,   601/938] avg train loss: 0.028 avg val loss: 0.128 lr: 0.000012
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[25/30,   651/938] avg train loss: 0.032 avg val loss: 0.128 lr: 0.000012
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[25/30,   701/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000012
+[25/30,   751/938] avg train loss: 0.033 avg val loss: 0.128 lr: 0.000012
+[25/30,   801/938] avg train loss: 0.033 avg val loss: 0.127 lr: 0.000012
+[25/30,   851/938] avg train loss: 0.030 avg val loss: 0.128 lr: 0.000012
+[25/30,   901/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000012
+[25/30,   938/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000012
+[26/30,     1/938] avg train loss: 0.022 avg val loss: 0.128 lr: 0.000009
+[26/30,    51/938] avg train loss: 0.030 avg val loss: 0.128 lr: 0.000009
+[26/30,   101/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000009
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[26/30,   151/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000009
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[26/30,   201/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000009
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[26/30,   251/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000009
+[26/30,   301/938] avg train loss: 0.029 avg val loss: 0.128 lr: 0.000009
+[26/30,   351/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000009
+[26/30,   401/938] avg train loss: 0.031 avg val loss: 0.128 lr: 0.000009
+[26/30,   451/938] avg train loss: 0.032 avg val loss: 0.128 lr: 0.000009
+[26/30,   501/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000009
+[26/30,   551/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000009
+[26/30,   601/938] avg train loss: 0.031 avg val loss: 0.128 lr: 0.000009
+[26/30,   651/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000009
+[26/30,   701/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000009
+[26/30,   751/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000009
+[26/30,   801/938] avg train loss: 0.033 avg val loss: 0.127 lr: 0.000009
+[26/30,   851/938] avg train loss: 0.033 avg val loss: 0.128 lr: 0.000009
+[26/30,   901/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000009
+[26/30,   938/938] avg train loss: 0.034 avg val loss: 0.128 lr: 0.000009
+[27/30,     1/938] avg train loss: 0.035 avg val loss: 0.128 lr: 0.000006
+[27/30,    51/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000006
+[27/30,   101/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000006
+[27/30,   151/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000006
+[27/30,   201/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000006
+[27/30,   251/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000006
+[27/30,   301/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000006
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[27/30,   351/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000006
+[27/30,   401/938] avg train loss: 0.034 avg val loss: 0.127 lr: 0.000006
+[27/30,   451/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000006
+[27/30,   501/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000006
+[27/30,   551/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000006
+[27/30,   601/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000006
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[27/30,   651/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000006
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[27/30,   701/938] avg train loss: 0.027 avg val loss: 0.127 lr: 0.000006
+[27/30,   751/938] avg train loss: 0.033 avg val loss: 0.127 lr: 0.000006
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[27/30,   801/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000006
+[27/30,   851/938] avg train loss: 0.033 avg val loss: 0.127 lr: 0.000006
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[27/30,   901/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000006
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[27/30,   938/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000006
+[28/30,     1/938] avg train loss: 0.024 avg val loss: 0.127 lr: 0.000004
+[28/30,    51/938] avg train loss: 0.026 avg val loss: 0.127 lr: 0.000004
+[28/30,   101/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000004
+[28/30,   151/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000004
+[28/30,   201/938] avg train loss: 0.027 avg val loss: 0.127 lr: 0.000004
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[28/30,   251/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000004
+[28/30,   301/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000004
+[28/30,   351/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000004
+[28/30,   401/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000004
+[28/30,   451/938] avg train loss: 0.033 avg val loss: 0.127 lr: 0.000004
+[28/30,   501/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000004
+[28/30,   551/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000004
+[28/30,   601/938] avg train loss: 0.027 avg val loss: 0.127 lr: 0.000004
+[28/30,   651/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000004
+[28/30,   701/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000004
+[28/30,   751/938] avg train loss: 0.027 avg val loss: 0.127 lr: 0.000004
+[28/30,   801/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000004
+[28/30,   851/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000004
+[28/30,   901/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000004
+[28/30,   938/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000004
+[29/30,     1/938] avg train loss: 0.042 avg val loss: 0.127 lr: 0.000002
+[29/30,    51/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000002
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[29/30,   101/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000002
+[29/30,   151/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000002
+[29/30,   201/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000002
+[29/30,   251/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000002
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[29/30,   301/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000002
+[29/30,   351/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000002
+[29/30,   401/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000002
+[29/30,   451/938] avg train loss: 0.033 avg val loss: 0.127 lr: 0.000002
+[29/30,   501/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000002
+[29/30,   551/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000002
+[29/30,   601/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000002
+[29/30,   651/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000002
+[29/30,   701/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000002
+[29/30,   751/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000002
+[29/30,   801/938] avg train loss: 0.032 avg val loss: 0.127 lr: 0.000002
+[29/30,   851/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000002
+[29/30,   901/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000002
+[29/30,   938/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000002
+[30/30,     1/938] avg train loss: 0.045 avg val loss: 0.127 lr: 0.000001
+[30/30,    51/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000001
+[30/30,   101/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000001
+[30/30,   151/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000001
+[30/30,   201/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000001
+[30/30,   251/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000001
+[30/30,   301/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000001
+[30/30,   351/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000001
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[30/30,   401/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000001
+[30/30,   451/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000001
+[30/30,   501/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000001
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[30/30,   551/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000001
+[30/30,   601/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000001
+[30/30,   651/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000001
+[30/30,   701/938] avg train loss: 0.033 avg val loss: 0.127 lr: 0.000001
+[30/30,   751/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000001
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[30/30,   801/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000001
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[30/30,   851/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000001
+[30/30,   901/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000001
+[30/30,   938/938] avg train loss: 0.026 avg val loss: 0.127 lr: 0.000001
+[31/30,     1/938] avg train loss: 0.016 avg val loss: 0.127 lr: 0.000000
+[31/30,    51/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000000
+[31/30,   101/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000000
+[31/30,   151/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000000
+[31/30,   201/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000000
+[31/30,   251/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000000
+[31/30,   301/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000000
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[31/30,   351/938] avg train loss: 0.027 avg val loss: 0.127 lr: 0.000000
+[31/30,   401/938] avg train loss: 0.029 avg val loss: 0.127 lr: 0.000000
+[31/30,   451/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000000
+[31/30,   501/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000000
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[31/30,   551/938] avg train loss: 0.027 avg val loss: 0.127 lr: 0.000000
+Saved checkpoint to saved_models/diy_transformer_pass_1/model.pt
+[31/30,   601/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000000
+[31/30,   651/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000000
+[31/30,   701/938] avg train loss: 0.028 avg val loss: 0.127 lr: 0.000000
+[31/30,   751/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000000
+[31/30,   801/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000000
+[31/30,   851/938] avg train loss: 0.030 avg val loss: 0.127 lr: 0.000000
+[31/30,   901/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000000
+[31/30,   938/938] avg train loss: 0.031 avg val loss: 0.127 lr: 0.000000
