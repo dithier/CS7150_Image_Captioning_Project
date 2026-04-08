@@ -14,3 +14,869 @@ Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
 [1/30,    51/938] avg train loss: 8.336 avg val loss: 7.285 lr: 0.000100
 Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
 [1/30,   101/938] avg train loss: 6.379 avg val loss: 5.736 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   151/938] avg train loss: 5.445 avg val loss: 5.270 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   201/938] avg train loss: 5.136 avg val loss: 5.060 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   251/938] avg train loss: 4.969 avg val loss: 4.913 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   301/938] avg train loss: 4.823 avg val loss: 4.804 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   351/938] avg train loss: 4.757 avg val loss: 4.717 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   401/938] avg train loss: 4.666 avg val loss: 4.648 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   451/938] avg train loss: 4.632 avg val loss: 4.586 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   501/938] avg train loss: 4.573 avg val loss: 4.536 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   551/938] avg train loss: 4.487 avg val loss: 4.498 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   601/938] avg train loss: 4.431 avg val loss: 4.461 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   651/938] avg train loss: 4.406 avg val loss: 4.430 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   701/938] avg train loss: 4.407 avg val loss: 4.404 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   751/938] avg train loss: 4.349 avg val loss: 4.379 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   801/938] avg train loss: 4.345 avg val loss: 4.357 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   851/938] avg train loss: 4.313 avg val loss: 4.338 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   901/938] avg train loss: 4.290 avg val loss: 4.319 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[1/30,   938/938] avg train loss: 4.288 avg val loss: 4.305 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,     1/938] avg train loss: 4.112 avg val loss: 4.304 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,    51/938] avg train loss: 4.229 avg val loss: 4.291 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   101/938] avg train loss: 4.179 avg val loss: 4.271 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   151/938] avg train loss: 4.193 avg val loss: 4.259 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   201/938] avg train loss: 4.177 avg val loss: 4.245 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   251/938] avg train loss: 4.145 avg val loss: 4.233 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   301/938] avg train loss: 4.176 avg val loss: 4.221 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   351/938] avg train loss: 4.173 avg val loss: 4.210 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   401/938] avg train loss: 4.133 avg val loss: 4.200 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   451/938] avg train loss: 4.142 avg val loss: 4.190 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   501/938] avg train loss: 4.157 avg val loss: 4.174 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   551/938] avg train loss: 4.142 avg val loss: 4.164 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   601/938] avg train loss: 4.118 avg val loss: 4.154 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   651/938] avg train loss: 4.057 avg val loss: 4.148 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   701/938] avg train loss: 4.066 avg val loss: 4.141 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   751/938] avg train loss: 4.028 avg val loss: 4.125 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   801/938] avg train loss: 4.074 avg val loss: 4.118 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   851/938] avg train loss: 4.084 avg val loss: 4.106 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[2/30,   901/938] avg train loss: 4.056 avg val loss: 4.095 lr: 0.000100
+[2/30,   938/938] avg train loss: 4.041 avg val loss: 4.100 lr: 0.000100
+[3/30,     1/938] avg train loss: 3.863 avg val loss: 4.100 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,    51/938] avg train loss: 3.982 avg val loss: 4.078 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   101/938] avg train loss: 3.993 avg val loss: 4.077 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   151/938] avg train loss: 4.006 avg val loss: 4.064 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   201/938] avg train loss: 3.925 avg val loss: 4.052 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   251/938] avg train loss: 3.978 avg val loss: 4.043 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   301/938] avg train loss: 3.936 avg val loss: 4.031 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   351/938] avg train loss: 3.913 avg val loss: 4.022 lr: 0.000099
+[3/30,   401/938] avg train loss: 3.964 avg val loss: 4.049 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   451/938] avg train loss: 3.975 avg val loss: 4.007 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   501/938] avg train loss: 3.926 avg val loss: 3.999 lr: 0.000099
+[3/30,   551/938] avg train loss: 3.900 avg val loss: 4.006 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   601/938] avg train loss: 3.934 avg val loss: 3.992 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   651/938] avg train loss: 3.891 avg val loss: 3.980 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   701/938] avg train loss: 3.907 avg val loss: 3.976 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   751/938] avg train loss: 3.907 avg val loss: 3.968 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   801/938] avg train loss: 3.913 avg val loss: 3.967 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   851/938] avg train loss: 3.880 avg val loss: 3.964 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   901/938] avg train loss: 3.915 avg val loss: 3.953 lr: 0.000099
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[3/30,   938/938] avg train loss: 3.830 avg val loss: 3.948 lr: 0.000099
+[4/30,     1/938] avg train loss: 3.629 avg val loss: 3.957 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,    51/938] avg train loss: 3.849 avg val loss: 3.937 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   101/938] avg train loss: 3.820 avg val loss: 3.934 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   151/938] avg train loss: 3.830 avg val loss: 3.929 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   201/938] avg train loss: 3.822 avg val loss: 3.921 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   251/938] avg train loss: 3.786 avg val loss: 3.914 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   301/938] avg train loss: 3.800 avg val loss: 3.906 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   351/938] avg train loss: 3.787 avg val loss: 3.901 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   401/938] avg train loss: 3.812 avg val loss: 3.898 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   451/938] avg train loss: 3.802 avg val loss: 3.894 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   501/938] avg train loss: 3.802 avg val loss: 3.888 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   551/938] avg train loss: 3.772 avg val loss: 3.885 lr: 0.000098
+[4/30,   601/938] avg train loss: 3.728 avg val loss: 3.888 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   651/938] avg train loss: 3.776 avg val loss: 3.875 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   701/938] avg train loss: 3.796 avg val loss: 3.873 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   751/938] avg train loss: 3.779 avg val loss: 3.868 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   801/938] avg train loss: 3.756 avg val loss: 3.865 lr: 0.000098
+[4/30,   851/938] avg train loss: 3.742 avg val loss: 3.865 lr: 0.000098
+[4/30,   901/938] avg train loss: 3.724 avg val loss: 3.866 lr: 0.000098
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[4/30,   938/938] avg train loss: 3.776 avg val loss: 3.851 lr: 0.000098
+[5/30,     1/938] avg train loss: 3.738 avg val loss: 3.852 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,    51/938] avg train loss: 3.745 avg val loss: 3.845 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   101/938] avg train loss: 3.710 avg val loss: 3.844 lr: 0.000096
+[5/30,   151/938] avg train loss: 3.658 avg val loss: 3.844 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   201/938] avg train loss: 3.708 avg val loss: 3.843 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   251/938] avg train loss: 3.724 avg val loss: 3.834 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   301/938] avg train loss: 3.724 avg val loss: 3.831 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   351/938] avg train loss: 3.669 avg val loss: 3.825 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   401/938] avg train loss: 3.672 avg val loss: 3.823 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   451/938] avg train loss: 3.677 avg val loss: 3.819 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   501/938] avg train loss: 3.679 avg val loss: 3.819 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   551/938] avg train loss: 3.705 avg val loss: 3.816 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   601/938] avg train loss: 3.640 avg val loss: 3.815 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   651/938] avg train loss: 3.695 avg val loss: 3.809 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   701/938] avg train loss: 3.691 avg val loss: 3.808 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   751/938] avg train loss: 3.683 avg val loss: 3.802 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   801/938] avg train loss: 3.680 avg val loss: 3.802 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   851/938] avg train loss: 3.667 avg val loss: 3.794 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   901/938] avg train loss: 3.691 avg val loss: 3.792 lr: 0.000096
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[5/30,   938/938] avg train loss: 3.653 avg val loss: 3.791 lr: 0.000096
+[6/30,     1/938] avg train loss: 3.696 avg val loss: 3.791 lr: 0.000094
+[6/30,    51/938] avg train loss: 3.609 avg val loss: 3.792 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   101/938] avg train loss: 3.607 avg val loss: 3.789 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   151/938] avg train loss: 3.677 avg val loss: 3.784 lr: 0.000094
+[6/30,   201/938] avg train loss: 3.625 avg val loss: 3.788 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   251/938] avg train loss: 3.608 avg val loss: 3.779 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   301/938] avg train loss: 3.591 avg val loss: 3.778 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   351/938] avg train loss: 3.595 avg val loss: 3.773 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   401/938] avg train loss: 3.626 avg val loss: 3.773 lr: 0.000094
+[6/30,   451/938] avg train loss: 3.624 avg val loss: 3.773 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   501/938] avg train loss: 3.647 avg val loss: 3.771 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   551/938] avg train loss: 3.631 avg val loss: 3.765 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   601/938] avg train loss: 3.612 avg val loss: 3.759 lr: 0.000094
+[6/30,   651/938] avg train loss: 3.596 avg val loss: 3.759 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   701/938] avg train loss: 3.596 avg val loss: 3.751 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   751/938] avg train loss: 3.615 avg val loss: 3.748 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   801/938] avg train loss: 3.611 avg val loss: 3.746 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   851/938] avg train loss: 3.584 avg val loss: 3.746 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   901/938] avg train loss: 3.603 avg val loss: 3.745 lr: 0.000094
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[6/30,   938/938] avg train loss: 3.571 avg val loss: 3.741 lr: 0.000094
+[7/30,     1/938] avg train loss: 3.497 avg val loss: 3.742 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,    51/938] avg train loss: 3.558 avg val loss: 3.740 lr: 0.000091
+[7/30,   101/938] avg train loss: 3.525 avg val loss: 3.740 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   151/938] avg train loss: 3.575 avg val loss: 3.731 lr: 0.000091
+[7/30,   201/938] avg train loss: 3.622 avg val loss: 3.732 lr: 0.000091
+[7/30,   251/938] avg train loss: 3.550 avg val loss: 3.735 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   301/938] avg train loss: 3.544 avg val loss: 3.728 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   351/938] avg train loss: 3.553 avg val loss: 3.725 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   401/938] avg train loss: 3.534 avg val loss: 3.722 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   451/938] avg train loss: 3.541 avg val loss: 3.721 lr: 0.000091
+[7/30,   501/938] avg train loss: 3.533 avg val loss: 3.723 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   551/938] avg train loss: 3.526 avg val loss: 3.721 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   601/938] avg train loss: 3.553 avg val loss: 3.712 lr: 0.000091
+[7/30,   651/938] avg train loss: 3.540 avg val loss: 3.713 lr: 0.000091
+[7/30,   701/938] avg train loss: 3.551 avg val loss: 3.715 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   751/938] avg train loss: 3.569 avg val loss: 3.708 lr: 0.000091
+[7/30,   801/938] avg train loss: 3.527 avg val loss: 3.709 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   851/938] avg train loss: 3.529 avg val loss: 3.707 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   901/938] avg train loss: 3.554 avg val loss: 3.701 lr: 0.000091
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[7/30,   938/938] avg train loss: 3.511 avg val loss: 3.700 lr: 0.000091
+[8/30,     1/938] avg train loss: 3.577 avg val loss: 3.700 lr: 0.000088
+[8/30,    51/938] avg train loss: 3.455 avg val loss: 3.700 lr: 0.000088
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[8/30,   101/938] avg train loss: 3.474 avg val loss: 3.695 lr: 0.000088
+[8/30,   151/938] avg train loss: 3.526 avg val loss: 3.697 lr: 0.000088
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[8/30,   201/938] avg train loss: 3.518 avg val loss: 3.692 lr: 0.000088
+[8/30,   251/938] avg train loss: 3.539 avg val loss: 3.693 lr: 0.000088
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[8/30,   301/938] avg train loss: 3.498 avg val loss: 3.690 lr: 0.000088
+[8/30,   351/938] avg train loss: 3.508 avg val loss: 3.694 lr: 0.000088
+[8/30,   401/938] avg train loss: 3.477 avg val loss: 3.693 lr: 0.000088
+[8/30,   451/938] avg train loss: 3.468 avg val loss: 3.691 lr: 0.000088
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[8/30,   501/938] avg train loss: 3.469 avg val loss: 3.688 lr: 0.000088
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[8/30,   551/938] avg train loss: 3.510 avg val loss: 3.680 lr: 0.000088
+[8/30,   601/938] avg train loss: 3.500 avg val loss: 3.684 lr: 0.000088
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[8/30,   651/938] avg train loss: 3.494 avg val loss: 3.678 lr: 0.000088
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[8/30,   701/938] avg train loss: 3.497 avg val loss: 3.677 lr: 0.000088
+[8/30,   751/938] avg train loss: 3.500 avg val loss: 3.685 lr: 0.000088
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[8/30,   801/938] avg train loss: 3.501 avg val loss: 3.675 lr: 0.000088
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[8/30,   851/938] avg train loss: 3.480 avg val loss: 3.668 lr: 0.000088
+[8/30,   901/938] avg train loss: 3.465 avg val loss: 3.670 lr: 0.000088
+[8/30,   938/938] avg train loss: 3.465 avg val loss: 3.673 lr: 0.000088
+[9/30,     1/938] avg train loss: 3.470 avg val loss: 3.673 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,    51/938] avg train loss: 3.446 avg val loss: 3.668 lr: 0.000084
+[9/30,   101/938] avg train loss: 3.426 avg val loss: 3.668 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   151/938] avg train loss: 3.443 avg val loss: 3.666 lr: 0.000084
+[9/30,   201/938] avg train loss: 3.446 avg val loss: 3.668 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   251/938] avg train loss: 3.432 avg val loss: 3.665 lr: 0.000084
+[9/30,   301/938] avg train loss: 3.440 avg val loss: 3.668 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   351/938] avg train loss: 3.474 avg val loss: 3.662 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   401/938] avg train loss: 3.458 avg val loss: 3.660 lr: 0.000084
+[9/30,   451/938] avg train loss: 3.455 avg val loss: 3.660 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   501/938] avg train loss: 3.452 avg val loss: 3.657 lr: 0.000084
+[9/30,   551/938] avg train loss: 3.493 avg val loss: 3.657 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   601/938] avg train loss: 3.443 avg val loss: 3.656 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   651/938] avg train loss: 3.460 avg val loss: 3.654 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   701/938] avg train loss: 3.435 avg val loss: 3.649 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   751/938] avg train loss: 3.434 avg val loss: 3.649 lr: 0.000084
+[9/30,   801/938] avg train loss: 3.419 avg val loss: 3.653 lr: 0.000084
+[9/30,   851/938] avg train loss: 3.450 avg val loss: 3.652 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   901/938] avg train loss: 3.430 avg val loss: 3.646 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[9/30,   938/938] avg train loss: 3.447 avg val loss: 3.645 lr: 0.000084
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,     1/938] avg train loss: 3.509 avg val loss: 3.644 lr: 0.000081
+[10/30,    51/938] avg train loss: 3.435 avg val loss: 3.645 lr: 0.000081
+[10/30,   101/938] avg train loss: 3.409 avg val loss: 3.654 lr: 0.000081
+[10/30,   151/938] avg train loss: 3.436 avg val loss: 3.646 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   201/938] avg train loss: 3.406 avg val loss: 3.644 lr: 0.000081
+[10/30,   251/938] avg train loss: 3.416 avg val loss: 3.644 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   301/938] avg train loss: 3.413 avg val loss: 3.642 lr: 0.000081
+[10/30,   351/938] avg train loss: 3.407 avg val loss: 3.646 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   401/938] avg train loss: 3.395 avg val loss: 3.642 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   451/938] avg train loss: 3.423 avg val loss: 3.640 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   501/938] avg train loss: 3.392 avg val loss: 3.639 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   551/938] avg train loss: 3.415 avg val loss: 3.636 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   601/938] avg train loss: 3.395 avg val loss: 3.635 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   651/938] avg train loss: 3.374 avg val loss: 3.634 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   701/938] avg train loss: 3.396 avg val loss: 3.632 lr: 0.000081
+[10/30,   751/938] avg train loss: 3.415 avg val loss: 3.633 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   801/938] avg train loss: 3.412 avg val loss: 3.627 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   851/938] avg train loss: 3.403 avg val loss: 3.625 lr: 0.000081
+[10/30,   901/938] avg train loss: 3.381 avg val loss: 3.627 lr: 0.000081
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[10/30,   938/938] avg train loss: 3.413 avg val loss: 3.622 lr: 0.000081
+[11/30,     1/938] avg train loss: 3.210 avg val loss: 3.623 lr: 0.000076
+[11/30,    51/938] avg train loss: 3.382 avg val loss: 3.626 lr: 0.000076
+[11/30,   101/938] avg train loss: 3.351 avg val loss: 3.623 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   151/938] avg train loss: 3.374 avg val loss: 3.622 lr: 0.000076
+[11/30,   201/938] avg train loss: 3.353 avg val loss: 3.625 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   251/938] avg train loss: 3.372 avg val loss: 3.622 lr: 0.000076
+[11/30,   301/938] avg train loss: 3.394 avg val loss: 3.624 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   351/938] avg train loss: 3.351 avg val loss: 3.619 lr: 0.000076
+[11/30,   401/938] avg train loss: 3.335 avg val loss: 3.624 lr: 0.000076
+[11/30,   451/938] avg train loss: 3.386 avg val loss: 3.621 lr: 0.000076
+[11/30,   501/938] avg train loss: 3.340 avg val loss: 3.623 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   551/938] avg train loss: 3.409 avg val loss: 3.616 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   601/938] avg train loss: 3.367 avg val loss: 3.616 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   651/938] avg train loss: 3.383 avg val loss: 3.613 lr: 0.000076
+[11/30,   701/938] avg train loss: 3.391 avg val loss: 3.616 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   751/938] avg train loss: 3.357 avg val loss: 3.613 lr: 0.000076
+[11/30,   801/938] avg train loss: 3.368 avg val loss: 3.616 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   851/938] avg train loss: 3.369 avg val loss: 3.611 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   901/938] avg train loss: 3.389 avg val loss: 3.611 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[11/30,   938/938] avg train loss: 3.365 avg val loss: 3.606 lr: 0.000076
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,     1/938] avg train loss: 3.358 avg val loss: 3.606 lr: 0.000072
+[12/30,    51/938] avg train loss: 3.359 avg val loss: 3.609 lr: 0.000072
+[12/30,   101/938] avg train loss: 3.331 avg val loss: 3.607 lr: 0.000072
+[12/30,   151/938] avg train loss: 3.294 avg val loss: 3.607 lr: 0.000072
+[12/30,   201/938] avg train loss: 3.360 avg val loss: 3.608 lr: 0.000072
+[12/30,   251/938] avg train loss: 3.347 avg val loss: 3.610 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,   301/938] avg train loss: 3.315 avg val loss: 3.605 lr: 0.000072
+[12/30,   351/938] avg train loss: 3.367 avg val loss: 3.607 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,   401/938] avg train loss: 3.315 avg val loss: 3.604 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,   451/938] avg train loss: 3.334 avg val loss: 3.600 lr: 0.000072
+[12/30,   501/938] avg train loss: 3.312 avg val loss: 3.606 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,   551/938] avg train loss: 3.319 avg val loss: 3.600 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,   601/938] avg train loss: 3.327 avg val loss: 3.599 lr: 0.000072
+[12/30,   651/938] avg train loss: 3.328 avg val loss: 3.601 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,   701/938] avg train loss: 3.369 avg val loss: 3.596 lr: 0.000072
+[12/30,   751/938] avg train loss: 3.364 avg val loss: 3.597 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,   801/938] avg train loss: 3.320 avg val loss: 3.596 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,   851/938] avg train loss: 3.335 avg val loss: 3.594 lr: 0.000072
+[12/30,   901/938] avg train loss: 3.355 avg val loss: 3.596 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[12/30,   938/938] avg train loss: 3.374 avg val loss: 3.590 lr: 0.000072
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[13/30,     1/938] avg train loss: 3.307 avg val loss: 3.590 lr: 0.000067
+[13/30,    51/938] avg train loss: 3.282 avg val loss: 3.593 lr: 0.000067
+[13/30,   101/938] avg train loss: 3.273 avg val loss: 3.594 lr: 0.000067
+[13/30,   151/938] avg train loss: 3.302 avg val loss: 3.590 lr: 0.000067
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[13/30,   201/938] avg train loss: 3.313 avg val loss: 3.588 lr: 0.000067
+[13/30,   251/938] avg train loss: 3.321 avg val loss: 3.588 lr: 0.000067
+[13/30,   301/938] avg train loss: 3.324 avg val loss: 3.588 lr: 0.000067
+[13/30,   351/938] avg train loss: 3.293 avg val loss: 3.588 lr: 0.000067
+[13/30,   401/938] avg train loss: 3.279 avg val loss: 3.589 lr: 0.000067
+[13/30,   451/938] avg train loss: 3.291 avg val loss: 3.589 lr: 0.000067
+[13/30,   501/938] avg train loss: 3.331 avg val loss: 3.590 lr: 0.000067
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[13/30,   551/938] avg train loss: 3.298 avg val loss: 3.583 lr: 0.000067
+[13/30,   601/938] avg train loss: 3.307 avg val loss: 3.585 lr: 0.000067
+[13/30,   651/938] avg train loss: 3.338 avg val loss: 3.586 lr: 0.000067
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[13/30,   701/938] avg train loss: 3.339 avg val loss: 3.580 lr: 0.000067
+[13/30,   751/938] avg train loss: 3.335 avg val loss: 3.582 lr: 0.000067
+[13/30,   801/938] avg train loss: 3.321 avg val loss: 3.580 lr: 0.000067
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[13/30,   851/938] avg train loss: 3.281 avg val loss: 3.579 lr: 0.000067
+[13/30,   901/938] avg train loss: 3.304 avg val loss: 3.580 lr: 0.000067
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[13/30,   938/938] avg train loss: 3.285 avg val loss: 3.579 lr: 0.000067
+[14/30,     1/938] avg train loss: 3.266 avg val loss: 3.580 lr: 0.000063
+[14/30,    51/938] avg train loss: 3.243 avg val loss: 3.583 lr: 0.000063
+[14/30,   101/938] avg train loss: 3.313 avg val loss: 3.582 lr: 0.000063
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[14/30,   151/938] avg train loss: 3.264 avg val loss: 3.578 lr: 0.000063
+[14/30,   201/938] avg train loss: 3.265 avg val loss: 3.580 lr: 0.000063
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[14/30,   251/938] avg train loss: 3.282 avg val loss: 3.577 lr: 0.000063
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[14/30,   301/938] avg train loss: 3.310 avg val loss: 3.576 lr: 0.000063
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[14/30,   351/938] avg train loss: 3.272 avg val loss: 3.574 lr: 0.000063
+[14/30,   401/938] avg train loss: 3.293 avg val loss: 3.578 lr: 0.000063
+[14/30,   451/938] avg train loss: 3.307 avg val loss: 3.578 lr: 0.000063
+[14/30,   501/938] avg train loss: 3.278 avg val loss: 3.574 lr: 0.000063
+[14/30,   551/938] avg train loss: 3.271 avg val loss: 3.574 lr: 0.000063
+[14/30,   601/938] avg train loss: 3.289 avg val loss: 3.575 lr: 0.000063
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[14/30,   651/938] avg train loss: 3.273 avg val loss: 3.572 lr: 0.000063
+[14/30,   701/938] avg train loss: 3.251 avg val loss: 3.574 lr: 0.000063
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[14/30,   751/938] avg train loss: 3.304 avg val loss: 3.568 lr: 0.000063
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[14/30,   801/938] avg train loss: 3.255 avg val loss: 3.567 lr: 0.000063
+[14/30,   851/938] avg train loss: 3.250 avg val loss: 3.570 lr: 0.000063
+[14/30,   901/938] avg train loss: 3.280 avg val loss: 3.570 lr: 0.000063
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[14/30,   938/938] avg train loss: 3.270 avg val loss: 3.566 lr: 0.000063
+[15/30,     1/938] avg train loss: 3.323 avg val loss: 3.568 lr: 0.000058
+[15/30,    51/938] avg train loss: 3.230 avg val loss: 3.570 lr: 0.000058
+[15/30,   101/938] avg train loss: 3.265 avg val loss: 3.569 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[15/30,   151/938] avg train loss: 3.235 avg val loss: 3.566 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[15/30,   201/938] avg train loss: 3.281 avg val loss: 3.566 lr: 0.000058
+[15/30,   251/938] avg train loss: 3.257 avg val loss: 3.566 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[15/30,   301/938] avg train loss: 3.232 avg val loss: 3.566 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[15/30,   351/938] avg train loss: 3.263 avg val loss: 3.565 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[15/30,   401/938] avg train loss: 3.234 avg val loss: 3.562 lr: 0.000058
+[15/30,   451/938] avg train loss: 3.208 avg val loss: 3.564 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[15/30,   501/938] avg train loss: 3.240 avg val loss: 3.561 lr: 0.000058
+[15/30,   551/938] avg train loss: 3.243 avg val loss: 3.562 lr: 0.000058
+[15/30,   601/938] avg train loss: 3.238 avg val loss: 3.561 lr: 0.000058
+[15/30,   651/938] avg train loss: 3.268 avg val loss: 3.561 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[15/30,   701/938] avg train loss: 3.256 avg val loss: 3.560 lr: 0.000058
+[15/30,   751/938] avg train loss: 3.254 avg val loss: 3.561 lr: 0.000058
+[15/30,   801/938] avg train loss: 3.256 avg val loss: 3.561 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[15/30,   851/938] avg train loss: 3.272 avg val loss: 3.557 lr: 0.000058
+[15/30,   901/938] avg train loss: 3.254 avg val loss: 3.561 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[15/30,   938/938] avg train loss: 3.278 avg val loss: 3.554 lr: 0.000058
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[16/30,     1/938] avg train loss: 2.802 avg val loss: 3.554 lr: 0.000053
+[16/30,    51/938] avg train loss: 3.234 avg val loss: 3.556 lr: 0.000053
+[16/30,   101/938] avg train loss: 3.237 avg val loss: 3.561 lr: 0.000053
+[16/30,   151/938] avg train loss: 3.202 avg val loss: 3.561 lr: 0.000053
+[16/30,   201/938] avg train loss: 3.193 avg val loss: 3.556 lr: 0.000053
+[16/30,   251/938] avg train loss: 3.226 avg val loss: 3.559 lr: 0.000053
+[16/30,   301/938] avg train loss: 3.257 avg val loss: 3.558 lr: 0.000053
+[16/30,   351/938] avg train loss: 3.224 avg val loss: 3.554 lr: 0.000053
+[16/30,   401/938] avg train loss: 3.238 avg val loss: 3.555 lr: 0.000053
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[16/30,   451/938] avg train loss: 3.222 avg val loss: 3.553 lr: 0.000053
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[16/30,   501/938] avg train loss: 3.243 avg val loss: 3.553 lr: 0.000053
+[16/30,   551/938] avg train loss: 3.214 avg val loss: 3.553 lr: 0.000053
+[16/30,   601/938] avg train loss: 3.214 avg val loss: 3.555 lr: 0.000053
+[16/30,   651/938] avg train loss: 3.213 avg val loss: 3.554 lr: 0.000053
+[16/30,   701/938] avg train loss: 3.252 avg val loss: 3.554 lr: 0.000053
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[16/30,   751/938] avg train loss: 3.229 avg val loss: 3.551 lr: 0.000053
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[16/30,   801/938] avg train loss: 3.256 avg val loss: 3.548 lr: 0.000053
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[16/30,   851/938] avg train loss: 3.223 avg val loss: 3.547 lr: 0.000053
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[16/30,   901/938] avg train loss: 3.226 avg val loss: 3.543 lr: 0.000053
+[16/30,   938/938] avg train loss: 3.182 avg val loss: 3.549 lr: 0.000053
+[17/30,     1/938] avg train loss: 3.149 avg val loss: 3.549 lr: 0.000047
+[17/30,    51/938] avg train loss: 3.204 avg val loss: 3.545 lr: 0.000047
+[17/30,   101/938] avg train loss: 3.173 avg val loss: 3.551 lr: 0.000047
+[17/30,   151/938] avg train loss: 3.179 avg val loss: 3.550 lr: 0.000047
+[17/30,   201/938] avg train loss: 3.183 avg val loss: 3.548 lr: 0.000047
+[17/30,   251/938] avg train loss: 3.246 avg val loss: 3.545 lr: 0.000047
+[17/30,   301/938] avg train loss: 3.184 avg val loss: 3.547 lr: 0.000047
+[17/30,   351/938] avg train loss: 3.190 avg val loss: 3.547 lr: 0.000047
+[17/30,   401/938] avg train loss: 3.197 avg val loss: 3.547 lr: 0.000047
+[17/30,   451/938] avg train loss: 3.208 avg val loss: 3.549 lr: 0.000047
+[17/30,   501/938] avg train loss: 3.215 avg val loss: 3.548 lr: 0.000047
+[17/30,   551/938] avg train loss: 3.239 avg val loss: 3.547 lr: 0.000047
+[17/30,   601/938] avg train loss: 3.237 avg val loss: 3.549 lr: 0.000047
+[17/30,   651/938] avg train loss: 3.203 avg val loss: 3.548 lr: 0.000047
+[17/30,   701/938] avg train loss: 3.226 avg val loss: 3.544 lr: 0.000047
+[17/30,   751/938] avg train loss: 3.188 avg val loss: 3.552 lr: 0.000047
+[17/30,   801/938] avg train loss: 3.189 avg val loss: 3.546 lr: 0.000047
+[17/30,   851/938] avg train loss: 3.254 avg val loss: 3.545 lr: 0.000047
+[17/30,   901/938] avg train loss: 3.198 avg val loss: 3.544 lr: 0.000047
+[17/30,   938/938] avg train loss: 3.149 avg val loss: 3.545 lr: 0.000047
+[18/30,     1/938] avg train loss: 3.047 avg val loss: 3.544 lr: 0.000042
+[18/30,    51/938] avg train loss: 3.184 avg val loss: 3.544 lr: 0.000042
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[18/30,   101/938] avg train loss: 3.139 avg val loss: 3.541 lr: 0.000042
+[18/30,   151/938] avg train loss: 3.167 avg val loss: 3.543 lr: 0.000042
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[18/30,   201/938] avg train loss: 3.175 avg val loss: 3.541 lr: 0.000042
+[18/30,   251/938] avg train loss: 3.177 avg val loss: 3.542 lr: 0.000042
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[18/30,   301/938] avg train loss: 3.185 avg val loss: 3.541 lr: 0.000042
+[18/30,   351/938] avg train loss: 3.159 avg val loss: 3.542 lr: 0.000042
+[18/30,   401/938] avg train loss: 3.207 avg val loss: 3.541 lr: 0.000042
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[18/30,   451/938] avg train loss: 3.186 avg val loss: 3.540 lr: 0.000042
+[18/30,   501/938] avg train loss: 3.220 avg val loss: 3.545 lr: 0.000042
+[18/30,   551/938] avg train loss: 3.175 avg val loss: 3.541 lr: 0.000042
+[18/30,   601/938] avg train loss: 3.181 avg val loss: 3.546 lr: 0.000042
+[18/30,   651/938] avg train loss: 3.169 avg val loss: 3.544 lr: 0.000042
+[18/30,   701/938] avg train loss: 3.198 avg val loss: 3.543 lr: 0.000042
+[18/30,   751/938] avg train loss: 3.207 avg val loss: 3.541 lr: 0.000042
+[18/30,   801/938] avg train loss: 3.179 avg val loss: 3.540 lr: 0.000042
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[18/30,   851/938] avg train loss: 3.164 avg val loss: 3.539 lr: 0.000042
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[18/30,   901/938] avg train loss: 3.229 avg val loss: 3.539 lr: 0.000042
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[18/30,   938/938] avg train loss: 3.191 avg val loss: 3.536 lr: 0.000042
+[19/30,     1/938] avg train loss: 2.877 avg val loss: 3.536 lr: 0.000037
+[19/30,    51/938] avg train loss: 3.173 avg val loss: 3.540 lr: 0.000037
+[19/30,   101/938] avg train loss: 3.151 avg val loss: 3.539 lr: 0.000037
+[19/30,   151/938] avg train loss: 3.142 avg val loss: 3.545 lr: 0.000037
+[19/30,   201/938] avg train loss: 3.155 avg val loss: 3.539 lr: 0.000037
+[19/30,   251/938] avg train loss: 3.140 avg val loss: 3.541 lr: 0.000037
+[19/30,   301/938] avg train loss: 3.168 avg val loss: 3.541 lr: 0.000037
+[19/30,   351/938] avg train loss: 3.180 avg val loss: 3.540 lr: 0.000037
+[19/30,   401/938] avg train loss: 3.176 avg val loss: 3.538 lr: 0.000037
+[19/30,   451/938] avg train loss: 3.172 avg val loss: 3.538 lr: 0.000037
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[19/30,   501/938] avg train loss: 3.154 avg val loss: 3.536 lr: 0.000037
+[19/30,   551/938] avg train loss: 3.142 avg val loss: 3.537 lr: 0.000037
+[19/30,   601/938] avg train loss: 3.164 avg val loss: 3.537 lr: 0.000037
+[19/30,   651/938] avg train loss: 3.170 avg val loss: 3.536 lr: 0.000037
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[19/30,   701/938] avg train loss: 3.183 avg val loss: 3.536 lr: 0.000037
+[19/30,   751/938] avg train loss: 3.164 avg val loss: 3.536 lr: 0.000037
+[19/30,   801/938] avg train loss: 3.186 avg val loss: 3.537 lr: 0.000037
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[19/30,   851/938] avg train loss: 3.173 avg val loss: 3.535 lr: 0.000037
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[19/30,   901/938] avg train loss: 3.185 avg val loss: 3.531 lr: 0.000037
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[19/30,   938/938] avg train loss: 3.158 avg val loss: 3.531 lr: 0.000037
+[20/30,     1/938] avg train loss: 3.278 avg val loss: 3.531 lr: 0.000033
+[20/30,    51/938] avg train loss: 3.182 avg val loss: 3.531 lr: 0.000033
+[20/30,   101/938] avg train loss: 3.110 avg val loss: 3.532 lr: 0.000033
+[20/30,   151/938] avg train loss: 3.146 avg val loss: 3.533 lr: 0.000033
+[20/30,   201/938] avg train loss: 3.137 avg val loss: 3.537 lr: 0.000033
+[20/30,   251/938] avg train loss: 3.172 avg val loss: 3.534 lr: 0.000033
+[20/30,   301/938] avg train loss: 3.138 avg val loss: 3.533 lr: 0.000033
+[20/30,   351/938] avg train loss: 3.151 avg val loss: 3.533 lr: 0.000033
+[20/30,   401/938] avg train loss: 3.131 avg val loss: 3.538 lr: 0.000033
+[20/30,   451/938] avg train loss: 3.112 avg val loss: 3.534 lr: 0.000033
+[20/30,   501/938] avg train loss: 3.133 avg val loss: 3.533 lr: 0.000033
+[20/30,   551/938] avg train loss: 3.155 avg val loss: 3.538 lr: 0.000033
+[20/30,   601/938] avg train loss: 3.179 avg val loss: 3.534 lr: 0.000033
+[20/30,   651/938] avg train loss: 3.155 avg val loss: 3.534 lr: 0.000033
+[20/30,   701/938] avg train loss: 3.165 avg val loss: 3.533 lr: 0.000033
+[20/30,   751/938] avg train loss: 3.128 avg val loss: 3.531 lr: 0.000033
+[20/30,   801/938] avg train loss: 3.137 avg val loss: 3.533 lr: 0.000033
+[20/30,   851/938] avg train loss: 3.152 avg val loss: 3.532 lr: 0.000033
+[20/30,   901/938] avg train loss: 3.147 avg val loss: 3.533 lr: 0.000033
+[20/30,   938/938] avg train loss: 3.179 avg val loss: 3.533 lr: 0.000033
+[21/30,     1/938] avg train loss: 3.119 avg val loss: 3.532 lr: 0.000028
+[21/30,    51/938] avg train loss: 3.151 avg val loss: 3.531 lr: 0.000028
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[21/30,   101/938] avg train loss: 3.089 avg val loss: 3.529 lr: 0.000028
+[21/30,   151/938] avg train loss: 3.134 avg val loss: 3.530 lr: 0.000028
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[21/30,   201/938] avg train loss: 3.140 avg val loss: 3.527 lr: 0.000028
+[21/30,   251/938] avg train loss: 3.142 avg val loss: 3.532 lr: 0.000028
+[21/30,   301/938] avg train loss: 3.124 avg val loss: 3.530 lr: 0.000028
+[21/30,   351/938] avg train loss: 3.135 avg val loss: 3.530 lr: 0.000028
+[21/30,   401/938] avg train loss: 3.140 avg val loss: 3.530 lr: 0.000028
+[21/30,   451/938] avg train loss: 3.116 avg val loss: 3.533 lr: 0.000028
+[21/30,   501/938] avg train loss: 3.131 avg val loss: 3.533 lr: 0.000028
+[21/30,   551/938] avg train loss: 3.121 avg val loss: 3.531 lr: 0.000028
+[21/30,   601/938] avg train loss: 3.157 avg val loss: 3.530 lr: 0.000028
+[21/30,   651/938] avg train loss: 3.103 avg val loss: 3.528 lr: 0.000028
+[21/30,   701/938] avg train loss: 3.158 avg val loss: 3.529 lr: 0.000028
+[21/30,   751/938] avg train loss: 3.099 avg val loss: 3.529 lr: 0.000028
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[21/30,   801/938] avg train loss: 3.114 avg val loss: 3.526 lr: 0.000028
+[21/30,   851/938] avg train loss: 3.131 avg val loss: 3.528 lr: 0.000028
+[21/30,   901/938] avg train loss: 3.162 avg val loss: 3.529 lr: 0.000028
+[21/30,   938/938] avg train loss: 3.195 avg val loss: 3.528 lr: 0.000028
+[22/30,     1/938] avg train loss: 3.262 avg val loss: 3.528 lr: 0.000024
+[22/30,    51/938] avg train loss: 3.120 avg val loss: 3.528 lr: 0.000024
+[22/30,   101/938] avg train loss: 3.156 avg val loss: 3.527 lr: 0.000024
+[22/30,   151/938] avg train loss: 3.105 avg val loss: 3.529 lr: 0.000024
+[22/30,   201/938] avg train loss: 3.111 avg val loss: 3.529 lr: 0.000024
+[22/30,   251/938] avg train loss: 3.115 avg val loss: 3.529 lr: 0.000024
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[22/30,   301/938] avg train loss: 3.100 avg val loss: 3.526 lr: 0.000024
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[22/30,   351/938] avg train loss: 3.113 avg val loss: 3.525 lr: 0.000024
+[22/30,   401/938] avg train loss: 3.122 avg val loss: 3.529 lr: 0.000024
+[22/30,   451/938] avg train loss: 3.125 avg val loss: 3.528 lr: 0.000024
+[22/30,   501/938] avg train loss: 3.144 avg val loss: 3.527 lr: 0.000024
+[22/30,   551/938] avg train loss: 3.126 avg val loss: 3.525 lr: 0.000024
+[22/30,   601/938] avg train loss: 3.114 avg val loss: 3.529 lr: 0.000024
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[22/30,   651/938] avg train loss: 3.132 avg val loss: 3.525 lr: 0.000024
+[22/30,   701/938] avg train loss: 3.126 avg val loss: 3.527 lr: 0.000024
+[22/30,   751/938] avg train loss: 3.072 avg val loss: 3.526 lr: 0.000024
+[22/30,   801/938] avg train loss: 3.122 avg val loss: 3.527 lr: 0.000024
+[22/30,   851/938] avg train loss: 3.156 avg val loss: 3.526 lr: 0.000024
+[22/30,   901/938] avg train loss: 3.124 avg val loss: 3.528 lr: 0.000024
+[22/30,   938/938] avg train loss: 3.054 avg val loss: 3.531 lr: 0.000024
+[23/30,     1/938] avg train loss: 3.208 avg val loss: 3.531 lr: 0.000019
+[23/30,    51/938] avg train loss: 3.133 avg val loss: 3.525 lr: 0.000019
+[23/30,   101/938] avg train loss: 3.108 avg val loss: 3.529 lr: 0.000019
+[23/30,   151/938] avg train loss: 3.098 avg val loss: 3.528 lr: 0.000019
+[23/30,   201/938] avg train loss: 3.102 avg val loss: 3.527 lr: 0.000019
+[23/30,   251/938] avg train loss: 3.102 avg val loss: 3.526 lr: 0.000019
+[23/30,   301/938] avg train loss: 3.110 avg val loss: 3.527 lr: 0.000019
+[23/30,   351/938] avg train loss: 3.102 avg val loss: 3.529 lr: 0.000019
+[23/30,   401/938] avg train loss: 3.098 avg val loss: 3.526 lr: 0.000019
+[23/30,   451/938] avg train loss: 3.099 avg val loss: 3.525 lr: 0.000019
+[23/30,   501/938] avg train loss: 3.113 avg val loss: 3.527 lr: 0.000019
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[23/30,   551/938] avg train loss: 3.109 avg val loss: 3.524 lr: 0.000019
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[23/30,   601/938] avg train loss: 3.052 avg val loss: 3.524 lr: 0.000019
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[23/30,   651/938] avg train loss: 3.138 avg val loss: 3.523 lr: 0.000019
+[23/30,   701/938] avg train loss: 3.091 avg val loss: 3.524 lr: 0.000019
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[23/30,   751/938] avg train loss: 3.108 avg val loss: 3.523 lr: 0.000019
+[23/30,   801/938] avg train loss: 3.138 avg val loss: 3.523 lr: 0.000019
+[23/30,   851/938] avg train loss: 3.137 avg val loss: 3.524 lr: 0.000019
+[23/30,   901/938] avg train loss: 3.078 avg val loss: 3.524 lr: 0.000019
+[23/30,   938/938] avg train loss: 3.086 avg val loss: 3.523 lr: 0.000019
+[24/30,     1/938] avg train loss: 3.177 avg val loss: 3.523 lr: 0.000016
+[24/30,    51/938] avg train loss: 3.121 avg val loss: 3.524 lr: 0.000016
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[24/30,   101/938] avg train loss: 3.094 avg val loss: 3.522 lr: 0.000016
+[24/30,   151/938] avg train loss: 3.093 avg val loss: 3.524 lr: 0.000016
+[24/30,   201/938] avg train loss: 3.090 avg val loss: 3.526 lr: 0.000016
+[24/30,   251/938] avg train loss: 3.088 avg val loss: 3.524 lr: 0.000016
+[24/30,   301/938] avg train loss: 3.113 avg val loss: 3.526 lr: 0.000016
+[24/30,   351/938] avg train loss: 3.091 avg val loss: 3.525 lr: 0.000016
+[24/30,   401/938] avg train loss: 3.075 avg val loss: 3.524 lr: 0.000016
+[24/30,   451/938] avg train loss: 3.076 avg val loss: 3.525 lr: 0.000016
+[24/30,   501/938] avg train loss: 3.057 avg val loss: 3.524 lr: 0.000016
+[24/30,   551/938] avg train loss: 3.097 avg val loss: 3.522 lr: 0.000016
+[24/30,   601/938] avg train loss: 3.101 avg val loss: 3.522 lr: 0.000016
+[24/30,   651/938] avg train loss: 3.062 avg val loss: 3.522 lr: 0.000016
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[24/30,   701/938] avg train loss: 3.115 avg val loss: 3.521 lr: 0.000016
+[24/30,   751/938] avg train loss: 3.131 avg val loss: 3.522 lr: 0.000016
+[24/30,   801/938] avg train loss: 3.111 avg val loss: 3.524 lr: 0.000016
+[24/30,   851/938] avg train loss: 3.099 avg val loss: 3.522 lr: 0.000016
+[24/30,   901/938] avg train loss: 3.109 avg val loss: 3.522 lr: 0.000016
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[24/30,   938/938] avg train loss: 3.086 avg val loss: 3.520 lr: 0.000016
+[25/30,     1/938] avg train loss: 3.128 avg val loss: 3.520 lr: 0.000012
+[25/30,    51/938] avg train loss: 3.056 avg val loss: 3.521 lr: 0.000012
+[25/30,   101/938] avg train loss: 3.120 avg val loss: 3.521 lr: 0.000012
+[25/30,   151/938] avg train loss: 3.090 avg val loss: 3.521 lr: 0.000012
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[25/30,   201/938] avg train loss: 3.077 avg val loss: 3.520 lr: 0.000012
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[25/30,   251/938] avg train loss: 3.050 avg val loss: 3.519 lr: 0.000012
+[25/30,   301/938] avg train loss: 3.056 avg val loss: 3.520 lr: 0.000012
+[25/30,   351/938] avg train loss: 3.080 avg val loss: 3.520 lr: 0.000012
+[25/30,   401/938] avg train loss: 3.143 avg val loss: 3.519 lr: 0.000012
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[25/30,   451/938] avg train loss: 3.074 avg val loss: 3.518 lr: 0.000012
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[25/30,   501/938] avg train loss: 3.098 avg val loss: 3.517 lr: 0.000012
+[25/30,   551/938] avg train loss: 3.086 avg val loss: 3.517 lr: 0.000012
+[25/30,   601/938] avg train loss: 3.055 avg val loss: 3.519 lr: 0.000012
+[25/30,   651/938] avg train loss: 3.085 avg val loss: 3.519 lr: 0.000012
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[25/30,   701/938] avg train loss: 3.062 avg val loss: 3.517 lr: 0.000012
+[25/30,   751/938] avg train loss: 3.109 avg val loss: 3.519 lr: 0.000012
+[25/30,   801/938] avg train loss: 3.094 avg val loss: 3.519 lr: 0.000012
+[25/30,   851/938] avg train loss: 3.086 avg val loss: 3.519 lr: 0.000012
+[25/30,   901/938] avg train loss: 3.095 avg val loss: 3.517 lr: 0.000012
+[25/30,   938/938] avg train loss: 3.101 avg val loss: 3.518 lr: 0.000012
+[26/30,     1/938] avg train loss: 3.148 avg val loss: 3.518 lr: 0.000009
+[26/30,    51/938] avg train loss: 3.076 avg val loss: 3.517 lr: 0.000009
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[26/30,   101/938] avg train loss: 3.072 avg val loss: 3.516 lr: 0.000009
+[26/30,   151/938] avg train loss: 3.094 avg val loss: 3.516 lr: 0.000009
+[26/30,   201/938] avg train loss: 3.060 avg val loss: 3.517 lr: 0.000009
+[26/30,   251/938] avg train loss: 3.079 avg val loss: 3.517 lr: 0.000009
+[26/30,   301/938] avg train loss: 3.098 avg val loss: 3.516 lr: 0.000009
+[26/30,   351/938] avg train loss: 3.109 avg val loss: 3.516 lr: 0.000009
+[26/30,   401/938] avg train loss: 3.085 avg val loss: 3.516 lr: 0.000009
+[26/30,   451/938] avg train loss: 3.098 avg val loss: 3.516 lr: 0.000009
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[26/30,   501/938] avg train loss: 3.092 avg val loss: 3.515 lr: 0.000009
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[26/30,   551/938] avg train loss: 3.052 avg val loss: 3.515 lr: 0.000009
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[26/30,   601/938] avg train loss: 3.055 avg val loss: 3.515 lr: 0.000009
+[26/30,   651/938] avg train loss: 3.089 avg val loss: 3.515 lr: 0.000009
+[26/30,   701/938] avg train loss: 3.060 avg val loss: 3.515 lr: 0.000009
+[26/30,   751/938] avg train loss: 3.079 avg val loss: 3.515 lr: 0.000009
+[26/30,   801/938] avg train loss: 3.046 avg val loss: 3.515 lr: 0.000009
+[26/30,   851/938] avg train loss: 3.087 avg val loss: 3.515 lr: 0.000009
+[26/30,   901/938] avg train loss: 3.063 avg val loss: 3.516 lr: 0.000009
+[26/30,   938/938] avg train loss: 3.077 avg val loss: 3.517 lr: 0.000009
+[27/30,     1/938] avg train loss: 3.103 avg val loss: 3.517 lr: 0.000006
+[27/30,    51/938] avg train loss: 3.041 avg val loss: 3.517 lr: 0.000006
+[27/30,   101/938] avg train loss: 3.067 avg val loss: 3.515 lr: 0.000006
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[27/30,   151/938] avg train loss: 3.082 avg val loss: 3.514 lr: 0.000006
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[27/30,   201/938] avg train loss: 3.056 avg val loss: 3.514 lr: 0.000006
+[27/30,   251/938] avg train loss: 3.093 avg val loss: 3.515 lr: 0.000006
+[27/30,   301/938] avg train loss: 3.084 avg val loss: 3.515 lr: 0.000006
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[27/30,   351/938] avg train loss: 3.049 avg val loss: 3.514 lr: 0.000006
+[27/30,   401/938] avg train loss: 3.037 avg val loss: 3.515 lr: 0.000006
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[27/30,   451/938] avg train loss: 3.072 avg val loss: 3.513 lr: 0.000006
+[27/30,   501/938] avg train loss: 3.087 avg val loss: 3.515 lr: 0.000006
+[27/30,   551/938] avg train loss: 3.072 avg val loss: 3.515 lr: 0.000006
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[27/30,   601/938] avg train loss: 3.065 avg val loss: 3.513 lr: 0.000006
+[27/30,   651/938] avg train loss: 3.074 avg val loss: 3.513 lr: 0.000006
+[27/30,   701/938] avg train loss: 3.081 avg val loss: 3.514 lr: 0.000006
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[27/30,   751/938] avg train loss: 3.077 avg val loss: 3.512 lr: 0.000006
+[27/30,   801/938] avg train loss: 3.052 avg val loss: 3.513 lr: 0.000006
+[27/30,   851/938] avg train loss: 3.079 avg val loss: 3.513 lr: 0.000006
+[27/30,   901/938] avg train loss: 3.077 avg val loss: 3.512 lr: 0.000006
+[27/30,   938/938] avg train loss: 3.063 avg val loss: 3.513 lr: 0.000006
+[28/30,     1/938] avg train loss: 3.328 avg val loss: 3.513 lr: 0.000004
+[28/30,    51/938] avg train loss: 3.048 avg val loss: 3.513 lr: 0.000004
+[28/30,   101/938] avg train loss: 3.066 avg val loss: 3.513 lr: 0.000004
+[28/30,   151/938] avg train loss: 3.045 avg val loss: 3.513 lr: 0.000004
+[28/30,   201/938] avg train loss: 3.043 avg val loss: 3.513 lr: 0.000004
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[28/30,   251/938] avg train loss: 3.081 avg val loss: 3.512 lr: 0.000004
+[28/30,   301/938] avg train loss: 3.058 avg val loss: 3.512 lr: 0.000004
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[28/30,   351/938] avg train loss: 3.109 avg val loss: 3.511 lr: 0.000004
+[28/30,   401/938] avg train loss: 3.044 avg val loss: 3.512 lr: 0.000004
+[28/30,   451/938] avg train loss: 3.055 avg val loss: 3.512 lr: 0.000004
+[28/30,   501/938] avg train loss: 3.074 avg val loss: 3.512 lr: 0.000004
+[28/30,   551/938] avg train loss: 3.050 avg val loss: 3.513 lr: 0.000004
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[28/30,   601/938] avg train loss: 3.059 avg val loss: 3.511 lr: 0.000004
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[28/30,   651/938] avg train loss: 3.078 avg val loss: 3.511 lr: 0.000004
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[28/30,   701/938] avg train loss: 3.066 avg val loss: 3.511 lr: 0.000004
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[28/30,   751/938] avg train loss: 3.054 avg val loss: 3.510 lr: 0.000004
+[28/30,   801/938] avg train loss: 3.083 avg val loss: 3.511 lr: 0.000004
+[28/30,   851/938] avg train loss: 3.073 avg val loss: 3.511 lr: 0.000004
+[28/30,   901/938] avg train loss: 3.064 avg val loss: 3.513 lr: 0.000004
+[28/30,   938/938] avg train loss: 3.048 avg val loss: 3.511 lr: 0.000004
+[29/30,     1/938] avg train loss: 2.774 avg val loss: 3.511 lr: 0.000002
+[29/30,    51/938] avg train loss: 3.024 avg val loss: 3.512 lr: 0.000002
+[29/30,   101/938] avg train loss: 3.065 avg val loss: 3.511 lr: 0.000002
+[29/30,   151/938] avg train loss: 3.063 avg val loss: 3.511 lr: 0.000002
+[29/30,   201/938] avg train loss: 3.073 avg val loss: 3.511 lr: 0.000002
+[29/30,   251/938] avg train loss: 3.079 avg val loss: 3.511 lr: 0.000002
+[29/30,   301/938] avg train loss: 3.068 avg val loss: 3.511 lr: 0.000002
+[29/30,   351/938] avg train loss: 3.056 avg val loss: 3.511 lr: 0.000002
+[29/30,   401/938] avg train loss: 3.047 avg val loss: 3.511 lr: 0.000002
+[29/30,   451/938] avg train loss: 3.081 avg val loss: 3.511 lr: 0.000002
+[29/30,   501/938] avg train loss: 3.111 avg val loss: 3.511 lr: 0.000002
+[29/30,   551/938] avg train loss: 3.008 avg val loss: 3.511 lr: 0.000002
+[29/30,   601/938] avg train loss: 3.049 avg val loss: 3.511 lr: 0.000002
+[29/30,   651/938] avg train loss: 3.049 avg val loss: 3.511 lr: 0.000002
+[29/30,   701/938] avg train loss: 3.055 avg val loss: 3.511 lr: 0.000002
+[29/30,   751/938] avg train loss: 3.067 avg val loss: 3.510 lr: 0.000002
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[29/30,   801/938] avg train loss: 3.033 avg val loss: 3.509 lr: 0.000002
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[29/30,   851/938] avg train loss: 3.071 avg val loss: 3.509 lr: 0.000002
+[29/30,   901/938] avg train loss: 3.074 avg val loss: 3.510 lr: 0.000002
+[29/30,   938/938] avg train loss: 3.075 avg val loss: 3.509 lr: 0.000002
+[30/30,     1/938] avg train loss: 2.982 avg val loss: 3.509 lr: 0.000001
+[30/30,    51/938] avg train loss: 3.057 avg val loss: 3.510 lr: 0.000001
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[30/30,   101/938] avg train loss: 3.060 avg val loss: 3.509 lr: 0.000001
+[30/30,   151/938] avg train loss: 3.060 avg val loss: 3.510 lr: 0.000001
+[30/30,   201/938] avg train loss: 3.073 avg val loss: 3.510 lr: 0.000001
+[30/30,   251/938] avg train loss: 3.078 avg val loss: 3.510 lr: 0.000001
+[30/30,   301/938] avg train loss: 3.055 avg val loss: 3.509 lr: 0.000001
+[30/30,   351/938] avg train loss: 3.061 avg val loss: 3.510 lr: 0.000001
+[30/30,   401/938] avg train loss: 3.027 avg val loss: 3.510 lr: 0.000001
+[30/30,   451/938] avg train loss: 3.041 avg val loss: 3.510 lr: 0.000001
+[30/30,   501/938] avg train loss: 3.089 avg val loss: 3.510 lr: 0.000001
+[30/30,   551/938] avg train loss: 3.048 avg val loss: 3.510 lr: 0.000001
+[30/30,   601/938] avg train loss: 3.054 avg val loss: 3.510 lr: 0.000001
+[30/30,   651/938] avg train loss: 3.064 avg val loss: 3.510 lr: 0.000001
+[30/30,   701/938] avg train loss: 3.044 avg val loss: 3.510 lr: 0.000001
+[30/30,   751/938] avg train loss: 3.050 avg val loss: 3.510 lr: 0.000001
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[30/30,   801/938] avg train loss: 3.088 avg val loss: 3.509 lr: 0.000001
+Saved checkpoint to saved_models/decoder_transformer_pass_1/model.pt
+[30/30,   851/938] avg train loss: 3.056 avg val loss: 3.509 lr: 0.000001
+[30/30,   901/938] avg train loss: 3.045 avg val loss: 3.509 lr: 0.000001
+[30/30,   938/938] avg train loss: 3.027 avg val loss: 3.509 lr: 0.000001
+[31/30,     1/938] avg train loss: 3.129 avg val loss: 3.509 lr: 0.000000
+[31/30,    51/938] avg train loss: 3.061 avg val loss: 3.509 lr: 0.000000
+[31/30,   101/938] avg train loss: 3.070 avg val loss: 3.509 lr: 0.000000
+[31/30,   151/938] avg train loss: 3.067 avg val loss: 3.509 lr: 0.000000
+[31/30,   201/938] avg train loss: 3.060 avg val loss: 3.509 lr: 0.000000
+[31/30,   251/938] avg train loss: 3.062 avg val loss: 3.509 lr: 0.000000
+[31/30,   301/938] avg train loss: 3.094 avg val loss: 3.509 lr: 0.000000
+[31/30,   351/938] avg train loss: 3.054 avg val loss: 3.509 lr: 0.000000
+[31/30,   401/938] avg train loss: 3.042 avg val loss: 3.509 lr: 0.000000
+[31/30,   451/938] avg train loss: 3.045 avg val loss: 3.509 lr: 0.000000
+[31/30,   501/938] avg train loss: 3.024 avg val loss: 3.509 lr: 0.000000
+[31/30,   551/938] avg train loss: 3.053 avg val loss: 3.509 lr: 0.000000
+[31/30,   601/938] avg train loss: 3.044 avg val loss: 3.509 lr: 0.000000
+[31/30,   651/938] avg train loss: 3.054 avg val loss: 3.509 lr: 0.000000
+[31/30,   701/938] avg train loss: 3.047 avg val loss: 3.509 lr: 0.000000
+[31/30,   751/938] avg train loss: 3.040 avg val loss: 3.509 lr: 0.000000
+[31/30,   801/938] avg train loss: 3.075 avg val loss: 3.509 lr: 0.000000
+[31/30,   851/938] avg train loss: 3.065 avg val loss: 3.509 lr: 0.000000
+[31/30,   901/938] avg train loss: 3.079 avg val loss: 3.509 lr: 0.000000
+[31/30,   938/938] avg train loss: 3.036 avg val loss: 3.509 lr: 0.000000

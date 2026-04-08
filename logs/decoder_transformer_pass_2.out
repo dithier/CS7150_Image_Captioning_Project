@@ -1,0 +1,22 @@
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='train'  caption pairs=30000
+[Vocabulary] 7458 tokens total
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='val'  caption pairs=5000
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='test'  caption pairs=5455
+Saved checkpoint to saved_models/decoder_transformer_pass_2/model.pt
+[1/30,     1/938] avg train loss: 9.003 avg val loss: 9.039 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_2/model.pt
+[1/30,    51/938] avg train loss: 8.462 avg val loss: 7.589 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_2/model.pt
+[1/30,   101/938] avg train loss: 6.559 avg val loss: 5.851 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_2/model.pt
+[1/30,   151/938] avg train loss: 5.561 avg val loss: 5.339 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_2/model.pt
+[1/30,   201/938] avg train loss: 5.230 avg val loss: 5.130 lr: 0.000100
+Saved checkpoint to saved_models/decoder_transformer_pass_2/model.pt
+[1/30,   251/938] avg train loss: 5.052 avg val loss: 4.993 lr: 0.000100

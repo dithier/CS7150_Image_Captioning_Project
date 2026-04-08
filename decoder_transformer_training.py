@@ -42,7 +42,7 @@ class Logger:
         self.terminal.flush()
         self.log.flush()
 
-sys.stdout = Logger(os.path.join("logs", "decoder_transformer_pass_1.out"))  # CHANGED
+sys.stdout = Logger(os.path.join("logs", "decoder_transformer_pass_2.out"))  
 
 ############## Checkpoint Related Logic #############################
 
@@ -160,8 +160,8 @@ def main(opt):
     embed_dim = 256
     num_heads = 8
     trx_ff_dim = embed_dim * 4
-    num_decoder_cells = 6
-    dropout = 0.1
+    num_decoder_cells = 4 # pass_1 -> 6
+    dropout = 0.3 # pass_1 ->0.1
 
     model = VisionTransformerDecoderModel(
         vocab, P, embed_dim, num_heads, trx_ff_dim, num_decoder_cells, dropout
