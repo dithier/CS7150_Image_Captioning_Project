@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
+from torch.utils.data import Subset, DataLoader
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -26,6 +27,64 @@ def get_avg_validation_loss(model, val_data_loader, loss_fn, vocab):
 
             running_loss += loss.item()
     
+    model.train()
+    
+    return running_loss / len(val_data_loader)
+
+def evaluate(model, image, vocab):
+    model.eval()
+    with torch.no_grad():
+        outputs = model(image)
+
+        _, topi = outputs.topk(1)
+        decoded_ids = topi.squeeze()
+
+        decoded_words = []
+        for idx in decoded_ids:
+            if idx.item() == vocab.word_to_index["<EOS>"]:
+                decoded_words.append('<EOS>')
+                break
+            decoded_words.append(vocab.index_to_word[idx.item()])
+    return decoded_words
+
+def evaluateRandomly(model, val_data_loader, vocab, n=10):
+    indices = torch.randperm(len(val_data_loader))[:n]
+    subset_dataset = Subset(val_data_loader.dataset, indices)
+    # todo come back to
+    subset_loader = DataLoader(subset_dataset, batch_size=1)
+    
+    for image, caption, _ in subset_loader:
+        output_words = evaluate(model, image, vocab)
+        output_sentence = ' '.join(output_words)
+
+        truth = vocab.decode(caption.squeeze().tolist())
+        print(f"truth == {truth}")
+        print('output >', output_sentence)
+        print('')
+
+def get_avg_validation_transformer_loss(model, val_data_loader, loss_fn, vocab):
+    running_loss = 0
+
+    model.eval()
+    with torch.no_grad():
+        for i, batch_data in enumerate(val_data_loader):
+            # Every data instance is an image + label pair
+            images, captions, _ = batch_data
+            images = images.to(device)
+            captions = captions.to(device)
+
+            # use the model
+            outputs = model(images) # we want <SOS> to last word but not <EOS> token
+
+            loss = loss_fn(
+                outputs.reshape(-1, len(vocab)), # first dimension is batch * seq length, second dim vocab size
+                captions[:, 1:].reshape(-1) # groud truth, ignore <SOS> tag
+            )
+
+            running_loss += loss.item()
+    
+    evaluateRandomly(model, val_data_loader, vocab)
+
     model.train()
     
     return running_loss / len(val_data_loader)
