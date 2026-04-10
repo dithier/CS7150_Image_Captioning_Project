@@ -54,7 +54,9 @@ class BasicLSTMDecoder(nn.Module):
         embeds, _ = self.lstm(self.embed(captions), (h0, c0))
         return self.fc(embeds)
     
-    # this returns in the INDEXES of the words in the covab
+    # this returns a list of english words that caption the image 
+    # whose feature was passed in. If batch of images, there is a large list 
+    # and each of its inner lists consists of the caption of the batch image at that index
     def generate(self, features, vocab, max_length=30):
         self.eval()
 
@@ -70,7 +72,7 @@ class BasicLSTMDecoder(nn.Module):
             dtype=torch.long, device=device
         )
 
-        # this has a emty list for each batch image. These lists will be appended to as we generate 
+        # this has an empty list for each batch image. These lists will be appended to as we generate 
         # the caption below
         captions   = [[] for _ in range(B)]
 
@@ -80,7 +82,7 @@ class BasicLSTMDecoder(nn.Module):
         h, c = h0, c0
 
         with torch.no_grad():
-            for _ in range(max_length):
+            for step in range(max_length + 1):
                 embed = self.embed(token) # (B , 1, embed_dim)
                 out, (h,c) = self.lstm(embed, (h,c)) # out: (B, 1, hidden_dim)
                 logits = self.fc(out.squeeze(1)) # (B, vocab size)
