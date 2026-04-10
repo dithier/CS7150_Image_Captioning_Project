@@ -11,7 +11,7 @@
 module load cuda/12.1.1 anaconda3/2024.06
 source activate cs7150
 
-python -u diy_transformer_training_2.py \
+python -u ViT/diy_transformer_training_2.py \
 	--epochs 30 \
     --print_freq 50 \
 	--checkpoint False \
