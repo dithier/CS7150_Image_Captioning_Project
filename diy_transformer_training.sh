@@ -11,11 +11,13 @@
 module load cuda/12.1.1 anaconda3/2024.06
 source activate cs7150
 
+export PYTHONPATH=$(pwd)
+
 python -u ViT/diy_transformer_training_2.py \
-	--epochs 30 \
+	--epochs 1 \
     --print_freq 50 \
 	--checkpoint False \
 	--dataset_dir flickr8k \
-	--log_dir runs/transformer \
-    --save_path saved_models/transformer
+	--log_dir test \
+    --save_path test
     
