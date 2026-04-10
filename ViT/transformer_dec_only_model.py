@@ -294,7 +294,7 @@ class VisionTransformerDecoderModel(nn.Module):
         )
         
         # generated is embedded image and embedded start token, both scaled 
-        generated = torch.cat(embedded, self.embedding(start), dim=1) * math.sqrt(self.embed_dim)
+        generated = torch.cat((embedded, self.embedding(start)), dim=1) * math.sqrt(self.embed_dim)
 
         decoder_outputs = []
 
