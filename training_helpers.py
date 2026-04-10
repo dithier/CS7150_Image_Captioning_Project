@@ -54,6 +54,9 @@ def evaluateRandomly(model, val_data_loader, vocab, n=5):
     subset_loader = DataLoader(subset_dataset, batch_size=1)
     
     for image, caption, _ in subset_loader:
+        image = image.to(device)
+        caption = caption.to(device)
+        
         output_words = evaluate(model, image, vocab)
         output_sentence = ' '.join(output_words)
 
