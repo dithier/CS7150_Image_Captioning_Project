@@ -1,7 +1,7 @@
 import torch
 import argparse
 from dataloader import get_flickr8k_loaders
-from models import BaselineModel
+from baseline_models.baseline_model_v2 import BaselineModel
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

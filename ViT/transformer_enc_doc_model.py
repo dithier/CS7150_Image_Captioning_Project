@@ -101,7 +101,7 @@ class MultiHeadAttention(nn.Module):
             # We simply set the similarity scores to be near negative infinity for
             # the positions where the attention should not be done. Think of why  #
             # we do this.
-            dot_prod_scores = dot_prod_scores.masked_fill(mask == 0, -1e9)
+            dot_prod_scores = dot_prod_scores.masked_fill(mask == 0, -1e9) # B x H X L X L
 
         out = None
         ###########################################################################
@@ -358,8 +358,7 @@ class VisionTransformerDecoderCell(nn.Module):
         out = self.dropout(out)
         c = x + out
 
-        normalized = self.layer_norm_2(c)
-        query = normalized
+        query = self.layer_norm_2(c)
         key, value = encoder_output, encoder_output
         out = self.cross_attn(query, key, value, None)
         out = self.dropout(out)
@@ -580,14 +579,21 @@ class VisionTransformerModel(nn.Module):
         # of our mask to be 0
         seq_len = labels.size(1)
 
-        # handles padding tokens we don't want our decoder to see (B, 1, 1, seq_len)
+        
         # again bc multihead attn block fills False/0 with -inf we want where our pad
         # tokens are to be false
-        pad_mask = (labels != self.pad_token).unsqueeze(1).unsqueeze(2)
 
+        # B X Seq Length (don't want to attend to pad values which are meaningless)
+        pad_mask = (labels != self.pad_token)
+
+        # B X 1 X 1 X Seq Length
+        pad_mask = pad_mask.unsqueeze(1).unsqueeze(2)
+
+        # Seq Length X Seq Length
         causal_mask = (1 - torch.triu(torch.ones(seq_len, seq_len), diagonal=1)).bool().to(labels.device)
+        
 
-        mask = pad_mask | causal_mask 
+        mask = pad_mask & causal_mask # B X 1 X seq len X seq len
 
         logits = None
         ###########################################################################
@@ -612,9 +618,7 @@ class VisionTransformerModel(nn.Module):
         return logits
     
     # Note: Output strips SOS and EOS tokens in result
-    # this is in english
     # will generate for whole batch
-    # TODO: THIS IS OLD IMPLEMENTATION-- NEED TO FIX
     def forward_test(self, image, max_length=30):
         # number of patches (from paper N = HW/P^2)
         N = (image.shape[2] * image.shape[3]) // (self.P**2)
@@ -626,8 +630,6 @@ class VisionTransformerModel(nn.Module):
         embedded = self.image_embedding_layer(embedded) * math.sqrt(self.embed_dim) # B X N X self.embed_dim
         embedded = self.positional_encoding(embedded)
 
-        B = image.size(0)
-
         # start with just <SOS>
         generated = torch.full(
             (B, 1), # make a tensor for dimensions batch size, 1
@@ -636,12 +638,9 @@ class VisionTransformerModel(nn.Module):
         )
         
         encoder_output = self.transformer_encoder(embedded)
-        # print(f"encoder output mean: {encoder_output.mean().item():.4f}")
-        # print(f"encoder output std:  {encoder_output.std().item():.4f}")
         decoder_outputs = []
 
         for _ in range(max_length + 1):
-            # todo: No embedding and pe needed?
             decoder_input = self.positional_encoding(self.embedding(generated) * math.sqrt(self.embed_dim))
             decoder_output = self.transformer_decoder(decoder_input, encoder_output)
 

@@ -3,7 +3,7 @@ from torch.utils.tensorboard import SummaryWriter
 import argparse
 from dataloader_v2 import get_flickr8k_loaders
 from training_helpers import *
-from old_transformer_files.transformer_model import VisionTransformerModel
+from transformer_enc_doc_model import VisionTransformerModel
 import os
 
 # pip install tensorboard
@@ -11,19 +11,17 @@ import os
 # pip install nltk
 
 """
-Adam optimizer variant of baseline_training.py.
-Key differences from baseline_training.py:
-  - Uses Adam optimizer instead of SGD + momentum
-  - Saves weight_decay in checkpoint so it can be restored
-  - --momentum arg removed, --betas and --weight_decay added
-  - Log and save paths default to adam-specific directories
+More correct version of baseline_training.py.
+Key differences from diy_transformer_training.py:
+  - using inference loss for saving model and evaluating
+  - additional prints on random batches to see if captioning makes sense
 
 To run locally:
-  python baseline_training_adam.py --epochs 30 --checkpoint False --dataset_dir flickr8k
+  python diy_transformer_training_2.py --epochs 30 --checkpoint False --dataset_dir flickr8k
       --log_dir runs/adam_pass_1 --save_path saved_models/adam_pass_1/
 
 To run on cluster:
-  Use baseline_train_adam.sh (same structure as baseline_train.sh)
+  Use diy_transformer_training.sh (same structure as baseline_train.sh)
 """
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -122,11 +120,12 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
             running_total += captions.size(0)
             batches_since_last_log += 1
 
-            if i % print_save_freq == 0 or i == len(train_data_loader) - 1:
+            if i > 0 and i % print_save_freq == 0 or i == len(train_data_loader) - 1:
 
-                running_loss = running_loss / running_total
+                # avg loss across batches
+                running_loss = running_loss / batches_since_last_log
 
-                avg_val_loss = get_avg_validation_loss(model, val_data_loader, loss_fn, vocab)
+                avg_val_loss = get_avg_validation_transformer_loss(model, val_data_loader, loss_fn, vocab)
 
                 writer.add_scalars("Loss", {
                     "train": running_loss,
@@ -145,7 +144,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
                                     last_lr, lr_scheduler, best_perf, opt.weight_decay,
                                     save_path_labeled)
 
-                print(f'[{epoch_i + 1}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] avg train loss: {running_loss:.3f} avg val loss: {avg_val_loss:.3f} lr: {last_lr:.6f}')
+                print(f'[{epoch_i}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] avg train loss: {running_loss:.3f} avg val loss: {avg_val_loss:.3f} lr: {last_lr:.6f}')
                 running_loss = 0.0
                 running_total = 0.0
                 batches_since_last_log = 0
@@ -191,7 +190,8 @@ def main(opt):
         curr_lr = opt.lr
 
     train_val_model(opt, vocab, model, train_loader, val_loader, loss_fn,
-                    optimizer, lr_scheduler, curr_lr, curr_epoch, opt.epochs, best_perf, print_save_freq=50)
+                    optimizer, lr_scheduler, curr_lr, curr_epoch, opt.epochs, best_perf, 
+                    print_save_freq=opt.print_freq)
 
 
 ############## Helper Fns for Args ############################
@@ -214,6 +214,7 @@ def parse_betas(s):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--epochs", type=int, default=30, help="number of epochs")
+    parser.add_argument("--print_freq", type=int, default=50, help="how many batches go by in between save and prints")
     parser.add_argument("--checkpoint", type=str2bool, default=True, help="true to load from checkpoint, false otherwise")
     parser.add_argument("--checkpoint_path", type=str, default="./model.pt", help="path to checkpoint")
     parser.add_argument("--dataset_dir", type=str, default=".", help="directory for all images/annotations")

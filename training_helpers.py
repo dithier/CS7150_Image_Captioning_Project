@@ -6,6 +6,7 @@ from torch.utils.data import Subset, DataLoader
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# This is only for LSTM model 
 def get_avg_validation_loss(model, val_data_loader, loss_fn, vocab):
     running_loss = 0
 
@@ -47,10 +48,9 @@ def evaluate(model, image, vocab):
             decoded_words.append(vocab.index_to_word[idx.item()])
     return decoded_words
 
-def evaluateRandomly(model, val_data_loader, vocab, n=10):
+def evaluateRandomly(model, val_data_loader, vocab, n=5):
     indices = torch.randperm(len(val_data_loader))[:n]
     subset_dataset = Subset(val_data_loader.dataset, indices)
-    # todo come back to
     subset_loader = DataLoader(subset_dataset, batch_size=1)
     
     for image, caption, _ in subset_loader:
@@ -74,7 +74,8 @@ def get_avg_validation_transformer_loss(model, val_data_loader, loss_fn, vocab):
             captions = captions.to(device)
 
             # use the model
-            outputs = model(images) # we want <SOS> to last word but not <EOS> token
+            # todo: need to delete last token?
+            outputs = model(images) 
 
             loss = loss_fn(
                 outputs.reshape(-1, len(vocab)), # first dimension is batch * seq length, second dim vocab size
