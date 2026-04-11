@@ -120,7 +120,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
             running_total += captions.size(0)
             batches_since_last_log += 1
 
-            if i > 0 and i % print_save_freq == 0 or i == len(train_data_loader) - 1:
+            if (i > 1 and i % print_save_freq == 0) or i == len(train_data_loader) - 1:
 
                 # avg loss across batches
                 running_loss = running_loss / batches_since_last_log
