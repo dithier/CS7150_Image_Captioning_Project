@@ -43,7 +43,8 @@ class VisionTransformerModel(nn.Module):
         layer_norm_1 = nn.LayerNorm(self.embed_dim)
         encoder_layer = nn.TransformerEncoderLayer(self.embed_dim, num_heads, dim_feedforward=trx_ff_dim,
                                                    dropout=dropout, batch_first=True, norm_first=True)
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_encoder_cells, norm=layer_norm_1) # need device?
+        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_encoder_cells, norm=layer_norm_1,
+                                                         enable_nested_tensor=False) # need device?
 
         layer_norm_2 = nn.LayerNorm(self.embed_dim)
         decoder_layer = nn.TransformerDecoderLayer(self.embed_dim, num_heads, dim_feedforward=trx_ff_dim, 

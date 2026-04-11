@@ -182,7 +182,8 @@ def main(opt):
         loss_fn, optimizer = set_up_Adam_loss_optimizer(model, lr, opt.betas, weight_decay, vocab)
         optimizer.load_state_dict(optimizer_state_dict)
 
-        lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
+        lr_scheduler = torch.optim.lr_scheduler.ConstantLR(optimizer, factor=1)
+        # lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
         lr_scheduler.load_state_dict(lr_sched_state)
 
         curr_lr = lr
@@ -222,7 +223,7 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint", type=str2bool, default=True, help="true to load from checkpoint, false otherwise")
     parser.add_argument("--checkpoint_path", type=str, default="./model.pt", help="path to checkpoint")
     parser.add_argument("--dataset_dir", type=str, default=".", help="directory for all images/annotations")
-    parser.add_argument("--lr", type=float, default=1e-4, help="starting learning rate")
+    parser.add_argument("--lr", type=float, default=1e-3, help="starting learning rate")
     parser.add_argument("--betas", type=parse_betas, default="0.9,0.999", help="Adam betas as 'b1,b2'")
     parser.add_argument("--weight_decay", type=float, default=1e-4, help="Adam weight decay")
     parser.add_argument("--log_dir", type=str, default="./runs/diy_transformer_pass_1", help="tensorboard log directory")
