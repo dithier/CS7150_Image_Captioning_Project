@@ -3,8 +3,8 @@
 #SBATCH --gres=gpu:v100-sxm2:1
 #SBATCH --time=8:00:00
 #SBATCH --job-name=transformer_training
-#SBATCH --output=logs/transformer/%j.out
-#SBATCH --error=logs/transformer/%j.err
+#SBATCH --output=logs/transformer_two/%j.out
+#SBATCH --error=logs/transformer_two/%j.err
 
 # Note: may need to change params in file run to run
 
@@ -14,10 +14,10 @@ source activate cs7150
 export PYTHONPATH=$(pwd)
 
 python -u ViT/diy_transformer_training_2.py \
-	--epochs 1 \
-    --print_freq 50 \
+	--epochs 30 \
+    --print_freq 250 \
 	--checkpoint False \
 	--dataset_dir flickr8k \
-	--log_dir test \
-    --save_path test
+	--log_dir runs/transformer_two  \
+    --save_path saved_models/transformer_two
     
