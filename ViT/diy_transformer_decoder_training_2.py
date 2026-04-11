@@ -143,6 +143,12 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
                     save_checkpoint(model, optimizer, epoch_i, running_loss, avg_val_loss,
                                     last_lr, lr_scheduler, best_perf, opt.weight_decay,
                                     save_path_labeled)
+                
+                if epoch_i == total_epochs and i == len(train_data_loader) - 1:
+                    save_path_labeled = os.path.join(opt.save_path, f"model_{epoch_i}_epochs.pt")
+                    save_checkpoint(model, optimizer, epoch_i, running_loss, avg_val_loss,
+                                    last_lr, lr_scheduler, best_perf, opt.weight_decay,
+                                    save_path_labeled)
 
                 print(f'[{epoch_i}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] avg train loss: {running_loss:.3f} avg val loss: {avg_val_loss:.3f} lr: {last_lr:.6f}')
                 running_loss = 0.0

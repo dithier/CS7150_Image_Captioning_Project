@@ -3,7 +3,7 @@ from torch.utils.tensorboard import SummaryWriter
 import argparse
 from dataloader_v2 import get_flickr8k_loaders
 from training_helpers import *
-from transformer_enc_doc_model import VisionTransformerModel
+from pytorch_transformer_enc_dec_model import VisionTransformerModel
 import os
 
 # pip install tensorboard
