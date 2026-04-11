@@ -190,7 +190,8 @@ def main(opt):
     else:
         loss_fn, optimizer = set_up_Adam_loss_optimizer(model, opt.lr, opt.betas, opt.weight_decay, vocab)
         curr_epoch = 1
-        lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
+        lr_scheduler = torch.optim.lr_scheduler.ConstantLR(optimizer, factor=1)
+        #lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
         best_perf = float("inf")
         curr_lr = opt.lr
 
