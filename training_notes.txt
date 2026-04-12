@@ -70,3 +70,9 @@ Decoder only pass 2
     - decoder cell = 4
     - same parameters as before
     - no other change in the model
+
+Decoder Only model 3
+    - dropout = 0.3
+    - decoder cells = 4
+    - same parameters as before 
+    - transformer_dec_only_model and transformer_enc_doc_only used

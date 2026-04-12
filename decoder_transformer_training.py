@@ -7,7 +7,7 @@ from torch.utils.tensorboard import SummaryWriter
 import argparse
 from dataloader_v2 import get_flickr8k_loaders
 from training_helpers import *
-from decoder_transformer_only_model import VisionTransformerDecoderModel  # CHANGED
+from transformer_dec_only_model import VisionTransformerDecoderModel  # CHANGED
 import os
 
 # pip install tensorboard
@@ -160,8 +160,8 @@ def main(opt):
     embed_dim = 256
     num_heads = 8
     trx_ff_dim = embed_dim * 4
-    num_decoder_cells = 4 # pass_1 -> 6
-    dropout = 0.3 # pass_1 ->0.1
+    num_decoder_cells = 4 # 6 -> 4
+    dropout = 0.3 # 0.1 -> 0.3
 
     model = VisionTransformerDecoderModel(
         vocab, P, embed_dim, num_heads, trx_ff_dim, num_decoder_cells, dropout
