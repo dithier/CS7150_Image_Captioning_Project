@@ -64,6 +64,8 @@ Decoder only model
     - used the parameters: dropout = 0.1 
     - num_decoder_cells = 6
     - rest of the code same 
+    - lr = 0.0001
+    - 
 
 Decoder only pass 2
     - dropout = 0.3
