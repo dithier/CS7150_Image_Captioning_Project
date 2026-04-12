@@ -187,7 +187,7 @@ def main(opt):
         curr_lr = opt.lr
 
     train_val_model(opt, vocab, model, train_loader, val_loader, loss_fn,
-                    optimizer, lr_scheduler, curr_lr, curr_epoch, opt.epochs, best_perf, print_save_freq=50)
+                    optimizer, lr_scheduler, curr_lr, curr_epoch, opt.epochs, best_perf, print_save_freq=250)
 
 
 ############## Helper Fns for Args ############################
