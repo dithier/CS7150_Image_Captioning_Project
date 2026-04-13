@@ -108,7 +108,7 @@ def get_avg_validation_transformer_teacher_loss(model, val_data_loader, loss_fn,
             captions = captions.to(device)
 
             # use the model
-            outputs = model.foward_train(images, captions[:, :-1]) # we want <SOS> to last word but not <EOS> token
+            outputs = model.forward_train(images, captions[:, :-1]) # we want <SOS> to last word but not <EOS> token
 
             loss = loss_fn(
                 outputs.reshape(-1, len(vocab)), # first dimension is batch * seq length, second dim vocab size
