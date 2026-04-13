@@ -1,5 +1,5 @@
 import math
-from transformer_enc_doc_model import PositionalEncoding
+from ViT.transformer_enc_doc_model import PositionalEncoding
 import torch
 import torch.nn as nn
 

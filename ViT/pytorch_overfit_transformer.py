@@ -159,7 +159,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
 
 
 def main(opt):
-    train_loader, val_loader, _, vocab = get_flickr8k_loaders(root_dir=opt.dataset_dir)
+    train_loader, val_loader, test_loader, vocab = get_flickr8k_loaders(root_dir=opt.dataset_dir)
 
     # Note these model params may be too larger for such a small dataset, Might overfit
     P = 16
@@ -195,7 +195,8 @@ def main(opt):
         best_perf = float("inf")
         curr_lr = opt.lr
 
-    train_val_model(opt, vocab, model, train_loader, val_loader, loss_fn,
+    #### USE test_loader instead of train in effort to overfit
+    train_val_model(opt, vocab, model, test_loader, val_loader, loss_fn,
                     optimizer, lr_scheduler, curr_lr, curr_epoch, opt.epochs, best_perf, 
                     print_save_freq=opt.print_freq)
 
