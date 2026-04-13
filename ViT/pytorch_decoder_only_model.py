@@ -1,16 +1,15 @@
 import math
-from ViT.transformer_enc_doc_model import PositionalEncoding
+from transformer_enc_doc_model import PositionalEncoding
 import torch
 import torch.nn as nn
 
-class VisionTransformerModel(nn.Module):
+class VisionTransformerDecoderModel(nn.Module):
     """
     A Transformer-based image captioning model
     """
     def __init__(self,
             vocab, P: int, embed_dim: int, num_heads: int, trx_ff_dim: int,
-            num_encoder_cells: int, num_decoder_cells : int,
-              dropout: float=0.1
+            num_decoder_cells : int, dropout: float=0.1
         ):
         """
         Inputs:
@@ -21,7 +20,7 @@ class VisionTransformerModel(nn.Module):
         - num_trx_cells: Number of TransformerEncoderCells
         - dropout: Dropout ratio
         """
-        super(VisionTransformerModel, self).__init__()
+        super(VisionTransformerDecoderModel, self).__init__()
 
         self.P = P
         self.C = 3 # number of channels
@@ -38,19 +37,15 @@ class VisionTransformerModel(nn.Module):
         ###########################################################################
         self.image_embedding_layer = nn.Linear(self.init_embed_dim, self.embed_dim)
         self.positional_encoding = PositionalEncoding(self.embed_dim)
-        self.embedding = nn.Embedding(len(vocab), self.embed_dim)
 
+        # Note: becauses no cross attention we use pytorch's encoder cell for our decoder
         layer_norm_1 = nn.LayerNorm(self.embed_dim)
         encoder_layer = nn.TransformerEncoderLayer(self.embed_dim, num_heads, dim_feedforward=trx_ff_dim,
                                                    dropout=dropout, batch_first=True, norm_first=True)
-        self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_encoder_cells, norm=layer_norm_1,
+        self.transformer_decoder = nn.TransformerEncoder(encoder_layer, num_layers=num_decoder_cells, norm=layer_norm_1,
                                                          enable_nested_tensor=False) 
-
-        layer_norm_2 = nn.LayerNorm(self.embed_dim)
-        decoder_layer = nn.TransformerDecoderLayer(self.embed_dim, num_heads, dim_feedforward=trx_ff_dim, 
-                                                   dropout=dropout, batch_first=True, norm_first=True)
-        self.transformer_decoder = nn.TransformerDecoder(decoder_layer, num_decoder_cells, norm=layer_norm_2) 
         
+        self.embedding = nn.Embedding(len(vocab), self.embed_dim)
         self.fc_out = nn.Linear(self.embed_dim, len(vocab))
         ###########################################################################
         #                             END OF YOUR CODE                            #
@@ -65,6 +60,32 @@ class VisionTransformerModel(nn.Module):
 
         # patches is B X N X (P * P * C)
         return patches
+
+    def get_mask(self, N, L, labels, device):
+        # final causal mask size (N + L) X (N + L)
+        dim = N + L
+        causal_mask = torch.zeros((dim, dim), dtype=torch.bool, device=device)
+
+        # True in pytorch attn mask means you are not allowed to attend (reverse from HWs)
+
+        # we want the image part of the mask to be visible everywhere
+        # so causal_mask[:, :N] remains the initialized 0
+
+        # However, the picture tokens shouldn't be allowed to attend to labels
+        causal_mask[:N, N:] = 1
+
+        submask = (torch.triu(torch.ones(L, L), diagonal=1)).bool()
+        submask = submask.to(device)
+        causal_mask[N:, N:] = submask
+
+        # we also want to mask out padding tokens
+        pad_mask = (labels == self.pad_token) # B X L
+        # no padding during image part of input so all should be seen by model
+        pad_img_mask = torch.zeros((labels.size(0), N), dtype=torch.bool, device=device)
+        # concatenate pad masks
+        pad_mask = torch.concat((pad_img_mask, pad_mask), dim=-1) # B X (N + L)
+
+        return pad_mask, causal_mask
 
     def forward_train(self, image, labels):
         """
@@ -90,40 +111,45 @@ class VisionTransformerModel(nn.Module):
         # batch num
         B = image.shape[0]
 
-        seq_len = labels.size(1)
+        # Num in seq
+        L = labels.size(1)
 
-        embedded = self.make_patches(image) # B X N X (P * P * C)
-        embedded = self.image_embedding_layer(embedded) * math.sqrt(self.embed_dim) # B X N X self.embed_dim
-
-        causal_mask = torch.triu(torch.ones(seq_len, seq_len), diagonal=1).bool().to(labels.device) #seq len X seq len
-
-        padding_mask = (labels == self.pad_token) # B x seq len
-
-        logits = None
-        ###########################################################################
-        # Apply positional embedding to the input, which is then fed into   #
-        # the encoder. Average pooling is applied then to all the features of all #
-        # tokens. Finally, the logits are computed based on the pooled features.  #
-        ###########################################################################
-        # C' = self.embed_dim
-        output = self.positional_encoding(embedded) # B X N X C'
-        encoder_output = self.transformer_encoder(output) # B X N X C'
+        image_tokens = self.make_patches(image) # B X N X (P * P * C)
+        
+        # C' is embed dimension
+        image_embedding = self.image_embedding_layer(image_tokens)  * math.sqrt(self.embed_dim) # B X N X C'
 
         # label embeddings B X L
-        label_embeddings = self.embedding(labels) * math.sqrt(self.embed_dim) # B X L X C
-        # add positional encoding
-        label_embeddings = self.positional_encoding(label_embeddings)
-
-        decoder_output = self.transformer_decoder(label_embeddings, encoder_output,  tgt_mask=causal_mask,    
-                                                  tgt_key_padding_mask=padding_mask,
-                                                  memory_key_padding_mask=None,
-                                                  tgt_is_causal=True) 
+        label_embeddings = self.embedding(labels) * math.sqrt(self.embed_dim) # B X L X C'
         
-        logits = self.fc_out(decoder_output) # B X L X vocab_size
+        # Now we concatenate our image and label embeddings by making the image embedding a prefix
+        embedding = torch.cat((image_embedding, label_embeddings), dim=1) # B x (N + L) X C'
+    
+        # positional encoding applied to whole combined embedding
+        output = self.positional_encoding(embedding) # B X (N + L) X C'
 
-        ###########################################################################
-        #                             END OF YOUR CODE                            #
-        ###########################################################################
+        # generate mask for next step
+        pad_mask, causal_mask = self.get_mask(N, L, labels, image.device)
+
+        # pass PE result into transformer decoder model and all its cells
+        output = self.transformer_decoder(output, mask=causal_mask, src_key_padding_mask=pad_mask,
+                                          is_causal=True) 
+        
+        ## or should we do this? with actual decoder
+        # output (B, L, embed_dim)
+        # output = self.transformer_decoder(
+        #     tgt=label_embeddings,    # (B, L, embed_dim) — caption tokens
+        #     memory=image_embeddings, # (B, N, embed_dim) — image patches as "encoder output"
+        #     tgt_mask=causal_mask,
+        #     tgt_key_padding_mask=padding_mask,
+        #     tgt_is_causal=True
+        # )
+        # logits = self.fc_out(output)
+
+        # get just positions related to captions in output
+        caption_output = output[:, N:, :]
+
+        logits = self.fc_out(caption_output) # B X L X vocab_size
 
         return logits
     
@@ -137,22 +163,30 @@ class VisionTransformerModel(nn.Module):
         B = image.shape[0]
 
         embedded = self.make_patches(image) # B X N X (P * P * C)
-        embedded = self.image_embedding_layer(embedded) * math.sqrt(self.embed_dim) # B X N X self.embed_dim
-        embedded = self.positional_encoding(embedded)
+        embedded = self.image_embedding_layer(embedded) # B X N X self.embed_dim
 
         # start with just <SOS>
-        generated = torch.full(
+        start = torch.full(
             (B, 1), # make a tensor for dimensions batch size, 1
             self.vocab.word_to_index[self.vocab.SOS_TOKEN], # make every row start with the Start of Sentence (SOS) token
             dtype=torch.long, device=image.device
         )
         
-        encoder_output = self.transformer_encoder(embedded)
+        # generated is embedded image and embedded start token, both scaled 
+        generated = torch.cat((embedded, self.embedding(start)), dim=1) * math.sqrt(self.embed_dim)
+
         decoder_outputs = []
 
         for _ in range(max_length + 1):
-            decoder_input = self.positional_encoding(self.embedding(generated) * math.sqrt(self.embed_dim))
-            decoder_output = self.transformer_decoder(decoder_input, encoder_output)
+            # this includes image embedding and tokens generated so far
+            decoder_input = self.positional_encoding(generated)
+            decoder_output = self.transformer_decoder(decoder_input)
+
+            # OR other method
+            # output = self.transformer_decoder(
+                #     tgt=generated,    # (B, L, embed_dim) — caption tokens
+                #     memory=image_embeddings, # (B, N, embed_dim) — image patches as "encoder output"
+                # )
 
             output = self.fc_out(decoder_output)
             last_output = output[:, -1, :]
@@ -161,8 +195,10 @@ class VisionTransformerModel(nn.Module):
 
             # get indices of highest values 
             _, topi = last_output.topk(1)
+
+            top_i_embedded = self.embedding(topi) * math.sqrt(self.embed_dim)
         
-            generated = torch.cat((generated, topi), dim=1)
+            generated = torch.cat((generated, top_i_embedded), dim=1)
         
         logits = torch.stack(decoder_outputs, dim=1)
 
@@ -186,3 +222,5 @@ class VisionTransformerModel(nn.Module):
 
         # testing-time behavior
         return self.forward_test(images)
+    
+   
