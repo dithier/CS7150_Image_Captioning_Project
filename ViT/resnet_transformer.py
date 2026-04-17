@@ -92,7 +92,7 @@ class TranformerDecoder(nn.Module):
         # add positional encoding
         label_embeddings = self.positional_encoding(label_embeddings)
 
-        # encoder_output is B x embed_dim
+        # encoder_output is B x 49 x embed_dim
         decoder_output = self.transformer_decoder(label_embeddings, encoder_output, tgt_mask=causal_mask,    
                                                   tgt_key_padding_mask=padding_mask,
                                                   memory_key_padding_mask=None,
@@ -136,25 +136,7 @@ class TranformerDecoder(nn.Module):
         logits = torch.stack(decoder_outputs, dim=1)
 
         return logits
-    
-    def forward(self, encoder_output, labels=None):
-        """
-        Inputs:
-        - image: is input image(s) of shape B x C X H X W
-        - labels: Tensor of BxLd, word indexes of the english caption. Can be empty.
 
-        Return:
-        - y: Tensor of BxLdxK, corresponding to the log probabilities of generated
-             words in the target language. K is the vocab size.
-        """
-        
-        if self.training:
-            # training-time behavior
-            assert labels is not None
-            return self.forward_train(encoder_output, labels)
-
-        # testing-time behavior
-        return self.forward_test(encoder_output)
 
 class ResnetTransformerModel(nn.Module):
     def __init__(self, vocab, num_heads, trx_ff_dim, num_decoder_cells, embed_dim=512, dropout= 0.1, freeze=True):
@@ -165,10 +147,32 @@ class ResnetTransformerModel(nn.Module):
         self.encoder = ResNetEncoder(embed_dim, freeze)
 
         self.decoder = TranformerDecoder(self.vocab, self.embed_dim, num_heads, trx_ff_dim, num_decoder_cells, dropout)
+    
+    def forward_train(self, encoder_output, captions):
+        return self.decoder.forward_train(encoder_output, captions)
 
-    # returns logtis
-    def forward(self, images, captions=None):
-        x = self.encoder(images)
-        return self.decoder(x, captions)
+    def forward_test(self, encoder_output):
+        return self.decoder.forward_test(encoder_output)
+
+    # returns logits
+    def forward(self, images, labels=None):
+        """
+        Inputs:
+        - image: is input image(s) of shape B x C X H X W
+        - labels: Tensor of BxLd, word indexes of the english caption. Can be empty.
+
+        Return:
+        - y: Tensor of BxLdxK, corresponding to the log probabilities of generated
+             words in the target language. K is the vocab size.
+        """
+        encoder_output = self.encoder(images)
+
+        if self.training:
+            # training-time behavior
+            assert labels is not None
+            return self.forward_train(encoder_output, labels)
+
+        # testing-time behavior
+        return self.forward_test(encoder_output)
     
 
