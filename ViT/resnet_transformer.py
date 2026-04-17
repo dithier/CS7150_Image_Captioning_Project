@@ -148,10 +148,12 @@ class ResnetTransformerModel(nn.Module):
 
         self.decoder = TranformerDecoder(self.vocab, self.embed_dim, num_heads, trx_ff_dim, num_decoder_cells, dropout)
     
-    def forward_train(self, encoder_output, captions):
+    def forward_train(self, images, captions):
+        encoder_output = self.encoder(images)
         return self.decoder.forward_train(encoder_output, captions)
 
-    def forward_test(self, encoder_output):
+    def forward_test(self, images):
+        encoder_output = self.encoder(images)
         return self.decoder.forward_test(encoder_output)
 
     # returns logits
@@ -165,14 +167,13 @@ class ResnetTransformerModel(nn.Module):
         - y: Tensor of BxLdxK, corresponding to the log probabilities of generated
              words in the target language. K is the vocab size.
         """
-        encoder_output = self.encoder(images)
 
         if self.training:
             # training-time behavior
             assert labels is not None
-            return self.forward_train(encoder_output, labels)
+            return self.forward_train(images, labels)
 
         # testing-time behavior
-        return self.forward_test(encoder_output)
+        return self.forward_test(images)
     
 
