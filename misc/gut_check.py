@@ -1,7 +1,7 @@
 import torch
 import argparse
 from dataloader import get_flickr8k_loaders
-from baseline_models.baseline_model_v2 import BaselineModel
+from baseline.baseline_model_v2 import BaselineModel
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -27,6 +27,7 @@ def main(opt):
 
     # build model and load weights from checkpoint
     model = BaselineModel(vocab_size=len(vocab)).to(device)
+    
     checkpoint = torch.load(opt.checkpoint_path, map_location=device)
     model.load_state_dict(checkpoint['model_state_dict'])
     print(f"Loaded checkpoint from {opt.checkpoint_path}")
@@ -49,7 +50,7 @@ def main(opt):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint_path", type=str, 
-                        default="model.pt", 
+                        default="models/pytorch_transformer_model_30_epochs.pt", 
                         required=False, 
                         help="path to saved model checkpoint")
     parser.add_argument("--dataset_dir", type=str, 

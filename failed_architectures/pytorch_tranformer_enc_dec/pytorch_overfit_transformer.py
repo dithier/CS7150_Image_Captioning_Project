@@ -10,6 +10,9 @@ import os
 # pip install pandas
 # pip install nltk
 
+# IMPT: This file is same as train file in directory but uses large model with hope that we can at least overfit the model and see good results on train
+# to verify that our methods are correct
+
 """
 More correct version of baseline_training.py.
 Key differences from diy_transformer_training.py:
