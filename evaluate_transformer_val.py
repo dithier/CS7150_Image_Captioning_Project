@@ -4,24 +4,18 @@ import math
 from collections import defaultdict
 from dataloader_v2 import get_flickr8k_loaders
 from eval_metrics import evaluation_metric
-from decoder_transformer_only_model import VisionTransformerDecoderModel  # CHANGED
+from transformer_model import VisionTransformerModel
 
 """
-Evaluate a saved decoder-only transformer checkpoint on the test set.
+Evaluate a saved encoder-decoder transformer checkpoint on the VALIDATION set.
 Supports BLEU-1 through BLEU-4, METEOR, CIDEr-D, and CIDEr per n-gram order.
 
 Usage:
     # all metrics (default)
-    python evaluate_decoder_transformer.py --checkpoint_path saved_models/decoder_transformer_pass_1/model.pt
+    python evaluate_transformer_val.py --checkpoint_path saved_models/diy_transformer_pass_1/model.pt
 
-    # bleu only
-    python evaluate_decoder_transformer.py --checkpoint_path saved_models/decoder_transformer_pass_1/model.pt --metric bleu
-
-    # meteor only
-    python evaluate_decoder_transformer.py --checkpoint_path saved_models/decoder_transformer_pass_1/model.pt --metric meteor
-
-    # cider only
-    python evaluate_decoder_transformer.py --checkpoint_path saved_models/decoder_transformer_pass_1/model.pt --metric cider
+    # single metric
+    python evaluate_transformer_val.py --checkpoint_path saved_models/diy_transformer_pass_1/model.pt --metric bleu
 """
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -31,19 +25,14 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # Caption Generation
 # ──────────────────────────────────────────────
 
-def generate_captions(model, data_loader):  # CHANGED: no vocab arg — decoder model doesn't need it
-    """
-    Run model.generate() over entire dataloader.
-    Returns dict: { image_name -> list of str }
-    Decoder-only generate() returns word strings directly (no vocab needed).
-    """
+def generate_captions(model, data_loader):
     model.eval()
     all_generated = {}
 
     with torch.no_grad():
         for images, captions, image_names in data_loader:
             images = images.to(device)
-            batch_generated = model.generate(images)  # CHANGED: no vocab arg
+            batch_generated = model.generate(images)
 
             for img_name, words in zip(image_names, batch_generated):
                 if img_name not in all_generated:
@@ -71,13 +60,7 @@ def compute_meteor(ref_dict, hypotheses_dict):
     scores = []
     for img_name, references in ref_dict.items():
         hypothesis = hypotheses_dict.get(img_name, ["<unk>"])
-        score = meteor_score(
-            references,
-            hypothesis,
-            alpha=0.9,
-            beta=3.0,
-            gamma=0.5
-        )
+        score = meteor_score(references, hypothesis, alpha=0.9, beta=3.0, gamma=0.5)
         scores.append(score)
 
     return sum(scores) / len(scores) if scores else 0.0
@@ -107,7 +90,6 @@ def compute_cider_n(test_counts, refs_counts, doc_freq, num_images, n, sigma=6.0
         return vec, norm
 
     hyp_vec, hyp_norm = tfidf_vec(test_counts)
-
     ref_lens = [sum(v for v in rc.values()) for rc in refs_counts]
     avg_ref_len = sum(ref_lens) / len(ref_lens) if ref_lens else 1
     hyp_len = sum(v for v in test_counts.values())
@@ -125,9 +107,6 @@ def compute_cider_n(test_counts, refs_counts, doc_freq, num_images, n, sigma=6.0
 
 
 def compute_cider(ref_dict, hypotheses_dict, n_max=4, sigma=6.0):
-    """
-    Returns overall CIDEr-D score and per n-gram order breakdown.
-    """
     image_names = list(ref_dict.keys())
     num_images = len(image_names)
 
@@ -160,12 +139,7 @@ def compute_cider(ref_dict, hypotheses_dict, n_max=4, sigma=6.0):
         image_score = 0.0
         for n in range(1, n_max + 1):
             n_score = compute_cider_n(
-                test_ngrams[n][i],
-                refs_ngrams[n][i],
-                doc_freqs[n],
-                num_images,
-                n,
-                sigma,
+                test_ngrams[n][i], refs_ngrams[n][i], doc_freqs[n], num_images, n, sigma,
             )
             scores_per_order[n].append(n_score)
             image_score += n_score
@@ -191,21 +165,22 @@ def main(opt):
         nltk.download("wordnet", quiet=True)
         nltk.download("omw-1.4", quiet=True)
 
-    _, _, test_loader, vocab = get_flickr8k_loaders(
+    _, val_loader, _, vocab = get_flickr8k_loaders(  # val_loader, not test_loader
         root_dir=opt.dataset_dir,
         batch_size=opt.ref * 32
     )
 
-    # CHANGED: decoder-only model instantiation, no num_encoder_cells
     P = 16
     embed_dim = 256
     num_heads = 8
     trx_ff_dim = embed_dim * 4
-    num_decoder_cells = 4#6
-    dropout = 0.3 #0.1
+    num_encoder_cells = 6
+    num_decoder_cells = 6
+    dropout = 0.1
 
-    model = VisionTransformerDecoderModel(
-        vocab, P, embed_dim, num_heads, trx_ff_dim, num_decoder_cells, dropout
+    model = VisionTransformerModel(
+        vocab, P, embed_dim, num_heads, trx_ff_dim,
+        num_encoder_cells, num_decoder_cells, dropout
     ).to(device)
 
     checkpoint = torch.load(opt.checkpoint_path, map_location=device)
@@ -213,10 +188,9 @@ def main(opt):
     print(f"Loaded checkpoint from {opt.checkpoint_path}")
     print(f"Saved at epoch {checkpoint['epoch']} | val loss {checkpoint['val_loss']:.4f}")
 
-    # generate once — reuse for all metrics
-    print("\nGenerating captions over test set...")
-    hypotheses_dict = generate_captions(model, test_loader)  # CHANGED: no vocab arg
-    ref_dict = test_loader.dataset.get_all_references_dict()
+    print("\nGenerating captions over validation set...")
+    hypotheses_dict = generate_captions(model, val_loader)
+    ref_dict = val_loader.dataset.get_all_references_dict()
 
     assert len(hypotheses_dict) == len(ref_dict), (
         f"Mismatch: {len(hypotheses_dict)} hypotheses vs {len(ref_dict)} reference images"
@@ -227,7 +201,7 @@ def main(opt):
 
     if opt.metric in ("bleu", "all"):
         print("\nComputing BLEU scores...")
-        bleu = compute_bleu(test_loader, hypotheses_dict, ref_dict)
+        bleu = compute_bleu(val_loader, hypotheses_dict, ref_dict)
         print("\n--- BLEU Scores ---")
         print(f"  BLEU-1: {bleu['bleu1'] * 100:.2f}")
         print(f"  BLEU-2: {bleu['bleu2'] * 100:.2f}")
@@ -252,7 +226,7 @@ def main(opt):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint_path", type=str, required=True,
-                        help="path to saved decoder transformer checkpoint")
+                        help="path to saved transformer checkpoint")
     parser.add_argument("--metric", type=str,
                         choices=["bleu", "meteor", "cider", "all"], default="all",
                         help="which metric(s) to compute (default: all)")
