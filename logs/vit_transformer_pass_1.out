@@ -2525,3 +2525,46 @@ truth == a child in gray clothes is sleeping on a red cushion
 output > a boy on a red couch <EOS>
 
 [30/30,   501/938] avg train loss: 1.931 avg val loss: 3.062 lr: 0.000002
+image: ('1105959054_9c3a738096.jpg',)
+truth == the child paints on a large paper with water colors
+output > a young girl in a green shirt is standing in front of a window <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men wear silly stove pipe hats and wear makeup
+output > a man in a red shirt and a santa suit <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a dog jumps to catch a frisbee while many people watch
+output > a dog jumps in the air while people watch <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a man is drilling through the frozen ice of a pond
+output > a man is sitting on a woman on a blanket on the beach <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a girl is getting ready to swing the club
+output > a man in a blue shirt and blue shirt is standing in a field of grass <EOS>
+
+[30/30,   751/938] avg train loss: 1.933 avg val loss: 3.062 lr: 0.000002
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man standing in a bar with a neon beer sign hanging on the wall
+output > a group of people sitting on a counter <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man stands next to three video game machines and a beer sign
+output > a group of people sitting on a counter <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a girl walking alone at night on a street
+output > a man in a black shirt and white shirt walking in a doorway <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a child with a helmet on his head rides a bike
+output > a man rides a bicycle down a paved road <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a person standing on a frozen lake
+output > a man is sitting on a woman on a blanket on the ground <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model_30_epochs.pt
+[30/30,   938/938] avg train loss: 1.921 avg val loss: 3.064 lr: 0.000002
