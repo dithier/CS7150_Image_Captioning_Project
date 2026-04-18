@@ -2,10 +2,11 @@ import torch
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
-from eval_metrics import evaluation_metric, prepare_hypotheses
+from torch.utils.data import Subset, DataLoader
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# This is only for LSTM model 
 def get_avg_validation_loss(model, val_data_loader, loss_fn, vocab):
     running_loss = 0
 
@@ -31,35 +32,96 @@ def get_avg_validation_loss(model, val_data_loader, loss_fn, vocab):
     
     return running_loss / len(val_data_loader)
 
-
-
-def test_model(model, data_loader, vocab):
+def evaluate(model, image, vocab):
     model.eval()
-
-    all_generated = {}  # image_name -> generated caption (deduplicate by image)
-
     with torch.no_grad():
-        for batch_data in data_loader:
-            images, captions, image_names = batch_data
+        outputs = model(image)
+
+        _, topi = outputs.topk(1)
+        decoded_ids = topi.squeeze()
+
+        decoded_words = []
+        for idx in decoded_ids:
+            if idx.item() == vocab.word_to_index["<EOS>"]:
+                decoded_words.append('<EOS>')
+                break
+            decoded_words.append(vocab.index_to_word[idx.item()])
+    return decoded_words
+
+def evaluateRandomly(model, val_data_loader, vocab, n=5, print_data=False):
+    indices = torch.randperm(len(val_data_loader))[:n]
+    subset_dataset = Subset(val_data_loader.dataset, indices)
+    subset_loader = DataLoader(subset_dataset, batch_size=1)
+    
+    for image, caption, image_name in subset_loader:
+        image = image.to(device)
+        caption = caption.to(device)
+        
+        output_words = evaluate(model, image, vocab)
+        output_sentence = ' '.join(output_words)
+
+        truth = vocab.decode(caption.squeeze().tolist())
+        print(f"image: {image_name}")
+        print(f"truth == {truth}")
+        print('output >', output_sentence)
+        print('')
+
+# this has no teacher forcing
+def get_avg_validation_transformer_loss(model, val_data_loader, loss_fn, vocab):
+    running_loss = 0
+
+    model.eval()
+    with torch.no_grad():
+        for i, batch_data in enumerate(val_data_loader):
+            # Every data instance is an image + label pair
+            images, captions, _ = batch_data
             images = images.to(device)
+            captions = captions.to(device)
 
-            batch_generated = model.generate(images, vocab)
+            # use the model
+            # todo: need to delete last token?
+            outputs = model(images) 
 
-            for img_name, generated in zip(image_names, batch_generated):
-                if img_name not in all_generated:
-                    all_generated[img_name] = generated
+            loss = loss_fn(
+                outputs.reshape(-1, len(vocab)), # first dimension is batch * seq length, second dim vocab size
+                captions[:, 1:].reshape(-1) # groud truth, ignore <SOS> tag
+            )
 
-    # get references dict to ensure same ordering
-    ref_dict = data_loader.dataset.get_all_references_dict()
+            running_loss += loss.item()
+    
+    evaluateRandomly(model, val_data_loader, vocab)
 
-    # build hypotheses in same order as references
-    hypotheses = prepare_hypotheses(
-        [all_generated[img] for img in ref_dict.keys()],
-        vocab
-    )
+    model.train()
+    
+    return running_loss / len(val_data_loader)
 
-    bleu_scores = evaluation_metric(data_loader, hypotheses)
-    return bleu_scores
+# this has teacher forcing
+def get_avg_validation_transformer_teacher_loss(model, val_data_loader, loss_fn, vocab):
+    running_loss = 0
+
+    model.eval()
+    with torch.no_grad():
+        for i, batch_data in enumerate(val_data_loader):
+            # Every data instance is an image + label pair
+            images, captions, _ = batch_data
+            images = images.to(device)
+            captions = captions.to(device)
+
+            # use the model
+            outputs = model.forward_train(images, captions[:, :-1]) # we want <SOS> to last word but not <EOS> token
+
+            loss = loss_fn(
+                outputs.reshape(-1, len(vocab)), # first dimension is batch * seq length, second dim vocab size
+                captions[:, 1:].reshape(-1) # groud truth, ignore <SOS> tag
+            )
+
+            running_loss += loss.item()
+
+    evaluateRandomly(model, val_data_loader, vocab)
+    model.train()
+    
+    return running_loss / len(val_data_loader)
+
 
 def set_up_SGD_loss_optimizer(model, learning_rate, momentum, vocab):
     """
