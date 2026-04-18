@@ -1,0 +1,2527 @@
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='train'  caption pairs=30000
+[Vocabulary] 7458 tokens total
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='val'  caption pairs=5000
+[Parser] Loaded 40455 caption rows for 8091 unique images.
+[Splits] train=6000  val=1000  test=1091  images  (seed=42)
+[Flickr8kDataset] split='test'  caption pairs=5455
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a spotted dog are fighting
+output > a man in a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a white dog <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a little boy rides a bike down a hill on a miniature dirt bike
+output > a man in a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a young baby sucking a <UNK> asleep in a chair
+output > a man in a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman in a blue coat and blue heels walks down a city sidewalk at night
+output > a man in a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == an artist paints clouds onto a canvas
+output > a man in a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[1/30,   251/938] avg train loss: 5.094 avg val loss: 4.326 lr: 0.000100
+image: ('102351840_323e3de834.jpg',)
+truth == a man drilling a hole in the ice
+output > a man in a red shirt is running through the water <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man in a black jacket is taking a photo of a man in a red jacket
+output > a man in a red shirt is standing on a red shirt <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black dog runs into the ocean next to a pile of seaweed
+output > a dog is running through the water <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a child jumps off a high diving board into the pool
+output > a man in a red shirt is running through the water <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man is standing by a group of video games in a bar
+output > a man in a red shirt is running through a red shirt <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[1/30,   501/938] avg train loss: 4.130 avg val loss: 4.002 lr: 0.000100
+image: ('1187435567_18173c148b.jpg',)
+truth == a small brown and black dog playing with a toy
+output > a dog with a field <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == a man is sitting next to the water reading
+output > a black and white dog is running in the water <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == a person in a brown jacket is sitting on a pier by the water reading
+output > a black and white dog is running in the water <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple with their newborn baby sitting under a tree facing a lake
+output > a man in a red shirt is jumping over a red shirt <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman with a paddle sits in a boat on the water
+output > a man in a red shirt is jumping over a field <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[1/30,   751/938] avg train loss: 3.899 avg val loss: 3.825 lr: 0.000100
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man in a red shirt and a red shirt and a red shirt and a red shirt and a red shirt and a red shirt and a red shirt <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == people are riding around on <UNK>
+output > a man in a red shirt and a red shirt and a snow covered in a snow <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == the <UNK> males pose for a picture
+output > a man in a red shirt and a red shirt and a red shirt and a red shirt and a red shirt and a red shirt and a red shirt <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a little boy lies down on a picnic table bench
+output > a man in a red shirt and a blue shirt and a red shirt and a red shirt and a red shirt and a red shirt and a red shirt <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman paddles a boat down a river
+output > a man in a blue shirt is standing in a water <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[1/30,   938/938] avg train loss: 3.745 avg val loss: 3.715 lr: 0.000100
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man standing in a bar with a neon beer sign hanging on the wall
+output > a man in a red shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white shirt and
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman is taking a swing with a golf club
+output > a man in a red shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white shirt and
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black dog runs into the ocean next to a pile of seaweed
+output > a dog is running on the beach <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == a white dog shakes on the edge of a beach with an orange ball
+output > a dog is running on a beach <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small shaggy dog playing with a toy on a blanket
+output > a black and white dog is running in the snow <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[2/30,   251/938] avg train loss: 3.551 avg val loss: 3.620 lr: 0.000100
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a little girl in a pink bathing suit swimming in a pool
+output > a woman in a blue shirt and a pool <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man standing in a bar with a neon beer sign hanging on the wall
+output > a man in a blue shirt and a blue shirt and a woman in a blue shirt and a blue shirt and a woman in a blue shirt and a blue
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a pile of seaweed sits on the sand behind it a big black dog is running in the water
+output > a dog is running on the beach <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a man without a shirt on is guiding a large brown horse pulling a green and yellow wagon
+output > a man in a blue shirt and a white shirt and a white shirt and a white shirt and a white shirt and a white shirt and a white shirt and
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three women on the street drinking and posing
+output > a woman in a blue shirt and a woman in a blue shirt and a woman in a white shirt and a woman in a white shirt and a woman in
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[2/30,   501/938] avg train loss: 3.472 avg val loss: 3.535 lr: 0.000100
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple sit on the grass with a baby and stroller
+output > a man in a red jacket and a black shirt and a red jacket and a red jacket <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == the young people party in the streets
+output > a woman in a pink shirt and a woman wearing a pink shirt and white shirt and white shirt and white shirt and white shirt and a pink shirt and a
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == person sitting on concrete landing next to body of water
+output > a man in a black wetsuit is standing on a beach <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog jumps to get the frisbee
+output > a dog with a ball in a field <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person <UNK> down a steep incline
+output > a man in a red jacket is standing on a rock <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[2/30,   751/938] avg train loss: 3.413 avg val loss: 3.464 lr: 0.000100
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two people wearing hats sit and look at the camera
+output > a man in a red shirt and a black shirt and white shirt and white shirt and white shirt and a crowd of a crowd of a crowd of a crowd
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a child is on a bench with arms stretched out
+output > a boy in a blue shirt and a blue shirt and a blue shirt and a blue shirt and a pool <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man in a black jacket is taking a photo of a man in a red jacket
+output > a man in a red shirt and a man in a black shirt and a man in a white shirt and a man in a man in a white shirt and
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two younger people are being pulled on watercraft behind a boat
+output > a man in a black shirt and white dog <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three young women pose for the camera at a parade
+output > a woman in a blue shirt and a crowd of people <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[2/30,   938/938] avg train loss: 3.345 avg val loss: 3.422 lr: 0.000100
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a pile of seaweed sits on the sand behind it a big black dog is running in the water
+output > a dog with a stick in the ocean <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a child in gray clothes is sleeping on a red cushion
+output > a little girl in a blue shirt and white shirt and white shirt and white shirt and white shirt <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == the small child climbs on a red ropes on a playground
+output > a girl in a blue shirt and white shirt and white shirt and white shirt and white shirt <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == a person in a brown jacket is sitting on a pier by the water reading
+output > a man in a black wetsuit is swimming pool <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == there are several people and children looking into water with a blue tiled floor and <UNK>
+output > a boy in a blue shirt and white shirt is jumping into a pool <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[3/30,   251/938] avg train loss: 3.197 avg val loss: 3.377 lr: 0.000099
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two people wearing hats sit and look at the camera
+output > a man in a black shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white shirt <EOS>
+
+image: ('1295669416_21cabf594d.jpg',)
+truth == a girl dressed in a red and black top with black pants is sitting on a wall
+output > a woman in a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and a blue shirt and
+
+image: ('102351840_323e3de834.jpg',)
+truth == a man drilling a hole in the ice
+output > a man in a blue shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white dog <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small brown and black dog
+output > a dog with a red collar is running in a red toy <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == several people are standing near a fish pond
+output > a man in a blue shirt and a boy in a blue shirt and blue shirt and blue shirt and blue shirt and blue jeans and blue jeans and blue jeans
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[3/30,   501/938] avg train loss: 3.177 avg val loss: 3.333 lr: 0.000099
+image: ('1007320043_627395c3d8.jpg',)
+truth == the small child climbs on a red ropes on a playground
+output > a girl in a pink shirt and a pink shirt is playing with a blue ball <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a man without a shirt on is guiding a large brown horse pulling a green and yellow wagon
+output > a man in a black shirt and white dog <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man in a red shirt and a bike on a dirt bike <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a man drilling a hole in the ice
+output > a man in a blue shirt and white shirt and white shirt and white shirt and white shirt and white shirt and white shirt and a blue jeans and white shirt
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbs a tall flat mountain while holding onto a safety rope
+output > a man in a blue shirt is rock <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[3/30,   751/938] avg train loss: 3.171 avg val loss: 3.292 lr: 0.000099
+image: ('1119463452_69d4eecd08.jpg',)
+truth == smiling little girl swimming in outdoor pool
+output > a girl in a pool <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == couple with a baby sit outdoors next to their stroller
+output > a man in a black shirt and a black shirt and a black shirt and a black shirt and a black shirt and a black hat <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == the young people party in the streets
+output > a woman in a black shirt and white shirt and a white shirt and a white shirt and a black shirt and a white shirt and a white shirt and a
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a shirtless man <UNK> a horse pulling a carriage along a paved road
+output > a man in a black shirt and white dog <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a little girl in a pink bathing suit swimming in a pool
+output > a girl in a pool <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[3/30,   938/938] avg train loss: 3.115 avg val loss: 3.271 lr: 0.000099
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a white and tan dog leaps through the air
+output > a dog running in a field <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == three people and two <UNK>
+output > a person in a red jacket is riding a snow <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman is taking a swing with a golf club
+output > a boy in a blue shirt and a blue shirt is jumping over a field <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a tri colored dog playing with each other on the road
+output > a dog with a red collar is running on a red ball <EOS>
+
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == the dog in a vest leaps in the air and there is a bird flying
+output > a dog running in a field <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[4/30,   251/938] avg train loss: 2.996 avg val loss: 3.258 lr: 0.000098
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and child kayak through <UNK> waters
+output > a boy in a yellow shirt is in a yellow kayak <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small shaggy dog playing with a toy on a blanket
+output > a dog with a red collar is standing in its mouth <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black dog is jumping up to catch a purple and green toy
+output > a black dog is running in the grass <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man stands next to a bank of computer <UNK> machines
+output > a woman in a white shirt and a white dress <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black dog runs into the ocean next to a pile of seaweed
+output > a dog is running in the sand <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[4/30,   501/938] avg train loss: 2.988 avg val loss: 3.214 lr: 0.000098
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple sit on the grass with a baby and stroller
+output > a man and a woman are standing on a dirt path <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a city sidewalk at night
+output > a man and a woman are standing on a sidewalk <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a tri colored dog playing with each other on the road
+output > two dogs are running on a path <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a boy lays on a picnic table bench
+output > a young boy in a blue shirt and a blue shirt is sitting on a wooden bench <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == dog with orange ball at feet stands on shore shaking off water
+output > a dog with a ball in the background <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[4/30,   751/938] avg train loss: 2.983 avg val loss: 3.195 lr: 0.000098
+image: ('1030985833_b0902ea560.jpg',)
+truth == a brown and black lab are outside and the black lab is catching a toy in its mouth
+output > a dog with a toy in its mouth <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == the <UNK> males pose for a picture
+output > a man in a blue shirt and a white shirt and a white shirt <EOS>
+
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a dog is leaping through the grass
+output > a dog runs through the grass <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a child in gray clothes is sleeping on a red cushion
+output > a little boy in a blue shirt and a blue shirt and a blue shirt <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == some children watching fish in a pool
+output > a boy in a blue shirt and blue shirt is jumping into a pool <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[4/30,   938/938] avg train loss: 2.938 avg val loss: 3.175 lr: 0.000098
+image: ('1149179852_acad4d7300.jpg',)
+truth == shirtless man leading a small horse drawn covered wagon down a road
+output > a man is walking down a street <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three women on the street drinking and posing
+output > a woman in a black dress and white dress <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a black and white border collie catches a frisbee in front of an audience
+output > a black and white dog are playing with a ball in a field <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman kayaking down a river
+output > a woman in a blue shirt is standing in a lake <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a boy lays on a picnic table bench
+output > a boy in a blue shirt is sitting on a wooden bench <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[5/30,   251/938] avg train loss: 2.841 avg val loss: 3.166 lr: 0.000096
+image: ('1012212859_01547e3f17.jpg',)
+truth == dog with orange ball at feet stands on shore shaking off water
+output > a dog with a red collar is running in the water <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a man without a shirt on is guiding a large brown horse pulling a green and yellow wagon
+output > a man and a woman are walking down a street <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == man and child in yellow kayak
+output > a boy in a blue shirt and blue water <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and a baby are in a yellow kayak on water
+output > a boy in a blue shirt and blue water <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a child painting a picture
+output > a young girl in a white shirt and a blue shirt is sitting on a wall <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[5/30,   501/938] avg train loss: 2.849 avg val loss: 3.157 lr: 0.000096
+image: ('1057089366_ca83da0877.jpg',)
+truth == a little kid is jumping off a high dive at the pool
+output > a boy jumps into a pool <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a black and white border collie catches a frisbee in front of an audience
+output > a dog jumps over a hurdle <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man in a black jacket is taking a photo of a man in a red jacket
+output > a man in a white shirt and a woman in a white shirt and a white shirt and a white shirt and a white shirt and a white shirt and a
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple sit on the grass with a baby and stroller
+output > a man in a black shirt and a black shirt and a tree <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a spotted dog are fighting
+output > a black and white dog are running on a sidewalk <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[5/30,   751/938] avg train loss: 2.840 avg val loss: 3.140 lr: 0.000096
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman wearing a blue shirt and hat with khaki shorts plays golf
+output > a man in a green shirt and white shirt is standing in front of a green grass <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == people are riding around on <UNK>
+output > a skier in a red jacket and white snow covered hill <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a little boy rides a bike down a hill on a miniature dirt bike
+output > a man in a red helmet rides a bike <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two people wearing hats sit and look at the camera
+output > a man in a red shirt and white shirt with a red shirt <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a little girl swimming in a pool
+output > a little girl in a pool <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[5/30,   938/938] avg train loss: 2.841 avg val loss: 3.128 lr: 0.000096
+image: ('1130017585_1a219257ac.jpg',)
+truth == three young women pose for the camera at a parade
+output > a woman in a red shirt and white dress <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == two dogs of different breeds looking at each other on the road
+output > two dogs are running on a sidewalk <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == the two men are wearing tall hats one hat is a red print and the other is gold colored
+output > a man in a red shirt and a woman in a red jacket <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple and an infant being held by the male sitting next to a pond with a near by stroller
+output > a man in a black jacket and a woman in a black jacket is sitting on a tree <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a little girl swimming in a pool
+output > a girl in a pool <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[6/30,   251/938] avg train loss: 2.717 avg val loss: 3.116 lr: 0.000094
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a girl swimming in a pool
+output > a little girl in a pool <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man rides a bike <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three girls make faces as one takes a drink while they stand in a busy street
+output > a woman in a blue dress and white dress <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men in tall hats <UNK> at the camera
+output > a man in a blue shirt and a blue shirt is sitting on a subway <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == there are several people and children looking into water with a blue tiled floor and <UNK>
+output > a boy in a blue shirt is jumping into a pool <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[6/30,   501/938] avg train loss: 2.742 avg val loss: 3.105 lr: 0.000094
+image: ('1105959054_9c3a738096.jpg',)
+truth == a child painting a picture
+output > a young girl in a blue shirt and blue jeans is sitting on a wall <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == a little girl climbing on red roping
+output > a girl in a blue shirt and blue shirt is playing a fence <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a girl is getting ready to swing the club
+output > a man in a blue shirt and white shirt is standing in front of a field <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == the shirtless man is walking the <UNK> pony and carriage down the street
+output > a man in a black jacket and a brown jacket is walking down a street <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == a little girl in pink climbs a rope bridge at the park
+output > a girl in a blue shirt and blue shirt is playing a fence <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[6/30,   751/938] avg train loss: 2.734 avg val loss: 3.094 lr: 0.000094
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == the <UNK> males pose for a picture
+output > a man in a red shirt and blue shirt with a red shirt <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black dog is jumping up to catch a purple and green toy
+output > a black and white dog is running through a red ball <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == terrier dog playing with toy on blanket
+output > a black dog and white dog are playing with a toy <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a little kid is jumping off a high dive at the pool
+output > a boy is jumping into a pool <EOS>
+
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a white and tan dog leaps through the air
+output > a dog runs through a field <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[6/30,   938/938] avg train loss: 2.733 avg val loss: 3.087 lr: 0.000094
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a brown and white dug jumping up to catch a frisbee while an audience watches
+output > a dog jumps over a hurdle <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two people are wakeboarding in the water and are being pulled by a boat
+output > a man is riding a boat <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple and an infant being held by the male sitting next to a pond with a near by stroller
+output > a man in a black shirt and a brown jacket is sitting on a forest <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black <UNK> runs into the water on the beach with swimmers in the distance and sea <UNK> in the foreground
+output > a black dog is running on the beach <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small dog plays with a toy on top of a white blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[7/30,   251/938] avg train loss: 2.619 avg val loss: 3.081 lr: 0.000091
+image: ('1007320043_627395c3d8.jpg',)
+truth == a little girl in pink climbs a rope bridge at the park
+output > a little girl in a red shirt and white shirt is playing on a playground <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a young girl with braids is painting with water colors on a white paper on the wall
+output > a young girl in a blue shirt and white shirt sitting on a chair <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small dog plays with a toy on top of a white blanket
+output > a small black dog and white dog <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == terrier dog playing with toy on blanket
+output > a small black dog and white dog <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog with brown ears standing near water with head turned to one side
+output > a dog with a stick in its mouth <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[7/30,   501/938] avg train loss: 2.645 avg val loss: 3.076 lr: 0.000091
+image: ('102351840_323e3de834.jpg',)
+truth == a man drilling a hole in the ice
+output > a man in a red shirt and blue shirt is walking down a city <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a toddler wearing a pacifier is sleeping on a red blanket with a teddy bear at his side
+output > a little boy is sitting on a couch <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == terrier dog playing with toy on blanket
+output > a black and white dog are playing with a toy <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman wearing blue begins a golf swing
+output > a man in a blue shirt and white shirt is standing in front of a field <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a young girl painting a picture
+output > a woman in a blue shirt and white shirt sitting on a chair <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[7/30,   751/938] avg train loss: 2.644 avg val loss: 3.061 lr: 0.000091
+image: ('1057089366_ca83da0877.jpg',)
+truth == a child jumps off a high diving board into the pool
+output > a boy jumps into a pool <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man in a black outfit is taking a photograph of a man in a red jacket
+output > a man in a red shirt and a woman in a woman in a black jacket <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a pile of seaweed sits on the sand behind it a big black dog is running in the water
+output > a black dog is jumping into the ocean <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a little boy in a red shirt sitting on a wooden picnic table bench
+output > a boy in a blue shirt is sitting on a park bench <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == people pose with helmets and goggles on while riding <UNK>
+output > a group of sled in a sled <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[7/30,   938/938] avg train loss: 2.653 avg val loss: 3.056 lr: 0.000091
+image: ('1110208841_5bb6806afe.jpg',)
+truth == an <UNK> dog catches a frisbee while a crowd of onlookers watches closely
+output > a dog jumps over a hurdle <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a girl paddling down a large river as seen from behind her
+output > a woman is holding a fish <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == young man takes picture of another young man in front of church
+output > a man in a red shirt and a woman in a man in a blue shirt standing in front of a building <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman is taking a swing with a golf club
+output > a man in a blue shirt and white shirt is standing in front of a field <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbs a tall flat mountain while holding onto a safety rope
+output > a man is climbing a rock <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[8/30,   251/938] avg train loss: 2.544 avg val loss: 3.056 lr: 0.000088
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman kayaking down a river
+output > a man with a fishing pole in a lake <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a shirtless man <UNK> a horse pulling a carriage along a paved road
+output > a man is riding a skateboard down a street <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == young man takes picture of another young man in front of church
+output > a man in a red shirt and a woman walking down a street <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a sleeping child sucking on a pacifier
+output > a child is sitting on a couch <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a young girl with braids is painting with water colors on a white paper on the wall
+output > a young man in a blue shirt and a white shirt with a blue shirt <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[8/30,   501/938] avg train loss: 2.542 avg val loss: 3.052 lr: 0.000088
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman in a blue coat and blue heels walks down a city sidewalk at night
+output > a man in a black shirt and white shirt standing in front of a store <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and a little boy in blue life jackets are rowing a yellow canoe
+output > a boy in a yellow kayak on a boat <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three young women pose for the camera at a parade
+output > a woman in a white dress and a crowd of people <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a man is drilling through the frozen ice of a pond
+output > a man in a blue shirt and a woman in a blue shirt is walking on a crowded street <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black <UNK> runs into the water on the beach with swimmers in the distance and sea <UNK> in the foreground
+output > a black dog is jumping into the ocean <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[8/30,   751/938] avg train loss: 2.585 avg val loss: 3.041 lr: 0.000088
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men in tall hats <UNK> at the camera
+output > a man in a red shirt and blue shirt with a red shirt <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a little girl swimming in a pool
+output > a little girl in a pink bathing suit swimming pool <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog jumps to get the frisbee
+output > a black and white dog is jumping in the air <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two boys waterskiing
+output > a man and a dog are riding a boat <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a pile of seaweed sits on the sand behind it a big black dog is running in the water
+output > a black dog is jumping into the ocean <EOS>
+
+[8/30,   938/938] avg train loss: 2.583 avg val loss: 3.041 lr: 0.000088
+image: ('1030985833_b0902ea560.jpg',)
+truth == black dog <UNK> at red and black object as brown dog lunges
+output > two dogs are playing with a toy <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man is standing by a group of video games in a bar
+output > a man in a white shirt and a santa suit sits on a subway train <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == two dogs on pavement moving toward each other
+output > a dog runs on a road <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a little boy has fallen asleep on a miniature sofa and a pacifier in his mouth
+output > a little boy and a little girl in a white shirt <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and a baby are in a yellow kayak on water
+output > a boy in a yellow kayak is riding a boat <EOS>
+
+[9/30,   251/938] avg train loss: 2.466 avg val loss: 3.047 lr: 0.000085
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black <UNK> runs into the water on the beach with swimmers in the distance and sea <UNK> in the foreground
+output > a black dog is running on the beach <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == the two men are wearing tall hats one hat is a red print and the other is gold colored
+output > a man in a red shirt and blue shirt with a red shirt <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a tri colored dog playing with each other on the road
+output > a dog runs on a street <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == some children watching fish in a pool
+output > a boy in a yellow shirt is jumping into a pool <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black dog is jumping up to catch a purple and green toy
+output > a black and white dog running on grass <EOS>
+
+[9/30,   501/938] avg train loss: 2.493 avg val loss: 3.043 lr: 0.000085
+image: ('109738916_236dc456ac.jpg',)
+truth == people pose with helmets and goggles on while riding <UNK>
+output > a person in a red jacket and white helmet <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two boys wakeboard
+output > a man is riding a boat <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man stands next to three video game machines and a beer sign
+output > a man in a white shirt and a blue shirt sitting at a table <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog is attempting to catch a yellow and purple object in a low cut yard
+output > a black and white dog jumping in a red frisbee <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman wearing a blue shirt and hat with khaki shorts plays golf
+output > a man in a green shirt and blue shirt is standing in front of a green grass <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[9/30,   751/938] avg train loss: 2.500 avg val loss: 3.036 lr: 0.000085
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a man and woman care for an infant along the side of a body of water
+output > a man and a woman sit on a bench <EOS>
+
+image: ('1295669416_21cabf594d.jpg',)
+truth == a girl dressed in a red and black top with black pants is sitting on a wall
+output > a woman in a red shirt and black shirt and white shirt <EOS>
+
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a dog is leaping through the grass
+output > a dog runs through the grass <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two younger people are being pulled on watercraft behind a boat
+output > a man and a woman are riding a dog <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two people wearing hats sit and look at the camera
+output > a man in a red shirt and blue shirt <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[9/30,   938/938] avg train loss: 2.525 avg val loss: 3.028 lr: 0.000085
+image: ('109738916_236dc456ac.jpg',)
+truth == several people are taking a break while on a snowmobiling ride
+output > a sled team of sled team in the snow <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two boys waterskiing
+output > a man and a dog are riding a boat <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == a child playing on a rope net
+output > a girl in a red shirt and blue shirt is playing on a playground <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a brick sidewalk at night
+output > a man in a black shirt and white shirt standing in front of a store <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three women on the street drinking and posing
+output > a woman in a white dress <EOS>
+
+[10/30,   251/938] avg train loss: 2.400 avg val loss: 3.042 lr: 0.000081
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a young baby sucking a <UNK> asleep in a chair
+output > a little boy is sitting on a red couch <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person is climbing a rock while holding onto a white rope
+output > a man in a red shirt is rock climbing <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a little boy has fallen asleep on a miniature sofa and a pacifier in his mouth
+output > a little boy is sitting on a red couch <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == there are several people and children looking into water with a blue tiled floor and <UNK>
+output > a boy in a red shirt is jumping into a pool <EOS>
+
+image: ('1030985833_b0902ea560.jpg',)
+truth == a black dog and a brown dog are jumping up to catch a red toy
+output > two dogs are playing with a toy <EOS>
+
+[10/30,   501/938] avg train loss: 2.427 avg val loss: 3.037 lr: 0.000081
+image: ('12830823_87d2654e31.jpg',)
+truth == several people are standing near a fish pond
+output > a boy in a red shirt and white shirt is jumping into a pool <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog is attempting to catch a yellow and purple object in a low cut yard
+output > a black and white dog is running in the grass <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == the shirtless man is walking the <UNK> pony and carriage down the street
+output > a man on a skateboard <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small shaggy dog playing with a toy on a blanket
+output > a black dog and a red collar is in the snow <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == couple with a baby sit outdoors next to their stroller
+output > a man and a woman sit on a tree <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[10/30,   751/938] avg train loss: 2.458 avg val loss: 3.026 lr: 0.000081
+image: ('1187435567_18173c148b.jpg',)
+truth == a small brown and black dog
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a little girl in a pink bathing suit swimming in a pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men wear silly stove pipe hats and wear makeup
+output > a man in a red shirt and a red shirt with a red shirt <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and a baby are in a yellow kayak on water
+output > two people in a boat <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a brown and white dog catches a frisbee in it mouth in front of a group of people
+output > a dog jumps over a soccer ball <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[10/30,   938/938] avg train loss: 2.454 avg val loss: 3.020 lr: 0.000081
+image: ('1057089366_ca83da0877.jpg',)
+truth == the boy is jumping off a high diving board into the pool
+output > a boy jumps into a pool <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == young man takes picture of another young man in front of church
+output > a man stands on a sidewalk <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == there are three young people one dark haired holding a bottled drink one with head tilted back and finger in her mouth and one with spiked hair
+output > a woman in a white dress stands in front of a crowd <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a little boy rides a bike down a hill on a miniature dirt bike
+output > a man rides his bike <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man stands next to three video machines
+output > a group of people sitting on a table <EOS>
+
+[11/30,   251/938] avg train loss: 2.353 avg val loss: 3.022 lr: 0.000077
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog jumps after a yellow toy
+output > a black and white dog jumping in the air <EOS>
+
+image: ('1295669416_21cabf594d.jpg',)
+truth == a girl dressed in a red and black top with black pants is sitting on a wall
+output > a woman in a red shirt and black shirt is standing on a stone wall <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == the boy is jumping off a high diving board into the pool
+output > a boy jumps into a pool <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman wearing a blue shirt and hat with khaki shorts plays golf
+output > a boy in a shirt and blue shirt is standing in a field <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman with a paddle
+output > a woman in a bikini top is standing in a lake <EOS>
+
+[11/30,   501/938] avg train loss: 2.392 avg val loss: 3.024 lr: 0.000077
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog is attempting to catch a yellow and purple object in a low cut yard
+output > a black and white dog is running in a grassy area <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a brick sidewalk at night
+output > a man in a black shirt and a white shirt standing in front of a store <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == a man is pulled behind a boat on a knee board while another doing the same begins to fall
+output > a man is riding a dog on a boat <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a spotted dog are fighting
+output > two dogs running on the street <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man takes a picture of another man in an open area just off of a busy street
+output > a man in a red shirt and a red shirt standing in front of a building <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[11/30,   751/938] avg train loss: 2.384 avg val loss: 3.019 lr: 0.000077
+image: ('1105959054_9c3a738096.jpg',)
+truth == an artist paints clouds onto a canvas
+output > a young girl in a blue shirt is sitting on a chair <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a girl paddling down a large river as seen from behind her
+output > a man with a fishing pole in the background <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a man is drilling through the frozen ice of a pond
+output > a man is standing on a woman in the city <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black dog runs into the ocean next to a pile of seaweed
+output > a black dog is jumping into the water <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a person standing on a frozen lake
+output > a man is standing on a woman in the city <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[11/30,   938/938] avg train loss: 2.394 avg val loss: 3.016 lr: 0.000077
+image: ('1030985833_b0902ea560.jpg',)
+truth == a black dog and a brown dog play with a red toy on a courtyard
+output > two dogs are playing with a toy <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a brown and white dog catches a frisbee in it mouth in front of a group of people
+output > a dog jumps over a soccer ball <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man stands next to three video machines
+output > a group of people sitting at a table <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a little boy lies down on a picnic table bench
+output > a boy is sitting on a wooden bench <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a dog at the shore of an ocean with seaweed in foreground
+output > a black dog jumping into the water <EOS>
+
+[12/30,   251/938] avg train loss: 2.303 avg val loss: 3.027 lr: 0.000072
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog playing with a red ball on the shore near the water
+output > a dog with a stick in its mouth <EOS>
+
+image: ('1030985833_b0902ea560.jpg',)
+truth == a black dog and a brown dog are jumping up to catch a red toy
+output > two dogs are playing with a toy <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == terrier dog playing with toy on blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == the shirtless man is walking the <UNK> pony and carriage down the street
+output > a man is riding a skateboard down a sidewalk <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a child with a helmet on his head rides a bike
+output > a man rides a bicycle <EOS>
+
+[12/30,   501/938] avg train loss: 2.329 avg val loss: 3.022 lr: 0.000072
+image: ('1001773457_577c3a7d70.jpg',)
+truth == two dogs on pavement moving toward each other
+output > a black and white dog running on a road <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and a little boy in blue life jackets are rowing a yellow canoe
+output > two boys in a boat <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == terrier dog playing with toy on blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the young boy pedals quickly at a bmx race
+output > a man rides a bicycle on a dirt road <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men in tall hats <UNK> at the camera
+output > a man in a red shirt and a santa suit <EOS>
+
+[12/30,   751/938] avg train loss: 2.353 avg val loss: 3.018 lr: 0.000072
+image: ('1007320043_627395c3d8.jpg',)
+truth == the small child climbs on a red ropes on a playground
+output > a girl in a red shirt is playing with a playground <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman paddles a boat down a river
+output > a man with a fishing pole <EOS>
+
+image: ('1030985833_b0902ea560.jpg',)
+truth == a black dog and a brown dog are jumping up to catch a red toy
+output > two dogs are playing with a toy <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small shaggy dog playing with a toy on a blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbs a tall flat mountain while holding onto a safety rope
+output > a man in a red shirt is rock climbing <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[12/30,   938/938] avg train loss: 2.342 avg val loss: 3.015 lr: 0.000072
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a young baby sucking a <UNK> asleep in a chair
+output > a little boy is sitting on a red couch <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a boy descends off the end of a high diving board
+output > a boy is jumping into a pool <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and a little boy in blue life jackets are rowing a yellow canoe
+output > two children in a boat <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a child with a helmet on his head rides a bike
+output > a man rides a bicycle on a dirt road <EOS>
+
+image: ('1295669416_21cabf594d.jpg',)
+truth == a girl dressed in a red and black top with black pants is sitting on a wall
+output > a girl in a red shirt and black shirt is climbing wall <EOS>
+
+[13/30,   251/938] avg train loss: 2.269 avg val loss: 3.029 lr: 0.000068
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a child in gray clothes is sleeping on a red cushion
+output > a boy is sitting on a red couch <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == people pose with helmets and goggles on while riding <UNK>
+output > a man in a red jacket and black and white helmet and red sled <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman paddles a boat down a river
+output > a man with a fishing pole <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men wear silly stove pipe hats and wear makeup
+output > a man with a red shirt and a red hair <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == a little girl climbing on red roping
+output > a girl in a red shirt is playing with a playground <EOS>
+
+[13/30,   501/938] avg train loss: 2.278 avg val loss: 3.022 lr: 0.000068
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == the <UNK> males pose for a picture
+output > a man in a red shirt and a red shirt is sitting in a red and a red shirt <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two boys waterskiing
+output > a man and a dog are riding a boat <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == young man takes picture of another young man in front of church
+output > a man in a red shirt and a red shirt standing in front of a white building <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == a person in a brown jacket is sitting on a pier by the water reading
+output > a man in a boat paddling pool <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == a man in a brown shirt sitting on a dock and reading
+output > a man in a boat paddling pool <EOS>
+
+[13/30,   751/938] avg train loss: 2.299 avg val loss: 3.020 lr: 0.000068
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman paddles a boat down a river
+output > a man with a fishing pole <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small brown and black dog
+output > a black and white dog are playing with a stuffed toy <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == two men are ice fishing
+output > a man in a blue shirt is standing on a city <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the young boy pedals quickly at a bmx race
+output > a man rides a bicycle <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog with brown ears standing near water with head turned to one side
+output > a dog with a leash is walking on the beach <EOS>
+
+Saved checkpoint to saved_models/vit_transformer_pass_2\model.pt
+[13/30,   938/938] avg train loss: 2.298 avg val loss: 3.011 lr: 0.000068
+image: ('1105959054_9c3a738096.jpg',)
+truth == the child paints on a large paper with water colors
+output > a young girl in a blue shirt and blue jeans is sitting on a wooden wall <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man stands next to three video game machines and a beer sign
+output > a group of people sitting at a table <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a white dog with brown spots are staring at each other in the street
+output > a black and white dog are running on a road <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == man and child in yellow kayak
+output > two boys in a boat <EOS>
+
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a dog in a number six jersey is running through a field
+output > a dog runs through the grass <EOS>
+
+[14/30,   251/938] avg train loss: 2.207 avg val loss: 3.028 lr: 0.000063
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a girl paddling down a large river as seen from behind her
+output > a man with a mohawk and a fishing pole <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small shaggy dog playing with a toy on a blanket
+output > a little black dog with a red collar is laying on its head <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a pile of seaweed sits on the sand behind it a big black dog is running in the water
+output > a black dog is jumping into the water <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == an <UNK> dog catches a frisbee while a crowd of onlookers watches closely
+output > a dog jumps over a soccer ball <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person is climbing a rock while holding onto a white rope
+output > a man in a red shirt is rock climbing <EOS>
+
+[14/30,   501/938] avg train loss: 2.244 avg val loss: 3.024 lr: 0.000063
+image: ('1187435567_18173c148b.jpg',)
+truth == a small shaggy dog playing with a toy on a blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a sleeping child sucking on a pacifier
+output > a little boy is holding a toy <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man rides a bicycle on a dirt road <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a brown and white dug jumping up to catch a frisbee while an audience watches
+output > a dog jumps over a frisbee <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a brick sidewalk at night
+output > a man in a black shirt and white shirt standing in front of a store <EOS>
+
+[14/30,   751/938] avg train loss: 2.256 avg val loss: 3.019 lr: 0.000063
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a city sidewalk at night
+output > a man in a black shirt and white shirt standing in front of a store <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a shirtless man <UNK> a horse pulling a carriage along a paved road
+output > a man is riding a skateboard down a sidewalk <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman in shorts and a blue sleeveless shirt leans over a golf club
+output > a man in a blue shirt and blue shirt is standing in front of a field <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black <UNK> runs into the water on the beach with swimmers in the distance and sea <UNK> in the foreground
+output > a black dog is jumping into the water <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman in a blue coat and blue heels walks down a city sidewalk at night
+output > a man in a black shirt and white shirt standing in front of a store <EOS>
+
+[14/30,   938/938] avg train loss: 2.275 avg val loss: 3.013 lr: 0.000063
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a white dog with brown spots are staring at each other in the street
+output > a black and white dog are running on the street <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog with brown ears standing near water with head turned to one side
+output > a dog with a stick in its mouth <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a pile of seaweed sits on the sand behind it a big black dog is running in the water
+output > a black dog and white dog are playing in the ocean <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a girl paddling down a large river as seen from behind her
+output > a man is looking at the camera <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == two dogs of different breeds looking at each other on the road
+output > a black and white dog are running on the street <EOS>
+
+[15/30,   251/938] avg train loss: 2.173 avg val loss: 3.028 lr: 0.000058
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a boy lays on a picnic table bench
+output > a boy sits on a bench <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a man is drilling through the frozen ice of a pond
+output > a man is standing on a woman in the city <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == three people and two <UNK>
+output > a sled team of sled team <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man rides his bike on a dirt road <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a little boy in a red shirt sitting on a wooden picnic table bench
+output > a boy sits on a bench <EOS>
+
+[15/30,   501/938] avg train loss: 2.197 avg val loss: 3.017 lr: 0.000058
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walking down a brick sidewalk
+output > a man stands in a doorway <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == several people are taking a break while on a snowmobiling ride
+output > a sled team of sled <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and young boy ride in a yellow kayak
+output > two people in life jackets in a boat <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == man and child in yellow kayak
+output > two people in life jackets in a boat <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man takes a picture of another man in an open area just off of a busy street
+output > a man stands on a sidewalk <EOS>
+
+[15/30,   751/938] avg train loss: 2.226 avg val loss: 3.013 lr: 0.000058
+image: ('1007320043_627395c3d8.jpg',)
+truth == a little girl climbing on red roping
+output > a girl in a red shirt is playing with a playground <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == a man is pulled behind a boat on a knee board while another doing the same begins to fall
+output > a man and a dog are riding a boat <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == a child playing on a rope net
+output > a girl in a red shirt is playing with a playground <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and child kayak through <UNK> waters
+output > two people in a yellow boat <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small dog plays with a toy on top of a white blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+[15/30,   938/938] avg train loss: 2.226 avg val loss: 3.018 lr: 0.000058
+image: ('1105959054_9c3a738096.jpg',)
+truth == a child painting a picture
+output > a young girl in a blue shirt and blue jeans is sitting on a wooden wall <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a brown and white dog catches a frisbee in it mouth in front of a group of people
+output > a dog jumps in the air to catch a frisbee <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman in shorts and a blue sleeveless shirt leans over a golf club
+output > a man in a shirt and a shirt is standing in front of a field <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two younger people are being pulled on watercraft behind a boat
+output > a man and a dog are riding a boat <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == people stare at the orange fish
+output > a boy is jumping into a pool <EOS>
+
+[16/30,   251/938] avg train loss: 2.151 avg val loss: 3.025 lr: 0.000053
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a brick sidewalk at night
+output > a man stands in a doorway with a doorway <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person wearing a red vest climbs up a steep rock
+output > a man in a red shirt is rock climbing <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and a little boy in blue life jackets are rowing a yellow canoe
+output > two people in a yellow raft <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a man without a shirt on is guiding a large brown horse pulling a green and yellow wagon
+output > a man is riding a skateboard down a sidewalk <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two people wearing hats sit and look at the camera
+output > a man is sitting in a red and a red shirt <EOS>
+
+[16/30,   501/938] avg train loss: 2.161 avg val loss: 3.029 lr: 0.000053
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and child kayak through <UNK> waters
+output > two people in a life raft on a yellow boat <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a child painting a picture
+output > a young girl in a green shirt is standing in a window <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman in shorts and a blue sleeveless shirt leans over a golf club
+output > a man in a shirt and blue shirt is standing in a field of grass <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a toddler wearing a pacifier is sleeping on a red blanket with a teddy bear at his side
+output > a little boy is sitting on a red couch <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == the small child climbs on a red ropes on a playground
+output > a girl in a pink shirt is playing with a playground <EOS>
+
+[16/30,   751/938] avg train loss: 2.193 avg val loss: 3.021 lr: 0.000053
+image: ('102351840_323e3de834.jpg',)
+truth == a man is drilling through the frozen ice of a pond
+output > a man in a black shirt is standing on a city street <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog jumps after a yellow toy
+output > a black and white dog jumping in the air <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == couple with a baby sit outdoors next to their stroller
+output > a man and a woman sit on a tree <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a girl paddling down a large river as seen from behind her
+output > a man with a mohawk and a fishing pole <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a dog jumps to catch a toy
+output > a black and white dog jumping in the air <EOS>
+
+[16/30,   938/938] avg train loss: 2.179 avg val loss: 3.019 lr: 0.000053
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a tri colored dog playing with each other on the road
+output > a black and white dog are running on a road <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two younger people are being pulled on watercraft behind a boat
+output > a man and a dog are riding on a boat <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a child painting a picture
+output > a young girl in a green shirt is sitting on a wooden wall <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man rides his bike <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == two men are ice fishing
+output > a man is sitting on a woman in the street <EOS>
+
+[17/30,   251/938] avg train loss: 2.127 avg val loss: 3.026 lr: 0.000048
+image: ('1057089366_ca83da0877.jpg',)
+truth == the boy is jumping off a high diving board into the pool
+output > a man is jumping into a pool <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man stands next to three video game machines and a beer sign
+output > a group of people sitting on a counter <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man standing in a bar with a neon beer sign hanging on the wall
+output > a group of people sitting on a counter <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and a baby are in a yellow kayak on water
+output > two people in life jackets in life jackets in life jackets in a boat <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == several people are taking a break while on a snowmobiling ride
+output > a sled team of sled <EOS>
+
+[17/30,   501/938] avg train loss: 2.129 avg val loss: 3.025 lr: 0.000048
+image: ('12830823_87d2654e31.jpg',)
+truth == children sit and watch the fish moving in the pond
+output > a boy is jumping off of a skateboard <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == two men are ice fishing
+output > a man is sitting on a woman in a red bench <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == three people and two <UNK>
+output > a sled team of sled team <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog jumps after a yellow toy
+output > a black and white dog jumping dog with a frisbee <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a man without a shirt on is guiding a large brown horse pulling a green and yellow wagon
+output > a man is riding a skateboard down a paved road <EOS>
+
+[17/30,   751/938] avg train loss: 2.139 avg val loss: 3.030 lr: 0.000048
+image: ('1075716537_62105738b4.jpg',)
+truth == a child with a helmet on his head rides a bike
+output > a man rides a bicycle down a dirt road <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a toddler wearing a pacifier is sleeping on a red blanket with a teddy bear at his side
+output > a boy is sitting on a red couch <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a child is laying down on a wooden bench
+output > a boy in a blue shirt sitting on a backyard <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a child painting a picture
+output > a young girl in a green shirt with a blue shirt and blue shirt <EOS>
+
+image: ('1030985833_b0902ea560.jpg',)
+truth == a black dog and a brown dog play with a red toy on a courtyard
+output > two dogs are playing with a toy <EOS>
+
+[17/30,   938/938] avg train loss: 2.151 avg val loss: 3.024 lr: 0.000048
+image: ('1057089366_ca83da0877.jpg',)
+truth == a little kid is jumping off a high dive at the pool
+output > a boy is jumping into a pool <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a tri colored dog playing with each other on the road
+output > two dogs run together <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbs a tall flat mountain while holding onto a safety rope
+output > a man in a red shirt is climbing a rock <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a man is drilling through the frozen ice of a pond
+output > a man is standing on a woman in the city <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a city sidewalk at night
+output > a man in a black shirt and white shirt walking in a doorway <EOS>
+
+[18/30,   251/938] avg train loss: 2.081 avg val loss: 3.031 lr: 0.000043
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a child is on a bench with arms stretched out
+output > a boy sits on a bench <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black dog runs into the ocean next to a pile of seaweed
+output > a black dog is jumping into the water <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man in a black outfit is taking a photograph of a man in a red jacket
+output > a man in a red shirt and a red shirt standing in front of a store <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a brown and white dog catches a frisbee in it mouth in front of a group of people
+output > a dog jumps over a soccer ball <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == a man is pulled behind a boat on a knee board while another doing the same begins to fall
+output > a man and a dog are riding a boat <EOS>
+
+[18/30,   501/938] avg train loss: 2.109 avg val loss: 3.030 lr: 0.000043
+image: ('1007320043_627395c3d8.jpg',)
+truth == a child playing on a rope net
+output > a little girl in a pink shirt is playing with a playground <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman in shorts and a blue sleeveless shirt leans over a golf club
+output > a man in a blue shirt and white shirt is standing in a field of grass <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog with brown ears standing near water with head turned to one side
+output > a dog with a leash <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two boys waterskiing
+output > a man and a dog are riding a boat <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman wearing a blue shirt and hat with khaki shorts plays golf
+output > a man in a blue shirt and white shirt is standing in a field of grass <EOS>
+
+[18/30,   751/938] avg train loss: 2.114 avg val loss: 3.032 lr: 0.000043
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a spotted dog are fighting
+output > a black and white dog running on the sidewalk <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog with brown ears standing near water with head turned to one side
+output > a dog with a leash is walking on the beach <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == a white dog shakes on the edge of a beach with an orange ball
+output > a dog with a leash is walking on the beach <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman with a paddle
+output > a man with a fishing pole <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a brick sidewalk at night
+output > a man in a black shirt and white shirt standing in front of a store <EOS>
+
+[18/30,   938/938] avg train loss: 2.135 avg val loss: 3.037 lr: 0.000043
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a child is on a bench with arms stretched out
+output > a boy sits on a bench <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black dog is jumping up to catch a purple and green toy
+output > a black and white dog jumping in the air <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a girl is getting ready to swing the club
+output > a man in a blue shirt is standing in a field of grass <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == there are several people and children looking into water with a blue tiled floor and <UNK>
+output > a boy is jumping off of a skateboard <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a brick sidewalk at night
+output > a man stands in a doorway with a doorway <EOS>
+
+[19/30,   251/938] avg train loss: 2.056 avg val loss: 3.034 lr: 0.000038
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple with their newborn baby sitting under a tree facing a lake
+output > a man and a woman sit on a tree <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man is standing by a group of video games in a bar
+output > a group of people sitting on a counter <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three women on the street drinking and posing
+output > a woman in a white dress surrounded by people <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == smiling little girl swimming in outdoor pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a sleeping child sucking on a pacifier
+output > a little boy is holding a toy <EOS>
+
+[19/30,   501/938] avg train loss: 2.073 avg val loss: 3.044 lr: 0.000038
+image: ('1067180831_a59dc64344.jpg',)
+truth == a dog jumps to catch a toy
+output > a black and white dog jumping in a grassy area <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == a child playing on a rope net
+output > a little girl in a pink shirt is playing with a playground <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a dog at the shore of an ocean with seaweed in foreground
+output > a black dog is jumping into the ocean <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a dog is running in the waves at the beach
+output > a black dog is jumping into the ocean <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog jumps to get the frisbee
+output > a black and white dog jumping in a grassy area <EOS>
+
+[19/30,   751/938] avg train loss: 2.099 avg val loss: 3.033 lr: 0.000038
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a spotted dog are fighting
+output > a black and white dog running on a road <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == the young people party in the streets
+output > a woman in a white dress surrounded by people <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three young women pose for the camera at a parade
+output > a woman in a white dress surrounded by people <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple and an infant being held by the male sitting next to a pond with a near by stroller
+output > a man and a woman sit on a tree <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman in a blue coat and blue heels walks down a city sidewalk at night
+output > a man in a black shirt and white shirt standing in a doorway <EOS>
+
+[19/30,   938/938] avg train loss: 2.096 avg val loss: 3.034 lr: 0.000038
+image: ('1030985833_b0902ea560.jpg',)
+truth == a brown and black lab are outside and the black lab is catching a toy in its mouth
+output > two dogs are playing with a toy <EOS>
+
+image: ('1030985833_b0902ea560.jpg',)
+truth == the chocolate lab jumps too late to get the toy as the black lab <UNK> it in the driveway
+output > two dogs are playing with a toy <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a little boy rides a bike down a hill on a miniature dirt bike
+output > a man rides a bicycle down a paved road <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black dog is jumping up to catch a purple and green toy
+output > a black and white dog jumping dog with a frisbee <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a young girl with braids is painting with water colors on a white paper on the wall
+output > a young girl in a blue shirt is standing in front of a window <EOS>
+
+[20/30,   251/938] avg train loss: 2.033 avg val loss: 3.039 lr: 0.000033
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a little boy lies down on a picnic table bench
+output > a boy sits on a bench <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a little girl in a pink bathing suit swimming in a pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a girl in a pink swimsuit in a pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a boy descends off the end of a high diving board
+output > a boy is jumping into a pool <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == an artist paints clouds onto a canvas
+output > a young girl in a green shirt is standing in front of a window <EOS>
+
+[20/30,   501/938] avg train loss: 2.055 avg val loss: 3.040 lr: 0.000033
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a black and white border collie catches a frisbee in front of an audience
+output > a dog jumps in the air while people watch <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == terrier dog playing with toy on blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('1030985833_b0902ea560.jpg',)
+truth == the chocolate lab jumps too late to get the toy as the black lab <UNK> it in the driveway
+output > two dogs are playing with a toy <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == a dog shakes its head near the shore a red ball next to it
+output > a dog with a leash <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a little kid is jumping off a high dive at the pool
+output > a boy is jumping into a pool <EOS>
+
+[20/30,   751/938] avg train loss: 2.064 avg val loss: 3.040 lr: 0.000033
+image: ('1295669416_21cabf594d.jpg',)
+truth == a girl in a red and black striped shirt sits on a brick wall in front of a tropical plant
+output > a woman in a red shirt and black shirt is climbing wall <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == terrier dog playing with toy on blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a young baby sucking a <UNK> asleep in a chair
+output > a toddler is sitting on a red couch <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == a little girl climbing on red roping
+output > a little girl in a pink shirt and blue shirt is playing on a playground <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a little girl in a pink bathing suit swimming in a pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+[20/30,   938/938] avg train loss: 2.061 avg val loss: 3.041 lr: 0.000033
+image: ('109738916_236dc456ac.jpg',)
+truth == people pose with helmets and goggles on while riding <UNK>
+output > a sled team of sled <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a girl in a pink swimsuit in a pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman kayaking down a river
+output > a man with a fishing pole <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == a man is pulled behind a boat on a knee board while another doing the same begins to fall
+output > a man and a dog are riding a boat <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman paddles a boat down a river
+output > a man with a fishing pole <EOS>
+
+[21/30,   251/938] avg train loss: 2.018 avg val loss: 3.046 lr: 0.000029
+image: ('1225443522_1633e7121f.jpg',)
+truth == a girl walking alone at night on a street
+output > a man in a black shirt and white shirt standing in a doorway <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple with their newborn baby sitting under a tree facing a lake
+output > a man and a woman sit on a tree <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a girl is getting ready to swing the club
+output > a man in a blue shirt and white shirt is standing in a field of grass <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small brown and black dog
+output > a little black dog and a little dog are playing with a stuffed toy <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black dog runs into the ocean next to a pile of seaweed
+output > a black dog is jumping into the water <EOS>
+
+[21/30,   501/938] avg train loss: 2.023 avg val loss: 3.048 lr: 0.000029
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two younger people are being pulled on watercraft behind a boat
+output > a man and a dog are riding a boat <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men wear silly stove pipe hats and wear makeup
+output > a man in a red shirt and black shirt with a red hat <EOS>
+
+image: ('1295669416_21cabf594d.jpg',)
+truth == a girl in a red and black striped shirt sits on a brick wall in front of a tropical plant
+output > a woman wearing a red shirt and black top is climbing wall <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a dog at the shore of an ocean with seaweed in foreground
+output > a black dog is jumping into the water <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man rides a bicycle down a paved road <EOS>
+
+[21/30,   751/938] avg train loss: 2.038 avg val loss: 3.042 lr: 0.000029
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a little boy in a red shirt sitting on a wooden picnic table bench
+output > a boy sits on a bench <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman kayaking down a river
+output > a man with a fishing pole <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a little kid is jumping off a high dive at the pool
+output > a boy jumps into a pool <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == a small child grips onto the red ropes at the playground
+output > a little girl in a pink shirt and blue shirt is playing on a playground <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == a white dog shakes on the edge of a beach with an orange ball
+output > a dog with a leash is walking on the water <EOS>
+
+[21/30,   938/938] avg train loss: 2.051 avg val loss: 3.041 lr: 0.000029
+image: ('1007320043_627395c3d8.jpg',)
+truth == a little girl climbing on red roping
+output > a little girl in a pink shirt is playing with a playground <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == three people and two <UNK>
+output > a sled team of sled <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a brick sidewalk at night
+output > a man in a black shirt and white shirt walking in a doorway <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a shirtless man <UNK> a horse pulling a carriage along a paved road
+output > a man is riding a skateboard down a paved road <EOS>
+
+image: ('109738916_236dc456ac.jpg',)
+truth == people pose with helmets and goggles on while riding <UNK>
+output > a sled team of sled <EOS>
+
+[22/30,   251/938] avg train loss: 1.998 avg val loss: 3.047 lr: 0.000024
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a little boy in a red shirt sitting on a wooden picnic table bench
+output > a boy sits on a bench <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == some children watching fish in a pool
+output > a boy is jumping off of a skateboard <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman with a paddle sits in a boat on the water
+output > a man with a mohawk style hair and a backpack <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three girls make faces as one takes a drink while they stand in a busy street
+output > a woman in a white dress is standing next to a crowd of people <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two boys waterskiing
+output > a man and a dog are riding a boat <EOS>
+
+[22/30,   501/938] avg train loss: 2.016 avg val loss: 3.046 lr: 0.000024
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a girl swimming in a pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a girl paddling down a large river as seen from behind her
+output > a man with a mohawk and a fishing pole <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == two dogs on pavement moving toward each other
+output > a black and white dog are running on a road <EOS>
+
+image: ('1030985833_b0902ea560.jpg',)
+truth == black dog <UNK> at red and black object as brown dog lunges
+output > two dogs are playing with a toy <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == a man is sitting next to the water reading
+output > two people are sitting in the water <EOS>
+
+[22/30,   751/938] avg train loss: 2.012 avg val loss: 3.046 lr: 0.000024
+image: ('1057089366_ca83da0877.jpg',)
+truth == a little kid is jumping off a high dive at the pool
+output > a boy is jumping into a pool <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a person in the snow drilling a hole in the ice
+output > a man is sitting on a woman on a blanket on a blanket <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a kid jumps off the diving board and into the swimming pool below
+output > a boy is jumping into a pool <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a brown and white dog catches a frisbee in it mouth in front of a group of people
+output > a dog jumps over a soccer ball <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == person sitting on concrete landing next to body of water
+output > two people are in a boat on the water <EOS>
+
+[22/30,   938/938] avg train loss: 2.023 avg val loss: 3.043 lr: 0.000024
+image: ('12830823_87d2654e31.jpg',)
+truth == some children watching fish in a pool
+output > a boy is jumping off of a skateboard <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbing down a sheer rock cliff using a rope
+output > a man in a red shirt is rock climbing <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == dog with orange ball at feet stands on shore shaking off water
+output > a dog with a leash is walking on the water <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men wear silly stove pipe hats and wear makeup
+output > a man in a red shirt and a red shirt is sitting in a red and a red costume <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a dog at the shore of an ocean with seaweed in foreground
+output > a black dog is jumping into the water <EOS>
+
+[23/30,   251/938] avg train loss: 1.976 avg val loss: 3.050 lr: 0.000020
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbing down a sheer rock cliff using a rope
+output > a man in a red shirt is rock climbing <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a dog is running in the waves at the beach
+output > a black dog is jumping into the water <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a dog jumps to catch a toy
+output > a black and white dog jumping dog <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == the boy is jumping off a high diving board into the pool
+output > a boy is jumping into a pool <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two people are wakeboarding in the water and are being pulled by a boat
+output > a man and a dog are riding a boat <EOS>
+
+[23/30,   501/938] avg train loss: 1.991 avg val loss: 3.049 lr: 0.000020
+image: ('1007320043_627395c3d8.jpg',)
+truth == a child playing on a rope net
+output > a little girl in a pink shirt is playing on a playground <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a child is laying down on a wooden bench
+output > a boy sits on a bench <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == there are several people and children looking into water with a blue tiled floor and <UNK>
+output > a boy is jumping into a pool <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman is taking a swing with a golf club
+output > a man in a blue shirt and blue shirt is standing in a field of grass <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a dog jumps to catch a toy
+output > a black and white dog jumping dog <EOS>
+
+[23/30,   751/938] avg train loss: 2.007 avg val loss: 3.051 lr: 0.000020
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == the two men are wearing tall hats one hat is a red print and the other is gold colored
+output > a man in a red shirt and a santa suit <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a young baby sucking a <UNK> asleep in a chair
+output > a boy is sitting on a red couch <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman is taking a swing with a golf club
+output > a man in a blue shirt and blue shirt is standing in front of a field <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog playing with a red ball on the shore near the water
+output > a dog with a leash <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a dog jumps to catch a frisbee while many people watch
+output > a dog jumps in the air to catch a frisbee <EOS>
+
+[23/30,   938/938] avg train loss: 2.002 avg val loss: 3.048 lr: 0.000020
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a little boy lies down on a picnic table bench
+output > a boy sits on a bench <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman wearing a blue shirt and hat with khaki shorts plays golf
+output > a man in a blue shirt and blue shirt is standing in a field of grass <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == a man is sitting next to the water reading
+output > two people are sitting in the water <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a spotted dog are fighting
+output > a black and white dog running on a road <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and young boy ride in a yellow kayak
+output > two people in life jackets in life jackets in life jackets in a boat <EOS>
+
+[24/30,   251/938] avg train loss: 1.976 avg val loss: 3.050 lr: 0.000016
+image: ('1187435567_18173c148b.jpg',)
+truth == a small dog plays with a toy on top of a white blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man rides a bicycle down a paved road <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a black and white border collie catches a frisbee in front of an audience
+output > a dog jumps in the air to catch a frisbee <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman with a paddle
+output > a man with a mohawk and a fishing pole <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == a small child grips onto the red ropes at the playground
+output > a little girl in a pink shirt is playing with a playground <EOS>
+
+[24/30,   501/938] avg train loss: 1.979 avg val loss: 3.055 lr: 0.000016
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a tri colored dog playing with each other on the road
+output > a black and white dog run down the street <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a dog jumps to catch a frisbee while many people watch
+output > a dog jumps in the air to catch a frisbee <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a girl swimming in a pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog is attempting to catch a yellow and purple object in a low cut yard
+output > a black and white dog is jumping over a green toy <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a little kid is jumping off a high dive at the pool
+output > a man is jumping into a pool <EOS>
+
+[24/30,   751/938] avg train loss: 1.971 avg val loss: 3.051 lr: 0.000016
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man stands next to a bank of computer <UNK> machines
+output > a group of people sitting on a counter <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man stands next to three video machines
+output > a group of people sitting on a counter <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbing down a sheer rock cliff using a rope
+output > a man in a red shirt is rock climbing <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a girl in a pink swimsuit in a pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == some children watching fish in a pool
+output > a boy is jumping off of a skateboard <EOS>
+
+[24/30,   938/938] avg train loss: 1.989 avg val loss: 3.050 lr: 0.000016
+image: ('102351840_323e3de834.jpg',)
+truth == a man drilling a hole in the ice
+output > a man is standing on a woman in the street <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a tri colored dog playing with each other on the road
+output > a black and white dog running on a road <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man in a black jacket is taking a photo of a man in a red jacket
+output > a man stands in front of a white building <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a brick sidewalk at night
+output > a man in a black shirt and white shirt standing in a doorway <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a person in the snow drilling a hole in the ice
+output > a man is standing on a woman in the street <EOS>
+
+[25/30,   251/938] avg train loss: 1.954 avg val loss: 3.054 lr: 0.000013
+image: ('1105959054_9c3a738096.jpg',)
+truth == a young girl painting a picture
+output > a young girl in a green shirt is standing in front of a window <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black dog is jumping up to catch a purple and green toy
+output > a black and white dog jumping dog with a frisbee <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman in shorts and a blue sleeveless shirt leans over a golf club
+output > a man in a blue shirt and blue shirt is standing in a field of grass <EOS>
+
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a white and tan dog leaps through the air
+output > a dog runs through the grass <EOS>
+
+image: ('1119463452_69d4eecd08.jpg',)
+truth == a little girl swimming in a pool
+output > a girl in a pink bathing suit swimming pool <EOS>
+
+[25/30,   501/938] avg train loss: 1.968 avg val loss: 3.052 lr: 0.000013
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walks down a city sidewalk at night
+output > a man walks past a baby in a doorway <EOS>
+
+image: ('1149179852_acad4d7300.jpg',)
+truth == a man without a shirt on is guiding a large brown horse pulling a green and yellow wagon
+output > a man is riding a skateboard down a paved road <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men in tall hats <UNK> at the camera
+output > a man in a red shirt and a santa suit <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == a black dog and a spotted dog are fighting
+output > a black and white dog running on a road <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbs a tall flat mountain while holding onto a safety rope
+output > a man in a red shirt is rock climbing <EOS>
+
+[25/30,   751/938] avg train loss: 1.967 avg val loss: 3.055 lr: 0.000013
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman is taking a swing with a golf club
+output > a man in a blue shirt and white shirt is standing in a field of grass <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a little kid is jumping off a high dive at the pool
+output > a boy is jumping into a pool <EOS>
+
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a pile of seaweed sits on the sand behind it a big black dog is running in the water
+output > a black dog is jumping into the water <EOS>
+
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a dog is leaping through the grass
+output > a dog runs through the grass field <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a child is laying down on a wooden bench
+output > a boy sits on a bench <EOS>
+
+[25/30,   938/938] avg train loss: 1.961 avg val loss: 3.054 lr: 0.000013
+image: ('109738916_236dc456ac.jpg',)
+truth == several people are taking a break while on a snowmobiling ride
+output > a sled team of sled <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == several people are standing near a fish pond
+output > a boy is jumping off of a skateboard <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == there are three young people one dark haired holding a bottled drink one with head tilted back and finger in her mouth and one with spiked hair
+output > a woman in a white dress surrounded by people <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog playing with a red ball on the shore near the water
+output > a dog with a leash is walking on the water <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman walking down a brick sidewalk
+output > a man walks past a baby in a doorway <EOS>
+
+[26/30,   251/938] avg train loss: 1.943 avg val loss: 3.054 lr: 0.000010
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a pile of seaweed sits on the sand behind it a big black dog is running in the water
+output > a black dog is jumping into the water <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three young women pose for the camera at a parade
+output > a woman in a white dress surrounded by people <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a little boy rides a bike down a hill on a miniature dirt bike
+output > a man rides a bicycle down a paved road <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == there are several people and children looking into water with a blue tiled floor and <UNK>
+output > a boy is jumping off of a skateboard <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a man is drilling through the frozen ice of a pond
+output > a man is sitting on a woman on a blanket on the ground <EOS>
+
+[26/30,   501/938] avg train loss: 1.946 avg val loss: 3.055 lr: 0.000010
+image: ('1105959054_9c3a738096.jpg',)
+truth == a child painting a picture
+output > a young girl in a green shirt is standing in front of a window <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man rides a bicycle down a paved road <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == several people are standing near a fish pond
+output > a boy is jumping off of a skateboard <EOS>
+
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog jumps to get the frisbee
+output > a black and white dog jumping dog <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == the <UNK> males pose for a picture
+output > a man in a red shirt and a santa suit <EOS>
+
+[26/30,   751/938] avg train loss: 1.954 avg val loss: 3.061 lr: 0.000010
+image: ('1131155939_b4b457b05e.jpg',)
+truth == a black dog runs into the ocean next to a pile of seaweed
+output > a black dog is jumping into the water <EOS>
+
+image: ('1225443522_1633e7121f.jpg',)
+truth == a woman in a blue coat and blue heels walks down a city sidewalk at night
+output > a man walks with a baby in a doorway <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the young boy pedals quickly at a bmx race
+output > a man rides a bicycle down a paved road <EOS>
+
+image: ('1295669416_21cabf594d.jpg',)
+truth == a girl in a red and black striped shirt sits on a brick wall in front of a tropical plant
+output > a woman wearing a red shirt and black shirt is climbing wall <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a child is laying down on a wooden bench
+output > a boy sits on a wooden bench <EOS>
+
+[26/30,   938/938] avg train loss: 1.973 avg val loss: 3.057 lr: 0.000010
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman is taking a swing with a golf club
+output > a man in a blue shirt and white shirt is standing in a field of grass <EOS>
+
+image: ('102351840_323e3de834.jpg',)
+truth == a person in the snow drilling a hole in the ice
+output > a man is sitting on a woman in the middle of a red boat <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == person sitting on concrete landing next to body of water
+output > two people are sitting in the water <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == man and child in yellow kayak
+output > two people in life jackets in life jackets in a yellow boat <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple with their newborn baby sitting under a tree facing a lake
+output > a man and a woman sit on a tree <EOS>
+
+[27/30,   251/938] avg train loss: 1.932 avg val loss: 3.057 lr: 0.000007
+image: ('119534510_d52b3781a3.jpg',)
+truth == a man reading a book on the dock near a post
+output > two people are sitting in the water <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog playing with a red ball on the shore near the water
+output > a dog with a leash and a stick in its mouth <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and young boy ride in a yellow kayak
+output > two people in life jackets in life jackets in a yellow boat <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a child jumps off a high diving board into the pool
+output > a boy is jumping into a pool <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a child in gray clothes is sleeping on a red cushion
+output > a little boy on a red couch <EOS>
+
+[27/30,   501/938] avg train loss: 1.942 avg val loss: 3.056 lr: 0.000007
+image: ('1067180831_a59dc64344.jpg',)
+truth == a black and white dog jumps after a yellow toy
+output > a black and white dog jumping dog <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a child with a helmet on his head rides a bike
+output > a man rides a bicycle down a paved road <EOS>
+
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two people are wakeboarding in the water and are being pulled by a boat
+output > a man and a dog are riding a boat <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small dog plays with a toy on top of a white blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == the little boy rides his bicycle in a race
+output > a man rides a bicycle down a paved road <EOS>
+
+[27/30,   751/938] avg train loss: 1.952 avg val loss: 3.059 lr: 0.000007
+image: ('1280320287_b2a4b9b7bd.jpg',)
+truth == two boys waterskiing
+output > a man and a dog are riding a boat <EOS>
+
+image: ('1030985833_b0902ea560.jpg',)
+truth == a brown and black lab are outside and the black lab is catching a toy in its mouth
+output > two dogs are playing with a toy <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man in a black outfit is taking a photograph of a man in a red jacket
+output > a man stands on a sidewalk with a cellphone <EOS>
+
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a white and tan dog leaps through the air
+output > a dog runs through the grass field <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == couple with a baby sit outdoors next to their stroller
+output > a man and a woman sit on a tree <EOS>
+
+[27/30,   938/938] avg train loss: 1.953 avg val loss: 3.057 lr: 0.000007
+image: ('1149179852_acad4d7300.jpg',)
+truth == the shirtless man is walking the <UNK> pony and carriage down the street
+output > a man is riding a skateboard down a paved road <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man in a black jacket is taking a photo of a man in a red jacket
+output > a man stands in front of a white building <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == children sit and watch the fish moving in the pond
+output > a boy is jumping off of a skateboard <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == the young people party in the streets
+output > a woman in a white dress surrounded by people <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == a white dog shakes on the edge of a beach with an orange ball
+output > a dog with a leash <EOS>
+
+[28/30,   251/938] avg train loss: 1.925 avg val loss: 3.061 lr: 0.000005
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a child is on a bench with arms stretched out
+output > a boy sits on a wooden bench <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a sleeping child sucking on a pacifier
+output > a boy is sleeping on a red couch <EOS>
+
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and a little boy in blue life jackets are rowing a yellow canoe
+output > two people in life jackets in life jackets in a yellow boat <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a dog jumps to catch a frisbee while many people watch
+output > a dog jumps in the air while people watch <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a boy descends off the end of a high diving board
+output > a boy is jumping into a pool <EOS>
+
+[28/30,   501/938] avg train loss: 1.941 avg val loss: 3.061 lr: 0.000005
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a dog is leaping through the grass
+output > a dog is running in a field <EOS>
+
+image: ('1012212859_01547e3f17.jpg',)
+truth == white dog with brown ears standing near water with head turned to one side
+output > a dog with a leash is walking on the water <EOS>
+
+image: ('1187435567_18173c148b.jpg',)
+truth == a small brown and black dog playing with a toy
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == the dog in a vest leaps in the air and there is a bird flying
+output > a dog is running in a field <EOS>
+
+image: ('1235580648_7eebaed9bc.jpg',)
+truth == two men wear silly stove pipe hats and wear makeup
+output > a man in a red shirt and a santa suit <EOS>
+
+[28/30,   751/938] avg train loss: 1.943 avg val loss: 3.061 lr: 0.000005
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a man and woman care for an infant along the side of a body of water
+output > a man and a woman sit on a tree <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a brown and white dug jumping up to catch a frisbee while an audience watches
+output > a dog jumps in the air while people watch <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a child painting a picture
+output > a young girl in a green shirt is standing in front of a window <EOS>
+
+image: ('119534510_d52b3781a3.jpg',)
+truth == a man reading a book on the dock near a post
+output > two people are sitting in the water <EOS>
+
+image: ('1057089366_ca83da0877.jpg',)
+truth == a child jumps off a high diving board into the pool
+output > a man is jumping into a pool <EOS>
+
+[28/30,   938/938] avg train loss: 1.937 avg val loss: 3.061 lr: 0.000005
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man standing in a bar with a neon beer sign hanging on the wall
+output > a group of people sitting on a counter <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a girl is getting ready to swing the club
+output > a man in a blue shirt and white shirt is standing in a field of grass <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == two dogs on pavement moving toward each other
+output > a black and white dog running on a road <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person wearing a red vest climbs up a steep rock
+output > a man in a red shirt is rock climbing <EOS>
+
+image: ('1022454428_b6b660a67b.jpg',)
+truth == a couple sit on the grass with a baby and stroller
+output > a man and a woman sit on a tree <EOS>
+
+[29/30,   251/938] avg train loss: 1.922 avg val loss: 3.062 lr: 0.000003
+image: ('1240297429_c36ae0c58f.jpg',)
+truth == a dog is leaping through the grass
+output > a dog runs through the grass field <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a man takes a picture of another man in an open area just off of a busy street
+output > a man stands in front of a white building <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man is standing by a group of video games in a bar
+output > a group of people sitting on a counter <EOS>
+
+image: ('12830823_87d2654e31.jpg',)
+truth == people stare at the orange fish
+output > a boy is jumping off of a skateboard <EOS>
+
+image: ('1110208841_5bb6806afe.jpg',)
+truth == a black and white border collie catches a frisbee in front of an audience
+output > a dog jumps in the air while people watch <EOS>
+
+[29/30,   501/938] avg train loss: 1.927 avg val loss: 3.062 lr: 0.000003
+image: ('1187435567_18173c148b.jpg',)
+truth == a small shaggy dog playing with a toy on a blanket
+output > a black and brown dog are playing with a toy <EOS>
+
+image: ('105342180_4d4a40b47f.jpg',)
+truth == a woman paddles a boat down a river
+output > a man with a mohawk and a fishing pole <EOS>
+
+image: ('1204996216_71d7519d9a.jpg',)
+truth == a little boy lies down on a picnic table bench
+output > a boy sits on a bench <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == the young people party in the streets
+output > a woman in a white dress surrounded by people <EOS>
+
+image: ('1167908324_8caab45e15.jpg',)
+truth == a man standing in a bar with a neon beer sign hanging on the wall
+output > a group of people sitting on a counter <EOS>
+
+[29/30,   751/938] avg train loss: 1.935 avg val loss: 3.062 lr: 0.000003
+image: ('1028205764_7e8df9a2ea.jpg',)
+truth == a man and young boy ride in a yellow kayak
+output > two people in life jackets in life jackets in a yellow boat <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbing down a sheer rock cliff using a rope
+output > a man in a red shirt is rock climbing <EOS>
+
+image: ('1001773457_577c3a7d70.jpg',)
+truth == two dogs of different breeds looking at each other on the road
+output > a black and white dog running on a road <EOS>
+
+image: ('1130017585_1a219257ac.jpg',)
+truth == three women on the street drinking and posing
+output > a woman in a white dress surrounded by people <EOS>
+
+image: ('1213336750_2269b51397.jpg',)
+truth == a young man taking a picture of another young man outdoors
+output > a man stands on a sidewalk with a cellphone <EOS>
+
+[29/30,   938/938] avg train loss: 1.937 avg val loss: 3.062 lr: 0.000003
+image: ('119534510_d52b3781a3.jpg',)
+truth == a man is sitting next to the water reading
+output > two people are sitting in the water <EOS>
+
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbing down a sheer rock cliff using a rope
+output > a man in a red shirt is rock climbing <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a toddler wearing a pacifier is sleeping on a red blanket with a teddy bear at his side
+output > a boy is sleeping on a red couch <EOS>
+
+image: ('1007320043_627395c3d8.jpg',)
+truth == the small child climbs on a red ropes on a playground
+output > a little girl in a pink shirt is playing with a playground <EOS>
+
+image: ('1105959054_9c3a738096.jpg',)
+truth == a young girl with braids is painting with water colors on a white paper on the wall
+output > a young girl in a green shirt is standing in front of a window <EOS>
+
+[30/30,   251/938] avg train loss: 1.926 avg val loss: 3.062 lr: 0.000002
+image: ('109260216_85b0be5378.jpg',)
+truth == a person climbing down a sheer rock cliff using a rope
+output > a man in a red shirt is rock climbing <EOS>
+
+image: ('1075716537_62105738b4.jpg',)
+truth == a young boy in a helmet rides a bike on the road
+output > a man rides a bicycle down a paved road <EOS>
+
+image: ('1030985833_b0902ea560.jpg',)
+truth == a brown and black lab are outside and the black lab is catching a toy in its mouth
+output > two dogs are playing with a toy <EOS>
+
+image: ('127490019_7c5c08cb11.jpg',)
+truth == a woman in shorts and a blue sleeveless shirt leans over a golf club
+output > a man in a blue shirt and blue shirt is standing in a field of grass <EOS>
+
+image: ('1231229740_8dcbf80bfb.jpg',)
+truth == a child in gray clothes is sleeping on a red cushion
+output > a boy on a red couch <EOS>
+
+[30/30,   501/938] avg train loss: 1.931 avg val loss: 3.062 lr: 0.000002
