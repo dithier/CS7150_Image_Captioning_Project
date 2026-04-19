@@ -79,7 +79,6 @@ def get_avg_validation_transformer_loss(model, val_data_loader, loss_fn, vocab):
             captions = captions.to(device)
 
             # use the model
-            # todo: need to delete last token?
             outputs = model(images) 
 
             loss = loss_fn(

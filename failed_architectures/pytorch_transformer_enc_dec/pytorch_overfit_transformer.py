@@ -3,14 +3,15 @@ from torch.utils.tensorboard import SummaryWriter
 import argparse
 from dataloader_v2 import get_flickr8k_loaders
 from training_helpers import *
-from pytorch_pretrainined_enc_dec_model import VisionTransformerModel
+from pytorch_transformer_enc_dec_model import VisionTransformerModel
 import os
-import torch.optim as optim
-import torch.nn as nn
 
 # pip install tensorboard
 # pip install pandas
 # pip install nltk
+
+# IMPT: This file is same as train file in directory but uses large model with hope that we can at least overfit the model and see good results on train
+# to verify that our methods are correct
 
 """
 More correct version of baseline_training.py.
@@ -48,7 +49,7 @@ def save_checkpoint(model, optimizer, epoch, train_loss, val_loss, lr, lr_sched,
 def load_checkpoint(model, mode, path="./model.pt"):
     checkpoint = torch.load(path)
     epoch = checkpoint['epoch']
-    lr = checkpoint['lr'] # this is a list
+    lr = checkpoint['lr']
     weight_decay = checkpoint['weight_decay']
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer_state_dict = checkpoint['optimizer_state_dict']
@@ -87,8 +88,10 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
 
             optimizer.zero_grad()
 
+            
             outputs = model(images, captions[:, :-1]) # this is train so uses causal mask
 
+            
             loss = loss_fn(
                 outputs.reshape(-1, len(vocab)),
                 captions[:, 1:].reshape(-1) # we don't want to include SOS
@@ -96,6 +99,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
 
             loss.backward()
 
+        
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=5.0)
 
             optimizer.step()
@@ -117,8 +121,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
                 }, epoch_i * len(train_data_loader) + i)
 
                 try:
-                    # this is a list
-                    last_lr = lr_scheduler.get_last_lr()
+                    last_lr = lr_scheduler.get_last_lr()[0]
                 except AttributeError:
                     pass
 
@@ -135,8 +138,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
                                     last_lr, lr_scheduler, best_perf, opt.weight_decay,
                                     save_path_labeled)
 
-                # last_lr[1] is the decoder group LR
-                print(f'[{epoch_i}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] avg train loss: {running_loss:.3f} avg val loss: {avg_val_loss:.3f} lr: {last_lr[1]:.6f}')
+                print(f'[{epoch_i}/{total_epochs}, {i + 1:5d}/{len(train_data_loader)}] avg train loss: {running_loss:.3f} avg val loss: {avg_val_loss:.3f} lr: {last_lr:.6f}')
                 running_loss = 0.0
                 running_total = 0.0
                 batches_since_last_log = 0
@@ -145,59 +147,45 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
 
 
 def main(opt):
-    train_loader, val_loader, _, vocab = get_flickr8k_loaders(root_dir=opt.dataset_dir)
-    
-    model = VisionTransformerModel(vocab).to(device)
+    train_loader, val_loader, test_loader, vocab = get_flickr8k_loaders(root_dir=opt.dataset_dir)
+
+    # Note these model params may be too larger for such a small dataset, Might overfit
+    P = 16
+    embed_dim = 256 # hidden size D in vision transformer?
+    num_heads = 8 
+    trx_ff_dim = embed_dim * 4  # couldn't find in paper
+    num_encoder_cells = 6 # ViT Base
+    num_decoder_cells = 6 # ViT Base
+    dropout = 0.1
+
+    model = VisionTransformerModel(vocab, P, embed_dim, num_heads, trx_ff_dim,
+                                   num_encoder_cells, num_decoder_cells,
+                                   dropout).to(device)
+
+    tmax = opt.epochs + 1
 
     if opt.checkpoint:
-        # lr is a list of learning rates, lr[1] is decoder lr
         model, optimizer_state_dict, curr_epoch, lr, lr_sched_state, best_perf, weight_decay = load_checkpoint(model, "train", opt.checkpoint_path)
 
-        loss_fn = nn.CrossEntropyLoss(ignore_index=vocab.word_to_index[vocab.PAD_TOKEN]) # needed to ignore index 0 
-
-        # recreate optimizer with the saved per-group LRs
-        optimizer = optim.Adam([
-            {'params': model.vit.parameters(), 'lr': lr[0]},
-            {'params': model.transformer_decoder.parameters(), 'lr': lr[1]},
-            {'params': model.embedding.parameters(), 'lr': lr[2]},
-            {'params': model.fc_out.parameters(), 'lr': lr[3]},
-            
-            ], 
-            weight_decay=weight_decay
-        )
+        loss_fn, optimizer = set_up_Adam_loss_optimizer(model, lr, opt.betas, weight_decay, vocab)
         optimizer.load_state_dict(optimizer_state_dict)
 
-        lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=opt.epochs + 1, eta_min=1e-6)
-
-        #lr_scheduler = torch.optim.lr_scheduler.ConstantLR(optimizer, factor=1)
+        lr_scheduler = torch.optim.lr_scheduler.ConstantLR(optimizer, factor=1)
         # lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
         lr_scheduler.load_state_dict(lr_sched_state)
+
+        curr_lr = lr
     else:
-        loss_fn = nn.CrossEntropyLoss(ignore_index=vocab.word_to_index[vocab.PAD_TOKEN]) # needed to ignore index 0 
-
+        loss_fn, optimizer = set_up_Adam_loss_optimizer(model, opt.lr, opt.betas, opt.weight_decay, vocab)
         curr_epoch = 1
-        # current decoder LR
-        curr_lr = 1e-4
-        lr = [1e-5, curr_lr, 1e-4, 1e-4]
-
-        optimizer = optim.Adam([
-            {'params': model.vit.parameters(), 'lr': lr[0]},
-            {'params': model.transformer_decoder.parameters(), 'lr': lr[1]},
-            {'params': model.embedding.parameters(), 'lr': lr[2]},
-            {'params': model.fc_out.parameters(), 'lr': lr[3]},
-            
-            ], 
-            weight_decay=opt.weight_decay
-        )
-
-        lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=opt.epochs + 1, eta_min=1e-6)
-        #lr_scheduler = torch.optim.lr_scheduler.ConstantLR(optimizer, factor=1)
+        lr_scheduler = torch.optim.lr_scheduler.ConstantLR(optimizer, factor=1)
         #lr_scheduler = set_up_cos_annealing_lr_scheduler(optimizer, tmax)
         best_perf = float("inf")
-        
+        curr_lr = opt.lr
 
-    train_val_model(opt, vocab, model, train_loader, val_loader, loss_fn,
-                    optimizer, lr_scheduler, lr, curr_epoch, opt.epochs, best_perf, 
+    #### USE test_loader instead of train in effort to overfit
+    train_val_model(opt, vocab, model, test_loader, val_loader, loss_fn,
+                    optimizer, lr_scheduler, curr_lr, curr_epoch, opt.epochs, best_perf, 
                     print_save_freq=opt.print_freq)
 
 
@@ -225,7 +213,7 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint", type=str2bool, default=True, help="true to load from checkpoint, false otherwise")
     parser.add_argument("--checkpoint_path", type=str, default="./model.pt", help="path to checkpoint")
     parser.add_argument("--dataset_dir", type=str, default=".", help="directory for all images/annotations")
-    # parser.add_argument("--lr", type=float, default=1e-4, help="starting learning rate")
+    parser.add_argument("--lr", type=float, default=1e-3, help="starting learning rate")
     parser.add_argument("--betas", type=parse_betas, default="0.9,0.999", help="Adam betas as 'b1,b2'")
     parser.add_argument("--weight_decay", type=float, default=1e-4, help="Adam weight decay")
     parser.add_argument("--log_dir", type=str, default="./runs/diy_transformer_pass_1", help="tensorboard log directory")
