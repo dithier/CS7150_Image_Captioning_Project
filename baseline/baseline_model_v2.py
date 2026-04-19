@@ -82,7 +82,7 @@ class BasicLSTMDecoder(nn.Module):
         h, c = h0, c0
 
         with torch.no_grad():
-            for step in range(max_length + 1):
+            for _ in range(max_length + 1):
                 embed = self.embed(token) # (B , 1, embed_dim)
                 out, (h,c) = self.lstm(embed, (h,c)) # out: (B, 1, hidden_dim)
                 logits = self.fc(out.squeeze(1)) # (B, vocab size)

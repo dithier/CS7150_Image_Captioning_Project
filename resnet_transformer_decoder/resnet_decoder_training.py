@@ -28,20 +28,6 @@ To run on cluster:
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# # Logger- Redirect stdout to a log file while still printing to console
-# class Logger:
-#     def __init__(self, filepath):
-#         self.terminal = sys.__stdout__
-#         self.log = open(filepath, "w")
-#     def write(self, message):
-#         self.terminal.write(message)
-#         self.log.write(message)
-#         self.log.flush()
-#     def flush(self):
-#         self.terminal.flush()
-#         self.log.flush()
-
-# sys.stdout = Logger(os.path.join("logs", "adam_pass_3.out"))
 
 ############## Checkpoint Related Logic #############################
 
@@ -102,10 +88,10 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
 
             optimizer.zero_grad()
 
-            # todo captions[:, :-1]?
+            
             outputs = model(images, captions[:, :-1]) # this is train so uses causal mask
 
-            # todo captions[:, 1:]? (address in training helpers too)
+            
             loss = loss_fn(
                 outputs.reshape(-1, len(vocab)),
                 captions[:, 1:].reshape(-1) # we don't want to include SOS
@@ -113,7 +99,7 @@ def train_val_model(opt, vocab, model, train_data_loader, val_data_loader, loss_
 
             loss.backward()
 
-            # todo: need this?
+            
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=5.0)
 
             optimizer.step()

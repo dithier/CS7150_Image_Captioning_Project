@@ -9,7 +9,9 @@
 module load cuda/12.1.1 anaconda3/2024.06
 source activate cs7150
 
-python -u adam_baseline_training_v2.py \
+export PYTHONPATH=$(pwd)
+
+python -u baseline/adam_baseline_training_v2.py \
 	--epochs 30 \
 	--checkpoint False \
 	--dataset_dir flickr8k \

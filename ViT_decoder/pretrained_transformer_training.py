@@ -28,21 +28,6 @@ To run on cluster:
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# # Logger- Redirect stdout to a log file while still printing to console
-# class Logger:
-#     def __init__(self, filepath):
-#         self.terminal = sys.__stdout__
-#         self.log = open(filepath, "w")
-#     def write(self, message):
-#         self.terminal.write(message)
-#         self.log.write(message)
-#         self.log.flush()
-#     def flush(self):
-#         self.terminal.flush()
-#         self.log.flush()
-
-# sys.stdout = Logger(os.path.join("logs", "adam_pass_3.out"))
-
 ############## Checkpoint Related Logic #############################
 
 def save_checkpoint(model, optimizer, epoch, train_loss, val_loss, lr, lr_sched,

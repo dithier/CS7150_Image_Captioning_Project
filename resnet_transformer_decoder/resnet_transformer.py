@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torchvision.models as models
 import torch
-from ViT.transformer_enc_doc_model import PositionalEncoding
+from positional_encoding import PositionalEncoding
 import math
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -34,7 +34,7 @@ class ResNetEncoder(nn.Module):
             for p in self.resnet.parameters():
                 p.requires_grad = False
 
-    # todo: we need (B, L, embed_dim) -> remove avgpool res
+    # we need (B, L, embed_dim) 
     def forward(self, x):
         features = self.resnet(x) # (B, 2048, 7, 7)
 

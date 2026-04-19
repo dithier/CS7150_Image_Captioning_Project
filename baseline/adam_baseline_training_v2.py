@@ -1,14 +1,12 @@
-import sys
-
 import torch
 import torch.nn as nn
 from torch import Tensor
 import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 import argparse
-from dataloader import get_flickr8k_loaders
+from dataloader_v2 import get_flickr8k_loaders
 from training_helpers import *
-from baseline_models.baseline_model_v2 import BaselineModel
+from baseline_model_v2 import BaselineModel
 import os
 
 # pip install tensorboard
@@ -33,20 +31,6 @@ To run on cluster:
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# # Logger- Redirect stdout to a log file while still printing to console
-# class Logger:
-#     def __init__(self, filepath):
-#         self.terminal = sys.__stdout__
-#         self.log = open(filepath, "w")
-#     def write(self, message):
-#         self.terminal.write(message)
-#         self.log.write(message)
-#         self.log.flush()
-#     def flush(self):
-#         self.terminal.flush()
-#         self.log.flush()
-
-# sys.stdout = Logger(os.path.join("logs", "adam_pass_3.out"))
 
 ############## Checkpoint Related Logic #############################
 
@@ -162,7 +146,6 @@ def main(opt):
 
     tmax = opt.epochs + 1
 
-#    tmax = opt.epochs 
     if opt.checkpoint:
         model, optimizer_state_dict, curr_epoch, lr, lr_sched_state, best_perf, weight_decay = load_checkpoint(model, "train", opt.checkpoint_path)
 

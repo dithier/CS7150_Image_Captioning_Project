@@ -1,7 +1,7 @@
 import torchvision.models as models
 
 import math
-from ViT.transformer_enc_doc_model import PositionalEncoding
+from positional_encoding import PositionalEncoding
 import torch
 import torch.nn as nn
 
@@ -26,12 +26,7 @@ class VisionTransformerModel(nn.Module):
         """
         super(VisionTransformerModel, self).__init__()
 
-        # self.P = P
-        # self.C = 3 # number of channels
-        # self.embed_dim = embed_dim
         self.embed_dim = 768 # output of encoder is dimension feature 768
-
-        # self.init_embed_dim = P * P * self.C # from vision transformer paper in HW 3
 
         self.pad_token = vocab.word_to_index["<PAD>"]
         self.vocab = vocab
@@ -64,12 +59,6 @@ class VisionTransformerModel(nn.Module):
         # self.image_embedding_layer = nn.Linear(self.init_embed_dim, self.embed_dim)
         self.positional_encoding = PositionalEncoding(self.embed_dim)
         self.embedding = nn.Embedding(len(vocab), self.embed_dim)
-
-        # layer_norm_1 = nn.LayerNorm(self.embed_dim)
-        # encoder_layer = nn.TransformerEncoderLayer(self.embed_dim, num_heads, dim_feedforward=trx_ff_dim,
-        #                                            dropout=dropout, batch_first=True, norm_first=True)
-        # self.transformer_encoder = nn.TransformerEncoder(encoder_layer, num_layers=num_encoder_cells, norm=layer_norm_1,
-        #                                                  enable_nested_tensor=False) 
 
         layer_norm_2 = nn.LayerNorm(self.embed_dim)
         decoder_layer = nn.TransformerDecoderLayer(self.embed_dim, self.num_heads, dim_feedforward=trx_ff_dim, 
@@ -111,22 +100,8 @@ class VisionTransformerModel(nn.Module):
         Return:
         - logits: Tensor with the shape of BxK, where K is the number of classes
         """
-        # image is B x C X H x W
-    
-        # make sure we can split up the image correctly
-        # assert image.shape[2] % self.P == 0
-        # assert image.shape[3] % self.P == 0
-
-        # # number of patches (from paper N = HW/P^2)
-        # N = (image.shape[2] * image.shape[3]) // (self.P**2)
-    
-        # # batch num
-        # B = image.shape[0]
 
         seq_len = labels.size(1)
-
-        # embedded = self.make_patches(image) # B X N X (P * P * C)
-        # embedded = self.image_embedding_layer(embedded) * math.sqrt(self.embed_dim) # B X N X self.embed_dim
 
         causal_mask = torch.triu(torch.ones(seq_len, seq_len), diagonal=1).bool().to(labels.device) #seq len X seq len
 
@@ -138,9 +113,6 @@ class VisionTransformerModel(nn.Module):
         # the encoder. Average pooling is applied then to all the features of all #
         # tokens. Finally, the logits are computed based on the pooled features.  #
         ###########################################################################
-        # C' = self.embed_dim
-        # output = self.positional_encoding(embedded) # B X N X C'
-        # encoder_output = self.transformer_encoder(output) # B X N X C'
 
         with torch.no_grad():
             encoder_output = self.get_patch_features(image) # (B, 196, 768)
@@ -166,15 +138,9 @@ class VisionTransformerModel(nn.Module):
     # Note: Output strips SOS and EOS tokens in result
     # will generate for whole batch
     def forward_test(self, image, max_length=30):
-        # number of patches (from paper N = HW/P^2)
-        # N = (image.shape[2] * image.shape[3]) // (self.P**2)
     
         # batch num
         B = image.shape[0]
-
-        # embedded = self.make_patches(image) # B X N X (P * P * C)
-        # embedded = self.image_embedding_layer(embedded) * math.sqrt(self.embed_dim) # B X N X self.embed_dim
-        # embedded = self.positional_encoding(embedded)
 
         # start with just <SOS>
         generated = torch.full(

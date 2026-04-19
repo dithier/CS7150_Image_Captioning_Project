@@ -1,8 +1,7 @@
 import math
-from transformer_enc_doc_model import PositionalEncoding
+from diy_transformer_enc_dec.transformer_enc_dec_model import PositionalEncoding
 import torch
 import torch.nn as nn
-
 class VisionTransformerDecoderModel(nn.Module):
     """
     A Transformer-based image captioning model
@@ -134,17 +133,7 @@ class VisionTransformerDecoderModel(nn.Module):
         # pass PE result into transformer decoder model and all its cells
         output = self.transformer_decoder(output, mask=causal_mask, src_key_padding_mask=pad_mask,
                                           is_causal=True) 
-        
-        ## or should we do this? with actual decoder
-        # output (B, L, embed_dim)
-        # output = self.transformer_decoder(
-        #     tgt=label_embeddings,    # (B, L, embed_dim) — caption tokens
-        #     memory=image_embeddings, # (B, N, embed_dim) — image patches as "encoder output"
-        #     tgt_mask=causal_mask,
-        #     tgt_key_padding_mask=padding_mask,
-        #     tgt_is_causal=True
-        # )
-        # logits = self.fc_out(output)
+    
 
         # get just positions related to captions in output
         caption_output = output[:, N:, :]
@@ -181,12 +170,6 @@ class VisionTransformerDecoderModel(nn.Module):
             # this includes image embedding and tokens generated so far
             decoder_input = self.positional_encoding(generated)
             decoder_output = self.transformer_decoder(decoder_input)
-
-            # OR other method
-            # output = self.transformer_decoder(
-                #     tgt=generated,    # (B, L, embed_dim) — caption tokens
-                #     memory=image_embeddings, # (B, N, embed_dim) — image patches as "encoder output"
-                # )
 
             output = self.fc_out(decoder_output)
             last_output = output[:, -1, :]
