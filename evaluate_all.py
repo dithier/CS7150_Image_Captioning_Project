@@ -1,40 +1,84 @@
 import torch
 import argparse
 import math
+import nltk
 from collections import defaultdict
 from dataloader_v2 import get_flickr8k_loaders
-from eval_metrics import evaluation_metric
+from nltk.translate.bleu_score import corpus_bleu
 
 """
-Evaluate a saved model checkpoint on the test set.
-Supports BLEU-1 through BLEU-4, METEOR, CIDEr-D, and CIDEr per n-gram order.
+Unified evaluation script for all model types.
+Supports BLEU-1 through BLEU-4, METEOR, and CIDEr-D.
+
+Model versions:
+  baseline_v2         - BaselineModel with learned c0 (LSTM baseline)
+  decoder_only        - VisionTransformerDecoderModel (decoder-only transformer)
+  resnet_transformer  - ResnetTransformerModel (pretrained ResNet50 + transformer decoder)
+  vit_transformer     - VisionTransformerModel (pretrained ViT-B/16 + transformer decoder)
 
 Usage:
-    # all metrics (default)
-    python evaluate_all.py --checkpoint_path saved_models/adam_pass_4/model.pt --model_version v1
-
-    # bleu only
-    python evaluate_all.py --checkpoint_path saved_models/adam_pass_4/model.pt --model_version v1 --metric bleu
-
-    # meteor only
-    python evaluate_all.py --checkpoint_path saved_models/baseline_v2_adam/model.pt --model_version v2 --metric meteor
-
-    # cider only
-    python evaluate_all.py --checkpoint_path saved_models/baseline_v2_adam/model.pt --model_version v2 --metric cider
+  python evaluate_all.py --model_version baseline_v2 --checkpoint_path saved_models/sgd_v2/model.pt
+  python evaluate_all.py --model_version decoder_only --checkpoint_path saved_models/decoder_transformer_pass_1/model.pt
+  python evaluate_all.py --model_version resnet_transformer --checkpoint_path saved_models/resnet_transformer_pass_1/model.pt
+  python evaluate_all.py --model_version vit_transformer --checkpoint_path saved_models/vit_transformer_pass_1/model.pt
+  python evaluate_all.py --model_version baseline_v2 --checkpoint_path ... --metric bleu
+  python evaluate_all.py --model_version vit_transformer --checkpoint_path ... --metric cider
 """
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 # ──────────────────────────────────────────────
+# Model Loading
+# ──────────────────────────────────────────────
+
+def load_model(opt, vocab):
+    """
+    Load and return the correct model class based on --model_version.
+    """
+    if opt.model_version == "baseline_v2":
+        from baseline_model_v2 import BaselineModel
+        print("Using baseline_model_v2 (LSTM with learned c0)")
+        model = BaselineModel(vocab_size=len(vocab)).to(device)
+
+    elif opt.model_version == "decoder_only":
+        from decoder_transformer_only_model import VisionTransformerDecoderModel
+        print("Using VisionTransformerDecoderModel (decoder-only transformer)")
+        P = 16
+        embed_dim = 256
+        num_heads = 8
+        trx_ff_dim = embed_dim * 4
+        num_decoder_cells = 4
+        dropout = 0.1
+        model = VisionTransformerDecoderModel(
+            vocab, P, embed_dim, num_heads, trx_ff_dim, num_decoder_cells, dropout
+        ).to(device)
+
+    elif opt.model_version == "vit_transformer":
+        from pytorch_pretrainined_enc_dec_model import VisionTransformerModel
+        print("Using VisionTransformerModel (pretrained ViT-B/16 + transformer decoder)")
+        model = VisionTransformerModel(vocab).to(device)
+
+    else:
+        raise ValueError(f"Unknown model_version: {opt.model_version}")
+
+    checkpoint = torch.load(opt.checkpoint_path, map_location=device)
+    model.load_state_dict(checkpoint["model_state_dict"])
+    print(f"Loaded checkpoint from {opt.checkpoint_path}")
+    print(f"Saved at epoch {checkpoint['epoch']} | val loss {checkpoint['val_loss']:.4f}")
+
+    return model
+
+
+# ──────────────────────────────────────────────
 # Caption Generation
 # ──────────────────────────────────────────────
 
-def generate_captions(model, data_loader, vocab):
+def generate_captions_word_strings(model, data_loader, vocab=None):
     """
-    Run model.generate() over entire dataloader.
-    Returns dict: { image_name -> list of str }
-    Both v1 and v2 generate() return word strings directly.
+    For models whose generate() returns word strings directly.
+    - baseline_v2: model.generate(images, vocab)
+    - decoder_only: model.generate(images)
     """
     model.eval()
     all_generated = {}
@@ -42,7 +86,11 @@ def generate_captions(model, data_loader, vocab):
     with torch.no_grad():
         for images, captions, image_names in data_loader:
             images = images.to(device)
-            batch_generated = model.generate(images, vocab)
+
+            if vocab is not None:
+                batch_generated = model.generate(images, vocab)
+            else:
+                batch_generated = model.generate(images)
 
             for img_name, words in zip(image_names, batch_generated):
                 if img_name not in all_generated:
@@ -51,13 +99,63 @@ def generate_captions(model, data_loader, vocab):
     return all_generated
 
 
+def generate_captions_from_logits(model, data_loader, vocab):
+    model.eval()
+    all_generated = {}
+    eos_idx = vocab.word_to_index[vocab.EOS_TOKEN]
+    pad_idx = vocab.word_to_index[vocab.PAD_TOKEN]
+    sos_idx = vocab.word_to_index[vocab.SOS_TOKEN]
+
+    with torch.no_grad():
+        for batch_idx, (images, captions, image_names) in enumerate(data_loader):
+            images = images.to(device)
+            print(f"  Generating batch {batch_idx + 1}/{len(data_loader)}...", flush=True)
+            logits = model.forward_test(images)
+            predicted = logits.argmax(dim=-1)
+
+            for img_name, token_ids in zip(image_names, predicted):
+                words = []
+                for tok in token_ids.tolist():
+                    if tok in (eos_idx, pad_idx, sos_idx):
+                        break
+                    words.append(vocab.index_to_word.get(tok, "<unk>"))
+                if img_name not in all_generated:
+                    all_generated[img_name] = words if words else ["<unk>"]
+
+    return all_generated
+
+
+def generate_captions(model_version, model, data_loader, vocab):
+    """
+    Route to the correct generation function based on model type.
+    """
+    if model_version == "baseline_v2":
+        return generate_captions_word_strings(model, data_loader, vocab=vocab)
+    elif model_version == "decoder_only":
+        return generate_captions_word_strings(model, data_loader, vocab=None)
+    elif model_version in ("vit_transformer"):
+        return generate_captions_from_logits(model, data_loader, vocab)
+    else:
+        raise ValueError(f"Unknown model_version: {model_version}")
+
+
 # ──────────────────────────────────────────────
 # BLEU
 # ──────────────────────────────────────────────
 
-def compute_bleu(data_loader, hypotheses_dict, ref_dict):
-    hypotheses = [hypotheses_dict[img] for img in ref_dict.keys()]
-    return evaluation_metric(data_loader, hypotheses)
+def compute_bleu(ref_dict, hypotheses_dict):
+    references = []
+    hypotheses = []
+    for img_name, refs in ref_dict.items():
+        references.append(refs)
+        hypotheses.append(hypotheses_dict.get(img_name, ["<unk>"]))
+
+    bleu1 = corpus_bleu(references, hypotheses, weights=(1.0, 0, 0, 0))
+    bleu2 = corpus_bleu(references, hypotheses, weights=(0.5, 0.5, 0, 0))
+    bleu3 = corpus_bleu(references, hypotheses, weights=(0.33, 0.33, 0.33, 0))
+    bleu4 = corpus_bleu(references, hypotheses, weights=(0.25, 0.25, 0.25, 0.25))
+
+    return {"bleu1": bleu1, "bleu2": bleu2, "bleu3": bleu3, "bleu4": bleu4}
 
 
 # ──────────────────────────────────────────────
@@ -70,13 +168,7 @@ def compute_meteor(ref_dict, hypotheses_dict):
     scores = []
     for img_name, references in ref_dict.items():
         hypothesis = hypotheses_dict.get(img_name, ["<unk>"])
-        score = meteor_score(
-            references,
-            hypothesis,
-            alpha=0.9,
-            beta=3.0,
-            gamma=0.5
-        )
+        score = meteor_score(references, hypothesis, alpha=0.9, beta=3.0, gamma=0.5)
         scores.append(score)
 
     return sum(scores) / len(scores) if scores else 0.0
@@ -93,40 +185,7 @@ def get_ngrams(tokens, n):
     return counts
 
 
-def compute_cider_n(test_counts, refs_counts, doc_freq, num_images, n, sigma=6.0):
-    def tfidf_vec(counts):
-        vec = defaultdict(float)
-        norm = 0.0
-        for ngram, count in counts.items():
-            df = doc_freq.get(ngram, 0)
-            idf = math.log((num_images - df + 0.5) / (df + 0.5))
-            vec[ngram] = count * idf
-            norm += (count * idf) ** 2
-        norm = math.sqrt(norm)
-        return vec, norm
-
-    hyp_vec, hyp_norm = tfidf_vec(test_counts)
-
-    ref_lens = [sum(v for v in rc.values()) for rc in refs_counts]
-    avg_ref_len = sum(ref_lens) / len(ref_lens) if ref_lens else 1
-    hyp_len = sum(v for v in test_counts.values())
-
-    score = 0.0
-    for ref_counts in refs_counts:
-        ref_vec, ref_norm = tfidf_vec(ref_counts)
-        dot = sum(hyp_vec[ng] * ref_vec[ng] for ng in ref_vec if ng in hyp_vec)
-        dot = max(dot, 0.0)
-        if hyp_norm * ref_norm > 0:
-            score += dot / (hyp_norm * ref_norm)
-
-    penalty = math.exp(-((hyp_len - avg_ref_len) ** 2) / (2 * sigma ** 2))
-    return (score / len(refs_counts)) * penalty
-
-
 def compute_cider(ref_dict, hypotheses_dict, n_max=4, sigma=6.0):
-    """
-    Returns overall CIDEr-D score and per n-gram order breakdown.
-    """
     image_names = list(ref_dict.keys())
     num_images = len(image_names)
 
@@ -152,32 +211,47 @@ def compute_cider(ref_dict, hypotheses_dict, n_max=4, sigma=6.0):
                         seen.add(ngram)
         doc_freqs[n] = df
 
-    # scores_per_order[n] = list of per-image scores for n-gram order n
+    def tfidf_vec(counts, doc_freq):
+        vec = defaultdict(float)
+        norm = 0.0
+        for ngram, count in counts.items():
+            df = doc_freq.get(ngram, 0)
+            idf = math.log((num_images - df + 0.5) / (df + 0.5))
+            vec[ngram] = count * idf
+            norm += (count * idf) ** 2
+        return vec, math.sqrt(norm)
+
     scores_per_order = {n: [] for n in range(1, n_max + 1)}
     scores_per_image = []
 
     for i in range(num_images):
         image_score = 0.0
         for n in range(1, n_max + 1):
-            n_score = compute_cider_n(
-                test_ngrams[n][i],
-                refs_ngrams[n][i],
-                doc_freqs[n],
-                num_images,
-                n,
-                sigma,
-            )
+            hyp_vec, hyp_norm = tfidf_vec(test_ngrams[n][i], doc_freqs[n])
+            ref_lens = [sum(v for v in rc.values()) for rc in refs_ngrams[n][i]]
+            avg_ref_len = sum(ref_lens) / len(ref_lens) if ref_lens else 1
+            hyp_len = sum(v for v in test_ngrams[n][i].values())
+
+            score = 0.0
+            for ref_counts in refs_ngrams[n][i]:
+                ref_vec, ref_norm = tfidf_vec(ref_counts, doc_freqs[n])
+                dot = sum(hyp_vec[ng] * ref_vec[ng] for ng in ref_vec if ng in hyp_vec)
+                dot = max(dot, 0.0)
+                if hyp_norm * ref_norm > 0:
+                    score += dot / (hyp_norm * ref_norm)
+
+            penalty = math.exp(-((hyp_len - avg_ref_len) ** 2) / (2 * sigma ** 2))
+            n_score = (score / len(refs_ngrams[n][i])) * penalty
             scores_per_order[n].append(n_score)
             image_score += n_score
-        image_score /= n_max
-        scores_per_image.append(image_score)
+
+        scores_per_image.append(image_score / n_max)
 
     overall = (sum(scores_per_image) / num_images) * 10.0
     per_order = {
         n: (sum(scores_per_order[n]) / num_images) * 10.0
         for n in range(1, n_max + 1)
     }
-
     return overall, per_order
 
 
@@ -187,7 +261,6 @@ def compute_cider(ref_dict, hypotheses_dict, n_max=4, sigma=6.0):
 
 def main(opt):
     if opt.metric in ("meteor", "all"):
-        import nltk
         nltk.download("wordnet", quiet=True)
         nltk.download("omw-1.4", quiet=True)
 
@@ -196,22 +269,10 @@ def main(opt):
         batch_size=opt.ref * 32
     )
 
-    if opt.model_version == "v1":
-        from baseline_model_v1 import BaselineModel
-        print("Using baseline_model_v1 (no init_c, c0 = zeros)")
-    else:
-        from baseline_model_v2 import BaselineModel
-        print("Using baseline_model_v2 (with learned init_c)")
+    model = load_model(opt, vocab)
 
-    model = BaselineModel(vocab_size=len(vocab)).to(device)
-    checkpoint = torch.load(opt.checkpoint_path, map_location=device)
-    model.load_state_dict(checkpoint["model_state_dict"])
-    print(f"Loaded checkpoint from {opt.checkpoint_path}")
-    print(f"Saved at epoch {checkpoint['epoch']} | val loss {checkpoint['val_loss']:.4f}")
-
-    # generate once — reuse for all metrics
     print("\nGenerating captions over test set...")
-    hypotheses_dict = generate_captions(model, test_loader, vocab)
+    hypotheses_dict = generate_captions(opt.model_version, model, test_loader, vocab)
     ref_dict = test_loader.dataset.get_all_references_dict()
 
     assert len(hypotheses_dict) == len(ref_dict), (
@@ -221,10 +282,20 @@ def main(opt):
     if empty:
         print(f"Warning: {empty} empty hypotheses replaced with <unk>")
 
+    # Debug sample
+    sample_imgs = list(ref_dict.keys())[:3]
+    print("\n--- Debug Sample ---")
+    for img in sample_imgs:
+        print(f"  image : {img}")
+        print(f"  hyp   : {hypotheses_dict[img]}")
+        print(f"  ref[0]: {ref_dict[img][0]}")
+    print("--------------------\n")
+
+    print(f"\n========== Evaluation Results [{opt.model_version}] ==========")
+
     if opt.metric in ("bleu", "all"):
         print("\nComputing BLEU scores...")
-        bleu = compute_bleu(test_loader, hypotheses_dict, ref_dict)
-        print("\n--- BLEU Scores ---")
+        bleu = compute_bleu(ref_dict, hypotheses_dict)
         print(f"  BLEU-1: {bleu['bleu1'] * 100:.2f}")
         print(f"  BLEU-2: {bleu['bleu2'] * 100:.2f}")
         print(f"  BLEU-3: {bleu['bleu3'] * 100:.2f}")
@@ -233,27 +304,27 @@ def main(opt):
     if opt.metric in ("meteor", "all"):
         print("\nComputing METEOR score...")
         meteor = compute_meteor(ref_dict, hypotheses_dict)
-        print("\n--- METEOR Score ---")
         print(f"  METEOR: {meteor * 100:.2f}")
 
     if opt.metric in ("cider", "all"):
         print("\nComputing CIDEr-D (may take ~30s)...")
         overall, per_order = compute_cider(ref_dict, hypotheses_dict)
-        print("\n--- CIDEr-D Scores ---")
         print(f"  CIDEr-D (overall): {overall:.2f}")
         for n in range(1, 5):
             print(f"  CIDEr-{n}          : {per_order[n]:.2f}")
+
+    print("=====================================================")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint_path", type=str, required=True,
                         help="path to saved model checkpoint")
-    parser.add_argument("--model_version", type=str,
-                        choices=["v1", "v2"], required=True,
-                        help="v1 = no init_c (adam_pass_1/2/4), v2 = with init_c (baseline_v2_adam, sgd_v2)")
-    parser.add_argument("--metric", type=str,
-                        choices=["bleu", "meteor", "cider", "all"], default="all",
+    parser.add_argument("--model_version", type=str, required=True,
+                        choices=["baseline_v2", "decoder_only",  "vit_transformer"],
+                        help="which model to evaluate")
+    parser.add_argument("--metric", type=str, default="all",
+                        choices=["bleu", "meteor", "cider", "all"],
                         help="which metric(s) to compute (default: all)")
     parser.add_argument("--dataset_dir", type=str, default="flickr8k",
                         help="path to flickr8k folder")
