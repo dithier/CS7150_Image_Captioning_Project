@@ -28,6 +28,12 @@ We also have a folder for failed architectures. Each subfolder (of which there a
 
 The fact we trained all of these from scratch on a small dataset (6k unique train images) is likely why we were having such poor results.
 
+### Logs folder
+This folder has the logs outputted during training for each best model.
+
+### Runs folder
+This folder has the tensorboard logs for each training session fore each best model.
+
 ### Misc files in root
 ```positional_encodings.py``` is a helper class used in multiple models.
 
