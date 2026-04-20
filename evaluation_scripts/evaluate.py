@@ -43,7 +43,7 @@ def load_model(opt, vocab):
         # todo: are default params def what we used?
         model = BaselineModel(vocab_size=len(vocab)).to(device)
 
-    elif opt.model_version == "decoder_only":
+    elif opt.model_version == "resnet_transformer":
         from resnet_transformer_decoder.resnet_transformer import ResnetTransformerModel
         print("Using Resnet Transformer Decoder")
         # todo: are these the params we used?
@@ -51,7 +51,7 @@ def load_model(opt, vocab):
         num_heads = 8
         trx_ff_dim = 1024      # 4 * embed_dim
         num_decoder_cells = 3
-        dropout = 0.3
+        dropout = 0.3 # doesn't matter during inference
         freeze = True
 
         model = ResnetTransformerModel(vocab, num_heads, trx_ff_dim, num_decoder_cells,
@@ -133,7 +133,7 @@ def generate_captions(model_version, model, data_loader, vocab):
     """
     if model_version == "baseline_v2":
         return generate_captions_word_strings(model, data_loader, vocab=vocab)
-    elif model_version in ["vit_transformer, resnet_transformer"]:
+    elif model_version in ["vit_transformer", "resnet_transformer"]:
         # resnet transformer or vit transformer
         return generate_captions_from_logits(model, data_loader, vocab=vocab)
     else:
