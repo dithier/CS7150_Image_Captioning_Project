@@ -31,9 +31,9 @@ def download_model(model_url):
 if __name__ == "__main__":
     resnet_transformer_model = "https://github.com/dithier/CS7150_Image_Captioning_Project/releases/download/v1/resnet_transformer_best.pt"
 
-    baseline_model = None
+    baseline_model = "https://github.com/dithier/CS7150_Image_Captioning_Project/releases/download/v2/baseline_best_model.pt"
 
-    vit_decoder_model = None
+    vit_decoder_model = "https://github.com/dithier/CS7150_Image_Captioning_Project/releases/download/v3/vit_best_model.pt"
 
     model_urls = [resnet_transformer_model, baseline_model, vit_decoder_model]
 
