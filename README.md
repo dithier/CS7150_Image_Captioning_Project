@@ -24,7 +24,7 @@ We also have a folder for failed architectures. Each subfolder (of which there a
 - ```diy_decoder_only``` -> This is a transformer decoder only architecture. It was created with low level Pytorch layers (Linear, Embedding, etc) and was based off of modified homework assignments. It had no pretrained weights. We were training from scratch
 - ```diy_transformer_enc_dec``` -> This is a vision transformer encoder with a transformer decoder. It was created with low level Pytorch layers like the one above based off homeworks. It did not use pretrained weights. We were training it from scratch
 - ```pytorch decoder_only``` -> This is a transformer decoder only architecture but uses higher level pytorch layers like TransformerEncoderLayer and TransformerEncoder. We trained this from scratch.
-- ```pytroch_transformer_enc_dec```-> This is a vision transformer encoder with a transformer decoder. It was created using higher level pytorch layers like TransformerEncoderLayer, TransformerEncoder, TransformerDecoderLayer, TransformerDecoder. We trained this from scratch.
+- ```pytorch_transformer_enc_dec```-> This is a vision transformer encoder with a transformer decoder. It was created using higher level pytorch layers like TransformerEncoderLayer, TransformerEncoder, TransformerDecoderLayer, TransformerDecoder. We trained this from scratch.
 
 The fact we trained all of these from scratch on a small dataset (6k unique train images) is likely why we were having such poor results.
 
