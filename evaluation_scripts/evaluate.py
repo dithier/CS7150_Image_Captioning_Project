@@ -7,14 +7,13 @@ Short description:  Evaluation script for image captioning models on Flickr8k te
 
 import torch
 import argparse
-import math
 import nltk
-from collections import defaultdict
 from dataloader_v2 import get_flickr8k_loaders
 from nltk.translate.bleu_score import corpus_bleu
 from pycocoevalcap.cider.cider import Cider
 
 """
+
 Unified evaluation script for all model types.
 Supports BLEU-1 through BLEU-4, METEOR, and CIDEr-D.
 
@@ -24,13 +23,14 @@ Model versions:
   vit_transformer     - VisionTransformerModel (pretrained ViT-B/16 + transformer decoder)
     todo: fix model paths
 Usage:
-  python evaluate_all.py --model_version baseline_v2 --checkpoint_path saved_models/sgd_v2/model.pt
-  python evaluate_all.py --model_version baseline_v2 --checkpoint_path ... --metric bleu
+    Run in root: python -m evaluation_scripts.evaluate [args]
 
-  python evaluate_all.py --model_version resnet_transformer --checkpoint_path saved_models/resnet_transformer_pass_1/model.pt
+    ex args:
+    --model_version baseline_v2 --checkpoint_path models/baseline_best_model.pt --metric bleu
 
-  python evaluate_all.py --model_version vit_transformer --checkpoint_path saved_models/vit_transformer_pass_1/model.pt
-  python evaluate_all.py --model_version vit_transformer --checkpoint_path ... --metric cider
+  --model_version resnet_transformer --checkpoint_path models/resnet_transformer_best.pt
+
+  --model_version vit_transformer --checkpoint_path models/vit_best_model.pt -- metric cider
 """
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

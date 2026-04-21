@@ -28,16 +28,20 @@ We also have a folder for failed architectures. Each subfolder (of which there a
 
 The fact we trained all of these from scratch on a small dataset (6k unique train images) is likely why we were having such poor results.
 
+### Evaluations script folder
+This folder has our one eval script that can be used for all models to calculate BLEU, CIDER, and METOER metrics.
+
 ### Logs folder
 This folder has the logs outputted during training for each best model.
 
 ### Runs folder
 This folder has the tensorboard logs for each training session fore each best model.
 
+### Images folder
+This folder has a collection of images you can run inference on with a demo file, without the need of dowloading the whole flickr8k dataset.
+
 ### Misc files in root
 ```positional_encodings.py``` is a helper class used in multiple models.
-
-The ```evaluation_scripts``` folder has our one eval script that can be used for all models to calculate BLEU, CIDER, and METOER metrics.
 
 ```RunningBaselineTraining.md``` has instructions we used of how to run on the cluster.
 
@@ -51,10 +55,23 @@ The ```evaluation_scripts``` folder has our one eval script that can be used for
 
 ```demo.py``` Is a file that allows you to do inference on a subset of images with each model and see results
 
+```requirements.txt``` has a list of the python package requirements for our project. These packages need to be downloaded to be able to run our demo file.
+
+```visualize_attention.py``` was a file we used to generate figures in the report showing where attention was focused in the ResNet + Decoder model during inference. Note, this file relies on using flickr8k dataset the way it is currently written.
+
+```vocab.pkl``` is the vocabulary file created when making the training dataset. This can be obtained from our dataloaders, but assuming you don't want to make a dataloader (because it would require downloading the flickr8k dataset) we have provided a pickle file with its content.
+
 ## Running the demo
-### Step 1 - Download models
+
+### Step 1 - Install needed packages
+```pip install -r requirements.txt```
+Note: you may want to do this in virtual environment
+
+### Step 2 - Download models
 To download the models simply run ```python download_models.py```
 This will create a ```models`` folder in the root directory if it doesn't already exist, and download any models specified in the file that you don't have downloaded already.
 
-### Step 2 - Run demo.py
-TODO
+### Step 3 - Run demo.py
+```python demo.py```
+
+In this demo, an image will appear with the output of each of our three models. When done viewing the image, X it out (red button in top left corner), and the next one in the Images folder will appear. Continue this process until the program finishes or you have seen enough.
