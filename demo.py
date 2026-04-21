@@ -59,28 +59,22 @@ def get_transform():
 # ──────────────────────────────────────────────────────────────────────────────
 # 2.  Model loaders
 # ──────────────────────────────────────────────────────────────────────────────
+def load_checkpoint(model, mode, path="./model.pt"):
+    checkpoint = torch.load(path, map_location=device)
+    model.load_state_dict(checkpoint['model_state_dict'])
+
+    if mode == "eval":
+        model.eval()
+    else:
+        model.train()
+
+    return model
 
 def load_baseline(vocab, checkpoint_path):
-    from baseline.baseline_model_v2 import ResNetEncoder, BasicLSTMDecoder
-    encoder = ResNetEncoder(embed_dim=512, freeze=True).to(device)
-    decoder = BasicLSTMDecoder(
-        vocab_size=len(vocab), embed_dim=512, hidden_dim=512, num_layers=1
-    ).to(device)
-    ckpt  = torch.load(checkpoint_path, map_location=device)
-    state = ckpt.get("model_state_dict", ckpt.get("state_dict", ckpt))
-    # state dict may have encoder/decoder prefixed or flat — try both
-    enc_state = {k.replace("encoder.", ""): v for k, v in state.items() if k.startswith("encoder.")}
-    dec_state = {k.replace("decoder.", ""): v for k, v in state.items() if k.startswith("decoder.")}
-    if enc_state:
-        encoder.load_state_dict(enc_state)
-        decoder.load_state_dict(dec_state)
-    else:
-        # flat checkpoint — try loading encoder/decoder separately
-        encoder.load_state_dict({k: v for k, v in state.items() if not k.startswith("fc.")}, strict=False)
-        decoder.load_state_dict(state, strict=False)
-    encoder.eval()
-    decoder.eval()
-    return encoder, decoder
+    from baseline.baseline_model_v2 import BaselineModel
+    model = BaselineModel(vocab_size=len(vocab)).to(device)
+    model = load_checkpoint(model, "eval", checkpoint_path)
+    return model
 
 
 def load_resnet_transformer(vocab, checkpoint_path):
@@ -94,10 +88,7 @@ def load_resnet_transformer(vocab, checkpoint_path):
         dropout=0.3,
         freeze=True,
     ).to(device)
-    ckpt  = torch.load(checkpoint_path, map_location=device)
-    state = ckpt.get("model_state_dict", ckpt.get("state_dict", ckpt))
-    model.load_state_dict(state)
-    model.eval()
+    model = load_checkpoint(model, "eval", checkpoint_path)
     return model
 
 
@@ -108,10 +99,7 @@ def load_vit_transformer(vocab, checkpoint_path):
         num_decoder_cells=6,
         trx_ff_dim=3072,
     ).to(device)
-    ckpt  = torch.load(checkpoint_path, map_location=device)
-    state = ckpt.get("model_state_dict", ckpt.get("state_dict", ckpt))
-    model.load_state_dict(state)
-    model.eval()
+    model = load_checkpoint(model, "eval", checkpoint_path)
     return model
 
 
@@ -119,39 +107,38 @@ def load_vit_transformer(vocab, checkpoint_path):
 # 3.  Inference helpers
 # ──────────────────────────────────────────────────────────────────────────────
 
-def run_baseline(encoder, decoder, vocab, image_tensor):
+def run_baseline(model, vocab, image_tensor):
     with torch.no_grad():
-        features = encoder(image_tensor)           # (1, 512)
-    captions = decoder.generate(features, vocab)   # list of word lists
+        captions = model.generate(image_tensor, vocab) # list of words
     return " ".join(captions[0])
 
 
 def run_resnet_transformer(model, vocab, image_tensor):
     with torch.no_grad():
-        logits = model.forward_test(image_tensor)  # (1, L, vocab_size)
-    indices = logits.argmax(dim=-1)[0].tolist()
-    words = []
-    for idx in indices:
-        word = vocab.index_to_word.get(idx, "")
-        if word in (vocab.EOS_TOKEN, vocab.PAD_TOKEN, vocab.SOS_TOKEN):
-            break
-        if word:
-            words.append(word)
-    return " ".join(words)
+        logits = model.forward(image_tensor)  # (1, L, vocab_size)
+        indices = logits.argmax(dim=-1)[0].tolist()
+        words = []
+        for idx in indices:
+            word = vocab.index_to_word.get(idx, "")
+            if word in (vocab.EOS_TOKEN, vocab.PAD_TOKEN, vocab.SOS_TOKEN):
+                break
+            if word:
+                words.append(word)
+        return " ".join(words)
 
 
 def run_vit_transformer(model, vocab, image_tensor):
     with torch.no_grad():
-        logits = model.forward_test(image_tensor)  # (1, L, vocab_size)
-    indices = logits.argmax(dim=-1)[0].tolist()
-    words = []
-    for idx in indices:
-        word = vocab.index_to_word.get(idx, "")
-        if word in (vocab.EOS_TOKEN, vocab.PAD_TOKEN, vocab.SOS_TOKEN):
-            break
-        if word:
-            words.append(word)
-    return " ".join(words)
+        logits = model.forward(image_tensor)  # (1, L, vocab_size)
+        indices = logits.argmax(dim=-1)[0].tolist()
+        words = []
+        for idx in indices:
+            word = vocab.index_to_word.get(idx, "")
+            if word in (vocab.EOS_TOKEN, vocab.PAD_TOKEN, vocab.SOS_TOKEN):
+                break
+            if word:
+                words.append(word)
+        return " ".join(words)
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -230,7 +217,7 @@ def main():
 
     # load models
     print("Loading Baseline (ResNet+LSTM)...")
-    baseline_enc, baseline_dec = load_baseline(vocab, args.baseline_checkpoint)
+    baseline_model = load_baseline(vocab, args.baseline_checkpoint)
 
     print("Loading ResNet+Transformer...")
     resnet_model = load_resnet_transformer(vocab, args.resnet_checkpoint)
@@ -260,7 +247,7 @@ def main():
 
         print(f"Image: {img_name}")
 
-        c1 = run_baseline(baseline_enc, baseline_dec, vocab, image_tensor)
+        c1 = run_baseline(baseline_model, vocab, image_tensor)
         c2 = run_resnet_transformer(resnet_model, vocab, image_tensor)
         c3 = run_vit_transformer(vit_model, vocab, image_tensor)
 
