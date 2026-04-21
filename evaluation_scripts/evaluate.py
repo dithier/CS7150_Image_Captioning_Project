@@ -5,7 +5,7 @@ import nltk
 from collections import defaultdict
 from dataloader_v2 import get_flickr8k_loaders
 from nltk.translate.bleu_score import corpus_bleu
-from training_helpers import evaluate, evaluateRandomly
+from pycocoevalcap.cider.cider import Cider
 
 """
 Unified evaluation script for all model types.
@@ -56,8 +56,6 @@ def load_model(opt, vocab):
 
         model = ResnetTransformerModel(vocab, num_heads, trx_ff_dim, num_decoder_cells,
                                         embed_dim, dropout, freeze).to(device)
-    
-
 
     elif opt.model_version == "vit_transformer":
         from ViT_decoder.pytorch_pretrainined_enc_dec_model import VisionTransformerModel
@@ -179,81 +177,17 @@ def compute_meteor(ref_dict, hypotheses_dict):
 # CIDEr-D
 # ──────────────────────────────────────────────
 
-def get_ngrams(tokens, n):
-    counts = defaultdict(int)
-    for i in range(len(tokens) - n + 1):
-        counts[tuple(tokens[i: i + n])] += 1
-    return counts
+def compute_cider(ref_dict, hypotheses_dict):
+    scorer = Cider()
 
+    # format: {img_id: [caption_string]}
+    refs  = {img: [' '.join(words) for words in ref_list] for img, ref_list in ref_dict.items()}
+    hyps  = {img: [' '.join(words)] for img, words in hypotheses_dict.items()}
 
-def compute_cider(ref_dict, hypotheses_dict, n_max=4, sigma=6.0):
-    image_names = list(ref_dict.keys())
-    num_images = len(image_names)
-
-    refs_ngrams = {n: [] for n in range(1, n_max + 1)}
-    test_ngrams = {n: [] for n in range(1, n_max + 1)}
-
-    for img_name in image_names:
-        refs = ref_dict[img_name]
-        hyp = hypotheses_dict.get(img_name, ["<unk>"])
-        for n in range(1, n_max + 1):
-            refs_ngrams[n].append([get_ngrams(ref, n) for ref in refs])
-            test_ngrams[n].append(get_ngrams(hyp, n))
-
-    doc_freqs = {}
-    for n in range(1, n_max + 1):
-        df = defaultdict(int)
-        for i in range(num_images):
-            seen = set()
-            for ref_counts in refs_ngrams[n][i]:
-                for ngram in ref_counts:
-                    if ngram not in seen:
-                        df[ngram] += 1
-                        seen.add(ngram)
-        doc_freqs[n] = df
-
-    def tfidf_vec(counts, doc_freq):
-        vec = defaultdict(float)
-        norm = 0.0
-        for ngram, count in counts.items():
-            df = doc_freq.get(ngram, 0)
-            idf = math.log((num_images - df + 0.5) / (df + 0.5))
-            vec[ngram] = count * idf
-            norm += (count * idf) ** 2
-        return vec, math.sqrt(norm)
-
-    scores_per_order = {n: [] for n in range(1, n_max + 1)}
-    scores_per_image = []
-
-    for i in range(num_images):
-        image_score = 0.0
-        for n in range(1, n_max + 1):
-            hyp_vec, hyp_norm = tfidf_vec(test_ngrams[n][i], doc_freqs[n])
-            ref_lens = [sum(v for v in rc.values()) for rc in refs_ngrams[n][i]]
-            avg_ref_len = sum(ref_lens) / len(ref_lens) if ref_lens else 1
-            hyp_len = sum(v for v in test_ngrams[n][i].values())
-
-            score = 0.0
-            for ref_counts in refs_ngrams[n][i]:
-                ref_vec, ref_norm = tfidf_vec(ref_counts, doc_freqs[n])
-                dot = sum(hyp_vec[ng] * ref_vec[ng] for ng in ref_vec if ng in hyp_vec)
-                dot = max(dot, 0.0)
-                if hyp_norm * ref_norm > 0:
-                    score += dot / (hyp_norm * ref_norm)
-
-            penalty = math.exp(-((hyp_len - avg_ref_len) ** 2) / (2 * sigma ** 2))
-            n_score = (score / len(refs_ngrams[n][i])) * penalty
-            scores_per_order[n].append(n_score)
-            image_score += n_score
-
-        scores_per_image.append(image_score / n_max)
-
-    overall = (sum(scores_per_image) / num_images) * 10.0
-    per_order = {
-        n: (sum(scores_per_order[n]) / num_images) * 10.0
-        for n in range(1, n_max + 1)
-    }
-    return overall, per_order
+    # scores here would be 1-4 for cider, but seems like most people only use the 
+    # overal score when evaluating so just returning score
+    score, scores = scorer.compute_score(refs, hyps)
+    return score
 
 
 # ──────────────────────────────────────────────
@@ -308,11 +242,9 @@ def main(opt):
         print(f"  METEOR: {meteor * 100:.2f}")
 
     if opt.metric in ("cider", "all"):
-        print("\nComputing CIDEr-D (may take ~30s)...")
-        overall, per_order = compute_cider(ref_dict, hypotheses_dict)
-        print(f"  CIDEr-D (overall): {overall:.2f}")
-        for n in range(1, 5):
-            print(f"  CIDEr-{n}          : {per_order[n]:.2f}")
+        print("\nComputing CIDEr-D (may take several seconds)...")
+        cider_score = compute_cider(ref_dict, hypotheses_dict)
+        print(f"CIDEr-D: {cider_score * 100:.2f}")
 
     print("=====================================================")
 
