@@ -26,7 +26,6 @@ Directory structure expected:
 """
 
 import argparse
-import math
 import os
 import pickle
 
