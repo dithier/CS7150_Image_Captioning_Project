@@ -1,3 +1,10 @@
+"""
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Baseline image captioning model with a pretrained ResNet encoder and a basic LSTM decoder. The encoder extracts features from the input image, which are then fed into the LSTM decoder to generate captions. The decoder also includes a method for generating captions from image features, allowing for inference on new images. This model serves as a starting point for our image captioning project, and we will build upon it in future iterations.
+"""
+
 import torch.nn as nn
 import torchvision.models as models
 import torch

@@ -1,3 +1,10 @@
+"""
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Script to train the baseline image captioning model using Adam optimizer.
+"""
+
 import torch
 import torch.nn as nn
 from torch import Tensor
