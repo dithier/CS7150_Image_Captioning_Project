@@ -208,7 +208,7 @@ def main():
     parser.add_argument("--vocab_path", default="vocab.pkl", 
                         help="Path to vocab.pkl")
     parser.add_argument("--image_dir",           default="Images/",
-                        help="Folder of demo images (default: Images/)")
+                        help="Folder of demo images (default: Images)")
     args = parser.parse_args()
 
     # load vocab
