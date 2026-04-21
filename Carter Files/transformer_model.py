@@ -112,8 +112,8 @@ class MultiHeadAttention(nn.Module):
         #                                                                         #
         # Again, think of how to use reshaping tensor to do the concatenation.    #
         ###########################################################################
-        attn_weights = self.softmax(dot_prod_scores) # take it across columns in each batch
-        Z = torch.matmul(attn_weights, V) # B X H X L X D
+        softmax = self.softmax(dot_prod_scores) # take it across columns in each batch
+        Z = torch.matmul(softmax, V) # B X H X L X D
 
         Z = torch.transpose(Z, 1, 2) # B x L X H X D
         Z = torch.reshape(Z, (b, seq_len, -1))   # B X L X (H*D)
@@ -123,7 +123,7 @@ class MultiHeadAttention(nn.Module):
         #                             END OF YOUR CODE                            #
         ###########################################################################
 
-        return out, attn_weights
+        return out
        
 class FeedForwardNetwork(nn.Module):
     """
