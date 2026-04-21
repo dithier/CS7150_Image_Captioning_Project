@@ -167,7 +167,7 @@ def compute_meteor(ref_dict, hypotheses_dict):
     scores = []
     for img_name, references in ref_dict.items():
         hypothesis = hypotheses_dict.get(img_name, ["<unk>"])
-        score = meteor_score(references, hypothesis, alpha=0.9, beta=3.0, gamma=0.5)
+        score = meteor_score(references, hypothesis)
         scores.append(score)
 
     return sum(scores) / len(scores) if scores else 0.0
