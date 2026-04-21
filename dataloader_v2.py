@@ -1,4 +1,11 @@
 """
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  DataLoader for Flickr8k image captioning dataset. Loads images and captions, builds vocabulary, and provides PyTorch Datasets and DataLoaders for train/val/test splits. Also includes a smoke test to verify functionality. 
+"""
+
+"""
 Flickr8k Dataset Loader for Image Captioning
 =============================================
 Expects the following directory structure:

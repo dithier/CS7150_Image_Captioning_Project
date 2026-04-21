@@ -1,3 +1,10 @@
+"""
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  This file contains the implementation of the ResNet-Transformer model for image captioning. The model consists of a ResNet encoder that extracts features from the input image and a Transformer decoder that generates captions based on the extracted features. The ResNet encoder is pretrained on ImageNet and can be optionally frozen during training. The Transformer decoder uses multi-head attention to attend to the encoded image features and generate captions word by word. The model is designed to be trained using teacher forcing, where the ground truth captions are provided during training, and can also be used for inference to generate captions for new images.
+"""
+
 import torch.nn as nn
 import torchvision.models as models
 import torch

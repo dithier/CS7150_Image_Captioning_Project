@@ -1,3 +1,10 @@
+"""
+Authors: Priyanshu Ranka,  Carter Ithier
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Positional encoding module for Transformer models. 
+"""
+
 import torch.nn as nn
 import torch
 

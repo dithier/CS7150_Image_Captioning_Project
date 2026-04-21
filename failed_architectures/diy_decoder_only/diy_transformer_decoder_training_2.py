@@ -1,3 +1,10 @@
+"""
+Authors: Priyanshu Ranka,  Carter Ithier
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:   Training loop for transformer decoder only model.
+"""
+
 import torch
 from torch.utils.tensorboard import SummaryWriter
 import argparse

@@ -1,5 +1,11 @@
-import math
+"""
+Authors: Priyanshu Ranka,  Carter Ithier
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Transformer encoder-decoder model for image captioning.
+"""
 
+import math
 import torch
 import torch.nn as nn
 

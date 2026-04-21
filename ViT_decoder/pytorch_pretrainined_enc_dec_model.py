@@ -1,5 +1,11 @@
-import torchvision.models as models
+"""
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  This file contains the implementation of a vision transformer-based image captioning model. The model consists of a pre-trained Vision Transformer (ViT) as the encoder and a Transformer decoder for generating captions. The ViT is frozen during training, and the decoder is trained to generate captions based on the features extracted by the ViT. The model includes positional encoding, multi-head attention, and feedforward layers in the decoder. The forward method handles both training and testing behavior, allowing for caption generation during inference.
+"""
 
+import torchvision.models as models
 import math
 from positional_encoding import PositionalEncoding
 import torch

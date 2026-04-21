@@ -1,4 +1,11 @@
 """
+Authors: Priyanshu Ranka,  Carter Ithier
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Script to visualize attention maps for the ResNet + Transformer decoder model, in the style of the SAT paper Figure 5. 
+"""
+
+"""
 visualize_attention_sat.py
 
 SAT paper Figure 5 style attention visualization for the ResNet + Transformer decoder model.

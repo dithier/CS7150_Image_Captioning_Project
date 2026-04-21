@@ -1,3 +1,10 @@
+"""
+Authors: Priyanshu Ranka,  Carter Ithier
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description: This file contains the training loop for our decoder-only vision transformer model. It includes logic for saving and loading checkpoints, as well as logging training and validation loss to TensorBoard. The model is trained on the Flickr8k dataset, and the training loop evaluates the model on the validation set at regular intervals to determine when to save checkpoints based on performance.
+"""
+
 import torch
 from torch.utils.tensorboard import SummaryWriter
 import argparse

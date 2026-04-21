@@ -1,3 +1,10 @@
+"""
+Authors: Priyanshu Ranka,  Carter Ithier
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description: This file trains a transformer encoder-decoder model on the Flickr8k dataset. The model architecture is based on the Vision Transformer (ViT) for the encoder and a standard transformer decoder. The training loop includes checkpointing, learning rate scheduling, and logging to TensorBoard. The model is trained to overfit on the training set to verify that the implementation is correct and that the model can learn from the data.
+"""
+
 import torch
 from torch.utils.tensorboard import SummaryWriter
 import argparse

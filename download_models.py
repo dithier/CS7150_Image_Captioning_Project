@@ -1,3 +1,10 @@
+"""
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Script to download pre-trained image captioning models. 
+"""
+
 import os
 import urllib.request
 

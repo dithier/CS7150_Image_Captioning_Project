@@ -1,3 +1,10 @@
+"""
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  This script trains a pretrained ViT + transformer decoder model on the Flickr8k dataset, using teacher forcing and cross entropy loss. It includes logic for saving checkpoints based on validation performance, and can be resumed from a checkpoint. It also logs training and validation loss to TensorBoard for visualization.
+"""
+
 import torch
 from torch.utils.tensorboard import SummaryWriter
 import argparse

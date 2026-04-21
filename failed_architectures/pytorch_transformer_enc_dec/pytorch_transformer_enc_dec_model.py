@@ -1,3 +1,9 @@
+"""
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Transformer encoder-decoder model for image captioning.
+"""
 import math
 from diy_transformer_enc_dec.transformer_enc_dec_model import PositionalEncoding
 import torch

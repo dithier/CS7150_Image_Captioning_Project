@@ -1,3 +1,10 @@
+"""
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Training loop for Resnet-Transformer decoder model. Similar structure to diy_transformer_training.py but with some important differences (see comments in code).
+"""
+
 import torch
 from torch.utils.tensorboard import SummaryWriter
 import argparse

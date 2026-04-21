@@ -1,3 +1,10 @@
+"""
+Authors: Priyanshu Ranka,  Carter Ithier
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description: This file contains the training loop for the DIY transformer encoder-decoder model. It includes logic for saving and loading checkpoints, as well as logging training and validation loss to TensorBoard. The model is trained on the Flickr8k dataset, and the training process uses the Adam optimizer with a cosine annealing learning rate scheduler. The script can be run locally or on a cluster, and it accepts various command-line arguments for configuration.
+"""
+
 import torch
 from torch.utils.tensorboard import SummaryWriter
 import argparse

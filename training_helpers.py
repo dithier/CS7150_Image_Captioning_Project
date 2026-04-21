@@ -1,3 +1,10 @@
+"""
+Authors: Priyanshu Ranka,  Carter Ithier
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Helper functions for training and evaluation of the image captioning model. 
+"""
+
 import torch
 import torch.nn as nn
 from torch import Tensor

@@ -1,3 +1,9 @@
+"""
+Authors: Carter Ithier, Priyanshu Ranka  
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Training loop for transformer encoder-decoder model. More correct version of diy_transformer_training.py, with additional prints and using inference loss for saving and evaluating.
+"""
 import torch
 from torch.utils.tensorboard import SummaryWriter
 import argparse

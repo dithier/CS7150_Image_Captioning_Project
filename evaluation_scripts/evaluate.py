@@ -1,3 +1,10 @@
+"""
+Authors: Priyanshu Ranka,  Carter Ithier
+Course: CS 7150 - Deep Learning
+Semester: Spring 2026
+Short description:  Evaluation script for image captioning models on Flickr8k test set. 
+"""
+
 import torch
 import argparse
 import math
