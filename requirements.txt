@@ -8,3 +8,7 @@ scipy_doctest==2.2.0
 torch==2.10.0
 torchvision==0.25.0
 urllib3_secure_extra==0.1.0
+numpy
+tqdm
+seaborn
+tensorboard

@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-from torch import Tensor
 import torch.optim as optim
 from torch.utils.data import Subset, DataLoader
 

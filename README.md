@@ -62,12 +62,14 @@ This folder has a collection of images you can run inference on with a demo file
 ```vocab.pkl``` is the vocabulary file created when making the training dataset. This can be obtained from our dataloaders, but assuming you don't want to make a dataloader (because it would require downloading the flickr8k dataset) we have provided a pickle file with its content.
 
 ## Running the demo
-### Step 1 - Download models
+
+### Step 1 - Install needed packages
+```pip install -r requirements.txt```
+Note: you may want to do this in virtual environment
+
+### Step 2 - Download models
 To download the models simply run ```python download_models.py```
 This will create a ```models`` folder in the root directory if it doesn't already exist, and download any models specified in the file that you don't have downloaded already.
-
-### Step 2 - Install needed packages
-```pip install -r requirements.txt```
 
 ### Step 3 - Run demo.py
 ```python demo.py```

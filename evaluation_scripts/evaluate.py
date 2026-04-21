@@ -1,8 +1,6 @@
 import torch
 import argparse
-import math
 import nltk
-from collections import defaultdict
 from dataloader_v2 import get_flickr8k_loaders
 from nltk.translate.bleu_score import corpus_bleu
 from pycocoevalcap.cider.cider import Cider
