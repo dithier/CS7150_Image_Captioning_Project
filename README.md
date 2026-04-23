@@ -69,7 +69,7 @@ Note: you may want to do this in virtual environment
 
 ### Step 2 - Download models
 To download the models simply run ```python download_models.py```
-This will create a ```models`` folder in the root directory if it doesn't already exist, and download any models specified in the file that you don't have downloaded already.
+This will create a ```models``` folder in the root directory if it doesn't already exist, and download any models specified in the file that you don't have downloaded already.
 
 ### Step 3 - Run demo.py
 ```python demo.py```
